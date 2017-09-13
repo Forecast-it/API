@@ -11,10 +11,19 @@
 |first_name | String|
 |last_name | String|
 |email | String|
-|created_at | Date|
-|updated_at | Date|
+|user_type | String|
+|monday | Integer|
+|tuesday | Integer|
+|wednesday | Integer|
+|thursday | Integer|
+|friday | Integer|
+|saturday | Integer|
+|sunday | Integer|
 |active | Boolean|
 |default_role | Integer|
+|cost | Integer|
+|created_at | Date|
+|updated_at | Date|
 
 ### Sample JSON response
 ```javascript
@@ -25,10 +34,19 @@
       "first_name":"John",
       "last_name":"Smith",
       "email":"js@domain.com",
-      "created_at":"2017-01-14T18:46:56+01:00",
-      "updated_at":"2017-01-14T18:47:58+01:00",
+      "user_type":"ADMIN",
+      "monday":480,
+      "tuesday":480,
+      "wednesday":480,
+      "thursday":480,
+      "friday":480,
+      "saturday":480,
+      "sunday":480,
       "active":true,
-      "default_role":29
+      "default_role":29,
+      "cost":100,
+      "created_at":"2017-01-14T18:46:56+01:00",
+      "updated_at":"2017-01-14T18:47:58+01:00"
    }, ...
 ]
 ```
@@ -44,10 +62,19 @@
 |first_name | String|
 |last_name | String|
 |email | String|
-|created_at | Date|
-|updated_at | Date|
+|user_type | String|
+|monday | Integer|
+|tuesday | Integer|
+|wednesday | Integer|
+|thursday | Integer|
+|friday | Integer|
+|saturday | Integer|
+|sunday | Integer|
 |active | Boolean|
 |default_role | JSON (Role)|
+|cost | Integer|
+|created_at | Date|
+|updated_at | Date|
 
 ### Sample JSON response
 ```javascript
@@ -57,10 +84,19 @@
    "first_name":"John",
    "last_name":"Smith",
    "email":"js@domain.com",
-   "created_at":"2017-01-14T18:46:56+01:00",
-   "updated_at":"2017-01-14T18:47:58+01:00",
+   "user_type":"ADMIN",
+   "monday":480,
+   "tuesday":480,
+   "wednesday":480,
+   "thursday":480,
+   "friday":480,
+   "saturday":480,
+   "sunday":480,
    "active":true,
-   "default_role": {...}
+   "default_role": {...},
+   "cost":100,
+   "created_at":"2017-01-14T18:46:56+01:00",
+   "updated_at":"2017-01-14T18:47:58+01:00"
 }
 ```
 
@@ -73,7 +109,17 @@
 |first_name | (Required) String|
 |last_name | (Required) String|
 |email | (Required) String|
+|user_type | String|
+|monday | Integer|
+|tuesday | Integer|
+|wednesday | Integer|
+|thursday | Integer|
+|friday | Integer|
+|saturday | Integer|
+|sunday | Integer|
+|active | Boolean|
 |default_role | (Required) Integer, id of the default role|
+|cost | Integer|
 
 ### Sample JSON request
 POST https://api.forecast.it/api/v1/persons
@@ -83,7 +129,17 @@ POST https://api.forecast.it/api/v1/persons
    "first_name":"John",
    "last_name":"Smith",
    "email":"js@domain.com",
+   "user_type":"ADMIN",
+   "monday":480,
+   "tuesday":480,
+   "wednesday":480,
+   "thursday":480,
+   "friday":480,
+   "saturday":480,
+   "sunday":480,
+   "active":true,
    "default_role":4,
+   "cost":100,
 }
 ```
 
