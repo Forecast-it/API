@@ -89,7 +89,7 @@ Errors are returned in the following JSON format.
 ## API sections (Work in progress)
 
 * Company details
-* Persons
+* [Persons](sections/persons.md)
 * Clients
 * Labels
 * Non project time
