@@ -86,29 +86,24 @@ Errors are returned in the following JSON format.
 }
 ```
 
-## API sections
+## API sections (Work in progress)
 
-* [Users](https://github.com/Forecast-it/API/blob/master/sections/users.md)
-* [Roles](https://github.com/Forecast-it/API/blob/master/sections/roles.md)
-* [Teams](https://github.com/Forecast-it/API/blob/master/sections/teams.md)
-* [Customers](https://github.com/Forecast-it/API/blob/master/sections/customers.md)
-* [Business Units](https://github.com/Forecast-it/API/blob/master/sections/businessUnits.md)
-* [Projects](https://github.com/Forecast-it/API/blob/master/sections/projects.md)
-* [Project Phases](https://github.com/Forecast-it/API/blob/master/sections/projectPhases.md)
-* [Project Types](https://github.com/Forecast-it/API/blob/master/sections/projectTypes.md)
-* [Project People/Resources](https://github.com/Forecast-it/API/blob/master/sections/projectResources.md)
-* [Cost Types](https://github.com/Forecast-it/API/blob/master/sections/costTypes.md)
-* [User Stories](https://github.com/Forecast-it/API/blob/master/sections/userStories.md)
-* [User Story Types](https://github.com/Forecast-it/API/blob/master/sections/userStoryTypes.md)
-* [Sprints](https://github.com/Forecast-it/API/blob/master/sections/sprints.md)
-* [Tasks](https://github.com/Forecast-it/API/blob/master/sections/tasks.md)
-* [Time Tracking/Registration](https://github.com/Forecast-it/API/blob/master/sections/timeRegistration.md)
-* [Scrum Stages](https://github.com/Forecast-it/API/blob/master/sections/scrumStages.md)
-* [Tags](https://github.com/Forecast-it/API/blob/master/sections/tags.md)
-* [Files/Attachments](https://github.com/Forecast-it/API/blob/master/sections/filesAttachments.md)
-* [Milestones](https://github.com/Forecast-it/API/blob/master/sections/milestones.md)
-* [Work Breakdowns](https://github.com/Forecast-it/API/blob/master/sections/workBreakdowns.md)
-* [Versions](https://github.com/Forecast-it/API/blob/master/sections/versions.md)
+* Company details
+* Persons
+* Clients
+* Labels
+* Non project time
+* Roles
+* Rate cards
+* Allocations
+* Time registrations
+* Projects
+* Milestones
+* Workflow columns
+* Cards
+* Sprints
+* Project persons
+* Expense items
 
 ## API libraries
 
