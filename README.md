@@ -90,7 +90,7 @@ Errors are returned in the following JSON format.
 
 * Company details
 * [Persons](sections/persons.md)
-* Clients
+* [Clients](sections/clients.md)
 * Labels
 * Non project time
 * Roles

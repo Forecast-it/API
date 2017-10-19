@@ -11,17 +11,19 @@
 |first_name | String|
 |last_name | String|
 |email | String|
-|user_type | String|
-|monday | Integer|
-|tuesday | Integer|
-|wednesday | Integer|
-|thursday | Integer|
-|friday | Integer|
-|saturday | Integer|
-|sunday | Integer|
+|user_type | String {"ADMIN", "VIRTUAL", "COLLABORATOR", "MANAGER", "CONTROLLER"}|
+|monday | Integer, working hours in minutes|
+|tuesday | Integer, working hours in minutes|
+|wednesday | Integer, working hours in minutes|
+|thursday | Integer, working hours in minutes|
+|friday | Integer, working hours in minutes|
+|saturday | Integer, working hours in minutes|
+|sunday | Integer, working hours in minutes|
 |active | Boolean|
-|default_role | Integer|
-|cost | Integer|
+|default_role | Integer, ID of default role|
+|cost | Decimal|
+|created_by | Integer, ID of person|
+|updated_by | Integer, ID of person|
 |created_at | Date|
 |updated_at | Date|
 
@@ -45,6 +47,8 @@
       "active":true,
       "default_role":29,
       "cost":100,
+      "created_by":1,
+      "updated_by":1,
       "created_at":"2017-01-14T18:46:56+01:00",
       "updated_at":"2017-01-14T18:47:58+01:00"
    }, ...
@@ -72,7 +76,9 @@
 |sunday | Integer|
 |active | Boolean|
 |default_role | JSON (Role)|
-|cost | Integer|
+|cost | Decimal|
+|created_by | Integer, ID of person|
+|updated_by | Integer, ID of person|
 |created_at | Date|
 |updated_at | Date|
 
@@ -95,6 +101,8 @@
    "active":true,
    "default_role": {...},
    "cost":100,
+   "created_by":1,
+   "updated_by":1,
    "created_at":"2017-01-14T18:46:56+01:00",
    "updated_at":"2017-01-14T18:47:58+01:00"
 }
@@ -102,24 +110,23 @@
 
 ## Create person
 
-* `POST /persons` - Creates a new person.
+* `POST /persons` - Creates a new person. Returns the same object as getting a single person.
 
-|Response fields | Description/format|
+|Request fields | Description/format|
 |------------ | -------------|
 |first_name | (Required) String|
 |last_name | (Required) String|
 |email | (Required) String|
-|user_type | String|
-|monday | Integer|
-|tuesday | Integer|
-|wednesday | Integer|
-|thursday | Integer|
-|friday | Integer|
-|saturday | Integer|
-|sunday | Integer|
-|active | Boolean|
-|default_role | (Required) Integer, id of the default role|
-|cost | Integer|
+|user_type | (Required) String|
+|monday | Integer, if not set, taken from company|
+|tuesday | Integer, if not set, taken from company|
+|wednesday | Integer, if not set, taken from company|
+|thursday | Integer, if not set, taken from company|
+|friday | Integer, if not set, taken from company|
+|saturday | Integer, if not set, taken from company|
+|sunday | Integer, if not set, taken from company|
+|default_role | Integer, id of the default role|
+|cost | Decimal|
 
 ### Sample JSON request
 POST https://api.forecast.it/api/v1/persons
@@ -145,15 +152,24 @@ POST https://api.forecast.it/api/v1/persons
 
 ## Update person
 
-* `PUT /persons/{personId}` - Updates a person.
+* `PUT /persons/{personId}` - Updates a person. Returns the same object as getting a single person.
 
-|Response fields | Description/format|
+|Request fields | Description/format|
 |------------ | -------------|
 |first_name | String|
 |last_name | String|
 |email | String|
+|user_type | String|
+|monday | Integer|
+|tuesday | Integer|
+|wednesday | Integer|
+|thursday | Integer|
+|friday | Integer|
+|saturday | Integer|
+|sunday | Integer|
 |active | Boolean|
 |default_role | Integer, id of the default role|
+|cost | Decimal|
 
 ### Sample JSON request
 PUT https://api.forecast.it/api/v1/persons/1
@@ -167,6 +183,7 @@ PUT https://api.forecast.it/api/v1/persons/1
 
 ## Delete person
 
+* `DELETE /persons/{personId}` - Deletes a person.
 * `DELETE /persons/{personId}` - Deletes a person.
 
 ### Sample JSON request
