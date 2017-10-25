@@ -16,9 +16,9 @@ We recommend that you start out by getting to know the concepts and conventions 
 
 ## Making a request
 
-All URLs start with https://api.forecast.it/api/v1/. **SSL only**. The path contains the API version. If we change the API in backward-incompatible ways, we'll increment the version marker and maintain stable support for the old URLs.
+All URLs start with `https://api.forecast.it/api/v1/`. **SSL only**. The path contains the API version. If we change the API in backward-incompatible ways, we'll increment the version marker and maintain stable support for the old URLs.
 
-To make a request for all the projects on your account, you'd append the projects index path to the base url e.g. https://api.forecast.it/api/v1/projects
+To make a request for all the projects on your account, you'd append the projects index path to the base url e.g. `https://api.forecast.it/api/v1/projects`
 
 Using [curl](http://curl.haxx.se/) it will look like this:
 
@@ -50,6 +50,8 @@ API keys grant full access to your [Forecast](https://www.forecast.it) account, 
 ## No XML, just JSON
 
 We only support [JSON](http://json.org/) for serialization of data. This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing or PUTing data into [Forecast](https://www.forecast.it). **All API URLs only accept and return JSON.**
+
+You'll receive a 415 Unsupported Media Type response code if you don't include the Content-Type header.
 
 ## Responses
 
