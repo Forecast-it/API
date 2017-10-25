@@ -6,7 +6,6 @@
 
 |Response fields | Description/format|
 |------------ | -------------|
-|url | String, URL to the client|
 |id | Integer|
 |name | String|
 |street | String|
@@ -24,7 +23,6 @@
 ```javascript
 [
    {
-      "url":"https://api.forecast.it/api/v1/clients/1",
       "id":1,
       "name":"John Dow Inc.",
       "street":"Broadway 1",
@@ -35,8 +33,8 @@
       "notes":"Very important client",
       "created_by":1,
       "updated_by":1,
-      "created_at":"2017-01-14T18:46:56+01:00",
-      "updated_at":"2017-01-14T18:47:58+01:00"
+      "created_at":"2017-01-14T18:46:561Z",
+      "updated_at":"2017-01-14T18:47:581Z"
    }, ...
 ]
 ```
@@ -47,7 +45,6 @@
 
 |Response fields | Description/format|
 |------------ | -------------|
-|url | String, URL to the client|
 |id | Integer|
 |name | String|
 |street | String|
@@ -64,7 +61,6 @@
 ### Sample JSON response
 ```javascript
 {
-   "url":"https://api.forecast.it/api/v1/clients/1",
    "id":1,
    "name":"John Dow Inc.",
    "street":"Broadway 1",
@@ -75,8 +71,8 @@
    "notes":"Very important client",
    "created_by":1,
    "updated_by":1,
-   "created_at":"2017-01-14T18:46:56+01:00",
-   "updated_at":"2017-01-14T18:47:58+01:00"
+   "created_at":"2017-01-14T18:46:561Z",
+   "updated_at":"2017-01-14T18:47:581Z"
 }
 ```
 
@@ -115,7 +111,7 @@ POST https://api.forecast.it/api/v1/clients
 
 |Request fields | Description/format|
 |------------ | -------------|
-|name | (Required) String|
+|name | String|
 |street | String|
 |zip | String|
 |city | String|

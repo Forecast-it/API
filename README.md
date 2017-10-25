@@ -2,7 +2,7 @@
 
 The [Forecast](https://www.forecast.it) API is a complete programmable interface to all Forecast functionality.
 
-This is a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer)-style [API](http://en.wikipedia.org/wiki/Application_programming_interface) that uses [JSON](http://json.org/) for serialization and [HTTP](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) [Basic authentication](http://en.wikipedia.org/wiki/Basic_access_authentication).
+This is a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer)-style [API](http://en.wikipedia.org/wiki/Application_programming_interface) that uses [JSON](http://json.org/) for serialization and [HTTP](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol).
 
 # What can you do with it?
 
@@ -23,18 +23,16 @@ To make a request for all the projects on your account, you'd append the project
 Using [curl](http://curl.haxx.se/) it will look like this:
 
 ```shell
-curl -u {API-key}: https://api.forecast.it/api/v1/projects
+curl -X GET "https://api.forecast.it/api/v1/projects" -H "X-FORECAST-API-KEY: {API-key}"
 ```
 
 That's it. Super simple, eh?
 
 ## Authentication
 
-If you're making a private integration with [Forecast](https://www.forecast.it) for your own purposes, you can use HTTP Basic authentication. This is secure since all requests in [Forecast](https://www.forecast.it) use [SSL](http://en.wikipedia.org/wiki/Transport_Layer_Security).
+If you're making a private integration with [Forecast](https://www.forecast.it) for your own purposes, you can use HTTP header "X-FORECAST-API-KEY". This is secure since all requests in [Forecast](https://www.forecast.it) use [SSL](http://en.wikipedia.org/wiki/Transport_Layer_Security).
 
-There are two ways of authenticating. Using an API key or using a username and password of an existing user.
-
-API keys are generated in the administration module and used as username in Basic authentication.
+API keys are generated in the administration module.
 
 **API keys provide full access to your [Forecast](https://www.forecast.it) account, so keep them like a secret.**
 
@@ -69,7 +67,11 @@ If [Forecast](https://www.forecast.it) is having trouble, you might see a 5xx er
 
 Attempting a DELETE may result in a 403 Forbidden if the resource can not be deleted due to dependencies. Successful deletions return a 200 OK response. **Note that some resources will only be deactivated by a DELETE request and will therefore still appear on GET requests, but with "active" : false.**
 
-404 Errors usually means that you are trying to PUT/DELETE a resource that doesn't exist.
+400 Errors usually means that the provided input is invalid and the message will tell you what the problem is.
+
+401 is a failure to authenticate the api key.
+
+404 Errors usually means that you are trying to GET/PUT/DELETE a resource that doesn't exist.
 
 Errors are returned in the following JSON format.
 
@@ -88,22 +90,23 @@ Errors are returned in the following JSON format.
 
 ## API sections (Work in progress)
 
-* Company details
+* [Company details](sections/company.md)
 * [Persons](sections/persons.md)
 * [Clients](sections/clients.md)
-* Labels
-* Non project time
-* Roles
-* Rate cards
-* Allocations
-* Time registrations
-* Projects
-* Milestones
-* Workflow columns
-* Cards
-* Sprints
-* Project persons
-* Expense items
+* [Labels](sections/labels.md)
+* [Non project time](sections/non_project_time.md)
+* [Roles](sections/roles.md)
+* [Allocations](sections/allocations.md)
+* [Rate cards](sections/rate_cards.md)
+* [Rate card rates](sections/rate_card_rates.md)
+* [Projects](sections/projects.md)
+* [Project team](sections/project_team.md)
+* [Milestones](sections/milestones.md)
+* [Sprints](sections/sprints.md)
+* [Workflow columns](sections/workflow_columns.md)
+* [Cards](sections/cards.md)
+* [Time registrations](sections/time_registrations.md)
+* [Expense items](sections/expense_items.md)
 
 ## API libraries
 

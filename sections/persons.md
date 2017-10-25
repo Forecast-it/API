@@ -6,7 +6,6 @@
 
 |Response fields | Description/format|
 |------------ | -------------|
-|url | String, URL to the person|
 |id | Integer|
 |first_name | String|
 |last_name | String|
@@ -31,7 +30,6 @@
 ```javascript
 [
    {
-      "url":"https://api.forecast.it/api/v1/person/1",
       "id":1,
       "first_name":"John",
       "last_name":"Smith",
@@ -42,15 +40,15 @@
       "wednesday":480,
       "thursday":480,
       "friday":480,
-      "saturday":480,
-      "sunday":480,
+      "saturday":0,
+      "sunday":0,
       "active":true,
       "default_role":29,
       "cost":100,
       "created_by":1,
       "updated_by":1,
-      "created_at":"2017-01-14T18:46:56+01:00",
-      "updated_at":"2017-01-14T18:47:58+01:00"
+      "created_at":"2017-01-14T18:46:561Z",
+      "updated_at":"2017-01-14T18:47:581Z"
    }, ...
 ]
 ```
@@ -61,7 +59,6 @@
 
 |Response fields | Description/format|
 |------------ | -------------|
-|url | String, URL to the person|
 |id | Integer|
 |first_name | String|
 |last_name | String|
@@ -85,7 +82,6 @@
 ### Sample JSON response
 ```javascript
 {
-   "url":"https://api.forecast.it/api/v1/persons/1",
    "id":1,
    "first_name":"John",
    "last_name":"Smith",
@@ -96,15 +92,15 @@
    "wednesday":480,
    "thursday":480,
    "friday":480,
-   "saturday":480,
-   "sunday":480,
+   "saturday":0,
+   "sunday":0,
    "active":true,
    "default_role": {...},
    "cost":100,
    "created_by":1,
    "updated_by":1,
-   "created_at":"2017-01-14T18:46:56+01:00",
-   "updated_at":"2017-01-14T18:47:58+01:00"
+   "created_at":"2017-01-14T18:46:561Z",
+   "updated_at":"2017-01-14T18:47:581Z"
 }
 ```
 
@@ -142,8 +138,8 @@ POST https://api.forecast.it/api/v1/persons
    "wednesday":480,
    "thursday":480,
    "friday":480,
-   "saturday":480,
-   "sunday":480,
+   "saturday":0,
+   "sunday":0,
    "active":true,
    "default_role":4,
    "cost":100,
