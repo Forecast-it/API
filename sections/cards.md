@@ -24,6 +24,7 @@
 |workflow_column | Integer, ID of workflow column|
 |milestone | Integer, ID of milestone|
 |assigned_persons | List<Integer>, List ID of assigned persons|
+|labels | List<Integer>, List ID of labels|
 |created_by | Integer, ID of person|
 |updated_by | Integer, ID of person|
 |created_at | Date|
@@ -51,6 +52,7 @@
       "workflow_column":2,
       "milestone":1,
       "assigned_persons":[1,2,3],
+      "labels":[1,2,3],
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:561Z",
@@ -83,6 +85,7 @@
 |workflow_column | Integer, ID of workflow column|
 |milestone | Integer, ID of milestone|
 |assigned_persons | List<Integer>, List ID of assigned persons|
+|labels | List<Integer>, List ID of labels|
 |created_by | Integer, ID of person|
 |updated_by | Integer, ID of person|
 |created_at | Date|
@@ -110,6 +113,7 @@
       "workflow_column":2,
       "milestone":1,
       "assigned_persons":[1,2,3],
+      "labels":[1,2,3],
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:561Z",
@@ -142,6 +146,7 @@
 |workflow_column | Integer, ID of workflow column|
 |milestone | Integer, ID of milestone|
 |assigned_persons | List<Integer>, List ID of assigned persons|
+|labels | List<Integer>, List ID of labels|
 |created_by | Integer, ID of person|
 |updated_by | Integer, ID of person|
 |created_at | Date|
@@ -168,6 +173,7 @@
    "workflow_column":2,
    "milestone":1,
    "assigned_persons":[1,2,3],
+   "labels":[1,2,3],
    "created_by":1,
    "updated_by":1,
    "created_at":"2017-01-14T18:46:561Z",
@@ -196,6 +202,8 @@
 |sprint | Integer, ID of sprint|
 |workflow_column | Integer, ID of workflow column|
 |milestone | Integer, ID of milestone|
+|assigned_persons | List<Integer>, List ID of assigned persons|
+|labels | List<Integer>, List ID of labels|
 
 ### Sample JSON request
 POST https://api.forecast.it/api/v1/cards
@@ -233,6 +241,8 @@ POST https://api.forecast.it/api/v1/cards
 |sprint | Integer, ID of sprint|
 |workflow_column | Integer, ID of workflow column|
 |milestone | Integer, ID of milestone|
+|assigned_persons | List<Integer>, List ID of assigned persons|
+|labels | List<Integer>, List ID of labels|
 
 ### Sample JSON request
 PUT https://api.forecast.it/api/v1/cards/1
