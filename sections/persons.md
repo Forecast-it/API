@@ -63,7 +63,7 @@
 |first_name | String|
 |last_name | String|
 |email | String|
-|user_type | String|
+|user_type | String {"ADMIN", "VIRTUAL", "COLLABORATOR", "MANAGER", "CONTROLLER"}|
 |monday | Integer|
 |tuesday | Integer|
 |wednesday | Integer|
@@ -113,7 +113,7 @@
 |first_name | (Required) String|
 |last_name | (Required) String|
 |email | (Required) String|
-|user_type | (Required) String|
+|user_type | (Required) String {"ADMIN", "VIRTUAL", "COLLABORATOR", "MANAGER", "CONTROLLER"}|
 |monday | Integer, if not set, taken from company|
 |tuesday | Integer, if not set, taken from company|
 |wednesday | Integer, if not set, taken from company|
@@ -140,7 +140,6 @@ POST https://api.forecast.it/api/v1/persons
    "friday":480,
    "saturday":0,
    "sunday":0,
-   "active":true,
    "default_role":4,
    "cost":100,
 }
@@ -155,7 +154,7 @@ POST https://api.forecast.it/api/v1/persons
 |first_name | String|
 |last_name | String|
 |email | String|
-|user_type | String|
+|user_type | String {"ADMIN", "VIRTUAL", "COLLABORATOR", "MANAGER", "CONTROLLER"}|
 |monday | Integer|
 |tuesday | Integer|
 |wednesday | Integer|
@@ -163,7 +162,6 @@ POST https://api.forecast.it/api/v1/persons
 |friday | Integer|
 |saturday | Integer|
 |sunday | Integer|
-|active | Boolean|
 |default_role | Integer, id of the default role|
 |cost | Decimal|
 
