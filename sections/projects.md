@@ -7,9 +7,10 @@
 |Response fields | Description/format|
 |------------ | -------------|
 |id | Integer|
+|company_project_id | Integer|
 |name | String|
 |stage | String (PLANNING, RUNNING, HALTED, DONE)|
-|status | String (GREEN, YELLOW, RED)|
+|status_color | String (GREEN, YELLOW, RED)|
 |status_description | String|
 |description | String|
 |color | String|
@@ -32,6 +33,7 @@
 [
    {
       "id":1,
+      "company_project_id":1,
       "name":"Website project",
       "stage":"PLANNING",
       "status": "GREEN",
@@ -62,6 +64,7 @@
 |Response fields | Description/format|
 |------------ | -------------|
 |id | Integer|
+|company_project_id | Integer|
 |name | String|
 |stage | String (PLANNING, RUNNING, HALTED, DONE)|
 |status | String (GREEN, YELLOW, RED)|
@@ -86,6 +89,7 @@
 ```javascript
 {
    "id":1,
+   "company_project_id":1,
    "name":"Website project",
    "stage":"PLANNING",
    "status": "GREEN",
@@ -114,14 +118,14 @@
 
 |Request fields | Description/format|
 |------------ | -------------|
-|name | (Required) String|
+|name | String|
 |stage | String (PLANNING, RUNNING, HALTED, DONE) (Defaults to PLANNING)|
 |status | String (GREEN, YELLOW, RED) (Defaults to GREEN)|
 |status_description | String|
 |description | String|
-|estimation_units | (Required) String (HOURS, POINTS)|
-|billable | (Required) Boolean|
-|use_sprints | (Required) Boolean|
+|estimation_units | String (HOURS, POINTS) (Defaults to HOURS)|
+|billable | Boolean (Defaults to true)|
+|use_sprints | Boolean (Defaults to false)|
 |sprint_length | Integer (Defaults to 14)|
 |start_date | Date|
 |end_date | Date|

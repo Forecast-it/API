@@ -110,9 +110,9 @@
 
 |Request fields | Description/format|
 |------------ | -------------|
-|first_name | (Required) String|
-|last_name | (Required) String|
-|email | (Required) String|
+|first_name | String|
+|last_name | String|
+|email | String|
 |user_type | (Required) String {"ADMIN", "VIRTUAL", "COLLABORATOR", "MANAGER", "CONTROLLER"}|
 |monday | Integer, if not set, taken from company|
 |tuesday | Integer, if not set, taken from company|
@@ -162,6 +162,7 @@ POST https://api.forecast.it/api/v1/persons
 |friday | Integer|
 |saturday | Integer|
 |sunday | Integer|
+|active | Boolean|
 |default_role | Integer, id of the default role|
 |cost | Decimal|
 
@@ -174,11 +175,3 @@ PUT https://api.forecast.it/api/v1/persons/1
    "last_name":"Doe"
 }
 ```
-
-## Delete person
-
-* `DELETE /persons/{personId}` - Deletes a person.
-* `DELETE /persons/{personId}` - Deletes a person.
-
-### Sample JSON request
-DELETE https://api.forecast.it/api/v1/persons/1
