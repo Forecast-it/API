@@ -67,13 +67,11 @@ Successful DELETE requests return 200 OK
 
 If [Forecast](https://www.forecast.it) is having trouble, you might see a 5xx error. 500 means that the app is entirely down, but you might also see 502 Bad Gateway, 503 Service Unavailable, or 504 Gateway Timeout. It's your responsibility in all of these cases to retry your request later.
 
-Attempting a DELETE may result in a 403 Forbidden if the resource can not be deleted due to dependencies. **Note that persons will only be deactivated by a DELETE request and will therefore still appear on GET requests, but with "active" : false.**
-
 400 Errors usually means that the provided input is invalid and the message will tell you what the problem is.
 
 401 is a failure to authenticate the api key.
 
-404 Errors usually means that you are trying to GET/PUT/DELETE a resource that doesn't exist.
+404 Errors usually means that you are trying to GET/POST/PUT/DELETE a resource that doesn't exist.
 
 Errors are returned in the following JSON format.
 
