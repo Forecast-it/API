@@ -1,4 +1,5 @@
 # Persons
+**NOTE: persons with the user_type "SYSTEM" can only be fetched and not created or updated. These are used internal in Forecast for things like integrations.**
 
 ## Get persons
 
@@ -10,7 +11,7 @@
 |first_name | String|
 |last_name | String|
 |email | String|
-|user_type | String {"ADMIN", "VIRTUAL", "COLLABORATOR", "MANAGER", "CONTROLLER"}|
+|user_type | String {"ADMIN", "VIRTUAL", "COLLABORATOR", "MANAGER", "CONTROLLER", "SYSTEM"}|
 |monday | Integer, working hours in minutes|
 |tuesday | Integer, working hours in minutes|
 |wednesday | Integer, working hours in minutes|
@@ -63,7 +64,7 @@
 |first_name | String|
 |last_name | String|
 |email | String|
-|user_type | String {"ADMIN", "VIRTUAL", "COLLABORATOR", "MANAGER", "CONTROLLER"}|
+|user_type | String {"ADMIN", "VIRTUAL", "COLLABORATOR", "MANAGER", "CONTROLLER", "SYSTEM"}|
 |monday | Integer|
 |tuesday | Integer|
 |wednesday | Integer|
