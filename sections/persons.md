@@ -11,7 +11,7 @@
 |first_name | String|
 |last_name | String|
 |email | String|
-|user_type | String {"ADMIN", "VIRTUAL", "COLLABORATOR", "MANAGER", "CONTROLLER", "SYSTEM"}|
+|user_type | String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN"}|
 |monday | Integer, working hours in minutes|
 |tuesday | Integer, working hours in minutes|
 |wednesday | Integer, working hours in minutes|
@@ -64,7 +64,7 @@
 |first_name | String|
 |last_name | String|
 |email | String|
-|user_type | String {"ADMIN", "VIRTUAL", "COLLABORATOR", "MANAGER", "CONTROLLER", "SYSTEM"}|
+|user_type | String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN"}|
 |monday | Integer|
 |tuesday | Integer|
 |wednesday | Integer|
@@ -114,7 +114,7 @@
 |first_name | String|
 |last_name | String|
 |email | String|
-|user_type | (Required) String {"ADMIN", "VIRTUAL", "COLLABORATOR", "MANAGER", "CONTROLLER"}|
+|user_type | (Required) String {"VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN"}|
 |monday | Integer, if not set, taken from company|
 |tuesday | Integer, if not set, taken from company|
 |wednesday | Integer, if not set, taken from company|
@@ -155,7 +155,7 @@ POST https://api.forecast.it/api/v1/persons
 |first_name | String|
 |last_name | String|
 |email | String|
-|user_type | String {"ADMIN", "VIRTUAL", "COLLABORATOR", "MANAGER", "CONTROLLER"}|
+|user_type | String {"VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN"}|
 |monday | Integer|
 |tuesday | Integer|
 |wednesday | Integer|
