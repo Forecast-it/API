@@ -7,9 +7,9 @@
 |Response fields | Description/format|
 |------------ | -------------|
 |id | Integer|
-|project_id | Integer, ID of project|
-|non_project_time_id | Integer, ID of non project time|
-|person_id | Integer, ID of person|
+|project | Integer, ID of project|
+|non_project_time | Integer, ID of non project time|
+|person | Integer, ID of person|
 |start_date | Date|
 |end_date | Date|
 |monday | Integer, allocation hours in minutes|
@@ -30,9 +30,9 @@
 [
    {
       "id":1,
-      "project_id":1,
-      "non_project_time_id":null,
-      "person_id":1,
+      "project":1,
+      "non_project_time":null,
+      "person":1,
       "start_date":"2017-01-14",
       "end_date":"2018-02-14",
       "monday":480,
@@ -58,9 +58,9 @@
 |Response fields | Description/format|
 |------------ | -------------|
 |id | Integer|
-|project_id | Integer, ID of project|
-|non_project_time_id | Integer, ID of non project time|
-|person_id | Integer, ID of person|
+|project | Integer, ID of project|
+|non_project_time | Integer, ID of non project time|
+|person | Integer, ID of person|
 |start_date | Date|
 |end_date | Date|
 |monday | Integer, allocation hours in minutes|
@@ -80,9 +80,9 @@
 ```javascript
 {
    "id":1,
-   "project_id":1,
-   "non_project_time_id":null,
-   "person_id":1,
+   "project":1,
+   "non_project_time":null,
+   "person":1,
    "start_date":"2017-01-14",
    "end_date":"2018-02-14",
    "monday":480,
@@ -106,9 +106,9 @@
 
 |Request fields | Description/format|
 |------------ | -------------|
-|project_id | (Required*) Integer, ID of project|
-|non_project_time_id | (Required*) Integer, ID of non project time|
-|person_id | (Required) Integer, ID of person|
+|project | (Required*) Integer, ID of project|
+|non_project_time | (Required*) Integer, ID of non project time|
+|person | (Required) Integer, ID of person|
 |start_date | (Required) Date|
 |end_date | (Required) Date|
 |monday | Integer, allocation hours in minutes (Defaults to persons working hours)|
@@ -120,15 +120,15 @@
 |sunday | Integer, allocation hours in minutes (Defaults to persons working hours)|
 |notes | String|
 
-\* Either a project_id or non_project_time_id must be supplied
+\* Either a project or non_project_time must be supplied
 
 ### Sample JSON request
 POST https://api.forecast.it/api/v1/allocations
 
 ```javascript
 {
-   "project_id":1,
-   "person_id":1,
+   "project":1,
+   "person":1,
    "start_date":"2017-01-14",
    "end_date":"2018-02-14"
 }
@@ -140,9 +140,9 @@ POST https://api.forecast.it/api/v1/allocations
 
 |Request fields | Description/format|
 |------------ | -------------|
-|project_id | Integer, ID of project|
-|non_project_time_id | Integer, ID of non project time|
-|person_id | Integer, ID of person|
+|project | Integer, ID of project|
+|non_project_time | Integer, ID of non project time|
+|person | Integer, ID of person|
 |start_date | Date|
 |end_date | Date|
 |monday | Integer, allocation hours in minutes|

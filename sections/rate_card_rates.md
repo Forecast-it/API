@@ -2,7 +2,7 @@
 
 ## Get rate card rates
 
-* `GET /rate_cards/{rate_cardId}/rates` - Returns all rates for a rate card.
+* `GET /rate_cards/{rate_cardId}/rates` - Returns all rates for a rate card. All roles might not be present. When a role is not present, the default rate of the rate card is used.
 
 |Response fields | Description/format|
 |------------ | -------------|
@@ -17,9 +17,8 @@
 ```javascript
 [
    {
-      "id":1,
-      "rate":100.0,
       "role":1,
+      "rate":100.0,
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:561Z",
@@ -30,7 +29,7 @@
 
 ## Get rate card rate
 
-* `GET /rate_cards/{rate_cardId}/rates/{roleId}` - Returns a specific rate card rate for a role.
+* `GET /rate_cards/{rate_cardId}/rates/{roleId}` - Returns a specific rate card rate for a role. This will return a 404 error if the role does not have a rate.
 
 |Response fields | Description/format|
 |------------ | -------------|
@@ -44,8 +43,8 @@
 ### Sample JSON response
 ```javascript
 {
-   "rate":100.0,
    "role":1,
+   "rate":100.0,
    "created_by":1,
    "updated_by":1,
    "created_at":"2017-01-14T18:46:561Z",
@@ -55,11 +54,11 @@
 
 ## Update rate card rate
 
-* `PUT /rate_cards/{rate_cardId}/rates/{roleId}` - Updates a rate card. Returns the same object as getting a single rate card.
+* `PUT /rate_cards/{rate_cardId}/rates/{roleId}` - Updates a rate card rate. Returns the same object as getting a single rate card rate.
 
 |Request fields | Description/format|
 |------------ | -------------|
-|rate | String|
+|rate | Decimal|
 
 ### Sample JSON request
 PUT https://api.forecast.it/api/v1/rate_cards/1/rates/1
