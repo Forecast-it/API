@@ -8,7 +8,7 @@
 |------------ | -------------|
 |id | Integer|
 |name | String|
-|category | String (TODO, IN_PROGRESS, DONE)|
+|category | String (TODO, INPROGRESS, DONE)|
 |sort_order | Integer|
 |created_by | Integer, ID of person|
 |updated_by | Integer, ID of person|
@@ -39,7 +39,7 @@
 |------------ | -------------|
 |id | Integer|
 |name | String|
-|category | String (TODO, IN_PROGRESS, DONE)|
+|category | String (TODO, INPROGRESS, DONE)|
 |sort_order | Integer|
 |created_by | Integer, ID of person|
 |updated_by | Integer, ID of person|
@@ -67,7 +67,7 @@
 |Request fields | Description/format|
 |------------ | -------------|
 |name | (Required) String|
-|category | String (TODO, IN_PROGRESS, DONE) (Defaults to TODO)|
+|category | String (TODO, INPROGRESS, DONE) (Defaults to TODO)|
 |sort_order | Integer (Defaults to the last column)|
 
 ### Sample JSON request
@@ -76,7 +76,7 @@ POST https://api.forecast.it/api/v1/projects/1/workflow_columns
 ```javascript
 {
    "name":"In progress",
-   "category":"IN_PROGRESS",
+   "category":"INPROGRESS",
    "sort_order":2,
 }
 ```
@@ -88,7 +88,7 @@ POST https://api.forecast.it/api/v1/projects/1/workflow_columns
 |Request fields | Description/format|
 |------------ | -------------|
 |name | (Required) String|
-|category | String (TODO, IN_PROGRESS, DONE) (Defaults to TODO)|
+|category | String (TODO, INPROGRESS, DONE) (Defaults to TODO)|
 |sort_order | Integer (Defaults to the last column)|
 
 ### Sample JSON request
