@@ -90,7 +90,7 @@ Errors are returned in the following JSON format.
 
 ## API sections (Work in progress)
 
-* [Company details](sections/company.md#company)
+* [Company details](sections/company.md#company) (coming soon)
 * [Persons](sections/persons.md#persons)
 * [Clients](sections/clients.md#clients)
 * [Labels](sections/labels.md#labels)
