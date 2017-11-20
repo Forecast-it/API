@@ -20,7 +20,7 @@
 ```javascript
 [
    {
-      "is":1,
+      "id":1,
       "name":"Servers",
       "minimum":2000,
       "maximum":3000,
@@ -52,7 +52,7 @@
 ### Sample JSON response
 ```javascript
 {
-   "is":1,
+   "id":1,
    "name":"Servers",
    "minimum":2000,
    "maximum":3000,
