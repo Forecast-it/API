@@ -3,6 +3,7 @@
 ## Get time registrations
 
 * `GET /time_registrations` - Returns all time registrations.
+* `GET /time_registrations?updated_after=DDMMYYYYTHHmmss` - Returns all time registrations that have been updated after the specified time. Example value: `16022018T210047`.
 
 **Only one of project, card or non_project_time is filled!**
 
@@ -35,8 +36,8 @@
       "notes":"Did work on login page",
       "created_by":1,
       "updated_by":1,
-      "created_at":"2017-01-14T18:46:561Z",
-      "updated_at":"2017-01-14T18:47:581Z"
+      "created_at":"2017-01-14T18:46:56Z",
+      "updated_at":"2017-01-14T18:47:58Z"
    }, ...
 ]
 ```
@@ -44,6 +45,7 @@
 ## Get all time registrations in a project
 
 * `GET /projects/{projectId}/time_registrations` - Returns all time registrations in a project.
+* `GET /projects/{projectId}/time_registrations?updated_after=DDMMYYYYTHHmmss` - Returns all time registrations in a project that have been updated after the specified time. Example value: `16022018T210047`.
 
 **Only one of project, card or non_project_time is filled!**
 
@@ -76,14 +78,15 @@
       "notes":"Did work on login page",
       "created_by":1,
       "updated_by":1,
-      "created_at":"2017-01-14T18:46:561Z",
-      "updated_at":"2017-01-14T18:47:581Z"
+      "created_at":"2017-01-14T18:46:56Z",
+      "updated_at":"2017-01-14T18:47:58Z"
    }, ...
 ]
 ```
 ## Get all time registrations for a given person
 
 * `GET /persons/{personId}/time_registrations` - Returns all time registrations for a given person.
+* `GET /persons/{personId}/time_registrations?updated_after=DDMMYYYYTHHmmss` - Returns all time registrations for a given person that have been updated after the specified time. Example value: `16022018T210047`.
 
 **Only one of project, card or non_project_time is filled!**
 
@@ -116,8 +119,8 @@
       "notes":"Did work on login page",
       "created_by":1,
       "updated_by":1,
-      "created_at":"2017-01-14T18:46:561Z",
-      "updated_at":"2017-01-14T18:47:581Z"
+      "created_at":"2017-01-14T18:46:56Z",
+      "updated_at":"2017-01-14T18:47:58Z"
    }, ...
 ]
 ```
@@ -156,8 +159,8 @@
    "notes":"Did work on login page",
    "created_by":1,
    "updated_by":1,
-   "created_at":"2017-01-14T18:46:561Z",
-   "updated_at":"2017-01-14T18:47:581Z"
+   "created_at":"2017-01-14T18:46:56Z",
+   "updated_at":"2017-01-14T18:47:58Z"
 }
 ```
 
@@ -215,3 +218,25 @@ PUT https://api.forecast.it/api/v1/time_registrations/1
 
 ### Sample JSON request
 DELETE https://api.forecast.it/api/v1/time_registrations/1
+
+## Get deleted time registrations
+
+* `GET /time_registrations/deleted` - Returns all time registrations that have been deleted.
+* `GET /time_registrations/deleted?updated_after=DDMMYYYYTHHmmss` - Returns all time registrations that have been deleted. after the specified time. Example value: `16022018T210047`.
+
+|Response fields | Description/format|
+|------------ | -------------|
+|id | Integer, ID of the time registration that has been deleted|
+|deleted_by | Integer, ID of person|
+|deleted_at | Date|
+
+### Sample JSON response
+```javascript
+[
+   {
+      "id":1,
+      "deleted_by":1,
+      "deleted_at":"2017-01-14T18:46:56Z",
+   }, ...
+]
+```

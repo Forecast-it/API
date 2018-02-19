@@ -51,8 +51,8 @@
       "rate_card": 1,
       "created_by":1,
       "updated_by":1,
-      "created_at":"2017-01-14T18:46:561Z",
-      "updated_at":"2017-01-14T18:47:581Z"
+      "created_at":"2017-01-14T18:46:56Z",
+      "updated_at":"2017-01-14T18:47:58Z"
    }, ...
 ]
 ```
@@ -107,8 +107,8 @@
    "rate_card": 1,
    "created_by":1,
    "updated_by":1,
-   "created_at":"2017-01-14T18:46:561Z",
-   "updated_at":"2017-01-14T18:47:581Z"
+   "created_at":"2017-01-14T18:46:56Z",
+   "updated_at":"2017-01-14T18:47:58Z"
 }
 ```
 

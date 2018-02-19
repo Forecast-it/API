@@ -3,6 +3,7 @@
 ## Get all cards
 
 * `GET /cards` - Returns all cards in your account (This may be a large dataset).
+* `GET /cards?updated_after=DDMMYYYYTHHmmss` - Returns all cards in your account that have been updated after the specified time. Example value: `16022018T210047`.
 
 |Response fields | Description/format|
 |------------ | -------------|
@@ -55,8 +56,8 @@
       "labels":[1,2,3],
       "created_by":1,
       "updated_by":1,
-      "created_at":"2017-01-14T18:46:561Z",
-      "updated_at":"2017-01-14T18:47:581Z"
+      "created_at":"2017-01-14T18:46:56Z",
+      "updated_at":"2017-01-14T18:47:58Z"
    }, ...
 ]
 ```
@@ -64,6 +65,7 @@
 ## Get cards in project
 
 * `GET /projects/{projectId}/cards` - Returns all cards of the project.
+* `GET /projects/{projectId}/cards?updated_after=DDMMYYYYTHHmmss` - Returns all cards of the project that have been updated after the specified time. Example value: `16022018T210047`.
 
 |Response fields | Description/format|
 |------------ | -------------|
@@ -116,8 +118,8 @@
       "labels":[1,2,3],
       "created_by":1,
       "updated_by":1,
-      "created_at":"2017-01-14T18:46:561Z",
-      "updated_at":"2017-01-14T18:47:581Z"
+      "created_at":"2017-01-14T18:46:56Z",
+      "updated_at":"2017-01-14T18:47:58Z"
    }, ...
 ]
 ```
@@ -176,8 +178,8 @@
    "labels":[1,2,3],
    "created_by":1,
    "updated_by":1,
-   "created_at":"2017-01-14T18:46:561Z",
-   "updated_at":"2017-01-14T18:47:581Z"
+   "created_at":"2017-01-14T18:46:56Z",
+   "updated_at":"2017-01-14T18:47:58Z"
 }
 ```
 
@@ -259,3 +261,25 @@ PUT https://api.forecast.it/api/v1/cards/1
 
 ### Sample JSON request
 DELETE https://api.forecast.it/api/v1/cards/1
+
+## Get deleted cards
+
+* `GET /cards/deleted` - Returns all cards that have been deleted.
+* `GET /cards/deleted?updated_after=DDMMYYYYTHHmmss` - Returns all cards that have been deleted. after the specified time. Example value: `16022018T210047`.
+
+|Response fields | Description/format|
+|------------ | -------------|
+|id | Integer, ID of the card that has been deleted|
+|deleted_by | Integer, ID of person|
+|deleted_at | Date|
+
+### Sample JSON response
+```javascript
+[
+   {
+      "id":1,
+      "deleted_by":1,
+      "deleted_at":"2017-01-14T18:46:56Z",
+   }, ...
+]
+```
