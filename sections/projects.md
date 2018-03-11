@@ -23,6 +23,7 @@
 |card_levels | Integer (1 or 2)|
 |client | Integer, ID of client|
 |rate_card | Integer, ID of rate card|
+|external_refs | List of references to other systems|
 |created_by | Integer, ID of person|
 |updated_by | Integer, ID of person|
 |created_at | Date|
@@ -49,6 +50,7 @@
       "card_levels": 1,
       "client": 1,
       "rate_card": 1,
+      "external_refs": [],
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
@@ -80,6 +82,7 @@
 |card_levels | Integer (1 or 2)|
 |client | Integer, ID of client|
 |rate_card | Integer, ID of rate card|
+|external_refs | List of references to other systems|
 |created_by | Integer, ID of person|
 |updated_by | Integer, ID of person|
 |created_at | Date|
@@ -105,6 +108,7 @@
    "card_levels": 1,
    "client": 1,
    "rate_card": 1,
+   "external_refs": [],
    "created_by":1,
    "updated_by":1,
    "created_at":"2017-01-14T18:46:56Z",
