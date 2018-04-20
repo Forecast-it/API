@@ -8,6 +8,7 @@
 |Response fields | Description/format|
 |------------ | -------------|
 |id | Integer|
+|company_card_id | Integer|
 |title | String|
 |description | String|
 |project_id | Integer, ID of project|
@@ -36,6 +37,7 @@
 [
    {
       "id":1,
+      "company_card_id": 1,
       "title":"Design login screen",
       "description":"",
       "project_id":1,
@@ -70,6 +72,7 @@
 |Response fields | Description/format|
 |------------ | -------------|
 |id | Integer|
+|company_card_id | Integer|
 |title | String|
 |description | String|
 |project_id | Integer, ID of project|
@@ -98,6 +101,7 @@
 [
    {
       "id":1,
+      "company_card_id": 1,
       "title":"Design login screen",
       "description":"",
       "project_id":1,
@@ -131,6 +135,7 @@
 |Response fields | Description/format|
 |------------ | -------------|
 |id | Integer|
+|company_card_id | Integer|
 |title | String|
 |description | String|
 |project_id | Integer, ID of project|
@@ -158,6 +163,7 @@
 ```javascript
 {
    "id":1,
+   "company_card_id": 1,
    "title":"Design login screen",
    "description":"",
    "role":1,
