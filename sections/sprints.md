@@ -4,17 +4,17 @@
 
 * `GET /projects/{projectId}/sprints` - Returns all sprints of the project.
 
-| Response fields          | Description/format    |
-| ------------------------ | --------------------- |
-| id                       | Integer               |
-| connected_project_sprint | Integer               |
-| name                     | String                |
-| start_date               | Date                  |
-| end_date                 | Date                  |
-| created_by               | Integer, ID of person |
-| updated_by               | Integer, ID of person |
-| created_at               | Date                  |
-| updated_at               | Date                  |
+| Response fields          | Description/format                      |
+| ------------------------ | --------------------------------------- |
+| id                       | Integer                                 |
+| connected_project_sprint | Integer, ID of connected project sprint |
+| name                     | String                                  |
+| start_date               | Date                                    |
+| end_date                 | Date                                    |
+| created_by               | Integer, ID of person                   |
+| updated_by               | Integer, ID of person                   |
+| created_at               | Date                                    |
+| updated_at               | Date                                    |
 
 ### Sample JSON response
 
@@ -70,17 +70,17 @@
 
 * `GET /projects/{projectId}/sprints/{sprintId}` - Returns a specific sprint of the project.
 
-| Response fields          | Description/format    |
-| ------------------------ | --------------------- |
-| id                       | Integer               |
-| connected_project_sprint | Integer               |
-| name                     | String                |
-| start_date               | Date                  |
-| end_date                 | Date                  |
-| created_by               | Integer, ID of person |
-| updated_by               | Integer, ID of person |
-| created_at               | Date                  |
-| updated_at               | Date                  |
+| Response fields          | Description/format                      |
+| ------------------------ | --------------------------------------- |
+| id                       | Integer                                 |
+| connected_project_sprint | Integer, ID of connected project sprint |
+| name                     | String                                  |
+| start_date               | Date                                    |
+| end_date                 | Date                                    |
+| created_by               | Integer, ID of person                   |
+| updated_by               | Integer, ID of person                   |
+| created_at               | Date                                    |
+| updated_at               | Date                                    |
 
 ### Sample JSON response
 

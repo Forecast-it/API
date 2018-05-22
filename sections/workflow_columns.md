@@ -4,17 +4,17 @@
 
 * `GET /projects/{projectId}/workflow_columns` - Returns all workflow columns of the project.
 
-| Response fields                   | Description/format              |
-| --------------------------------- | ------------------------------- |
-| id                                | Integer                         |
-| connected_project_workflow_column | Integer                         |
-| name                              | String                          |
-| category                          | String (TODO, INPROGRESS, DONE) |
-| sort_order                        | Integer                         |
-| created_by                        | Integer, ID of person           |
-| updated_by                        | Integer, ID of person           |
-| created_at                        | Date                            |
-| updated_at                        | Date                            |
+| Response fields                   | Description/format                               |
+| --------------------------------- | ------------------------------------------------ |
+| id                                | Integer                                          |
+| connected_project_workflow_column | Integer, ID of connected project workflow column |
+| name                              | String                                           |
+| category                          | String (TODO, INPROGRESS, DONE)                  |
+| sort_order                        | Integer                                          |
+| created_by                        | Integer, ID of person                            |
+| updated_by                        | Integer, ID of person                            |
+| created_at                        | Date                                             |
+| updated_at                        | Date                                             |
 
 ### Sample JSON response
 
@@ -70,17 +70,17 @@
 
 * `GET /projects/{projectId}/workflow_columns/{workflow_columnId}` - Returns a specific project workflow column.
 
-| Response fields                   | Description/format              |
-| --------------------------------- | ------------------------------- |
-| id                                | Integer                         |
-| connected_project_workflow_column | Integer                         |
-| name                              | String                          |
-| category                          | String (TODO, INPROGRESS, DONE) |
-| sort_order                        | Integer                         |
-| created_by                        | Integer, ID of person           |
-| updated_by                        | Integer, ID of person           |
-| created_at                        | Date                            |
-| updated_at                        | Date                            |
+| Response fields                   | Description/format                               |
+| --------------------------------- | ------------------------------------------------ |
+| id                                | Integer                                          |
+| connected_project_workflow_column | Integer, ID of connected project workflow column |
+| name                              | String                                           |
+| category                          | String (TODO, INPROGRESS, DONE)                  |
+| sort_order                        | Integer                                          |
+| created_by                        | Integer, ID of person                            |
+| updated_by                        | Integer, ID of person                            |
+| created_at                        | Date                                             |
+| updated_at                        | Date                                             |
 
 ### Sample JSON response
 

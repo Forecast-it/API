@@ -127,7 +127,7 @@
 | sunday            | Integer, allocation hours in minutes (Defaults to persons working hours) |
 | notes             | String                                                                   |
 
-\* Either a project or non_project_time must be supplied
+\* Either a project, connected_project or non_project_time must be supplied
 
 ### Sample JSON request
 

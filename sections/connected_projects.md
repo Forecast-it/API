@@ -4,20 +4,20 @@
 
 * `GET /connected_projects` - Returns all connected projects.
 
-| Response fields              | Description/format    |
-| ---------------------------- | --------------------- |
-| id                           | Integer               |
-| company_project_group_id     | Integer               |
-| name                         | String                |
-| color                        | String                |
-| estimation_units             | String                |
-| use_sprints                  | Boolean               |
-| sprint_length                | Integer               |
-| minutes_per_estimation_point | Integer               |
-| created_by                   | Integer, ID of person |
-| updated_by                   | Integer, ID of person |
-| created_at                   | Date                  |
-| updated_at                   | Date                  |
+| Response fields              | Description/format     |
+| ---------------------------- | ---------------------- |
+| id                           | Integer                |
+| company_connected_project_id | Integer                |
+| name                         | String                 |
+| color                        | String                 |
+| estimation_units             | String (HOURS, POINTS) |
+| use_sprints                  | Boolean                |
+| sprint_length                | Integer                |
+| minutes_per_estimation_point | Integer                |
+| created_by                   | Integer, ID of person  |
+| updated_by                   | Integer, ID of person  |
+| created_at                   | Date                   |
+| updated_at                   | Date                   |
 
 ### Sample JSON response
 
@@ -25,7 +25,7 @@
 [
    {
       "id":1,
-      "company_project_group_id":1,
+      "company_connected_project_id":1,
       "name":"Website connected project",
       "color": "#E3E190",
       "estimation_units": "POINTS",
@@ -44,37 +44,37 @@
 
 * `GET /connected_projects/{connectedProjectId}` - Returns a specific connected project.
 
-| Response fields              | Description/format    |
-| ---------------------------- | --------------------- |
-| id                           | Integer               |
-| company_project_group_id     | Integer               |
-| name                         | String                |
-| color                        | String                |
-| estimation_units             | String                |
-| use_sprints                  | Boolean               |
-| sprint_length                | Integer               |
-| minutes_per_estimation_point | Integer               |
-| created_by                   | Integer, ID of person |
-| updated_by                   | Integer, ID of person |
-| created_at                   | Date                  |
-| updated_at                   | Date                  |
+| Response fields              | Description/format     |
+| ---------------------------- | ---------------------- |
+| id                           | Integer                |
+| company_connected_project_id | Integer                |
+| name                         | String                 |
+| color                        | String                 |
+| estimation_units             | String (HOURS, POINTS) |
+| use_sprints                  | Boolean                |
+| sprint_length                | Integer                |
+| minutes_per_estimation_point | Integer                |
+| created_by                   | Integer, ID of person  |
+| updated_by                   | Integer, ID of person  |
+| created_at                   | Date                   |
+| updated_at                   | Date                   |
 
 ### Sample JSON response
 
 ```javascript
 {
-	  "id":1,
-	  "company_project_group_id":1,
-	  "name":"Website connected project",
-	  "color": "#E3E190",
-	  "estimation_units": "POINTS",
-	  "use_sprints": true,
-	  "sprint_length": 7,
-	  "minutes_per_estimation_point": 480,
-	  "created_by":1,
-	  "updated_by":1,
-	  "created_at":"2017-01-14T18:46:56Z",
-	  "updated_at":"2017-01-14T18:47:58Z"
+     "id":1,
+     "company_connected_project_id":1,
+     "name":"Website connected project",
+     "color": "#E3E190",
+     "estimation_units": "POINTS",
+     "use_sprints": true,
+     "sprint_length": 7,
+     "minutes_per_estimation_point": 480,
+     "created_by":1,
+     "updated_by":1,
+     "created_at":"2017-01-14T18:46:56Z",
+     "updated_at":"2017-01-14T18:47:58Z"
 }
 ```
 
@@ -86,7 +86,7 @@
 | ---------------------------- | ---------------------- |
 | name                         | String                 |
 | color                        | String                 |
-| estimation_units             | String                 |
+| estimation_units             | String (HOURS, POINTS) |
 | use_sprints                  | Boolean                |
 | sprint_length                | Integer                |
 | projects                     | Array, IDs of projects |
@@ -112,14 +112,14 @@ POST https://api.forecast.it/api/v1/connected_projects
 
 * `PUT /connected_projects/{connectedProjectId}` - Updates a connected project. Returns the same object as getting a single project.
 
-| Request fields               | Description/format |
-| ---------------------------- | ------------------ |
-| name                         | String             |
-| color                        | String             |
-| estimation_units             | String             |
-| use_sprints                  | Boolean            |
-| sprint_length                | Integer            |
-| minutes_per_estimation_point | Integer            |
+| Request fields               | Description/format     |
+| ---------------------------- | ---------------------- |
+| name                         | String                 |
+| color                        | String                 |
+| estimation_units             | String (HOURS, POINTS) |
+| use_sprints                  | Boolean                |
+| sprint_length                | Integer                |
+| minutes_per_estimation_point | Integer                |
 
 ### Sample JSON request
 
