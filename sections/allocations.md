@@ -114,7 +114,7 @@
 | ----------------- | ------------------------------------------------------------------------ |
 | project           | (Required\*) Integer, ID of project                                      |
 | non_project_time  | (Required\*) Integer, ID of non project time                             |
-| connected_project | Integer, ID of connected project                                         |
+| connected_project | (Required\*) Integer, ID of connected project                            |
 | person            | (Required) Integer, ID of person                                         |
 | start_date        | (Required) Date                                                          |
 | end_date          | (Required) Date                                                          |

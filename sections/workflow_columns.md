@@ -178,7 +178,7 @@ POST https://api.forecast.it/api/v1/connected_projects/1/workflow_columns
 
 | Request fields | Description/format                                 |
 | -------------- | -------------------------------------------------- |
-| name           | (Required) String                                  |
+| name           | String                                             |
 | category       | String (TODO, INPROGRESS, DONE) (Defaults to TODO) |
 | sort_order     | Integer (Defaults to the last column)              |
 
@@ -198,7 +198,7 @@ PUT https://api.forecast.it/api/v1/projects/1/workflow_columns/1
 
 | Request fields | Description/format                                 |
 | -------------- | -------------------------------------------------- |
-| name           | (Required) String                                  |
+| name           | String                                             |
 | category       | String (TODO, INPROGRESS, DONE) (Defaults to TODO) |
 | sort_order     | Integer (Defaults to the last column)              |
 

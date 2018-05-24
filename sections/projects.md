@@ -136,7 +136,7 @@
 | status_description           | String                                                          |
 | description                  | String                                                          |
 | estimation_units             | String (HOURS, POINTS) (Defaults to HOURS)                      |
-| minutes_per_estimation_point | Integer                                                         |
+| minutes_per_estimation_point | Integer (Defaults to 60)                                        |
 | billable                     | Boolean (Defaults to true)                                      |
 | use_sprints                  | Boolean (Defaults to false)                                     |
 | sprint_length                | Integer (Defaults to 14)                                        |

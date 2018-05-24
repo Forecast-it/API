@@ -82,15 +82,15 @@
 
 * `POST /connected_projects` - Creates a new connected project. Returns the same object as getting a single project.
 
-| Request fields               | Description/format     |
-| ---------------------------- | ---------------------- |
-| name                         | String                 |
-| color                        | String                 |
-| estimation_units             | String (HOURS, POINTS) |
-| use_sprints                  | Boolean                |
-| sprint_length                | Integer                |
-| projects                     | Array, IDs of projects |
-| minutes_per_estimation_point | Integer                |
+| Request fields               | Description/format                                                     |
+| ---------------------------- | ---------------------------------------------------------------------- |
+| name                         | String                                                                 |
+| color                        | String                                                                 |
+| estimation_units             | String (HOURS, POINTS) (Default is inherited from one of the projects) |
+| use_sprints                  | Boolean (If any of the projects uses sprints default is set to true)   |
+| sprint_length                | Integer (Default is nherited from one of the projects)                 |
+| projects                     | (Requried not empty array) Array, IDs of projects                      |
+| minutes_per_estimation_point | Integer (Default is inherited from one of the projects)                |
 
 ### Sample JSON request
 
