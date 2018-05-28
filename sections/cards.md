@@ -5,34 +5,36 @@
 * `GET /cards` - Returns all cards in your account (This may be a large dataset).
 * `GET /cards?updated_after=DDMMYYYYTHHmmss` - Returns all cards in your account that have been updated after the specified time. Example value: `16022018T210047`.
 
-|Response fields | Description/format|
-|------------ | -------------|
-|id | Integer|
-|company_card_id | Integer|
-|title | String|
-|description | String|
-|project_id | Integer, ID of project|
-|role | Integer, ID of role|
-|low_estimate | Decimal|
-|high_estimate | Decimal|
-|forecast | Decimal|
-|approved | Boolean|
-|start_date | Date|
-|end_date | Date|
-|bug | Boolean|
-|un_billable | Boolean|
-|blocked | Boolean|
-|sprint | Integer, ID of sprint|
-|workflow_column | Integer, ID of workflow column|
-|milestone | Integer, ID of milestone|
-|assigned_persons | List<Integer>, List ID of assigned persons|
-|labels | List<Integer>, List ID of labels|
-|created_by | Integer, ID of person|
-|updated_by | Integer, ID of person|
-|created_at | Date|
-|updated_at | Date|
+| Response fields  | Description/format                         |
+| ---------------- | ------------------------------------------ |
+| id               | Integer                                    |
+| company_card_id  | Integer                                    |
+| title            | String                                     |
+| description      | String                                     |
+| project_id       | Integer, ID of project                     |
+| role             | Integer, ID of role                        |
+| low_estimate     | Decimal                                    |
+| high_estimate    | Decimal                                    |
+| forecast         | Decimal                                    |
+| remaining        | Decimal                                    |
+| approved         | Boolean                                    |
+| start_date       | Date                                       |
+| end_date         | Date                                       |
+| bug              | Boolean                                    |
+| un_billable      | Boolean                                    |
+| blocked          | Boolean                                    |
+| sprint           | Integer, ID of sprint                      |
+| workflow_column  | Integer, ID of workflow column             |
+| milestone        | Integer, ID of milestone                   |
+| assigned_persons | List<Integer>, List ID of assigned persons |
+| labels           | List<Integer>, List ID of labels           |
+| created_by       | Integer, ID of person                      |
+| updated_by       | Integer, ID of person                      |
+| created_at       | Date                                       |
+| updated_at       | Date                                       |
 
 ### Sample JSON response
+
 ```javascript
 [
    {
@@ -45,6 +47,7 @@
       "low_estimate":10.0,
       "high_estimate":20.0,
       "forecast":26.0,
+      "remaining":26.0,
       "approved":true,
       "start_date":"2017-01-01",
       "end_date":"2017-01-20",
@@ -69,34 +72,36 @@
 * `GET /projects/{projectId}/cards` - Returns all cards of the project.
 * `GET /projects/{projectId}/cards?updated_after=DDMMYYYYTHHmmss` - Returns all cards of the project that have been updated after the specified time. Example value: `16022018T210047`.
 
-|Response fields | Description/format|
-|------------ | -------------|
-|id | Integer|
-|company_card_id | Integer|
-|title | String|
-|description | String|
-|project_id | Integer, ID of project|
-|role | Integer, ID of role|
-|low_estimate | Decimal|
-|high_estimate | Decimal|
-|forecast | Decimal|
-|approved | Boolean|
-|start_date | Date|
-|end_date | Date|
-|bug | Boolean|
-|un_billable | Boolean|
-|blocked | Boolean|
-|sprint | Integer, ID of sprint|
-|workflow_column | Integer, ID of workflow column|
-|milestone | Integer, ID of milestone|
-|assigned_persons | List<Integer>, List ID of assigned persons|
-|labels | List<Integer>, List ID of labels|
-|created_by | Integer, ID of person|
-|updated_by | Integer, ID of person|
-|created_at | Date|
-|updated_at | Date|
+| Response fields  | Description/format                         |
+| ---------------- | ------------------------------------------ |
+| id               | Integer                                    |
+| company_card_id  | Integer                                    |
+| title            | String                                     |
+| description      | String                                     |
+| project_id       | Integer, ID of project                     |
+| role             | Integer, ID of role                        |
+| low_estimate     | Decimal                                    |
+| high_estimate    | Decimal                                    |
+| forecast         | Decimal                                    |
+| remaining        | Decimal                                    |
+| approved         | Boolean                                    |
+| start_date       | Date                                       |
+| end_date         | Date                                       |
+| bug              | Boolean                                    |
+| un_billable      | Boolean                                    |
+| blocked          | Boolean                                    |
+| sprint           | Integer, ID of sprint                      |
+| workflow_column  | Integer, ID of workflow column             |
+| milestone        | Integer, ID of milestone                   |
+| assigned_persons | List<Integer>, List ID of assigned persons |
+| labels           | List<Integer>, List ID of labels           |
+| created_by       | Integer, ID of person                      |
+| updated_by       | Integer, ID of person                      |
+| created_at       | Date                                       |
+| updated_at       | Date                                       |
 
 ### Sample JSON response
+
 ```javascript
 [
    {
@@ -109,6 +114,7 @@
       "low_estimate":10.0,
       "high_estimate":20.0,
       "forecast":26.0,
+      "remaining":26.0,
       "approved":true,
       "start_date":"2017-01-01",
       "end_date":"2017-01-20",
@@ -132,34 +138,36 @@
 
 * `GET /cards/{cardId}` - Returns a specific card.
 
-|Response fields | Description/format|
-|------------ | -------------|
-|id | Integer|
-|company_card_id | Integer|
-|title | String|
-|description | String|
-|project_id | Integer, ID of project|
-|role | Integer, ID of role|
-|low_estimate | Decimal|
-|high_estimate | Decimal|
-|forecast | Decimal|
-|approved | Boolean|
-|start_date | Date|
-|end_date | Date|
-|bug | Boolean|
-|un_billable | Boolean|
-|blocked | Boolean|
-|sprint | Integer, ID of sprint|
-|workflow_column | Integer, ID of workflow column|
-|milestone | Integer, ID of milestone|
-|assigned_persons | List<Integer>, List ID of assigned persons|
-|labels | List<Integer>, List ID of labels|
-|created_by | Integer, ID of person|
-|updated_by | Integer, ID of person|
-|created_at | Date|
-|updated_at | Date|
+| Response fields  | Description/format                         |
+| ---------------- | ------------------------------------------ |
+| id               | Integer                                    |
+| company_card_id  | Integer                                    |
+| title            | String                                     |
+| description      | String                                     |
+| project_id       | Integer, ID of project                     |
+| role             | Integer, ID of role                        |
+| low_estimate     | Decimal                                    |
+| high_estimate    | Decimal                                    |
+| forecast         | Decimal                                    |
+| remaining        | Decimal                                    |
+| approved         | Boolean                                    |
+| start_date       | Date                                       |
+| end_date         | Date                                       |
+| bug              | Boolean                                    |
+| un_billable      | Boolean                                    |
+| blocked          | Boolean                                    |
+| sprint           | Integer, ID of sprint                      |
+| workflow_column  | Integer, ID of workflow column             |
+| milestone        | Integer, ID of milestone                   |
+| assigned_persons | List<Integer>, List ID of assigned persons |
+| labels           | List<Integer>, List ID of labels           |
+| created_by       | Integer, ID of person                      |
+| updated_by       | Integer, ID of person                      |
+| created_at       | Date                                       |
+| updated_at       | Date                                       |
 
 ### Sample JSON response
+
 ```javascript
 {
    "id":1,
@@ -171,6 +179,7 @@
    "low_estimate":10.0,
    "high_estimate":20.0,
    "forecast":26.0,
+   "remaining":26.0,
    "approved":true,
    "start_date":"2017-01-01",
    "end_date":"2017-01-20",
@@ -193,27 +202,28 @@
 
 * `POST /cards` - Creates a new card. Returns the same object as getting a single card.
 
-|Request fields | Description/format|
-|------------ | -------------|
-|title | String|
-|description | String|
-|role | Integer, ID of role|
-|project_id | (Required) Integer, ID of project|
-|low_estimate | Decimal|
-|high_estimate | Decimal|
-|approved | Boolean (Defaults to true)|
-|start_date | Date|
-|end_date | Date|
-|bug | Boolean|
-|un_billable | Boolean|
-|blocked | Boolean|
-|sprint | Integer, ID of sprint|
-|workflow_column | Integer, ID of workflow column|
-|milestone | Integer, ID of milestone|
-|assigned_persons | List<Integer>, List ID of assigned persons|
-|labels | List<Integer>, List ID of labels|
+| Request fields   | Description/format                         |
+| ---------------- | ------------------------------------------ |
+| title            | String                                     |
+| description      | String                                     |
+| role             | Integer, ID of role                        |
+| project_id       | (Required) Integer, ID of project          |
+| low_estimate     | Decimal                                    |
+| high_estimate    | Decimal                                    |
+| approved         | Boolean (Defaults to true)                 |
+| start_date       | Date                                       |
+| end_date         | Date                                       |
+| bug              | Boolean                                    |
+| un_billable      | Boolean                                    |
+| blocked          | Boolean                                    |
+| sprint           | Integer, ID of sprint                      |
+| workflow_column  | Integer, ID of workflow column             |
+| milestone        | Integer, ID of milestone                   |
+| assigned_persons | List<Integer>, List ID of assigned persons |
+| labels           | List<Integer>, List ID of labels           |
 
 ### Sample JSON request
+
 POST https://api.forecast.it/api/v1/cards
 
 ```javascript
@@ -232,27 +242,29 @@ POST https://api.forecast.it/api/v1/cards
 
 * `PUT /cards/{cardId}` - Updates an card. Returns the same object as getting a single card.
 
-|Request fields | Description/format|
-|------------ | -------------|
-|title | String|
-|description | String|
-|role | Integer, ID of role|
-|project_id | Integer, ID of project|
-|low_estimate | Decimal|
-|high_estimate | Decimal|
-|approved | Boolean (Defaults to true)|
-|start_date | Date|
-|end_date | Date|
-|bug | Boolean|
-|un_billable | Boolean|
-|blocked | Boolean|
-|sprint | Integer, ID of sprint|
-|workflow_column | Integer, ID of workflow column|
-|milestone | Integer, ID of milestone|
-|assigned_persons | List<Integer>, List ID of assigned persons|
-|labels | List<Integer>, List ID of labels|
+| Request fields   | Description/format                                                                                   |
+| ---------------- | ---------------------------------------------------------------------------------------------------- |
+| title            | String                                                                                               |
+| description      | String                                                                                               |
+| role             | Integer, ID of role                                                                                  |
+| project_id       | Integer, ID of project                                                                               |
+| low_estimate     | Decimal                                                                                              |
+| high_estimate    | Decimal                                                                                              |
+| remaining        | Decimal (available only if project to which card belongs has remaining_auto_calculated set to false) |
+| approved         | Boolean (Defaults to true)                                                                           |
+| start_date       | Date                                                                                                 |
+| end_date         | Date                                                                                                 |
+| bug              | Boolean                                                                                              |
+| un_billable      | Boolean                                                                                              |
+| blocked          | Boolean                                                                                              |
+| sprint           | Integer, ID of sprint                                                                                |
+| workflow_column  | Integer, ID of workflow column                                                                       |
+| milestone        | Integer, ID of milestone                                                                             |
+| assigned_persons | List<Integer>, List ID of assigned persons                                                           |
+| labels           | List<Integer>, List ID of labels                                                                     |
 
 ### Sample JSON request
+
 PUT https://api.forecast.it/api/v1/cards/1
 
 ```javascript
@@ -266,6 +278,7 @@ PUT https://api.forecast.it/api/v1/cards/1
 * `DELETE /cards/{cardId}` - Deletes a card.
 
 ### Sample JSON request
+
 DELETE https://api.forecast.it/api/v1/cards/1
 
 ## Get deleted cards
@@ -273,13 +286,14 @@ DELETE https://api.forecast.it/api/v1/cards/1
 * `GET /cards/deleted` - Returns all cards that have been deleted.
 * `GET /cards/deleted?updated_after=DDMMYYYYTHHmmss` - Returns all cards that have been deleted. after the specified time. Example value: `16022018T210047`.
 
-|Response fields | Description/format|
-|------------ | -------------|
-|id | Integer, ID of the card that has been deleted|
-|deleted_by | Integer, ID of person|
-|deleted_at | Date|
+| Response fields | Description/format                            |
+| --------------- | --------------------------------------------- |
+| id              | Integer, ID of the card that has been deleted |
+| deleted_by      | Integer, ID of person                         |
+| deleted_at      | Date                                          |
 
 ### Sample JSON response
+
 ```javascript
 [
    {
