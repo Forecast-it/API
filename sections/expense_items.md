@@ -111,7 +111,7 @@ POST https://api.forecast.it/api/v1/projects/1/expense_items
    "name":"Licenses",
    "cost": 150,
    "price": 200,
-   "billable": true,
+   "billable": true
 }
 ```
 
@@ -139,7 +139,7 @@ PUT https://api.forecast.it/api/v1/projects/1/expense_items/1
 {
    "cost":200,
    "price": 200,
-   "billable": true,
+   "billable": true
 }
 ```
 
