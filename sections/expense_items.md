@@ -11,7 +11,7 @@
 | expense_date    | Date                  |
 | cost            | Decimal               |
 | price           | Decimal               |
-| quantity        | Integer               |
+| quantity        | Decimal               |
 | approved        | Boolean               |
 | billable        | Boolean               |
 | notes           | String                |
@@ -55,7 +55,7 @@
 | expense_date    | Date                  |
 | cost            | Decimal               |
 | price           | Decimal               |
-| quantity        | Integer               |
+| quantity        | Decimal               |
 | approved        | Boolean               |
 | billable        | Boolean               |
 | notes           | String                |
@@ -96,8 +96,8 @@
 | expense_date   | Date                                                                                                                              |
 | cost           | (Required) Decimal                                                                                                                |
 | price          | Decimal                                                                                                                           |
-| quantity       | Integer (min 1, defaults to 1)                                                                                                    |
-| approved       | Boolean (Defaults to true)                                                                                                        |
+| quantity       | Decimal (defaults to 1)                                                                                                    |
+| approved       | Boolean (Defaults to false)                                                                                                        |
 | billable       | Boolean (Cannnot be set to true if project on which expense item is added is not billable, defaults to true on billable projects) |
 | notes          | String                                                                                                                            |
 | person_id      | Integer, Id of person                                                                                                             |
@@ -125,7 +125,7 @@ POST https://api.forecast.it/api/v1/projects/1/expense_items
 | expense_date   | Date                                                                                       |
 | cost           | Decimal                                                                                    |
 | price          | Decimal                                                                                    |
-| quantity       | Integer (min 1)                                                                            |
+| quantity       | Decimal                                                                    |
 | approved       | Boolean                                                                                    |
 | billable       | Boolean (Cannnot be set to true if project on which expense item is added is not billable) |
 | notes          | String                                                                                     |
