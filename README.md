@@ -105,6 +105,7 @@ Errors are returned in the following JSON format.
 * [Sprints](sections/sprints.md#sprints)
 * [Workflow columns](sections/workflow_columns.md#workflow-columns)
 * [Cards](sections/cards.md#cards)
+* [Sub tasks](sections/sub_tasks.md#sub-tasks)
 * [Time registrations](sections/time_registrations.md#time-registrations)
 * [Expense items](sections/expense_items.md#expense-items)
 
