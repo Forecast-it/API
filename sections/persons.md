@@ -200,3 +200,67 @@ PUT https://api.forecast.it/api/v1/persons/1
 ### Sample JSON request
 
 DELETE https://api.forecast.it/api/v1/persons/1
+
+## Get person timer information
+
+* `GET /persons/{personId}/timer` - Returns a specific persons timer information.
+
+| Response fields | Description/format                                                                     |
+| --------------- | -------------------------------------------------------------------------------------- |
+| start_time | Date |
+| card | Integer, id of the card that the timer is started on |
+
+### Sample JSON response
+
+```javascript
+{
+   "start_time":"2018-01-14T18:46:56Z",
+   "card":1
+}
+```
+## Start person timer
+
+* `PUT /persons/{personId}/timer/start` - Start the timer on a person. Returns the same object as getting a single persons timer.
+
+| Request fields | Description/format                                                             |
+| -------------- | ------------------------------------------------------------------------------ |
+| card | Integer, id of the card to start the timer on. This is optional and can be set when stopping the timer |
+
+### Sample JSON request
+
+PUT https://api.forecast.it/api/v1/persons/1/timer/start
+
+```javascript
+{
+   "card":1
+}
+```
+
+## Stop person timer
+
+* `PUT /persons/{personId}/timer/stop` - Stop the timer on a person.
+
+| Request fields | Description/format                                                             |
+| -------------- | ------------------------------------------------------------------------------ |
+| card | Integer, id of the card to register the time on |
+| project |Integer, id of the project to register the time on |
+
+* Either a card or project must be set here. If the card was set when starting the timer, this can be omitted.
+
+### Sample JSON request
+
+PUT https://api.forecast.it/api/v1/persons/1/timer/stop
+
+```javascript
+{
+   "card":1
+}
+```
+
+## Reset person timer
+
+* `DELETE /persons/{personId}/timer` - Resets a persons timer.
+
+### Sample JSON request
+
+DELETE https://api.forecast.it/api/v1/persons/1/timer
