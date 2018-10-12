@@ -17,6 +17,7 @@
 | color                        | String                                   |
 | estimation_units             | String (HOURS, POINTS)                   |
 | minutes_per_estimation_point | Integer                                  |
+| budget                       | Double                                   |
 | billable                     | Boolean                                  |
 | use_sprints                  | Boolean                                  |
 | sprint_length                | Integer                                  |
@@ -47,6 +48,7 @@
       "color": "#FF7C75",
       "estimation_units": "HOURS",
       "minutes_per_estimation_point": 480,
+      "budget": 1234.56,
       "billable": true,
       "use_sprints": true,
       "sprint_length": 14,
@@ -82,6 +84,7 @@
 | color                        | String                                   |
 | estimation_units             | String (HOURS, POINTS)                   |
 | minutes_per_estimation_point | Integer                                  |
+| budget                       | Double                                   |
 | billable                     | Boolean                                  |
 | use_sprints                  | Boolean                                  |
 | sprint_length                | Integer                                  |
@@ -111,6 +114,7 @@
    "color": "#FF7C75",
    "estimation_units": "HOURS",
    "minutes_per_estimation_point": 480,
+   "budget": 1234.56,
    "billable": true,
    "use_sprints": true,
    "sprint_length": 14,
@@ -141,6 +145,7 @@
 | description                  | String                                                          |
 | estimation_units             | String (HOURS, POINTS) (Defaults to HOURS)                      |
 | minutes_per_estimation_point | Integer (Defaults to 60)                                        |
+| budget                       | Double                                                          |
 | billable                     | Boolean (Defaults to true)                                      |
 | use_sprints                  | Boolean (Defaults to false)                                     |
 | sprint_length                | Integer (Defaults to 14)                                        |
@@ -160,6 +165,7 @@ POST https://api.forecast.it/api/v1/projects
    "stage":"PLANNING",
    "status":"GREEN",
    "estimation_units":"HOURS",
+   "budget":1000,
    "billable":true,
    "use_sprints":true,
    "sprint_length":14
@@ -180,6 +186,7 @@ POST https://api.forecast.it/api/v1/projects
 | description                  | String                                   |
 | estimation_units             | String (HOURS, POINTS)                   |
 | minutes_per_estimation_point | Integer                                  |
+| budget                       | Double                                   |
 | billable                     | Boolean                                  |
 | use_sprints                  | Boolean                                  |
 | sprint_length                | Integer                                  |
