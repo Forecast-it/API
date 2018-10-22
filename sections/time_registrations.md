@@ -26,7 +26,7 @@
    {
       "id":1,
       "person":1,
-      "project":null,
+      "project":1,
       "card":1,
       "non_project_time":null,
       "time_registered":480,
@@ -105,7 +105,7 @@
    {
       "id":1,
       "person":1,
-      "project":null,
+      "project":1,
       "card":1,
       "non_project_time":null,
       "time_registered":480,
@@ -143,7 +143,7 @@
 {
    "id":1,
    "person":1,
-   "project":null,
+   "project":1,
    "card":1,
    "non_project_time":null,
    "time_registered":480,
