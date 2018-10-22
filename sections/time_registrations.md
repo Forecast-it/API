@@ -2,10 +2,8 @@
 
 ## Get time registrations
 
-* `GET /time_registrations` - Returns all time registrations.
-* `GET /time_registrations?updated_after=DDMMYYYYTHHmmss` - Returns all time registrations that have been updated after the specified time. Example value: `16022018T210047`.
-
-**Only one of project, card or non_project_time is filled!**
+* `GET v2/time_registrations` - Returns all time registrations.
+* `GET v2/time_registrations?updated_after=DDMMYYYYTHHmmss` - Returns all time registrations that have been updated after the specified time. Example value: `16022018T210047`.
 
 |Response fields | Description/format|
 |------------ | -------------|
@@ -44,10 +42,8 @@
 
 ## Get all time registrations in a project
 
-* `GET /projects/{projectId}/time_registrations` - Returns all time registrations in a project.
-* `GET /projects/{projectId}/time_registrations?updated_after=DDMMYYYYTHHmmss` - Returns all time registrations in a project that have been updated after the specified time. Example value: `16022018T210047`.
-
-**Only one of project, card or non_project_time is filled!**
+* `GET v2/projects/{projectId}/time_registrations` - Returns all time registrations in a project.
+* `GET v2/projects/{projectId}/time_registrations?updated_after=DDMMYYYYTHHmmss` - Returns all time registrations in a project that have been updated after the specified time. Example value: `16022018T210047`.
 
 |Response fields | Description/format|
 |------------ | -------------|
@@ -85,10 +81,8 @@
 ```
 ## Get all time registrations for a given person
 
-* `GET /persons/{personId}/time_registrations` - Returns all time registrations for a given person.
-* `GET /persons/{personId}/time_registrations?updated_after=DDMMYYYYTHHmmss` - Returns all time registrations for a given person that have been updated after the specified time. Example value: `16022018T210047`.
-
-**Only one of project, card or non_project_time is filled!**
+* `GET v2/persons/{personId}/time_registrations` - Returns all time registrations for a given person.
+* `GET v2/persons/{personId}/time_registrations?updated_after=DDMMYYYYTHHmmss` - Returns all time registrations for a given person that have been updated after the specified time. Example value: `16022018T210047`.
 
 |Response fields | Description/format|
 |------------ | -------------|
@@ -127,9 +121,7 @@
 
 ## Get time registration
 
-* `GET /time_registrations/{time_registrationId}` - Returns a specific time registration.
-
-**Only one of project, card or non_project_time is filled!**
+* `GET v2/time_registrations/{time_registrationId}` - Returns a specific time registration.
 
 |Response fields | Description/format|
 |------------ | -------------|
