@@ -214,3 +214,24 @@ PUT https://api.forecast.it/api/v1/projects/1
 ### Sample JSON request
 
 DELETE https://api.forecast.it/api/v1/projects/1
+
+## Get project statuses
+
+* `GET /projects/{projectId}/statuses` - Returns the entire status history of a specific project.
+
+### Sample JSON request
+
+GET https://api.forecast.it/api/v1/projects/1/statuses
+
+### Sample JSON response
+
+```javascript
+[
+   {
+      "status_description": "<div>Sample description</div>",
+      "status": "GREEN",
+      "created_at":"2019-01-04T12:00:00Z",
+      "created_by":1
+   }, ...
+]
+```

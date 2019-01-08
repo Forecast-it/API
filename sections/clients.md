@@ -11,7 +11,7 @@
 |street | String|
 |zip | String|
 |city | String|
-|country | String|
+|country | String (ISO 3166-1 Alpha 2)|
 |vat_number | String|
 |notes | String|
 |created_by | Integer, ID of person|
@@ -28,7 +28,7 @@
       "street":"Broadway 1",
       "zip":"90210",
       "city":"Los Angeles",
-      "country":"United States",
+      "country":"US",
       "vat_number":null,
       "notes":"Very important client",
       "created_by":1,
@@ -50,7 +50,7 @@
 |street | String|
 |zip | String|
 |city | String|
-|country | String|
+|country | String (ISO 3166-1 Alpha 2)|
 |vat_number | String|
 |notes | String|
 |created_by | Integer, ID of person|
@@ -66,7 +66,7 @@
    "street":"Broadway 1",
    "zip":"90210",
    "city":"Los Angeles",
-   "country":"United States",
+   "country":"US",
    "vat_number":null,
    "notes":"Very important client",
    "created_by":1,
@@ -86,7 +86,7 @@
 |street | String|
 |zip | String|
 |city | String|
-|country | String|
+|country | String (ISO 3166-1 Alpha 2)|
 |vat_number | String|
 |notes | String|
 
@@ -99,7 +99,7 @@ POST https://api.forecast.it/api/v1/clients
    "street":"Broadway 1",
    "zip":"90210",
    "city":"Los Angeles",
-   "country":"United States",
+   "country":"US",
    "vat_number":null,
    "notes":"Very important client"
 }
@@ -115,7 +115,7 @@ POST https://api.forecast.it/api/v1/clients
 |street | String|
 |zip | String|
 |city | String|
-|country | String|
+|country | String (ISO 3166-1 Alpha 2)|
 |vat_number | String|
 |notes | String|
 
@@ -125,7 +125,8 @@ PUT https://api.forecast.it/api/v1/clients/1
 ```javascript
 {
    "name":"Jane Doen Inc.",
-   "street":"Sesame Street 42"
+   "street":"Sesame Street 42",
+   "country":"US"
 }
 ```
 
