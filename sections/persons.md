@@ -24,6 +24,7 @@
 | active          | Boolean                                                                                |
 | default_role    | Integer, ID of default role                                                            |
 | cost            | Decimal                                                                                |
+| language        | String {"SPANISH", "DANISH", "POLISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"} |
 | created_by      | Integer, ID of person                                                                  |
 | updated_by      | Integer, ID of person                                                                  |
 | created_at      | Date                                                                                   |
@@ -50,6 +51,7 @@
       "active":true,
       "default_role":29,
       "cost":100,
+      "language":"DANISH",
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
@@ -80,6 +82,7 @@
 | active          | Boolean                                                                                |
 | default_role    | JSON (Role)                                                                            |
 | cost            | Decimal                                                                                |
+| language        | String {"SPANISH", "DANISH", "POLISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"} |
 | created_by      | Integer, ID of person                                                                  |
 | updated_by      | Integer, ID of person                                                                  |
 | created_at      | Date                                                                                   |
@@ -105,6 +108,7 @@
    "active":true,
    "default_role": {...},
    "cost":100,
+   "language":"DANISH",
    "created_by":1,
    "updated_by":1,
    "created_at":"2017-01-14T18:46:56Z",
@@ -132,6 +136,7 @@
 | sunday         | Integer, if not set, taken from company                                                   |
 | default_role   | Integer, id of the default role                                                           |
 | cost           | Decimal                                                                                   |
+| language       | String {"SPANISH", "DANISH", "POLISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"} |
 
 \* Person with client_id can only be "VIRTUAL" or "CLIENT" user_type. Person without client_id cannot have "CLIENT" user_type
 
@@ -177,6 +182,7 @@ POST https://api.forecast.it/api/v1/persons
 | active         | Boolean\*                                                                      |
 | default_role   | Integer, id of the default role                                                |
 | cost           | Decimal                                                                        |
+| language       | String {"SPANISH", "DANISH", "POLISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"} |
 
 \* Person with client_id can only be "VIRTUAL" or "CLIENT" user_type and cannot have active equal to false. Person without client_id cannot have "CLIENT" user_type
 
