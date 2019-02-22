@@ -27,6 +27,7 @@
 | client                       | Integer, ID of client                    |
 | rate_card                    | Integer, ID of rate card                 |
 | remaining_auto_calculated    | Boolean                                  |
+| labels           | List<Integer>, List ID of labels           |
 | external_refs                | List of references to other systems      |
 | created_by                   | Integer, ID of person                    |
 | updated_by                   | Integer, ID of person                    |
@@ -58,6 +59,7 @@
       "client": 1,
       "rate_card": 1,
       "remaining_auto_calculated": false,
+      "labels": [1,2],
       "external_refs": [],
       "created_by":1,
       "updated_by":1,
@@ -94,6 +96,7 @@
 | client                       | Integer, ID of client                    |
 | rate_card                    | Integer, ID of rate card                 |
 | remaining_auto_calculated    | Boolean                                  |
+| labels           | List<Integer>, List ID of labels           |
 | external_refs                | List of references to other systems      |
 | created_by                   | Integer, ID of person                    |
 | updated_by                   | Integer, ID of person                    |
@@ -124,6 +127,7 @@
    "client": 1,
    "rate_card": 1,
    "remaining_auto_calculated": false,
+   "labels": [1,2],
    "external_refs": [],
    "created_by":1,
    "updated_by":1,
@@ -154,6 +158,7 @@
 | card_levels                  | Integer (1 or 2) (Defaults to 1)                                |
 | client                       | Integer, ID of client                                           |
 | rate_card                    | Integer, ID of rate card                                        |
+| labels           | List<Integer>, List ID of labels           |
 
 ### Sample JSON request
 
@@ -196,6 +201,7 @@ POST https://api.forecast.it/api/v1/projects
 | card_levels                  | Integer (1 or 2)                         |
 | client                       | Integer, ID of client                    |
 | rate_card                    | Integer, ID of rate card                 |
+| labels           | List<Integer>, List ID of labels           |
 
 ### Sample JSON request
 
