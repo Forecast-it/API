@@ -326,7 +326,7 @@ If includeAllFields query parameter is set the below fields will also be returne
 ]
 ```
 
-or if includeAllFields query parameter is set:
+### Sample JSON response - if includeAllFields query parameter is set:
 
 ```javascript
 [
