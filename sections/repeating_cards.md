@@ -168,8 +168,8 @@ PUT https://api.forecast.it/api/v1/repeating_cards/1
 ```javascript
 {
 	"repeat_type": "WEEKLY",
-    "thursday": false,
-    "friday": true
+	"thursday": false,
+	"friday": true
 }
 ```
 
