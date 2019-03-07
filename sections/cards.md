@@ -287,7 +287,7 @@ DELETE https://api.forecast.it/api/v1/cards/1
 * `GET /cards/deleted?updated_after=DDMMYYYYTHHmmss` - Returns all cards that have been deleted. after the specified time. Example value: `16022018T210047`.
 * `GET /cards/deleted?includeAllFields=true` - Includes a greater list of fields on the deleted card.
 
-Note that the 2 query parameters can be combined.
+### Note that the 2 query parameters can be combined.
 
 | Response fields | Description/format                            |
 | --------------- | --------------------------------------------- |
@@ -295,7 +295,8 @@ Note that the 2 query parameters can be combined.
 | deleted_by      | Integer, ID of person                         |
 | deleted_at      | Date                                          |
 
-If includeAllFields query parameter is set the below fields will also be returned:
+### If includeAllFields query parameter is set the below fields will also be returned:
+
 | Response fields | Description/format                            |
 | --------------- | --------------------------------------------- |
 | company_task_id             | String, Your ID of the card that has been deleted - fx T46   |
