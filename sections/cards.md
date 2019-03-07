@@ -285,12 +285,34 @@ DELETE https://api.forecast.it/api/v1/cards/1
 
 * `GET /cards/deleted` - Returns all cards that have been deleted.
 * `GET /cards/deleted?updated_after=DDMMYYYYTHHmmss` - Returns all cards that have been deleted. after the specified time. Example value: `16022018T210047`.
+* `GET /cards/deleted?includeAllFields=true` - Includes a greater list of fields on the deleted card.
+
+Note that the 2 query parameters can be combined.
 
 | Response fields | Description/format                            |
 | --------------- | --------------------------------------------- |
 | id              | Integer, ID of the card that has been deleted |
 | deleted_by      | Integer, ID of person                         |
 | deleted_at      | Date                                          |
+
+If includeAllFields query parameter is set the below fields will also be returned:
+| Response fields | Description/format                            |
+| --------------- | --------------------------------------------- |
+| company_task_id             | String, Your ID of the card that has been deleted - fx T46   |
+| title                       | String, Title of card                                                |
+| description                 | String, Description of card                                          |
+| low_estimate                | Decimal, Low estimate - if project is using hours                     |
+| high_estimate               | Decimal, High estimate - if project is using hours                    |
+| forecast                    | Decimal, Forecast - if project is using hours                         |
+| low_estimate_points         | Decimal, Low estimate - if project is using points                    |
+| high_estimate_points        | Decimal, High estimate - if project is using points                   |
+| forecast_points             | Decimal, Forecast - if project is using points                        |
+| start_date                  | Date, Start date of card                                           |
+| end_date                    | Date, End date of card                                             |
+| blocked                     | Boolean, If card is blocked                                           |
+| bug                         | Boolean, If card is marked as a bug                                   |
+| billable                    | Boolean, If card is billable                                          |
+| high_priority               | Boolean, If card is marked as high priority                           |
 
 ### Sample JSON response
 
@@ -301,5 +323,32 @@ DELETE https://api.forecast.it/api/v1/cards/1
       "deleted_by":1,
       "deleted_at":"2017-01-14T18:46:56Z",
    }, ...
+]
+```
+
+or if includeAllFields query parameter is set:
+
+```javascript
+[
+   {
+        "id": 1,
+        "deleted_by":1,
+        "deleted_at":"2017-01-14T18:46:56Z",
+        "company_task_id": "T1",
+        "title": "Login Page",
+        "description": "Design and build new login page",
+        "low_estimate": 7,
+        "high_estimate": 12,
+        "forecast": 10.5,
+        "low_estimate_points": null,
+        "high_estimate_points": null,
+        "forecast_points": null,
+        "start_date": "2019-02-01",
+        "end_date": "2019-02-05",
+        "blocked": false,
+        "bug": false,
+        "billable": true,
+        "high_priority": false
+    }, ...
 ]
 ```

@@ -108,6 +108,7 @@ Errors are returned in the following JSON format.
 * [Sub tasks](sections/sub_tasks.md#sub-tasks)
 * [Time registrations](sections/time_registrations.md#time-registrations)
 * [Expense items](sections/expense_items.md#expense-items)
+* [Repeating cards](sections/repeating_cards.md#repeating-cards)
 
 ## API libraries
 

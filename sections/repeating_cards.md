@@ -78,6 +78,45 @@
 }
 ```
 
+## Get project repeating cards
+
+* `GET /projects/{projectId}/repeating_cards` - Returns repeating card for a card.
+
+|Response fields | Description/format|
+|------------ | -------------|
+|id | Integer|
+|monday | Boolean|
+|tuesday | Boolean|
+|wednsday | Boolean|
+|thursday | Boolean|
+|friday | Boolean|
+|saturday | Boolean|
+|sunday | Boolean|
+|monthly_day | Integer|
+|repeat_type | String|
+|created_by | Integer, ID of person|
+|updated_by | Integer, ID of person|
+|created_at | Date|
+|updated_at | Date|
+
+### Sample JSON response
+```javascript
+{
+    "id": 15,
+    "monday": true,
+    "tuesday": false,
+    "wednesday": false,
+    "thursday": true,
+    "friday": false,
+    "saturday": false,
+    "sunday": false,
+    "monthly_day": 1,
+    "repeat_type": "WEEKLY",
+    "created_by": null,
+    "updated_by": null
+}
+```
+
 
 ## Create a repeating card
 
@@ -129,8 +168,8 @@ PUT https://api.forecast.it/api/v1/repeating_cards/1
 ```javascript
 {
 	"repeat_type": "WEEKLY",
-   "thursday": false,
-   "friday": true
+    "thursday": false,
+    "friday": true
 }
 ```
 
