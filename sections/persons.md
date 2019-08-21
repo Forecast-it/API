@@ -116,6 +116,76 @@
 }
 ```
 
+## Get person projects
+
+* `GET /persons/{personId}/projects` - Returns a specific person's projects.
+
+| Response fields              | Description/format                       |
+| ---------------------------- | ---------------------------------------- |
+| id                           | Integer                                  |
+| company_project_id           | Integer                                  |
+| name                         | String                                   |
+| connected_project            | Integer, ID of connected project         |
+| stage                        | String (PLANNING, RUNNING, HALTED, DONE) |
+| status_color                 | String (GREEN, YELLOW, RED)              |
+| status_description           | String                                   |
+| description                  | String                                   |
+| color                        | String                                   |
+| estimation_units             | String (HOURS, POINTS)                   |
+| minutes_per_estimation_point | Integer                                  |
+| budget                       | Double                                   |
+| billable                     | Boolean                                  |
+| use_sprints                  | Boolean                                  |
+| sprint_length                | Integer                                  |
+| start_date                   | Date                                     |
+| end_date                     | Date                                     |
+| card_levels                  | Integer (1 or 2)                         |
+| client                       | Integer, ID of client                    |
+| rate_card                    | Integer, ID of rate card                 |
+| remaining_auto_calculated    | Boolean                                  |
+| use_project_allocations      | Boolean                                  |
+| labels                       | List<Integer>, List ID of labels         |
+| external_refs                | List of references to other systems      |
+| created_by                   | Integer, ID of person                    |
+| updated_by                   | Integer, ID of person                    |
+| created_at                   | Date                                     |
+| updated_at                   | Date                                     |
+
+### Sample JSON response
+
+```javascript
+[
+   {
+      "id":1,
+      "company_project_id":1,
+      "name":"Website project",
+      "stage":"PLANNING",
+      "status": "GREEN",
+      "status_description": "",
+      "description": "",
+      "color": "#FF7C75",
+      "estimation_units": "HOURS",
+      "minutes_per_estimation_point": 480,
+      "budget": 1234.56,
+      "billable": true,
+      "use_sprints": true,
+      "sprint_length": 14,
+      "start_date": "2017-01-01",
+      "end_date": "2018-01-01",
+      "card_levels": 1,
+      "client": 1,
+      "rate_card": 1,
+      "remaining_auto_calculated": false,
+      "use_project_allocations": true,
+      "labels": [1,2],
+      "external_refs": [],
+      "created_by":1,
+      "updated_by":1,
+      "created_at":"2017-01-14T18:46:56Z",
+      "updated_at":"2017-01-14T18:47:58Z"
+   }, ...
+```
+
 ## Create person
 
 * `POST /persons` - Creates a new person. Returns the same object as getting a single person.
