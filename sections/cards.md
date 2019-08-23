@@ -197,6 +197,29 @@
    "updated_at":"2017-01-14T18:47:58Z"
 }
 ```
+## Get comments for a card
+
+* `GET /cards/{cardId}/comments` - Returns a card's comments.
+
+| Response fields  | Description/format                         |
+| ---------------- | ------------------------------------------ |
+| id               | Integer                                    |
+| card_id          | Integer                                    |
+| comment          | String/HTML                                |
+| created_at       | Date                                       |
+| person_id        | Integer                                    |
+
+### Sample JSON response
+
+```javascript
+{
+   "id":1,
+   "card_id":5,
+   "comment":"<div>This is a comment.<br/></div>",
+   "created_at":"2017-01-14T18:46:56Z",
+   "person_id":1,
+}
+```
 
 ## Create card
 
