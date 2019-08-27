@@ -205,20 +205,22 @@
 | ---------------- | ------------------------------------------ |
 | id               | Integer                                    |
 | card_id          | Integer                                    |
-| comment          | String/HTML                                |
+| comment          | String                                     |
 | created_at       | Date                                       |
-| person_id        | Integer                                    |
+| person_id        | Integer, ID of person                      |
 
 ### Sample JSON response
 
 ```javascript
-{
-   "id":1,
-   "card_id":5,
-   "comment":"<div>This is a comment.<br/></div>",
-   "created_at":"2017-01-14T18:46:56Z",
-   "person_id":1,
-}
+[
+   {
+      "id":1,
+      "card_id":5,
+      "comment":"<div>This is a comment.</div>",
+      "created_at":"2019-01-14T18:46:56Z",
+      "person_id":1
+   }, ...
+]
 ```
 
 ## Create card
