@@ -385,3 +385,10 @@ PUT https://api.forecast.it/api/v1/invoices/58
     "created_at": "2019-10-01T11:21:36Z"
 }
 ```
+## Delete Invoice
+
+* `DELETE /invoices/{invoiceId}` - Deletes a specific invoice, its entries and payments.
+
+### Sample JSON request
+
+DELETE https://api.forecast.it/api/v1/invoices/1
