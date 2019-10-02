@@ -430,8 +430,6 @@ POST https://api.forecast.it/api/v1/invoices/84/invoice_entries
 
 - `PUT /invoice_entries/{invoiceEntryId}` - Updates a specific invoice entry. Returns the updated invoice entry.
 
-### Entries
-
 | Request fields | Description/format         |
 | -------------- | -------------------------- |
 | invoice_id     | Integer, ID of the Invoice |
@@ -441,7 +439,6 @@ POST https://api.forecast.it/api/v1/invoices/84/invoice_entries
 | discount       | Double                     |
 | tax            | Double                     |
 | description    | String                     |
-
 
 ### Sample JSON request
 
@@ -466,3 +463,74 @@ PUT https://api.forecast.it/api/v1/invoice_entries/221
 ### Sample JSON request
 
 DELETE https://api.forecast.it/api/v1/invoice_entries/1
+
+# Invoice Payments
+
+## Create Invoice payment
+
+- `POST /invoices/{invoiceId}/invoice_payments` - Creates a new invoice payment for a specific invoice. Returns the newly created invoice payment.
+
+| Request fields | Description/format |
+| -------------- | ------------------ |
+| notes          | String             |
+| amount         | Integer            |
+| year           | Integer            |
+| month          | Integer            |
+| day            | Integer            |
+
+### Sample JSON request
+
+POST https://api.forecast.it/api/v1/invoices/80/invoice_payments
+
+```javascript
+{
+    "id": 7,
+    "invoice_id": 80,
+    "notes": "the payment",
+    "amount": 150,
+    "day": 5,
+    "month": 12,
+    "year": 2019,
+    "created_by": 97,
+    "created_at": "2019-10-02T17:28:29Z"
+}
+```
+
+## Update Invoice Payment
+
+- `PUT /invoice_payments/{invoicePaymentId}` - Updates a specific invoice payment. Returns the updated invoice payment.
+
+| Request fields | Description/format |
+| -------------- | ------------------ |
+| notes          | String             |
+| amount         | Integer            |
+| year           | Integer            |
+| month          | Integer            |
+| day            | Integer            |
+
+
+### Sample JSON request
+
+PUT https://api.forecast.it/api/v1/invoice_payments/7
+
+```javascript
+{
+    "id": 7,
+    "invoice_id": 80,
+    "notes": "the payment",
+    "amount": 150,
+    "day": 5,
+    "month": 12,
+    "year": 2019,
+    "created_by": 97,
+    "created_at": "2019-10-02T17:28:29Z"
+}
+```
+
+## Delete Invoice Entry
+
+- `DELETE /invoice_entries/{invoiceEntryId}` - Deletes a specific invoice payment.
+
+### Sample JSON request
+
+DELETE https://api.forecast.it/api/v1/invoice_payments/1
