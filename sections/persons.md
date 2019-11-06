@@ -23,7 +23,7 @@
 | sunday          | Integer, working hours in minutes                                                      |
 | active          | Boolean                                                                                |
 | default_role    | Integer, ID of default role                                                            |
-| cost            | Decimal                                                                                |
+| cost            | Decimal, cost from the current cost period                                             |
 | language        | String {"SPANISH", "DANISH", "POLISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"} |
 | created_by      | Integer, ID of person                                                                  |
 | updated_by      | Integer, ID of person                                                                  |
@@ -81,7 +81,7 @@
 | sunday          | Integer                                                                                |
 | active          | Boolean                                                                                |
 | default_role    | JSON (Role)                                                                            |
-| cost            | Decimal                                                                                |
+| cost            | Decimal, cost from the current cost period                                             |
 | language        | String {"SPANISH", "DANISH", "POLISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"} |
 | created_by      | Integer, ID of person                                                                  |
 | updated_by      | Integer, ID of person                                                                  |
@@ -205,7 +205,7 @@
 | saturday       | Integer, if not set, taken from company                                                   |
 | sunday         | Integer, if not set, taken from company                                                   |
 | default_role   | Integer, id of the default role                                                           |
-| cost           | Decimal                                                                                   |
+| cost           | Decimal, cost to be used in the current cost period                                       |
 | language       | String {"SPANISH", "DANISH", "POLISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"} |
 
 \* Person with client_id can only be "VIRTUAL" or "CLIENT" user_type. Person without client_id cannot have "CLIENT" user_type
@@ -251,7 +251,7 @@ POST https://api.forecast.it/api/v1/persons
 | sunday         | Integer                                                                        |
 | active         | Boolean\*                                                                      |
 | default_role   | Integer, id of the default role                                                |
-| cost           | Decimal                                                                        |
+| cost           | Decimal, cost to be used in the current cost period                            |
 | language       | String {"SPANISH", "DANISH", "POLISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"} |
 
 \* Person with client_id can only be "VIRTUAL" or "CLIENT" user_type and cannot have active equal to false. Person without client_id cannot have "CLIENT" user_type
