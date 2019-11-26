@@ -78,7 +78,6 @@ POST https://api.forecast.it/api/v1/holiday_calendar_entries
 
 |Request fields | Description/format|
 |------------ | -------------|
-|holiday_calendar_id | Integer|
 |year | Integer|
 |month | Integer|
 |day | Integer|
