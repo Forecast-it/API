@@ -112,12 +112,7 @@ POST https://api.forecast.it/api/v1/holiday_calendars
 
 ```javascript
 {
-   "id":2,
    "name":"Swedish holidays",
-   "created_by":1,
-   "updated_by":1,
-   "created_at":"2017-01-14T18:46:56Z",
-   "updated_at":"2017-01-14T18:47:58Z"
 }
 ```
 
@@ -134,12 +129,7 @@ PUT https://api.forecast.it/api/v1/holiday_calendars/1
 
 ```javascript
 {
-    "id": 1,
     "name": "Norwegian holidays",
-    "created_by": 2045,
-    "updated_by": 2064,
-    "created_at": "2019-11-25T11:00:40Z",
-    "updated_at": "2019-11-25T11:48:54Z"
 }
 ```
 

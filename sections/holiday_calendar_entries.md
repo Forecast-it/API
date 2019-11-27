@@ -88,7 +88,10 @@ PUT https://api.forecast.it/api/v1/holiday_calendar_entries/1
 
 ```javascript
 {
-    "name": "Christmas eve",
+    "name": "Juledag",
+    "year": 2019,
+    "month": 12,
+    "day": 25
 }
 ```
 
