@@ -49,15 +49,15 @@
 
 ## Create holiday calendar entry
 
-* `POST /holiday_calendar_entries` - Creates a new holiday calendar entries. Returns the created calendar entry.
+* `POST /holiday_calendar_entries` - Creates a new holiday calendar entry. Returns the created calendar entry.
 
 |Request fields | Description/format|
 |------------ | -------------|
-|holiday_calendar_id | Integer|
-|year | Integer|
-|month | Integer|
-|day | Integer|
-|name | String|
+|holiday_calendar_id | (Required) Integer|
+|year | (Required) Integer|
+|month | (Required) Integer|
+|day | (Required) Integer|
+|name | (Required) String|
 
 ### Sample JSON request
 POST https://api.forecast.it/api/v1/holiday_calendar_entries
@@ -97,7 +97,7 @@ PUT https://api.forecast.it/api/v1/holiday_calendar_entries/1
 
 ## Delete label
 
-* `DELETE /holiday_calendar_entries/{holidayCalendarId}` - Deletes a label.
+* `DELETE /holiday_calendar_entries/{holidayCalendarId}` - Deletes a holiday calendar entry.
 
 ### Sample JSON request
 DELETE https://api.forecast.it/api/v1/holiday_calendar_entries/1
