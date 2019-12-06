@@ -7,12 +7,11 @@
 |Response fields | Description/format|
 |------------ | -------------|
 |id | Integer|
-|company_id | Integer|
 |person_id | Integer|
 |start_year | Integer|
 |start_month | Integer|
 |start_day | Integer|
-|cost | Integer|
+|cost | Decimal|
 |created_by | Integer, ID of person|
 |updated_by | Integer, ID of person|
 |created_at | Date|
@@ -23,9 +22,8 @@
 [
     {
         "id": 1,
-        "company_id": 1,
         "person_id": 1,
-        "cost": 6,
+        "cost": 6.0,
         "created_by": 1,
         "updated_by": 1,
         "created_at": "2019-10-03T08:49:58Z",
@@ -33,12 +31,11 @@
     },
     {
         "id": 2,
-        "company_id": 1,
         "person_id": 1,
         "start_year": 2019,
         "start_month": 12,
         "start_day": 5,
-        "cost": 10,
+        "cost": 10.0,
         "created_by": 1,
         "updated_by": 1,
         "created_at": "2019-12-05T12:28:27Z",
@@ -54,12 +51,11 @@
 |Response fields | Description/format|
 |------------ | -------------|
 |id | Integer|
-|company_id | Integer|
 |person_id | Integer|
 |start_year | Integer|
 |start_month | Integer|
 |start_day | Integer|
-|cost | Integer|
+|cost | Decimal|
 |created_by | Integer, ID of person|
 |updated_by | Integer, ID of person|
 |created_at | Date|
@@ -70,9 +66,8 @@
 [
     {
         "id": 1,
-        "company_id": 1,
         "person_id": 1,
-        "cost": 6,
+        "cost": 6.0,
         "created_by": 1,
         "updated_by": 1,
         "created_at": "2019-10-03T08:49:58Z",
@@ -80,12 +75,11 @@
     },
     {
         "id": 2,
-        "company_id": 1,
         "person_id": 1,
         "start_year": 2019,
         "start_month": 12,
         "start_day": 5,
-        "cost": 10,
+        "cost": 10.0,
         "created_by": 1,
         "updated_by": 1,
         "created_at": "2019-12-05T12:28:27Z",
