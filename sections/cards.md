@@ -28,6 +28,7 @@
 | milestone        | Integer, ID of milestone                   |
 | assigned_persons | List<Integer>, List ID of assigned persons |
 | labels           | List<Integer>, List ID of labels           |
+| owner_id         | Integer, ID of person                      |
 | created_by       | Integer, ID of person                      |
 | updated_by       | Integer, ID of person                      |
 | created_at       | Date                                       |
@@ -59,6 +60,7 @@
       "milestone":1,
       "assigned_persons":[1,2,3],
       "labels":[1,2,3],
+      "owner_id":1,
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
@@ -95,6 +97,7 @@
 | milestone        | Integer, ID of milestone                   |
 | assigned_persons | List<Integer>, List ID of assigned persons |
 | labels           | List<Integer>, List ID of labels           |
+| owner_id         | Integer, ID of person                      |
 | created_by       | Integer, ID of person                      |
 | updated_by       | Integer, ID of person                      |
 | created_at       | Date                                       |
@@ -126,6 +129,7 @@
       "milestone":1,
       "assigned_persons":[1,2,3],
       "labels":[1,2,3],
+      "owner_id":1,
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
@@ -161,6 +165,7 @@
 | milestone        | Integer, ID of milestone                   |
 | assigned_persons | List<Integer>, List ID of assigned persons |
 | labels           | List<Integer>, List ID of labels           |
+| owner_id         | Integer, ID of person                      |
 | created_by       | Integer, ID of person                      |
 | updated_by       | Integer, ID of person                      |
 | created_at       | Date                                       |
@@ -191,6 +196,7 @@
    "milestone":1,
    "assigned_persons":[1,2,3],
    "labels":[1,2,3],
+   "owner_id":1,
    "created_by":1,
    "updated_by":1,
    "created_at":"2017-01-14T18:46:56Z",
@@ -246,6 +252,7 @@
 | milestone        | Integer, ID of milestone                   |
 | assigned_persons | List<Integer>, List ID of assigned persons |
 | labels           | List<Integer>, List ID of labels           |
+| owner_id         | Integer, ID of person                      |
 
 ### Sample JSON request
 
@@ -259,7 +266,8 @@ POST https://api.forecast.it/api/v1/cards
    "low_estimate":20.0,
    "high_estimate":40.0,
    "approved":true,
-   "sprint":2
+   "sprint":2,
+   "owner_id":1
 }
 ```
 
@@ -287,6 +295,7 @@ POST https://api.forecast.it/api/v1/cards
 | milestone        | Integer, ID of milestone                                                                             |
 | assigned_persons | List<Integer>, List ID of assigned persons                                                           |
 | labels           | List<Integer>, List ID of labels                                                                     |
+| owner_id         | Integer, ID of person                                                                                |
 
 ### Sample JSON request
 
