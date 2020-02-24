@@ -252,3 +252,170 @@ GET https://api.forecast.it/api/v1/projects/1/statuses
    }, ...
 ]
 ```
+
+## Get project financials
+
+-  `GET /projects/{projectId}/financials` - Returns all financial data for the project, broken down to milestone and role level.
+
+Some data in the response is broken down on the individual milestones of the project in arrays called `milestone_breakdown`. Each of these milestones can be further broken down on the individual roles in arrays called `role_breakdown`.
+
+Milestone and role objects with id zero represent data with no milestone or role.
+
+### Sample JSON request
+
+GET https://api.forecast.it/api/v1/projects/1/financials
+
+| Response fields                                    | Description/format                                           |
+| -------------------------------------------------- | ------------------------------------------------------------ |
+| project_id                                         | Integer                                                      |
+| progress                                           | Object                                                       |
+| &nbsp;&nbsp;↳ period_value                         | Double, the value for the selected period                    |
+| &nbsp;&nbsp;↳ total_value                          | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ milestone_breakdown                  | Array, the same values broken down on the project milestones |
+| fixed_price                                        | Object                                                       |
+| &nbsp;&nbsp;↳ revenue                              | Double                                                       |
+| &nbsp;&nbsp;↳ cost                                 | Double                                                       |
+| &nbsp;&nbsp;↳ profit                               | Double                                                       |
+| &nbsp;&nbsp;↳ margin                               | Double                                                       |
+| actual_price                                       | Object                                                       |
+| &nbsp;&nbsp;↳ revenue                              | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ cost                                 | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ profit                               | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ margin                               | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ milestone_breakdown                  | Array, the same values broken down on the project milestones |
+| plan_price                                         | Object                                                       |
+| &nbsp;&nbsp;↳ revenue                              | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ cost                                 | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ profit                               | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ margin                               | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ milestone_breakdown                  | Array, the same values broken down on the project milestones |
+| remaining_price                                    | Object                                                       |
+| &nbsp;&nbsp;↳ revenue                              | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ cost                                 | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ profit                               | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ margin                               | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ milestone_breakdown                  | Array, the same values broken down on the project milestones |
+| forecast_price                                     | Object                                                       |
+| &nbsp;&nbsp;↳ revenue                              | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ cost                                 | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ profit                               | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ margin                               | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ milestone_breakdown                  | Array, the same values broken down on the project milestones |
+| actual_variance_to_plan_price                      | Object                                                       |
+| &nbsp;&nbsp;↳ revenue                              | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ cost                                 | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ profit                               | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ margin                               | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ milestone_breakdown                  | Array, the same values broken down on the project milestones |
+| forecast_variance_to_plan_price                    | Object                                                       |
+| &nbsp;&nbsp;↳ revenue                              | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ cost                                 | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ profit                               | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ margin                               | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ milestone_breakdown                  | Array, the same values broken down on the project milestones |
+| company_financials                                 | Object                                                       |
+| &nbsp;&nbsp;↳ revenue                              | Double                                                       |
+| &nbsp;&nbsp;↳ cost                                 | Double                                                       |
+| &nbsp;&nbsp;↳ profit                               | Double                                                       |
+| &nbsp;&nbsp;↳ margin                               | Double                                                       |
+| registered_hours                                   | Object                                                       |
+| &nbsp;&nbsp;↳ period_value                         | Double, the value for the selected period                    |
+| &nbsp;&nbsp;↳ total_value                          | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ milestone_breakdown                  | Array, the same values broken down on the project milestones |
+| remaining_hours                                    | Object                                                       |
+| &nbsp;&nbsp;↳ period_value                         | Double, the value for the selected period                    |
+| &nbsp;&nbsp;↳ total_value                          | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ milestone_breakdown                  | Array, the same values broken down on the project milestones |
+| forecast_hours                                     | Object                                                       |
+| &nbsp;&nbsp;↳ period_value                         | Double, the value for the selected period                    |
+| &nbsp;&nbsp;↳ total_value                          | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ milestone_breakdown                  | Array, the same values broken down on the project milestones |
+| estimated_hours                                    | Object                                                       |
+| &nbsp;&nbsp;↳ approved                             | Object, values of only the approved tasks in the project     |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ all                                  | Object, values of all tasks in the project                   |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| low_hours                                          | Object                                                       |
+| &nbsp;&nbsp;↳ approved                             | Object, values of only the approved tasks in the project     |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ all                                  | Object, values of all tasks in the project                   |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| high_hours                                         | Object                                                       |
+| &nbsp;&nbsp;↳ approved                             | Object, values of only the approved tasks in the project     |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ all                                  | Object, values of all tasks in the project                   |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| allocation                                         | Object                                                       |
+| &nbsp;&nbsp;↳ period_value                         | Double, the value for the selected period                    |
+| &nbsp;&nbsp;↳ total_value                          | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ milestone_breakdown                  | Array, the same values broken down on the project milestones |
+| invoice                                            | Object                                                       |
+| &nbsp;&nbsp;↳ invoiced_price                       | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ invoiced_hours                       | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ invoiced_on_fixed_price              | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ invoiced_paid                        | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
+| &nbsp;&nbsp;↳ un_invoiced                          | Object                                                       |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, the value for the selected period                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, the total value for the project                      |
