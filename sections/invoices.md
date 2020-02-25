@@ -2,7 +2,7 @@
 
 ## Get Invoices
 
-- `GET /projects/{projectId}/invoices` - Returns all invoices of a specific project.
+-   `GET /projects/{projectId}/invoices` - Returns all invoices of a specific project.
 
 ### Invoice
 
@@ -14,12 +14,8 @@
 | name               | String                                                   |
 | invoice_reference  | String                                                   |
 | invoice_type       | String (DEPOSIT, FIXED_PRICE, TIME_AND_MATERIAL, MANUAL) |
-| created_day        | Integer                                                  |
-| created_month      | Integer                                                  |
-| created_year       | Integer                                                  |
-| due_day            | Integer                                                  |
-| due_month          | Integer                                                  |
-| due_year           | Integer                                                  |
+| created_date       | Date                                                     |
+| due_date           | Date                                                     |
 | notes              | String                                                   |
 | status             | String (DRAFT, APPROVED, SENT)                           |
 | entries            | List<Entries>, List of entries                           |
@@ -54,9 +50,7 @@
 | invoice_id      | Integer, ID of the Invoice |
 | notes           | String                     |
 | amount          | Double                     |
-| day             | Integer                    |
-| month           | Integer                    |
-| year            | Integer                    |
+| date            | Date                       |
 | created_by      | Integer, ID of person      |
 | updated_by      | Integer, ID of person      |
 | created_at      | Date                       |
@@ -73,12 +67,8 @@
         "name": "Invoice for Client 12",
         "invoice_reference": "INV-90",
         "invoice_type": "FIXED_PRICE",
-        "created_day": 5,
-        "created_month": 9,
-        "created_year": 2019,
-        "due_day": 12,
-        "due_month": 10,
-        "due_year": 2019,
+        "created_date": "2020-09-05",
+        "due_date": "2020-10-12",
         "status": "SENT",
         "entries": [
              {
@@ -98,9 +88,7 @@
                 "invoice_id": 80,
                 "notes": "payment for december",
                 "amount": 150,
-                "day": 5,
-                "month": 12,
-                "year": 2019,
+                "date": "2020-12-05",
                 "created_by": 97,
                 "created_at": "2019-10-02T09:18:02Z"
             }, ...
@@ -113,7 +101,7 @@
 
 ## Get Invoice
 
-- `GET /invoices/{invoiceId}` - Returns a specific invoice.
+-   `GET /invoices/{invoiceId}` - Returns a specific invoice.
 
 ### Invoice
 
@@ -125,12 +113,8 @@
 | name               | String                                                   |
 | invoice_reference  | String                                                   |
 | invoice_type       | String (DEPOSIT, FIXED_PRICE, TIME_AND_MATERIAL, MANUAL) |
-| created_day        | Integer                                                  |
-| created_month      | Integer                                                  |
-| created_year       | Integer                                                  |
-| due_day            | Integer                                                  |
-| due_month          | Integer                                                  |
-| due_year           | Integer                                                  |
+| created_date       | Date                                                     |
+| due_date           | Date                                                     |
 | notes              | String                                                   |
 | status             | String (DRAFT, APPROVED, SENT)                           |
 | entries            | List<Entries>, List of entries                           |
@@ -165,9 +149,7 @@
 | invoice_id      | Integer, ID of the Invoice |
 | notes           | String                     |
 | amount          | Double                     |
-| day             | Integer                    |
-| month           | Integer                    |
-| year            | Integer                    |
+| date            | Date                       |
 | created_by      | Integer, ID of person      |
 | updated_by      | Integer, ID of person      |
 | created_at      | Date                       |
@@ -183,12 +165,8 @@
         "name": "Invoice for Client 12",
         "invoice_reference": "INV-90",
         "invoice_type": "FIXED_PRICE",
-        "created_day": 5,
-        "created_month": 9,
-        "created_year": 2019,
-        "due_day": 12,
-        "due_month": 10,
-        "due_year": 2019,
+        "created_date": "2020-09-05",
+        "due_date": "2020-10-12",
         "status": "SENT",
         "entries": [
              {
@@ -208,9 +186,7 @@
                 "invoice_id": 80,
                 "notes": "payment for december",
                 "amount": 150,
-                "day": 5,
-                "month": 12,
-                "year": 2019,
+                "date": "2020-12-05",
                 "created_by": 97,
                 "created_at": "2019-10-02T09:18:02Z"
             }, ...
@@ -223,7 +199,7 @@
 
 ## Create invoice
 
-- `POST /projects/{projectId}/invoices` - Creates a new invoice for a specific project. Returns the same object as getting a single invoice.
+-   `POST /projects/{projectId}/invoices` - Creates a new invoice for a specific project. Returns the same object as getting a single invoice.
 
 ### Invoice
 
@@ -232,12 +208,8 @@
 | name              | String                                                   |
 | invoice_reference | String (Default INV-{Invoice ID})                        |
 | invoice_type      | String (DEPOSIT, FIXED_PRICE, TIME_AND_MATERIAL, MANUAL) |
-| created_day       | Integer                                                  |
-| created_month     | Integer                                                  |
-| created_year      | Integer                                                  |
-| due_day           | Integer                                                  |
-| due_month         | Integer                                                  |
-| due_year          | Integer                                                  |
+| created_date      | Date                                                     |
+| due_date          | Date                                                     |
 | notes             | String                                                   |
 | status            | String (DRAFT, APPROVED, SENT), (default DRAFT)          |
 | entries           | List<Entries>, List of entries                           |
@@ -266,12 +238,8 @@ POST https://api.forecast.it/api/v1/projects/4/invoices
     "name": "Invoice for the Queen",
     "invoice_reference": "INV-156",
     "invoice_type": "FIXED_PRICE",
-    "created_day": 5,
-    "created_month": 9,
-    "created_year": 2019,
-    "due_day": 12,
-    "due_month": 10,
-    "due_year": 2019,
+    "created_date": "2020-09-05",
+    "due_date": "2020-10-12",
     "status": "DRAFT",
     "entries": [
         {
@@ -291,7 +259,7 @@ POST https://api.forecast.it/api/v1/projects/4/invoices
 
 ## Update invoice
 
-- `PUT /invoices/{invoiceId}` - Updates a specific invoice. Returns the same object as getting a single invoice.
+-   `PUT /invoices/{invoiceId}` - Updates a specific invoice. Returns the same object as getting a single invoice.
 
 ### Invoice
 
@@ -300,12 +268,8 @@ POST https://api.forecast.it/api/v1/projects/4/invoices
 | name              | String                                                   |
 | invoice_reference | String (Default INV-{Invoice ID})                        |
 | invoice_type      | String (DEPOSIT, FIXED_PRICE, TIME_AND_MATERIAL, MANUAL) |
-| created_day       | Integer                                                  |
-| created_month     | Integer                                                  |
-| created_year      | Integer                                                  |
-| due_day           | Integer                                                  |
-| due_month         | Integer                                                  |
-| due_year          | Integer                                                  |
+| created_date      | Date                                                     |
+| due_date          | Date                                                     |
 | notes             | String                                                   |
 | status            | String (DRAFT, APPROVED, SENT), (default DRAFT)          |
 | entries           | List<Entries>, List of entries                           |
@@ -313,7 +277,7 @@ POST https://api.forecast.it/api/v1/projects/4/invoices
 
 ### Entries
 
-- If the entry id is specified then this entry will be updated (or an error occure if it does not exist) else a new entry will be created.
+-   If the entry id is specified then this entry will be updated (or an error occure if it does not exist) else a new entry will be created.
 
 | Request fields | Description/format         |
 | -------------- | -------------------------- |
@@ -328,7 +292,7 @@ POST https://api.forecast.it/api/v1/projects/4/invoices
 
 ### Payments
 
-- If the payment id is specified then this payment will be updated (or an error occure if it does not exist) else a new payment will be created.
+-   If the payment id is specified then this payment will be updated (or an error occure if it does not exist) else a new payment will be created.
 
 | Response fields | Description/format         |
 | --------------- | -------------------------- |
@@ -336,7 +300,7 @@ POST https://api.forecast.it/api/v1/projects/4/invoices
 | invoice_id      | Integer, ID of the Invoice |
 | notes           | String                     |
 | amount          | Double                     |
-| day             | Integer                    |
+| date            | Date                       |
 | month           | Integer                    |
 | year            | Integer                    |
 
@@ -352,17 +316,13 @@ PUT https://api.forecast.it/api/v1/invoices/58
     "name": "Invoice of the month",
     "invoice_reference": "INV-90",
     "invoice_type": "FIXED_PRICE",
-    "created_day": 15,
-    "created_month": 12,
-    "created_year": 2020,
-    "due_day": 16,
-    "due_month": 12,
-    "due_year": 2020,
+    "created_date": "2020-09-05",
+    "due_date": "2020-10-12",
     "status": "DRAFT",
     "entries": [
         {
             "id": 214,
-            "name": "entry 3",
+            "name": "interesting entry",
             "quantity": 2,
             "discount": 0,
             "tax": 0
@@ -374,9 +334,7 @@ PUT https://api.forecast.it/api/v1/invoices/58
             "invoice_id": 58,
             "notes": "awesome payment",
             "amount": 1500,
-            "day": 5,
-            "month": 12,
-            "year": 2019,
+            "date": "2020-12-05",
             "created_by": 97,
             "created_at": "2019-10-02T16:44:33Z"
         },...
@@ -388,7 +346,7 @@ PUT https://api.forecast.it/api/v1/invoices/58
 
 ## Delete Invoice
 
-- `DELETE /invoices/{invoiceId}` - Deletes a specific invoice and its entries and payments if there are.
+-   `DELETE /invoices/{invoiceId}` - Deletes a specific invoice and its entries and payments if there are.
 
 ### Sample JSON request
 
@@ -398,7 +356,7 @@ DELETE https://api.forecast.it/api/v1/invoices/1
 
 ## Create Invoice entry
 
-- `POST /invoices/{invoiceId}/invoice_entries` - Creates a new invoice entry for a specific invoice. Returns the newly created invoice entry.
+-   `POST /invoices/{invoiceId}/invoice_entries` - Creates a new invoice entry for a specific invoice. Returns the newly created invoice entry.
 
 | Request fields | Description/format         |
 | -------------- | -------------------------- |
@@ -428,7 +386,7 @@ POST https://api.forecast.it/api/v1/invoices/84/invoice_entries
 
 ## Update invoice entry
 
-- `PUT /invoice_entries/{invoiceEntryId}` - Updates a specific invoice entry. Returns the updated invoice entry.
+-   `PUT /invoice_entries/{invoiceEntryId}` - Updates a specific invoice entry. Returns the updated invoice entry.
 
 | Request fields | Description/format         |
 | -------------- | -------------------------- |
@@ -458,7 +416,7 @@ PUT https://api.forecast.it/api/v1/invoice_entries/221
 
 ## Delete Invoice Entry
 
-- `DELETE /invoice_entries/{invoiceEntryId}` - Deletes a specific invoice entry.
+-   `DELETE /invoice_entries/{invoiceEntryId}` - Deletes a specific invoice entry.
 
 ### Sample JSON request
 
@@ -468,15 +426,13 @@ DELETE https://api.forecast.it/api/v1/invoice_entries/1
 
 ## Create Invoice payment
 
-- `POST /invoices/{invoiceId}/invoice_payments` - Creates a new invoice payment for a specific invoice. Returns the newly created invoice payment.
+-   `POST /invoices/{invoiceId}/invoice_payments` - Creates a new invoice payment for a specific invoice. Returns the newly created invoice payment.
 
 | Request fields | Description/format |
 | -------------- | ------------------ |
 | notes          | String             |
 | amount         | Integer            |
-| year           | Integer            |
-| month          | Integer            |
-| day            | Integer            |
+| date           | Date               |
 
 ### Sample JSON request
 
@@ -488,9 +444,7 @@ POST https://api.forecast.it/api/v1/invoices/80/invoice_payments
     "invoice_id": 80,
     "notes": "the payment",
     "amount": 150,
-    "day": 5,
-    "month": 12,
-    "year": 2019,
+    "date": "2020-12-05",
     "created_by": 97,
     "created_at": "2019-10-02T17:28:29Z"
 }
@@ -498,7 +452,7 @@ POST https://api.forecast.it/api/v1/invoices/80/invoice_payments
 
 ## Update Invoice Payment
 
-- `PUT /invoice_payments/{invoicePaymentId}` - Updates a specific invoice payment. Returns the updated invoice payment.
+-   `PUT /invoice_payments/{invoicePaymentId}` - Updates a specific invoice payment. Returns the updated invoice payment.
 
 | Request fields | Description/format |
 | -------------- | ------------------ |
@@ -507,7 +461,6 @@ POST https://api.forecast.it/api/v1/invoices/80/invoice_payments
 | year           | Integer            |
 | month          | Integer            |
 | day            | Integer            |
-
 
 ### Sample JSON request
 
@@ -519,9 +472,7 @@ PUT https://api.forecast.it/api/v1/invoice_payments/7
     "invoice_id": 80,
     "notes": "the payment",
     "amount": 150,
-    "day": 5,
-    "month": 12,
-    "year": 2019,
+    "date": "2020-12-05",
     "created_by": 97,
     "created_at": "2019-10-02T17:28:29Z"
 }
@@ -529,7 +480,7 @@ PUT https://api.forecast.it/api/v1/invoice_payments/7
 
 ## Delete Invoice Entry
 
-- `DELETE /invoice_entries/{invoiceEntryId}` - Deletes a specific invoice payment.
+-   `DELETE /invoice_entries/{invoiceEntryId}` - Deletes a specific invoice payment.
 
 ### Sample JSON request
 
