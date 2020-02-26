@@ -6,7 +6,7 @@ This is a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer)-s
 
 # What can you do with it?
 
-A ton of stuff! We've exposed all the needed services for you to use in your applications. 
+A ton of stuff! We've exposed all the needed services for you to use in your applications.
 
 # How do I get started?
 
@@ -43,9 +43,10 @@ If you're worried that an API key has been compromised, or you're simply no long
 ### API key security
 
 API keys grant full access to your [Forecast](https://www.forecast.it) account, and should be protected the same way you would protect your password. In particular, there are a few common scenarios to keep in mind when working with API keys:
-* Give each integration its own API key (or at least use a few). If a specific API key is compromised, you can disable that key without disabling access to all of your other integrations.
-* Be careful not to expose the key to the public (such as in screenshots, videos, help documentation, source control, etc). Remember that blurring your data isn't always enough. It's best to use "cut" functions in your graphics program to remove the data completely.
-* If a key needs to be shared, generate a new key so it can be disabled, if needed. Make sure never to email the API key; if your email account becomes compromised, the emailed key would allow hackers access to your [Forecast](https://www.forecast.it) account as well.
+
+-   Give each integration its own API key (or at least use a few). If a specific API key is compromised, you can disable that key without disabling access to all of your other integrations.
+-   Be careful not to expose the key to the public (such as in screenshots, videos, help documentation, source control, etc). Remember that blurring your data isn't always enough. It's best to use "cut" functions in your graphics program to remove the data completely.
+-   If a key needs to be shared, generate a new key so it can be disabled, if needed. Make sure never to email the API key; if your email account becomes compromised, the emailed key would allow hackers access to your [Forecast](https://www.forecast.it) account as well.
 
 ## No XML, just JSON
 
@@ -57,7 +58,7 @@ You'll receive a 415 Unsupported Media Type response code if you don't include t
 
 All GET requests return 200 OK on success along with the JSON of the requested elements (See specific resource entry for JSON examples).
 
-Successful POST requests return 201 CREATED, and successful PUT requests return 200 OK. 
+Successful POST requests return 201 CREATED, and successful PUT requests return 200 OK.
 
 Successful PUT and POST requests also return the JSON of the created/updated resource similar to what you would get from a GET request for that specific resource.
 
@@ -75,49 +76,51 @@ If [Forecast](https://www.forecast.it) is having trouble, you might see a 5xx er
 
 Errors are returned in the following JSON format.
 
-|Response Fields | Description/Format|
-|------------ | -------------|
-|status | Integer, the status code of the error. This corresponds to the HTTP status code|
-|message | String, a descriptive message explaining the error|
+| Response Fields | Description/Format                                                              |
+| --------------- | ------------------------------------------------------------------------------- |
+| status          | Integer, the status code of the error. This corresponds to the HTTP status code |
+| message         | String, a descriptive message explaining the error                              |
 
 ### Sample JSON Error Response
+
 ```json
 {
-    "status":401,
-    "message":"Server failed to authenticate the request."
+	"status": 401,
+	"message": "Server failed to authenticate the request."
 }
 ```
 
 ## API sections (Work in progress)
 
-* [Allocations](sections/allocations.md#allocations)
-* [Cards](sections/cards.md#cards)
-* [Clients](sections/clients.md#clients)
-* [Connected projects](sections/connected_projects.md#connected-projects)
-* [Expense items](sections/expense_items.md#expense-items)
-* [Holiday calendar entries](sections/holiday_calendar_entries.md#holiday-calendar-entries)
-* [Holiday calendars](sections/holiday_calendars.md#holiday-calendars)
-* [Labels](sections/labels.md#labels)
-* [Milestones](sections/milestones.md#milestones)
-* [Non project time](sections/non_project_time.md#non-project-time)
-* [Persons](sections/persons.md#persons)
-* [Person cost periods](sections/person_cost_periods.md#person-cost-periods)
-* [Project team](sections/project_team.md#project-team)
-* [Projects](sections/projects.md#projects)
-* [Rate card rates](sections/rate_card_rates.md#rate-card-rates)
-* [Rate cards](sections/rate_cards.md#rate-cards)
-* [Repeating cards](sections/repeating_cards.md#repeating-cards)
-* [Roles](sections/roles.md#roles)
-* [Sprints](sections/sprints.md#sprints)
-* [Sub tasks](sections/sub_tasks.md#sub-tasks)
-* [Time registrations](sections/time_registrations.md#time-registrations)
-* [Workflow columns](sections/workflow_columns.md#workflow-columns)
+-   [Allocations](sections/allocations.md#allocations)
+-   [Cards](sections/cards.md#cards)
+-   [Clients](sections/clients.md#clients)
+-   [Connected projects](sections/connected_projects.md#connected-projects)
+-   [Expense items](sections/expense_items.md#expense-items)
+-   [Holiday calendar entries](sections/holiday_calendar_entries.md#holiday-calendar-entries)
+-   [Holiday calendars](sections/holiday_calendars.md#holiday-calendars)
+-   [Labels](sections/labels.md#labels)
+-   [Milestones](sections/milestones.md#milestones)
+-   [Non project time](sections/non_project_time.md#non-project-time)
+-   [Persons](sections/persons.md#persons)
+-   [Person cost periods](sections/person_cost_periods.md#person-cost-periods)
+-   [Project team](sections/project_team.md#project-team)
+-   [Projects](sections/projects.md#projects)
+-   [Rate card rates](sections/rate_card_rates.md#rate-card-rates)
+-   [Rate cards](sections/rate_cards.md#rate-cards)
+-   [Repeating cards](sections/repeating_cards.md#repeating-cards)
+-   [Roles](sections/roles.md#roles)
+-   [Sprints](sections/sprints.md#sprints)
+-   [Sub tasks](sections/sub_tasks.md#sub-tasks)
+-   [Time registrations](sections/time_registrations.md#time-registrations)
+-   [Workflow columns](sections/workflow_columns.md#workflow-columns)
+-   [Invoices](sections/invoices.md#invoices)
 
 ## API libraries
 
-* [Google APIs Client Library](https://code.google.com/p/google-api-java-client/) - Java
-* [Jersey](https://jersey.java.net/) - Java
-* Feel free to add libraries for other languages :) 
+-   [Google APIs Client Library](https://code.google.com/p/google-api-java-client/) - Java
+-   [Jersey](https://jersey.java.net/) - Java
+-   Feel free to add libraries for other languages :)
 
 ## Help us make it better
 
