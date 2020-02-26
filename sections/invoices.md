@@ -61,7 +61,7 @@
 ```javascript
 [
     {
-        "id": 58,
+        "id": 80,
         "company_invoice_id": 90,
         "project_id": 4,
         "name": "Invoice for Client 12",
@@ -159,7 +159,7 @@
 
 ```javascript
    {
-        "id": 58,
+        "id": 123,
         "company_invoice_id": 90,
         "project_id": 4,
         "name": "Invoice for Client 12",
@@ -170,8 +170,8 @@
         "status": "SENT",
         "entries": [
              {
-                "id": 134,
-                "invoice_id": 80,
+                "id": 1,
+                "invoice_id": 123,
                 "name": "Time worked on Task 2",
                 "quantity": 2,
                 "unit_price": 12.5,
@@ -182,8 +182,8 @@
         ],
         "payments": [
             {
-                "id": 2,
-                "invoice_id": 80,
+                "id": 1,
+                "invoice_id": 123,
                 "notes": "payment for december",
                 "amount": 150,
                 "date": "2020-12-05",
@@ -216,25 +216,21 @@
 
 ### Entries
 
-| Request fields | Description/format         |
-| -------------- | -------------------------- |
-| invoice_id     | Integer, ID of the Invoice |
-| name           | String                     |
-| quantity       | Integer                    |
-| unit_price     | Double                     |
-| discount       | Double                     |
-| tax            | Double                     |
-| description    | String                     |
+| Request fields | Description/format |
+| -------------- | ------------------ |
+| name           | String             |
+| quantity       | Integer            |
+| unit_price     | Double             |
+| discount       | Double             |
+| tax            | Double             |
+| description    | String             |
 
 ### Sample JSON request
 
-POST https://api.forecast.it/api/v1/projects/4/invoices
+POST https://api.forecast.it/api/v1/projects/123/invoices
 
 ```javascript
 {
-    "id": 139,
-    "company_invoice_id": 156,
-    "project_id": 4,
     "name": "Invoice for the Queen",
     "invoice_reference": "INV-156",
     "invoice_type": "FIXED_PRICE",
@@ -243,17 +239,13 @@ POST https://api.forecast.it/api/v1/projects/4/invoices
     "status": "DRAFT",
     "entries": [
         {
-            "id": 134,
-            "invoice_id": 80,
             "name": "Time worked on Task 10",
             "quantity": 2,
             "unit_price": 12.5,
             "discount": 0,
             "tax": 0,
-        }
-    ], ...
-    "created_by": 97,
-    "created_at": "2019-10-02T15:48:19Z"
+        }, ...
+    ]
 }
 ```
 
@@ -279,40 +271,33 @@ POST https://api.forecast.it/api/v1/projects/4/invoices
 
 -   If the entry id is specified then this entry will be updated (or an error occure if it does not exist) else a new entry will be created.
 
-| Request fields | Description/format         |
-| -------------- | -------------------------- |
-| id             | Integer, ID of the entry   |
-| invoice_id     | Integer, ID of the Invoice |
-| name           | String                     |
-| quantity       | Integer                    |
-| unit_price     | Double                     |
-| discount       | Double                     |
-| tax            | Double                     |
-| description    | String                     |
+| Request fields | Description/format       |
+| -------------- | ------------------------ |
+| id             | Integer, ID of the entry |
+| name           | String                   |
+| quantity       | Integer                  |
+| unit_price     | Double                   |
+| discount       | Double                   |
+| tax            | Double                   |
+| description    | String                   |
 
 ### Payments
 
 -   If the payment id is specified then this payment will be updated (or an error occure if it does not exist) else a new payment will be created.
 
-| Response fields | Description/format         |
-| --------------- | -------------------------- |
-| id              | Integer                    |
-| invoice_id      | Integer, ID of the Invoice |
-| notes           | String                     |
-| amount          | Double                     |
-| date            | Date                       |
-| month           | Integer                    |
-| year            | Integer                    |
+| Request fields | Description/format         |
+| -------------- | -------------------------- |
+| id             | Integer, ID of the payment |
+| notes          | String                     |
+| amount         | Double                     |
+| date           | Date                       |
 
 ### Sample JSON request
 
-PUT https://api.forecast.it/api/v1/invoices/58
+PUT https://api.forecast.it/api/v1/invoices/123
 
 ```javascript
 {
-    "id": 58,
-    "company_invoice_id": 90,
-    "project_id": 4,
     "name": "Invoice of the month",
     "invoice_reference": "INV-90",
     "invoice_type": "FIXED_PRICE",
@@ -325,32 +310,28 @@ PUT https://api.forecast.it/api/v1/invoices/58
             "name": "interesting entry",
             "quantity": 2,
             "discount": 0,
-            "tax": 0
+            "tax": 0,
+            "unit_price": 100.00
         },...
     ],
     "payments": [
         {
             "id": 6,
-            "invoice_id": 58,
             "notes": "awesome payment",
             "amount": 1500,
-            "date": "2020-12-05",
-            "created_by": 97,
-            "created_at": "2019-10-02T16:44:33Z"
+            "date": "2020-12-05"
         },...
-    ],
-    "created_by": 97,
-    "created_at": "2019-10-01T11:21:36Z"
+    ]
 }
 ```
 
 ## Delete Invoice
 
--   `DELETE /invoices/{invoiceId}` - Deletes a specific invoice and its entries and payments if there are.
+-   `DELETE /invoices/{invoiceId}` - Deletes a specific invoice and its entries and payments if there are any.
 
 ### Sample JSON request
 
-DELETE https://api.forecast.it/api/v1/invoices/1
+DELETE https://api.forecast.it/api/v1/invoices/123
 
 # Invoice Entries
 
@@ -358,15 +339,14 @@ DELETE https://api.forecast.it/api/v1/invoices/1
 
 -   `POST /invoices/{invoiceId}/invoice_entries` - Creates a new invoice entry for a specific invoice. Returns the newly created invoice entry.
 
-| Request fields | Description/format         |
-| -------------- | -------------------------- |
-| project_id     | Integer, ID of the porject |
-| name           | String                     |
-| quantity       | Integer                    |
-| unit_price     | Double                     |
-| discount       | Double                     |
-| tax            | Double                     |
-| description    | String                     |
+| Request fields | Description/format |
+| -------------- | ------------------ |
+| name           | String, Required   |
+| quantity       | Integer, Required  |
+| unit_price     | Double, Required   |
+| discount       | Double             |
+| tax            | Double             |
+| description    | String             |
 
 ### Sample JSON request
 
@@ -374,13 +354,12 @@ POST https://api.forecast.it/api/v1/invoices/84/invoice_entries
 
 ```javascript
 {
-    "id": 134,
-    "invoice_id": 84,
     "name": "2 hours registered",
     "quantity": 2,
     "unit_price": 12.5,
     "discount": 0,
-    "tax": 0
+    "tax": 0,
+    "description": "Worked on the thing"
 }
 ```
 
@@ -388,29 +367,27 @@ POST https://api.forecast.it/api/v1/invoices/84/invoice_entries
 
 -   `PUT /invoice_entries/{invoiceEntryId}` - Updates a specific invoice entry. Returns the updated invoice entry.
 
-| Request fields | Description/format         |
-| -------------- | -------------------------- |
-| invoice_id     | Integer, ID of the Invoice |
-| name           | String                     |
-| quantity       | Integer                    |
-| unit_price     | Double                     |
-| discount       | Double                     |
-| tax            | Double                     |
-| description    | String                     |
+| Request fields | Description/format |
+| -------------- | ------------------ |
+| name           | String             |
+| quantity       | Integer            |
+| unit_price     | Double             |
+| discount       | Double             |
+| tax            | Double             |
+| description    | String             |
 
 ### Sample JSON request
 
-PUT https://api.forecast.it/api/v1/invoice_entries/221
+PUT https://api.forecast.it/api/v1/invoice_entries/123
 
 ```javascript
 {
-    "id": 221,
-    "invoice_id": 59,
     "name": "New name",
     "quantity": 2,
     "unit_price": 12.5,
     "discount": 0,
-    "tax": 0
+    "tax": 0,
+    "description": "Worked on the thing"
 }
 ```
 
@@ -420,7 +397,7 @@ PUT https://api.forecast.it/api/v1/invoice_entries/221
 
 ### Sample JSON request
 
-DELETE https://api.forecast.it/api/v1/invoice_entries/1
+DELETE https://api.forecast.it/api/v1/invoice_entries/123
 
 # Invoice Payments
 
@@ -440,13 +417,9 @@ POST https://api.forecast.it/api/v1/invoices/80/invoice_payments
 
 ```javascript
 {
-    "id": 7,
-    "invoice_id": 80,
     "notes": "the payment",
     "amount": 150,
-    "date": "2020-12-05",
-    "created_by": 97,
-    "created_at": "2019-10-02T17:28:29Z"
+    "date": "2020-12-05"
 }
 ```
 
@@ -458,23 +431,17 @@ POST https://api.forecast.it/api/v1/invoices/80/invoice_payments
 | -------------- | ------------------ |
 | notes          | String             |
 | amount         | Integer            |
-| year           | Integer            |
-| month          | Integer            |
-| day            | Integer            |
+| date           | Date               |
 
 ### Sample JSON request
 
-PUT https://api.forecast.it/api/v1/invoice_payments/7
+PUT https://api.forecast.it/api/v1/invoice_payments/123
 
 ```javascript
 {
-    "id": 7,
-    "invoice_id": 80,
     "notes": "the payment",
     "amount": 150,
     "date": "2020-12-05",
-    "created_by": 97,
-    "created_at": "2019-10-02T17:28:29Z"
 }
 ```
 
@@ -484,4 +451,4 @@ PUT https://api.forecast.it/api/v1/invoice_payments/7
 
 ### Sample JSON request
 
-DELETE https://api.forecast.it/api/v1/invoice_payments/1
+DELETE https://api.forecast.it/api/v1/invoice_payments/123
