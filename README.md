@@ -99,6 +99,7 @@ Errors are returned in the following JSON format.
 -   [Expense items](sections/expense_items.md#expense-items)
 -   [Holiday calendar entries](sections/holiday_calendar_entries.md#holiday-calendar-entries)
 -   [Holiday calendars](sections/holiday_calendars.md#holiday-calendars)
+-   [Invoices](sections/invoices.md#invoices)
 -   [Labels](sections/labels.md#labels)
 -   [Milestones](sections/milestones.md#milestones)
 -   [Non project time](sections/non_project_time.md#non-project-time)
@@ -114,7 +115,6 @@ Errors are returned in the following JSON format.
 -   [Sub tasks](sections/sub_tasks.md#sub-tasks)
 -   [Time registrations](sections/time_registrations.md#time-registrations)
 -   [Workflow columns](sections/workflow_columns.md#workflow-columns)
--   [Invoices](sections/invoices.md#invoices)
 
 ## API libraries
 
