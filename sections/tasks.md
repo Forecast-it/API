@@ -10,7 +10,7 @@
 | Response fields  | Description/format                                |
 | ---------------- | ------------------------------------------------- |
 | id               | Integer                                           |
-| company_card_id  | Integer, depricated use 'company_task_id' instead |
+| company_card_id  | Integer, deprecated use 'company_task_id' instead |
 | company_task_id  | Integer                                           |
 | title            | String                                            |
 | description      | String                                            |
@@ -81,7 +81,7 @@
 | Response fields  | Description/format                                |
 | ---------------- | ------------------------------------------------- |
 | id               | Integer                                           |
-| company_card_id  | Integer, depricated use 'company_task_id' instead |
+| company_card_id  | Integer, deprecated use 'company_task_id' instead |
 | company_task_id  | Integer                                           |
 | title            | String                                            |
 | description      | String                                            |
@@ -151,7 +151,7 @@
 | Response fields  | Description/format                                |
 | ---------------- | ------------------------------------------------- |
 | id               | Integer                                           |
-| company_card_id  | Integer, depricated use 'company_task_id' instead |
+| company_card_id  | Integer, deprecated use 'company_task_id' instead |
 | company_task_id  | Integer                                           |
 | title            | String                                            |
 | description      | String                                            |
@@ -219,7 +219,7 @@
 | Response fields | Description/format                        |
 | --------------- | ----------------------------------------- |
 | id              | Integer                                   |
-| card_id         | Integer, Depricated use 'task_id' instead |
+| card_id         | Integer, deprecated use 'task_id' instead |
 | task_id         | Integer                                   |
 | comment         | String                                    |
 | created_at      | Date                                      |

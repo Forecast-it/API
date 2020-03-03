@@ -24,7 +24,8 @@
 | sprint_length                | Integer                                                          |
 | start_date                   | Date                                                             |
 | end_date                     | Date                                                             |
-| card_levels                  | Integer (1 or 2)                                                 |
+| card_levels                  | Integer, deprecated. Use 'task_levels' instead                   |
+| task_levels                  | Integer (1 or 2)                                                 |
 | client                       | Integer, ID of client                                            |
 | rate_card                    | Integer, ID of rate card                                         |
 | remaining_auto_calculated    | Boolean                                                          |
@@ -57,7 +58,7 @@
       "sprint_length": 14,
       "start_date": "2017-01-01",
       "end_date": "2018-01-01",
-      "card_levels": 1,
+      "task_levels": 1,
       "client": 1,
       "rate_card": 1,
       "remaining_auto_calculated": false,
@@ -96,7 +97,8 @@
 | sprint_length                | Integer                                                          |
 | start_date                   | Date                                                             |
 | end_date                     | Date                                                             |
-| card_levels                  | Integer (1 or 2)                                                 |
+| card_levels                  | Integer, deprecated. Use 'task_levels' instead                   |
+| task_levels                  | Integer (1 or 2)                                                 |
 | client                       | Integer, ID of client                                            |
 | rate_card                    | Integer, ID of rate card                                         |
 | remaining_auto_calculated    | Boolean                                                          |
@@ -128,7 +130,7 @@
    "sprint_length": 14,
    "start_date": "2017-01-01",
    "end_date": "2018-01-01",
-   "card_levels": 1,
+   "task_levels": 1,
    "client": 1,
    "rate_card": 1,
    "remaining_auto_calculated": false,
@@ -162,7 +164,8 @@
 | sprint_length                | Integer (Defaults to 14)                                                                          |
 | start_date                   | Date                                                                                              |
 | end_date                     | Date                                                                                              |
-| card_levels                  | Integer (1 or 2) (Defaults to 1)                                                                  |
+| card_levels                  | Integer, deprecated. Use 'task_levels' instead                                                    |
+| task_levels                  | Integer (1 or 2) (Defaults to 1)                                                                  |
 | client                       | Integer, ID of client                                                                             |
 | rate_card                    | Integer, ID of rate card                                                                          |
 | remaining_auto_calculated    | Boolean (Defaults to true)                                                                        |
@@ -208,7 +211,8 @@ POST https://api.forecast.it/api/v1/projects
 | remaining_auto_calculated    | Boolean                                                          |
 | start_date                   | Date                                                             |
 | end_date                     | Date                                                             |
-| card_levels                  | Integer (1 or 2)                                                 |
+| card_levels                  | Integer, deprecated. Use 'task_levels' instead                   |
+| task_levels                  | Integer (1 or 2)                                                 |
 | client                       | Integer, ID of client                                            |
 | rate_card                    | Integer, ID of rate card                                         |
 | use_project_allocations      | Boolean                                                          |
@@ -256,6 +260,7 @@ GET https://api.forecast.it/api/v1/projects/1/statuses
 ## Get project financials
 
 -  `GET /projects/{projectId}/financials` - Returns all financial data for the project, broken down to milestone and role level.
+-  `GET /projects/{projectId}/financials?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns all financial data for the project between `start_date` and `end_date`, broken down to milestone and role level.
 
 Some data in the response is broken down on the individual milestones of the project in arrays called `milestone_breakdown`. Each of these milestones can be further broken down on the individual roles in arrays called `role_breakdown`.
 

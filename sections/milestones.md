@@ -2,20 +2,21 @@
 
 ## Get milestones
 
-* `GET /projects/{projectId}/milestones` - Returns all milestones of the project.
+-  `GET /projects/{projectId}/milestones` - Returns all milestones of the project.
 
-|Response fields | Description/format|
-|------------ | -------------|
-|id | Integer|
-|name | String|
-|start_date | Date|
-|end_date | Date|
-|created_by | Integer, ID of person|
-|updated_by | Integer, ID of person|
-|created_at | Date|
-|updated_at | Date|
+| Response fields | Description/format    |
+| --------------- | --------------------- |
+| id              | Integer               |
+| name            | String                |
+| start_date      | Date                  |
+| end_date        | Date                  |
+| created_by      | Integer, ID of person |
+| updated_by      | Integer, ID of person |
+| created_at      | Date                  |
+| updated_at      | Date                  |
 
 ### Sample JSON response
+
 ```javascript
 [
    {
@@ -33,20 +34,21 @@
 
 ## Get milestone
 
-* `GET /projects/{projectId}/milestones/{milestoneId}` - Returns a specific milestone.
+-  `GET /projects/{projectId}/milestones/{milestoneId}` - Returns a specific milestone.
 
-|Response fields | Description/format|
-|------------ | -------------|
-|id | Integer|
-|name | String|
-|start_date | Date|
-|end_date | Date|
-|created_by | Integer, ID of person|
-|updated_by | Integer, ID of person|
-|created_at | Date|
-|updated_at | Date|
+| Response fields | Description/format    |
+| --------------- | --------------------- |
+| id              | Integer               |
+| name            | String                |
+| start_date      | Date                  |
+| end_date        | Date                  |
+| created_by      | Integer, ID of person |
+| updated_by      | Integer, ID of person |
+| created_at      | Date                  |
+| updated_at      | Date                  |
 
 ### Sample JSON response
+
 ```javascript
 {
    "id":1,
@@ -62,15 +64,16 @@
 
 ## Create milestone
 
-* `POST /projects/{projectId}/milestones` - Creates a new milestone. Returns the same object as getting a single milestone.
+-  `POST /projects/{projectId}/milestones` - Creates a new milestone. Returns the same object as getting a single milestone.
 
-|Request fields | Description/format|
-|------------ | -------------|
-|name | (Required) String|
-|start_date | Date|
-|end_date | Date|
+| Request fields | Description/format |
+| -------------- | ------------------ |
+| name           | (Required) String  |
+| start_date     | Date               |
+| end_date       | Date               |
 
 ### Sample JSON request
+
 POST https://api.forecast.it/api/v1/projects/1/milestones
 
 ```javascript
@@ -83,15 +86,16 @@ POST https://api.forecast.it/api/v1/projects/1/milestones
 
 ## Update milestone
 
-* `PUT /projects/{projectId}/milestones/{milestoneId}` - Updates an milestone. Returns the same object as getting a single milestone.
+-  `PUT /projects/{projectId}/milestones/{milestoneId}` - Updates an milestone. Returns the same object as getting a single milestone.
 
-|Request fields | Description/format|
-|------------ | -------------|
-|name | String|
-|start_date | Date|
-|end_date | Date|
+| Request fields | Description/format |
+| -------------- | ------------------ |
+| name           | String             |
+| start_date     | Date               |
+| end_date       | Date               |
 
 ### Sample JSON request
+
 PUT https://api.forecast.it/api/v1/projects/1/milestones/1
 
 ```javascript
@@ -102,7 +106,8 @@ PUT https://api.forecast.it/api/v1/projects/1/milestones/1
 
 ## Delete milestone
 
-* `DELETE /projects/{projectId}/milestones/{milestoneId}` - Deletes a milestone. Does not delete cards in the milestone.
+-  `DELETE /projects/{projectId}/milestones/{milestoneId}` - Deletes a milestone. Does not delete tasks in the milestone.
 
 ### Sample JSON request
+
 DELETE https://api.forecast.it/api/v1/projects/1/milestones/1

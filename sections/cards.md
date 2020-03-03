@@ -1,6 +1,6 @@
 # Cards
 
-NB! These endpoints have been depricated. Use [Tasks](tasks.md#tasks) instead.
+NB! These endpoints have been deprecated. Use [Tasks](tasks.md#tasks) instead.
 
 ## Get all cards
 

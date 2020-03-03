@@ -1,6 +1,6 @@
 # Repeating cards
 
-NB! These endpoints have been depricated. Use [Repeating Tasks](repeating_tasks.md#repeating-tasks)) instead.
+NB! These endpoints have been deprecated. Use [Repeating Tasks](repeating_tasks.md#repeating-tasks)) instead.
 
 ## Get a repeating card
 
