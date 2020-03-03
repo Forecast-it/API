@@ -1,6 +1,6 @@
 # Tasks
 
-(Formerly known as cards. See old docs here: [Cards](sections/cards.md#cards))
+(Formerly known as cards. See old docs here: [Cards](cards.md#cards))
 
 ## Get all tasks
 

@@ -1,6 +1,6 @@
 # Repeating tasks
 
-(Formerly known as Repeating Cards. See old docs here: [Repeating cards](sections/repeating_cards.md#repeating-cards))
+(Formerly known as Repeating Cards. See old docs here: [Repeating cards](repeating_cards.md#repeating-cards))
 
 ## Get a repeating task
 
