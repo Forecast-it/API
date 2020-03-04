@@ -2,7 +2,7 @@
 
 ## Get project workflow columns
 
-* `GET /projects/{projectId}/workflow_columns` - Returns all workflow columns of the project.
+-  `GET /projects/{projectId}/workflow_columns` - Returns all workflow columns of the project.
 
 | Response fields                   | Description/format                               |
 | --------------------------------- | ------------------------------------------------ |
@@ -36,7 +36,7 @@
 
 ## Get connected project workflow columns
 
-* `GET /connected_projects/{connectedProjectId}/workflow_columns` - Returns all workflow columns of the connected project.
+-  `GET /connected_projects/{connectedProjectId}/workflow_columns` - Returns all workflow columns of the connected project.
 
 | Response fields | Description/format              |
 | --------------- | ------------------------------- |
@@ -68,7 +68,7 @@
 
 ## Get project workflow column
 
-* `GET /projects/{projectId}/workflow_columns/{workflow_columnId}` - Returns a specific project workflow column.
+-  `GET /projects/{projectId}/workflow_columns/{workflow_columnId}` - Returns a specific project workflow column.
 
 | Response fields                   | Description/format                               |
 | --------------------------------- | ------------------------------------------------ |
@@ -100,7 +100,7 @@
 
 ## Get connected project workflow column
 
-* `GET /connected_projects/{connectedProjectId}/workflow_columns/{workflow_columnId}` - Returns a specific connected project workflow column.
+-  `GET /connected_projects/{connectedProjectId}/workflow_columns/{workflow_columnId}` - Returns a specific connected project workflow column.
 
 | Response fields | Description/format              |
 | --------------- | ------------------------------- |
@@ -130,7 +130,7 @@
 
 ## Create project workflow column
 
-* `POST /projects/{projectId}/workflow_columns` - Creates a new project workflow column. Returns the same object as getting a single workflow column.
+-  `POST /projects/{projectId}/workflow_columns` - Creates a new project workflow column. Returns the same object as getting a single workflow column.
 
 | Request fields | Description/format                                 |
 | -------------- | -------------------------------------------------- |
@@ -152,7 +152,7 @@ POST https://api.forecast.it/api/v1/projects/1/workflow_columns
 
 ## Create connected project workflow column
 
-* `POST /connected_projects/{connectedProjectId}/workflow_columns` - Creates a new connected project workflow column. Returns the same object as getting a single workflow column.
+-  `POST /connected_projects/{connectedProjectId}/workflow_columns` - Creates a new connected project workflow column. Returns the same object as getting a single workflow column.
 
 | Request fields | Description/format                                 |
 | -------------- | -------------------------------------------------- |
@@ -174,7 +174,7 @@ POST https://api.forecast.it/api/v1/connected_projects/1/workflow_columns
 
 ## Update project workflow column
 
-* `PUT /projects/{projectId}/workflow_columns/{workflow_columnId}` - Updates project workflow column. Returns the same object as getting a single workflow column.
+-  `PUT /projects/{projectId}/workflow_columns/{workflow_columnId}` - Updates project workflow column. Returns the same object as getting a single workflow column.
 
 | Request fields | Description/format                                 |
 | -------------- | -------------------------------------------------- |
@@ -194,7 +194,7 @@ PUT https://api.forecast.it/api/v1/projects/1/workflow_columns/1
 
 ## Update connected project workflow column
 
-* `PUT /connected_projects/{connectedProjectId}/workflow_columns/{workflow_columnId}` - Updates connected project workflow column. Returns the same object as getting a single workflow column.
+-  `PUT /connected_projects/{connectedProjectId}/workflow_columns/{workflow_columnId}` - Updates connected project workflow column. Returns the same object as getting a single workflow column.
 
 | Request fields | Description/format                                 |
 | -------------- | -------------------------------------------------- |
@@ -214,7 +214,7 @@ PUT https://api.forecast.it/api/v1/connected_projects/1/workflow_columns/1
 
 ## Delete project workflow column
 
-* `DELETE /projects/{projectId}/workflow_columns/{workflow_columnId}` - Deletes project workflow column. Does not delete cards in the workflow column.
+-  `DELETE /projects/{projectId}/workflow_columns/{workflow_columnId}` - Deletes project workflow column. Does not delete tasks in the workflow column.
 
 ### Sample JSON request
 
@@ -222,7 +222,7 @@ DELETE https://api.forecast.it/api/v1/projects/1/workflow_columns/1
 
 ## Delete connected project workflow column
 
-* `DELETE /connected_projects/{connectedProjectId}/workflow_columns/{workflow_columnId}` - Deletes connected project workflow column. Does not delete cards in the workflow column.
+-  `DELETE /connected_projects/{connectedProjectId}/workflow_columns/{workflow_columnId}` - Deletes connected project workflow column. Does not delete tasks in the workflow column.
 
 ### Sample JSON request
 

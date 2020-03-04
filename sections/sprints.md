@@ -2,7 +2,7 @@
 
 ## Get project sprints
 
-* `GET /projects/{projectId}/sprints` - Returns all sprints of the project.
+-  `GET /projects/{projectId}/sprints` - Returns all sprints of the project.
 
 | Response fields          | Description/format                      |
 | ------------------------ | --------------------------------------- |
@@ -36,7 +36,7 @@
 
 ## Get connected project sprints
 
-* `GET /connected_projects/{connectedProjectId}/sprints` - Returns all sprints of the connected project.
+-  `GET /connected_projects/{connectedProjectId}/sprints` - Returns all sprints of the connected project.
 
 | Response fields | Description/format    |
 | --------------- | --------------------- |
@@ -68,7 +68,7 @@
 
 ## Get project sprint
 
-* `GET /projects/{projectId}/sprints/{sprintId}` - Returns a specific sprint of the project.
+-  `GET /projects/{projectId}/sprints/{sprintId}` - Returns a specific sprint of the project.
 
 | Response fields          | Description/format                      |
 | ------------------------ | --------------------------------------- |
@@ -100,7 +100,7 @@
 
 ## Get connected project sprint
 
-* `GET /connected_projects/{connectedProjectId}/sprints/{sprintId}` - Returns a specific sprint of the connected project.
+-  `GET /connected_projects/{connectedProjectId}/sprints/{sprintId}` - Returns a specific sprint of the connected project.
 
 | Response fields | Description/format    |
 | --------------- | --------------------- |
@@ -130,7 +130,7 @@
 
 ## Create project sprint
 
-* `POST /projects/{projectId}/sprints` - Creates a new project sprint. Returns the same object as getting a single sprint.
+-  `POST /projects/{projectId}/sprints` - Creates a new project sprint. Returns the same object as getting a single sprint.
 
 | Request fields | Description/format |
 | -------------- | ------------------ |
@@ -152,7 +152,7 @@ POST https://api.forecast.it/api/v1/projects/1/sprints
 
 ## Create connected project sprint
 
-* `POST /connected_projects/{connectedProjectId}/sprints` - Creates a new connected project sprint. Returns the same object as getting a single sprint.
+-  `POST /connected_projects/{connectedProjectId}/sprints` - Creates a new connected project sprint. Returns the same object as getting a single sprint.
 
 | Request fields | Description/format |
 | -------------- | ------------------ |
@@ -174,7 +174,7 @@ POST https://api.forecast.it/api/v1/connected_projects/1/sprints
 
 ## Update project sprint
 
-* `PUT /projects/{projectId}/sprints/{sprintId}` - Updates a project sprint. Returns the same object as getting a single sprint.
+-  `PUT /projects/{projectId}/sprints/{sprintId}` - Updates a project sprint. Returns the same object as getting a single sprint.
 
 | Request fields | Description/format |
 | -------------- | ------------------ |
@@ -194,7 +194,7 @@ PUT https://api.forecast.it/api/v1/projects/1/sprints/1
 
 ## Update connected project sprint
 
-* `PUT /connected_projects/{connectedProjectId}/sprints/{sprintId}` - Updates a connected project sprint. Returns the same object as getting a single sprint.
+-  `PUT /connected_projects/{connectedProjectId}/sprints/{sprintId}` - Updates a connected project sprint. Returns the same object as getting a single sprint.
 
 | Request fields | Description/format |
 | -------------- | ------------------ |
@@ -214,7 +214,7 @@ PUT https://api.forecast.it/api/v1/connected_projects/1/sprints/1
 
 ## Delete project sprint
 
-* `DELETE /projects/{projectId}/sprints/{sprintId}` - Deletes a project sprint. Does not delete cards in the sprint.
+-  `DELETE /projects/{projectId}/sprints/{sprintId}` - Deletes a project sprint. Does not delete tasks in the sprint.
 
 ### Sample JSON request
 
@@ -222,7 +222,7 @@ DELETE https://api.forecast.it/api/v1/projects/1/sprints/1
 
 ## Delete connected project sprint
 
-* `DELETE /connected_projects/{connectedProjectId}/sprints/{sprintId}` - Deletes a connected project sprint. Does not delete cards in the sprint.
+-  `DELETE /connected_projects/{connectedProjectId}/sprints/{sprintId}` - Deletes a connected project sprint. Does not delete tasks in the sprint.
 
 ### Sample JSON request
 
