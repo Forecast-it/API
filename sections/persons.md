@@ -353,3 +353,37 @@ PUT https://api.forecast.it/api/v1/persons/1/timer/stop
 ### Sample JSON request
 
 DELETE https://api.forecast.it/api/v1/persons/1/timer
+
+## Get person utilization
+
+-  `GET /persons/{personId}/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns a person's utilization data for the given timespan. Both `start_date` and `end_date` are required.
+
+### Sample JSON request
+
+GET https://api.forecast.it/api/v1/persons/1/utilization?start_date=20200101&end_date=20200131
+
+### Sample JSON response
+
+```javascript
+{
+   "minutes_available": 11040,
+   "task_minutes_allocated": 5520,
+   "task_billable_minutes_allocated": 2760,
+   "project_minutes_allocated": 0,
+   "project_billable_minutes_allocated": 0,
+   "idle_time_minutes_allocated": 2760,
+   "time_off_minutes_allocated": 0,
+   "dates": [
+      {
+         "date": "2020-01-01",
+         "minutes_available": 480,
+         "task_minutes_allocated": 240,
+         "task_billable_minutes_allocated": 240,
+         "project_minutes_allocated": 0,
+         "project_billable_minutes_allocated": 0,
+         "idle_time_minutes_allocated": 0,
+         "time_off_minutes_allocated": 0
+      }, ...
+   ]
+}
+```
