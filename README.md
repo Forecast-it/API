@@ -93,7 +93,7 @@ Errors are returned in the following JSON format.
 ## API sections (Work in progress)
 
 -   [Allocations](sections/allocations.md#allocations)
--   [Cards](sections/cards.md#cards)
+-   [Tasks](sections/tasks.md#tasks)
 -   [Clients](sections/clients.md#clients)
 -   [Connected projects](sections/connected_projects.md#connected-projects)
 -   [Expense items](sections/expense_items.md#expense-items)
@@ -109,7 +109,7 @@ Errors are returned in the following JSON format.
 -   [Projects](sections/projects.md#projects)
 -   [Rate card rates](sections/rate_card_rates.md#rate-card-rates)
 -   [Rate cards](sections/rate_cards.md#rate-cards)
--   [Repeating cards](sections/repeating_cards.md#repeating-cards)
+-   [Repeating tasks](sections/repeating_tasks.md#repeating-tasks)
 -   [Roles](sections/roles.md#roles)
 -   [Sprints](sections/sprints.md#sprints)
 -   [Sub tasks](sections/sub_tasks.md#sub-tasks)

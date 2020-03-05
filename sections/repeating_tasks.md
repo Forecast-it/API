@@ -1,50 +1,10 @@
-# Repeating cards
+# Repeating tasks
 
-NB! These endpoints have been deprecated. Use [Repeating Tasks](repeating_tasks.md#repeating-tasks)) instead.
+(Formerly known as Repeating Cards. See old docs here: [Repeating cards](repeating_cards.md#repeating-cards))
 
-## Get a repeating card
+## Get a repeating task
 
--   `GET /repeating_cards/{repeatingCardId}` - Returns a repeating card by its id.
-
-| Response fields | Description/format    |
-| --------------- | --------------------- |
-| id              | Integer               |
-| monday          | Boolean               |
-| tuesday         | Boolean               |
-| wednsday        | Boolean               |
-| thursday        | Boolean               |
-| friday          | Boolean               |
-| saturday        | Boolean               |
-| sunday          | Boolean               |
-| monthly_day     | Integer               |
-| repeat_type     | String                |
-| created_by      | Integer, ID of person |
-| updated_by      | Integer, ID of person |
-| created_at      | Date                  |
-| updated_at      | Date                  |
-
-### Sample JSON response
-
-```javascript
-{
-    "id": 15,
-    "monday": true,
-    "tuesday": false,
-    "wednesday": false,
-    "thursday": true,
-    "friday": false,
-    "saturday": false,
-    "sunday": false,
-    "monthly_day": 1,
-    "repeat_type": "WEEKLY",
-    "created_by": null,
-    "updated_by": null
-}
-```
-
-## Get card repeating card
-
--   `GET /cards/{cardId}/repeating_cards` - Returns repeating card for a card.
+-   `GET /repeating_tasks/{repeatingTaskId}` - Returns a repeating task by its id.
 
 | Response fields | Description/format    |
 | --------------- | --------------------- |
@@ -82,9 +42,9 @@ NB! These endpoints have been deprecated. Use [Repeating Tasks](repeating_tasks.
 }
 ```
 
-## Get project repeating cards
+## Get task's repeating task
 
--   `GET /projects/{projectId}/repeating_cards` - Returns repeating card for a card.
+-   `GET /tasks/{taskId}/repeating_tasks` - Returns repeating task for a task.
 
 | Response fields | Description/format    |
 | --------------- | --------------------- |
@@ -122,13 +82,53 @@ NB! These endpoints have been deprecated. Use [Repeating Tasks](repeating_tasks.
 }
 ```
 
-## Create a repeating card
+## Get project repeating tasks
 
--   `POST /repeating_cards` - Creates a repeating card. Returns the same object as getting a single repeating card.
+-   `GET /projects/{projectId}/repeating_tasks` - Returns repeating tasks for a project.
+
+| Response fields | Description/format    |
+| --------------- | --------------------- |
+| id              | Integer               |
+| monday          | Boolean               |
+| tuesday         | Boolean               |
+| wednsday        | Boolean               |
+| thursday        | Boolean               |
+| friday          | Boolean               |
+| saturday        | Boolean               |
+| sunday          | Boolean               |
+| monthly_day     | Integer               |
+| repeat_type     | String                |
+| created_by      | Integer, ID of person |
+| updated_by      | Integer, ID of person |
+| created_at      | Date                  |
+| updated_at      | Date                  |
+
+### Sample JSON response
+
+```javascript
+{
+    "id": 15,
+    "monday": true,
+    "tuesday": false,
+    "wednesday": false,
+    "thursday": true,
+    "friday": false,
+    "saturday": false,
+    "sunday": false,
+    "monthly_day": 1,
+    "repeat_type": "WEEKLY",
+    "created_by": null,
+    "updated_by": null
+}
+```
+
+## Create a repeating task
+
+-   `POST /repeating_tasks` - Creates a repeating task. Returns the same object as getting a single repeating task.
 
 | Request fields | Description/format             |
 | -------------- | ------------------------------ |
-| task_id        | (Required) Integer, ID of card |
+| task_id        | (Required) Integer, ID of task |
 | repeat_type    | String, WEEKLY or MONTHLY      |
 | monday         | Boolean                        |
 | tuesday        | Boolean                        |
@@ -141,7 +141,7 @@ NB! These endpoints have been deprecated. Use [Repeating Tasks](repeating_tasks.
 
 ### Sample JSON request
 
-POST https://api.forecast.it/api/v1/repeating_cards
+POST https://api.forecast.it/api/v1/repeating_tasks
 
 ```javascript
 {
@@ -151,9 +151,9 @@ POST https://api.forecast.it/api/v1/repeating_cards
 }
 ```
 
-## Update repeating card
+## Update repeating task
 
--   `PUT /repeating_cards/{repeatingCardId}` - Updates a repeating card. Returns the same object as getting a single repeating card.
+-   `PUT /repeating_tasks/{repeatingTaskId}` - Updates a repeating task. Returns the same object as getting a single repeating task.
 
 | Request fields | Description/format        |
 | -------------- | ------------------------- |
@@ -169,7 +169,7 @@ POST https://api.forecast.it/api/v1/repeating_cards
 
 ### Sample JSON request
 
-PUT https://api.forecast.it/api/v1/repeating_cards/1
+PUT https://api.forecast.it/api/v1/repeating_tasks/1
 
 ```javascript
 {
@@ -179,10 +179,10 @@ PUT https://api.forecast.it/api/v1/repeating_cards/1
 }
 ```
 
-## Delete repeating card
+## Delete repeating task
 
--   `DELETE /repeating_cards/{repeatingCardId}` - Deletes a repeating card by its id.
+-   `DELETE /repeating_tasks/{repeatingTaskId}` - Deletes a repeating task by its id.
 
 ### Sample JSON request
 
-DELETE https://api.forecast.it/api/v1/repeating_cards/1
+DELETE https://api.forecast.it/api/v1/repeating_tasks/1

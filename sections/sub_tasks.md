@@ -1,28 +1,31 @@
 # Sub tasks
 
-## Get card sub tasks
+## Get task sub tasks
 
-* `GET /cards/{cardId}/sub_tasks` - Returns all sub tasks for a card.
+-  `GET /tasks/{taskId}/sub_tasks` - Returns all sub tasks for a task.
 
-|Response fields | Description/format|
-|------------ | -------------|
-|id | Integer|
-|card | Integer, ID of card|
-|name | String|
-|desription | String|
-|estimate | Integer (minutes)|
-|done | Boolean|
-|created_by | Integer, ID of person|
-|updated_by | Integer, ID of person|
-|created_at | Date|
-|updated_at | Date|
+| Response fields | Description/format                      |
+| --------------- | --------------------------------------- |
+| id              | Integer                                 |
+| card            | Integer, deprecated. Use 'task' instead |
+| task            | Integer, ID of task                     |
+| name            | String                                  |
+| description     | String                                  |
+| estimate        | Integer (minutes)                       |
+| done            | Boolean                                 |
+| created_by      | Integer, ID of person                   |
+| updated_by      | Integer, ID of person                   |
+| created_at      | Date                                    |
+| updated_at      | Date                                    |
 
 ### Sample JSON response
+
 ```javascript
 [
    {
       "id": 2,
       "card": 2,
+      "task": 2,
       "name": "Design",
       "description": null,
       "estimate": 480,
@@ -37,27 +40,30 @@
 
 ## Get project sub tasks
 
-* `GET /projects/{projectId}/sub_tasks` - Returns all sub tasks for a project.
+-  `GET /projects/{projectId}/sub_tasks` - Returns all sub tasks for a project.
 
-|Response fields | Description/format|
-|------------ | -------------|
-|id | Integer|
-|card | Integer, ID of card|
-|name | String|
-|desription | String|
-|estimate | Integer (minutes)|
-|done | Boolean|
-|created_by | Integer, ID of person|
-|updated_by | Integer, ID of person|
-|created_at | Date|
-|updated_at | Date|
+| Response fields | Description/format                      |
+| --------------- | --------------------------------------- |
+| id              | Integer                                 |
+| card            | Integer, deprecated. Use 'task' instead |
+| task            | Integer, ID of task                     |
+| name            | String                                  |
+| description     | String                                  |
+| estimate        | Integer (minutes)                       |
+| done            | Boolean                                 |
+| created_by      | Integer, ID of person                   |
+| updated_by      | Integer, ID of person                   |
+| created_at      | Date                                    |
+| updated_at      | Date                                    |
 
 ### Sample JSON response
+
 ```javascript
 [
    {
       "id": 2,
       "card": 2,
+      "task": 2,
       "name": "Design",
       "description": null,
       "estimate": 480,
@@ -72,26 +78,29 @@
 
 ## Get sub task
 
-* `GET /sub_tasks/{subTaskId}` - Returns a specific subtask.
+-  `GET /sub_tasks/{subTaskId}` - Returns a specific subtask.
 
-|Response fields | Description/format|
-|------------ | -------------|
-|id | Integer|
-|card | Integer, ID of card|
-|name | String|
-|desription | String|
-|estimate | Integer (minutes)|
-|done | Boolean|
-|created_by | Integer, ID of person|
-|updated_by | Integer, ID of person|
-|created_at | Date|
-|updated_at | Date|
+| Response fields | Description/format                      |
+| --------------- | --------------------------------------- |
+| id              | Integer                                 |
+| card            | Integer, deprecated. Use 'task' instead |
+| task            | Integer, ID of task                     |
+| name            | String                                  |
+| description     | String                                  |
+| estimate        | Integer (minutes)                       |
+| done            | Boolean                                 |
+| created_by      | Integer, ID of person                   |
+| updated_by      | Integer, ID of person                   |
+| created_at      | Date                                    |
+| updated_at      | Date                                    |
 
 ### Sample JSON response
+
 ```javascript
 {
    "id": 2,
    "card": 2,
+   "task": 2,
    "name": "Design",
    "description": null,
    "estimate": 480,
@@ -105,38 +114,41 @@
 
 ## Create sub task
 
-* `POST /sub_tasks` - Creates a new sub task. Returns the same object as getting a single sub task.
+-  `POST /sub_tasks` - Creates a new sub task. Returns the same object as getting a single sub task.
 
-|Request fields | Description/format|
-|------------ | -------------|
-|card | (Required) Integer, ID of card|
-|name | String|
-|desription | String|
-|estimate | Integer (minutes)|
-|done | Boolean|
+| Request fields | Description/format                      |
+| -------------- | --------------------------------------- |
+| card           | Integer, deprecated. Use 'task' instead |
+| task           | (Required) Integer, ID of parent task   |
+| name           | String                                  |
+| description    | String                                  |
+| estimate       | Integer (minutes)                       |
+| done           | Boolean                                 |
 
 ### Sample JSON request
+
 POST https://api.forecast.it/api/v1/sub_tasks
 
 ```javascript
 {
    "name":"Design",
-   "card":2
+   "task":2
 }
 ```
 
 ## Update sub task
 
-* `PUT /sub_tasks/{subTaskId}` - Updates a sub task. Returns the same object as getting a single sub task.
+-  `PUT /sub_tasks/{subTaskId}` - Updates a sub task. Returns the same object as getting a single sub task.
 
-|Request fields | Description/format|
-|------------ | -------------|
-|name | String|
-|desription | String|
-|estimate | Integer (minutes)|
-|done | Boolean|
+| Request fields | Description/format |
+| -------------- | ------------------ |
+| name           | String             |
+| description    | String             |
+| estimate       | Integer (minutes)  |
+| done           | Boolean            |
 
 ### Sample JSON request
+
 PUT https://api.forecast.it/api/v1/sub_tasks/1
 
 ```javascript
@@ -147,7 +159,8 @@ PUT https://api.forecast.it/api/v1/sub_tasks/1
 
 ## Delete sub task
 
-* `DELETE /sub_tasks/{subTaskId}` - Deletes a sub task.
+-  `DELETE /sub_tasks/{subTaskId}` - Deletes a sub task.
 
 ### Sample JSON request
+
 DELETE https://api.forecast.it/api/v1/sub_tasks/1

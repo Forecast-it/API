@@ -124,36 +124,37 @@
 
 -  `GET /persons/{personId}/projects` - Returns a specific person's projects.
 
-| Response fields              | Description/format                       |
-| ---------------------------- | ---------------------------------------- |
-| id                           | Integer                                  |
-| company_project_id           | Integer                                  |
-| name                         | String                                   |
-| connected_project            | Integer, ID of connected project         |
-| stage                        | String (PLANNING, RUNNING, HALTED, DONE) |
-| status_color                 | String (GREEN, YELLOW, RED)              |
-| status_description           | String                                   |
-| description                  | String                                   |
-| color                        | String                                   |
-| estimation_units             | String (HOURS, POINTS)                   |
-| minutes_per_estimation_point | Integer                                  |
-| budget                       | Double                                   |
-| billable                     | Boolean                                  |
-| use_sprints                  | Boolean                                  |
-| sprint_length                | Integer                                  |
-| start_date                   | Date                                     |
-| end_date                     | Date                                     |
-| card_levels                  | Integer (1 or 2)                         |
-| client                       | Integer, ID of client                    |
-| rate_card                    | Integer, ID of rate card                 |
-| remaining_auto_calculated    | Boolean                                  |
-| use_project_allocations      | Boolean                                  |
-| labels                       | List<Integer>, List ID of labels         |
-| external_refs                | List of references to other systems      |
-| created_by                   | Integer, ID of person                    |
-| updated_by                   | Integer, ID of person                    |
-| created_at                   | Date                                     |
-| updated_at                   | Date                                     |
+| Response fields              | Description/format                             |
+| ---------------------------- | ---------------------------------------------- |
+| id                           | Integer                                        |
+| company_project_id           | Integer                                        |
+| name                         | String                                         |
+| connected_project            | Integer, ID of connected project               |
+| stage                        | String (PLANNING, RUNNING, HALTED, DONE)       |
+| status_color                 | String (GREEN, YELLOW, RED)                    |
+| status_description           | String                                         |
+| description                  | String                                         |
+| color                        | String                                         |
+| estimation_units             | String (HOURS, POINTS)                         |
+| minutes_per_estimation_point | Integer                                        |
+| budget                       | Double                                         |
+| billable                     | Boolean                                        |
+| use_sprints                  | Boolean                                        |
+| sprint_length                | Integer                                        |
+| start_date                   | Date                                           |
+| end_date                     | Date                                           |
+| card_levels                  | Integer, deprecated. Use 'task_levels' instead |
+| task_levels                  | Integer (1 or 2)                               |
+| client                       | Integer, ID of client                          |
+| rate_card                    | Integer, ID of rate card                       |
+| remaining_auto_calculated    | Boolean                                        |
+| use_project_allocations      | Boolean                                        |
+| labels                       | List<Integer>, List ID of labels               |
+| external_refs                | List of references to other systems            |
+| created_by                   | Integer, ID of person                          |
+| updated_by                   | Integer, ID of person                          |
+| created_at                   | Date                                           |
+| updated_at                   | Date                                           |
 
 ### Sample JSON response
 
@@ -177,7 +178,7 @@
       "sprint_length": 14,
       "start_date": "2017-01-01",
       "end_date": "2018-01-01",
-      "card_levels": 1,
+      "task_levels": 1,
       "client": 1,
       "rate_card": 1,
       "remaining_auto_calculated": false,
@@ -292,14 +293,15 @@ DELETE https://api.forecast.it/api/v1/persons/1
 | Response fields | Description/format                                   |
 | --------------- | ---------------------------------------------------- |
 | start_time      | Date                                                 |
-| card            | Integer, id of the card that the timer is started on |
+| card            | Integer, deprecated. Use 'task' instead              |
+| task            | Integer, id of the task that the timer is started on |
 
 ### Sample JSON response
 
 ```javascript
 {
    "start_time":"2018-01-14T18:46:56Z",
-   "card":1
+   "task":1
 }
 ```
 
@@ -309,7 +311,8 @@ DELETE https://api.forecast.it/api/v1/persons/1
 
 | Request fields | Description/format                                                                                     |
 | -------------- | ------------------------------------------------------------------------------------------------------ |
-| card           | Integer, id of the card to start the timer on. This is optional and can be set when stopping the timer |
+| card           | Integer, deprecated. Use 'task' instead                                                                |
+| task           | Integer, id of the task to start the timer on. This is optional and can be set when stopping the timer |
 
 ### Sample JSON request
 
@@ -317,7 +320,7 @@ PUT https://api.forecast.it/api/v1/persons/1/timer/start
 
 ```javascript
 {
-   "card":1
+   "task":1
 }
 ```
 
@@ -327,10 +330,11 @@ PUT https://api.forecast.it/api/v1/persons/1/timer/start
 
 | Request fields | Description/format                                 |
 | -------------- | -------------------------------------------------- |
-| card           | Integer, id of the card to register the time on    |
+| card           | Integer, deprecated. Use 'task' instead            |
+| task           | Integer, id of the task to register the time on    |
 | project        | Integer, id of the project to register the time on |
 
--  Either a card or project must be set here. If the card was set when starting the timer, this can be omitted.
+-  Either a task or project must be set here. If the task was set when starting the timer, this can be omitted.
 
 ### Sample JSON request
 
@@ -338,7 +342,7 @@ PUT https://api.forecast.it/api/v1/persons/1/timer/stop
 
 ```javascript
 {
-   "card":1
+   "task":1
 }
 ```
 
@@ -349,3 +353,39 @@ PUT https://api.forecast.it/api/v1/persons/1/timer/stop
 ### Sample JSON request
 
 DELETE https://api.forecast.it/api/v1/persons/1/timer
+
+## Get person utilization
+
+-  `GET /persons/{personId}/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns a person's utilization data for the given timespan. Both `start_date` and `end_date` are required and inclusive.
+
+### Sample JSON request
+
+GET https://api.forecast.it/api/v1/persons/1/utilization?start_date=20200101&end_date=20200131
+
+### Sample JSON response
+
+The returned data contains a total for the entire timespan, plus an array with data for each day in the timespan.
+
+```javascript
+{
+   "minutes_available": 11040,
+   "task_minutes_allocated": 5520,
+   "task_billable_minutes_allocated": 2760,
+   "project_minutes_allocated": 0,
+   "project_billable_minutes_allocated": 0,
+   "idle_time_minutes_allocated": 2760,
+   "time_off_minutes_allocated": 0,
+   "dates": [
+      {
+         "date": "2020-01-01",
+         "minutes_available": 480,
+         "task_minutes_allocated": 240,
+         "task_billable_minutes_allocated": 240,
+         "project_minutes_allocated": 0,
+         "project_billable_minutes_allocated": 0,
+         "idle_time_minutes_allocated": 0,
+         "time_off_minutes_allocated": 0
+      }, ...
+   ]
+}
+```
