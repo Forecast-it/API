@@ -356,7 +356,7 @@ DELETE https://api.forecast.it/api/v1/persons/1/timer
 
 ## Get person utilization
 
--  `GET /persons/{personId}/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns a person's utilization data for the given timespan. Both `start_date` and `end_date` are required.
+-  `GET /persons/{personId}/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns a person's utilization data for the given timespan. Both `start_date` and `end_date` are required and inclusive.
 
 ### Sample JSON request
 
