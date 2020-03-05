@@ -364,6 +364,8 @@ GET https://api.forecast.it/api/v1/persons/1/utilization?start_date=20200101&end
 
 ### Sample JSON response
 
+The returned data contains a total for the entire timespan, plus an array with data for each day in the timespan.
+
 ```javascript
 {
    "minutes_available": 11040,
