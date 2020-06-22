@@ -169,7 +169,7 @@
 | client                       | Integer, ID of client                                                                             |
 | rate_card                    | Integer, ID of rate card                                                                          |
 | remaining_auto_calculated    | Boolean (Defaults to true)                                                                        |
-| use_project_allocations      | Boolean (Defaults to false)                                                                       |
+| use_project_allocations      | Boolean, deprecated. Uses company setting instead.                                                |
 | labels                       | List<Integer>, List ID of labels                                                                  |
 
 ### Sample JSON request
@@ -215,7 +215,7 @@ POST https://api.forecast.it/api/v1/projects
 | task_levels                  | Integer (1 or 2)                                                 |
 | client                       | Integer, ID of client                                            |
 | rate_card                    | Integer, ID of rate card                                         |
-| use_project_allocations      | Boolean                                                          |
+| use_project_allocations      | Boolean, deprecated. Uses company setting instead.               |
 | labels                       | List<Integer>, List ID of labels                                 |
 
 ### Sample JSON request
