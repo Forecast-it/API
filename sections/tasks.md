@@ -309,7 +309,7 @@
 ```
 ## Create comment on a task
 
-- `POST /tasks/{taskId}/comments` - Creates a new comment on a task and returns the created comment.
+- `POST /v2/tasks/{taskId}/comments` - Creates a new comment on a task and returns the created comment.
 
 | Request fields   | Description/format                         |
 | ---------------- | ------------------------------------------ |
