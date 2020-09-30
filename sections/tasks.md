@@ -307,6 +307,26 @@
    }, ...
 ]
 ```
+## Create comment on a task
+
+- `POST /tasks/{taskId}/comments` - Creates a new comment on a task and returns the created comment.
+
+| Request fields   | Description/format                         |
+| ---------------- | ------------------------------------------ |
+| comment          | String                                     |
+| person_id        | Integer, ID of a person                    |
+
+### Sample JSON request
+
+POST https://api.forecast.it/api/v2/tasks/2/comments
+
+```javascript
+{
+   "comment":"Some comment",
+   "person_id":1
+}
+```
+
 
 ## Create task
 
