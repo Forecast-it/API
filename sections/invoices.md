@@ -2,7 +2,7 @@
 
 ## Get Invoices
 
--   `GET /projects/{projectId}/invoices` - Returns all invoices of a specific project.
+-   `GET /invoices` - Returns all invoices across projects.
 
 ### Invoice
 
@@ -12,6 +12,8 @@
 | company_invoice_id | Integer                                                  |
 | project_id         | Integer, ID of the project                               |
 | name               | String                                                   |
+| currency           | String                                                   |
+| client_id          | Integer, ID of client                                    |
 | invoice_reference  | String                                                   |
 | invoice_type       | String (DEPOSIT, FIXED_PRICE, TIME_AND_MATERIAL, MANUAL) |
 | created_date       | Date                                                     |
@@ -32,6 +34,7 @@
 | id              | Integer                    |
 | invoice_id      | Integer, ID of the Invoice |
 | name            | String                     |
+| project_id      | Integer, ID of project     |
 | quantity        | Integer                    |
 | unit_price      | Double                     |
 | discount        | Double                     |
@@ -58,7 +61,7 @@
 
 ### Sample JSON response
 
-```javascript
+```json
 [
     {
         "id": 80,
@@ -80,7 +83,7 @@
                 "discount": 0,
                 "tax": 0,
                 "description": "need to be paid"
-            }, ...
+            }
         ],
         "payments": [
             {
@@ -91,17 +94,73 @@
                 "date": "2020-12-05",
                 "created_by": 97,
                 "created_at": "2019-10-02T09:18:02Z"
-            }, ...
+            }
         ],
         "created_by": 97,
         "created_at": "2019-10-01T11:21:36Z"
-    }, ...
+    }
 ]
 ```
 
-## Get Invoice
+## Create invoice
 
--   `GET /invoices/{invoiceId}` - Returns a specific invoice.
+-   `POST /invoices` - Creates a new invoice. Returns the same object as getting a single invoice. This invoice can be
+    cross-projects, by specifying the project_id on Entry level. All projects most belong to the same client_id, which
+    is defined on the Invoice. 
+
+### Invoice
+
+| Request fields    | Description/format                                       |
+| ----------------- | -------------------------------------------------------- |
+| name              | String                                                   |
+| currency          | String (Defaults to company currency)                    |
+| client_id         | Integer, ID of client                                    |
+| invoice_reference | String (Default INV-{Invoice ID})                        |
+| created_date      | Date                                                     |
+| due_date          | Date                                                     |
+| notes             | String                                                   |
+| status            | String (DRAFT, APPROVED, SENT), (default DRAFT)          |
+| entries           | List<Entries>, List of entries                           |
+
+### Entries
+
+| Request fields | Description/format     |
+| -------------- | ---------------------- |
+| name           | String                 |
+| project_id     | Integer, ID of project |
+| quantity       | Integer                |
+| unit_price     | Double                 |
+| discount       | Double                 |
+| tax            | Double                 |
+| description    | String                 |
+
+### Sample JSON request
+
+POST https://api.forecast.it/api/v1/projects/123/invoices
+
+```json
+{
+    "name": "Invoice for the Queen",
+    "invoice_reference": "INV-156",
+    "invoice_type": "FIXED_PRICE",
+    "created_date": "2020-09-05",
+    "due_date": "2020-10-12",
+    "status": "DRAFT",
+    "entries": [
+        {
+            "name": "Time worked on Task 10",
+            "quantity": 2,
+            "unit_price": 12.5,
+            "discount": 0,
+            "tax": 0
+        }
+    ]
+}
+```
+
+## Get Invoices for a project
+
+-   `GET /projects/{projectId}/invoices` - Returns all invoices of a specific project.
 
 ### Invoice
 
@@ -111,6 +170,8 @@
 | company_invoice_id | Integer                                                  |
 | project_id         | Integer, ID of the project                               |
 | name               | String                                                   |
+| currency           | String                                                   |
+| client_id          | Integer, ID of client                                    |
 | invoice_reference  | String                                                   |
 | invoice_type       | String (DEPOSIT, FIXED_PRICE, TIME_AND_MATERIAL, MANUAL) |
 | created_date       | Date                                                     |
@@ -131,6 +192,7 @@
 | id              | Integer                    |
 | invoice_id      | Integer, ID of the Invoice |
 | name            | String                     |
+| project_id      | Integer, ID of project     |
 | quantity        | Integer                    |
 | unit_price      | Double                     |
 | discount        | Double                     |
@@ -157,7 +219,109 @@
 
 ### Sample JSON response
 
-```javascript
+```json
+[
+    {
+        "id": 80,
+        "company_invoice_id": 90,
+        "project_id": 4,
+        "name": "Invoice for Client 12",
+        "invoice_reference": "INV-90",
+        "invoice_type": "FIXED_PRICE",
+        "created_date": "2020-09-05",
+        "due_date": "2020-10-12",
+        "status": "SENT",
+        "entries": [
+             {
+                "id": 134,
+                "invoice_id": 80,
+                "name": "Time worked on Task 2",
+                "quantity": 2,
+                "unit_price": 12.5,
+                "discount": 0,
+                "tax": 0,
+                "description": "need to be paid"
+            }
+        ],
+        "payments": [
+            {
+                "id": 2,
+                "invoice_id": 80,
+                "notes": "payment for december",
+                "amount": 150,
+                "date": "2020-12-05",
+                "created_by": 97,
+                "created_at": "2019-10-02T09:18:02Z"
+            }
+        ],
+        "created_by": 97,
+        "created_at": "2019-10-01T11:21:36Z"
+    }
+]
+```
+
+## Get Invoice
+
+-   `GET /invoices/{invoiceId}` - Returns a specific invoice.
+
+### Invoice
+
+| Response fields    | Description/format                                       |
+| ------------------ | -------------------------------------------------------- |
+| id                 | Integer                                                  |
+| company_invoice_id | Integer                                                  |
+| project_id         | Integer, ID of the project                               |
+| name               | String                                                   |
+| currency           | String                                                   |
+| client_id          | Integer, ID of client                                    |
+| invoice_reference  | String                                                   |
+| invoice_type       | String (DEPOSIT, FIXED_PRICE, TIME_AND_MATERIAL, MANUAL) |
+| created_date       | Date                                                     |
+| due_date           | Date                                                     |
+| notes              | String                                                   |
+| status             | String (DRAFT, APPROVED, SENT)                           |
+| entries            | List<Entries>, List of entries                           |
+| payments           | List<Payments>, List of payments                         |
+| created_by         | Integer, ID of person                                    |
+| updated_by         | Integer, ID of person                                    |
+| created_at         | Date                                                     |
+| updated_at         | Date                                                     |
+
+### Entries
+
+| Response fields | Description/format         |
+| --------------- | -------------------------- |
+| id              | Integer                    |
+| invoice_id      | Integer, ID of the Invoice |
+| name            | String                     |
+| project_id      | Integer, ID of project     |
+| quantity        | Integer                    |
+| unit_price      | Double                     |
+| discount        | Double                     |
+| tax             | Double                     |
+| description     | String                     |
+| created_by      | Integer, ID of person      |
+| updated_by      | Integer, ID of person      |
+| created_at      | Date                       |
+| updated_at      | Date                       |
+
+### Payments
+
+| Response fields | Description/format         |
+| --------------- | -------------------------- |
+| id              | Integer                    |
+| invoice_id      | Integer, ID of the Invoice |
+| notes           | String                     |
+| amount          | Double                     |
+| date            | Date                       |
+| created_by      | Integer, ID of person      |
+| updated_by      | Integer, ID of person      |
+| created_at      | Date                       |
+| updated_at      | Date                       |
+
+### Sample JSON response
+
+```json
    {
         "id": 123,
         "company_invoice_id": 90,
@@ -178,7 +342,7 @@
                 "discount": 0,
                 "tax": 0,
                 "description": "need to be paid"
-            }, ...
+            }
         ],
         "payments": [
             {
@@ -189,7 +353,7 @@
                 "date": "2020-12-05",
                 "created_by": 97,
                 "created_at": "2019-10-02T09:18:02Z"
-            }, ...
+            }
         ],
         "created_by": 97,
         "created_at": "2019-10-01T11:21:36Z"
@@ -206,6 +370,8 @@
 | Request fields    | Description/format                                       |
 | ----------------- | -------------------------------------------------------- |
 | name              | String                                                   |
+| currency          | String (Defaults to company currency)                    |
+| client_id         | Integer, ID of client                                    |
 | invoice_reference | String (Default INV-{Invoice ID})                        |
 | invoice_type      | String (DEPOSIT, FIXED_PRICE, TIME_AND_MATERIAL, MANUAL) |
 | created_date      | Date                                                     |
@@ -216,20 +382,21 @@
 
 ### Entries
 
-| Request fields | Description/format |
-| -------------- | ------------------ |
-| name           | String             |
-| quantity       | Integer            |
-| unit_price     | Double             |
-| discount       | Double             |
-| tax            | Double             |
-| description    | String             |
+| Request fields | Description/format     |
+| -------------- | ---------------------- |
+| name           | String                 |
+| project_id     | Integer, ID of project |
+| quantity       | Integer                |
+| unit_price     | Double                 |
+| discount       | Double                 |
+| tax            | Double                 |
+| description    | String                 |
 
 ### Sample JSON request
 
 POST https://api.forecast.it/api/v1/projects/123/invoices
 
-```javascript
+```json
 {
     "name": "Invoice for the Queen",
     "invoice_reference": "INV-156",
@@ -243,8 +410,8 @@ POST https://api.forecast.it/api/v1/projects/123/invoices
             "quantity": 2,
             "unit_price": 12.5,
             "discount": 0,
-            "tax": 0,
-        }, ...
+            "tax": 0
+        }
     ]
 }
 ```
@@ -258,6 +425,8 @@ POST https://api.forecast.it/api/v1/projects/123/invoices
 | Request fields    | Description/format                                       |
 | ----------------- | -------------------------------------------------------- |
 | name              | String                                                   |
+| currency          | String                                                   |
+| client_id         | Integer, ID of client                                    |
 | invoice_reference | String (Default INV-{Invoice ID})                        |
 | invoice_type      | String (DEPOSIT, FIXED_PRICE, TIME_AND_MATERIAL, MANUAL) |
 | created_date      | Date                                                     |
@@ -275,6 +444,7 @@ POST https://api.forecast.it/api/v1/projects/123/invoices
 | -------------- | ------------------------ |
 | id             | Integer, ID of the entry |
 | name           | String                   |
+| project_id     | Integer, ID of project   |
 | quantity       | Integer                  |
 | unit_price     | Double                   |
 | discount       | Double                   |
@@ -296,7 +466,7 @@ POST https://api.forecast.it/api/v1/projects/123/invoices
 
 PUT https://api.forecast.it/api/v1/invoices/123
 
-```javascript
+```json
 {
     "name": "Invoice of the month",
     "invoice_reference": "INV-90",
@@ -312,7 +482,7 @@ PUT https://api.forecast.it/api/v1/invoices/123
             "discount": 0,
             "tax": 0,
             "unit_price": 100.00
-        },...
+        }
     ],
     "payments": [
         {
@@ -320,7 +490,7 @@ PUT https://api.forecast.it/api/v1/invoices/123
             "notes": "awesome payment",
             "amount": 1500,
             "date": "2020-12-05"
-        },...
+        }
     ]
 }
 ```
@@ -339,20 +509,21 @@ DELETE https://api.forecast.it/api/v1/invoices/123
 
 -   `POST /invoices/{invoiceId}/invoice_entries` - Creates a new invoice entry for a specific invoice. Returns the newly created invoice entry.
 
-| Request fields | Description/format |
-| -------------- | ------------------ |
-| name           | String, Required   |
-| quantity       | Integer, Required  |
-| unit_price     | Double, Required   |
-| discount       | Double             |
-| tax            | Double             |
-| description    | String             |
+| Request fields | Description/format     |
+| -------------- | ---------------------- |
+| name           | String, Required       |
+| project_id     | Integer, ID of project |
+| quantity       | Integer, Required      |
+| unit_price     | Double, Required       |
+| discount       | Double                 |
+| tax            | Double                 |
+| description    | String                 |
 
 ### Sample JSON request
 
 POST https://api.forecast.it/api/v1/invoices/84/invoice_entries
 
-```javascript
+```json
 {
     "name": "2 hours registered",
     "quantity": 2,
@@ -367,20 +538,21 @@ POST https://api.forecast.it/api/v1/invoices/84/invoice_entries
 
 -   `PUT /invoice_entries/{invoiceEntryId}` - Updates a specific invoice entry. Returns the updated invoice entry.
 
-| Request fields | Description/format |
-| -------------- | ------------------ |
-| name           | String             |
-| quantity       | Integer            |
-| unit_price     | Double             |
-| discount       | Double             |
-| tax            | Double             |
-| description    | String             |
+| Request fields | Description/format     |
+| -------------- | ---------------------- |
+| name           | String                 |
+| project_id     | Integer, ID of project |
+| quantity       | Integer                |
+| unit_price     | Double                 |
+| discount       | Double                 |
+| tax            | Double                 |
+| description    | String                 |
 
 ### Sample JSON request
 
 PUT https://api.forecast.it/api/v1/invoice_entries/123
 
-```javascript
+```json
 {
     "name": "New name",
     "quantity": 2,
@@ -415,7 +587,7 @@ DELETE https://api.forecast.it/api/v1/invoice_entries/123
 
 POST https://api.forecast.it/api/v1/invoices/80/invoice_payments
 
-```javascript
+```json
 {
     "notes": "the payment",
     "amount": 150,
@@ -437,11 +609,11 @@ POST https://api.forecast.it/api/v1/invoices/80/invoice_payments
 
 PUT https://api.forecast.it/api/v1/invoice_payments/123
 
-```javascript
+```json
 {
     "notes": "the payment",
     "amount": 150,
-    "date": "2020-12-05",
+    "date": "2020-12-05"
 }
 ```
 
