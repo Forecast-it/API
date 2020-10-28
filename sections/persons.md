@@ -85,7 +85,7 @@
 | active              | Boolean                                                                                |
 | default_role        | JSON (Role)                                                                            |
 | cost                | Decimal, cost from the current cost period                                             |
-| language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}       |
+| language            | String {"SPANISH", "DANISH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}       |
 | created_by          | Integer, ID of person                                                                  |
 | updated_by          | Integer, ID of person                                                                  |
 | created_at          | Date                                                                                   |
