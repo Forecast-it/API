@@ -93,6 +93,8 @@ Errors are returned in the following JSON format.
 ## API sections (Work in progress)
 
 -   [Allocations](sections/allocations.md#allocations)
+-   [Baseline Expenses](sections/baseline_expenses.md#baseline_expenses)
+-   [Baseline Roles](sections/baseline_roles.md#baselines_roles)
 -   [Tasks](sections/tasks.md#tasks)
 -   [Clients](sections/clients.md#clients)
 -   [Connected projects](sections/connected_projects.md#connected-projects)

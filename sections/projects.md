@@ -30,6 +30,9 @@
 | rate_card                    | Integer, ID of rate card                                         |
 | remaining_auto_calculated    | Boolean                                                          |
 | use_project_allocations      | Boolean                                                          |
+| use_baseline                 | Boolean                                                          |
+| baseline_target_minutes      | Integer                                                          |
+| baseline_win_chance          | Double                                                           |
 | labels                       | List<Integer>, List ID of labels                                 |
 | external_refs                | List of references to other systems                              |
 | created_by                   | Integer, ID of person                                            |
@@ -63,6 +66,9 @@
       "rate_card": 1,
       "remaining_auto_calculated": false,
       "use_project_allocations": true,
+      "use_baseline": true,
+      "baseline_target_minutes": null,
+      "baseline_win_chance": 0.95,
       "labels": [1,2],
       "external_refs": [],
       "created_by":1,
@@ -103,6 +109,9 @@
 | rate_card                    | Integer, ID of rate card                                         |
 | remaining_auto_calculated    | Boolean                                                          |
 | use_project_allocations      | Boolean                                                          |
+| use_baseline                 | Boolean                                                          |
+| baseline_target_minutes      | Integer                                                          |
+| baseline_win_chance          | Double                                                           |
 | labels                       | List<Integer>, List ID of labels                                 |
 | external_refs                | List of references to other systems                              |
 | created_by                   | Integer, ID of person                                            |
@@ -135,6 +144,9 @@
    "rate_card": 1,
    "remaining_auto_calculated": false,
    "use_project_allocations": true,
+   "use_baseline": true,
+   "baseline_target_minutes": null,
+   "baseline_win_chance": 0.95,
    "labels": [1,2],
    "external_refs": [],
    "created_by":1,
@@ -170,6 +182,8 @@
 | rate_card                    | Integer, ID of rate card                                                                          |
 | remaining_auto_calculated    | Boolean (Defaults to true)                                                                        |
 | use_project_allocations      | Boolean, deprecated. Uses company setting instead.                                                |
+| use_baseline                 | Boolean (Defaults to false)                                                                       |
+| baseline_win_chance          | Double (Between 0.0 and 1.0) (Defaults to 1.0)                                                    |
 | labels                       | List<Integer>, List ID of labels                                                                  |
 
 ### Sample JSON request
@@ -216,6 +230,9 @@ POST https://api.forecast.it/api/v1/projects
 | client                       | Integer, ID of client                                            |
 | rate_card                    | Integer, ID of rate card                                         |
 | use_project_allocations      | Boolean, deprecated. Uses company setting instead.               |
+| use_baseline                 | Boolean                                                          |
+| baseline_target_minutes      | Integer                                                          |
+| baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
 | labels                       | List<Integer>, List ID of labels                                 |
 
 ### Sample JSON request
