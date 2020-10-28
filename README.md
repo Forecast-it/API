@@ -104,6 +104,7 @@ Errors are returned in the following JSON format.
 -   [Milestones](sections/milestones.md#milestones)
 -   [Non project time](sections/non_project_time.md#non-project-time)
 -   [Persons](sections/persons.md#persons)
+-   [Teams](sections/teams.md#teams)
 -   [Person cost periods](sections/person_cost_periods.md#person-cost-periods)
 -   [Project team](sections/project_team.md#project-team)
 -   [Projects](sections/projects.md#projects)
