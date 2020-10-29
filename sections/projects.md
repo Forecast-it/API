@@ -249,6 +249,10 @@ PUT https://api.forecast.it/api/v1/projects/1
 }
 ```
 
+###Baseline only: 
+When updating baseline values, the response may contain a baseline_correction_error. 
+This indicates that the values you sent do not fit within the baseline, and have been adjusted accordingly.
+
 ## Delete project
 
 -  `DELETE /projects/{projectId}` - Deletes a project.

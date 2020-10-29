@@ -80,7 +80,7 @@
 | start_date                 | Date                                                      |
 | end_date                   | Date                                                      |
 | baseline_target_minutes    | Integer (mutually exclusive with baseline_target_price)   |
-| baseline_target_price      | Double  (mutually exclusive with baseline_target_minutes) |  
+| baseline_target_price      | Double  (mutually exclusive with baseline_target_minutes) | 
 
 ### Sample JSON request
 
@@ -96,6 +96,10 @@ POST https://api.forecast.it/api/v1/projects/1/milestones
 }
 ```
 
+###Baseline only: 
+When creating a milestone with baseline values, the response may contain a baseline_correction_error. 
+This indicates that the values you sent do not fit within the baseline, and have been adjusted accordingly.
+
 ## Update milestone
 
 -  `PUT /projects/{projectId}/milestones/{milestoneId}` - Updates a milestone. Returns the same object as getting a single milestone.
@@ -106,8 +110,8 @@ POST https://api.forecast.it/api/v1/projects/1/milestones
 | start_date                 | Date                                                      |
 | end_date                   | Date                                                      |
 | baseline_target_minutes    | Integer (mutually exclusive with baseline_target_price)   |
-| baseline_target_price      | Double  (mutually exclusive with baseline_target_minutes) | 
-
+| baseline_target_price      | Double  (mutually exclusive with baseline_target_minutes) |
+ 
 ### Sample JSON request
 
 PUT https://api.forecast.it/api/v1/projects/1/milestones/1
@@ -117,6 +121,10 @@ PUT https://api.forecast.it/api/v1/projects/1/milestones/1
    "name":"Milestone 3"
 }
 ```
+
+###Baseline only: 
+When updating baseline values, the response may contain a baseline_correction_error. 
+This indicates that the values you sent do not fit within the baseline, and have been adjusted accordingly.
 
 ## Delete milestone
 
