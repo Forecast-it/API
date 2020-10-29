@@ -7,9 +7,9 @@
 | Response fields         | Description/format                         |
 | ----------------------- | ------------------------------------------ |
 | id                      | Integer                                    |
-| project_id              | Integer, ID of project                     |
-| milestone_id            | Integer, ID of milestone                   |
-| role_id                 | Integer, ID of role                        |
+| project                 | Integer, ID of project                     |
+| milestone               | Integer, ID of milestone                   |
+| role                    | Integer, ID of role                        |
 | baseline_minutes        | Integer                                    |
 | created_by              | Integer, ID of person                      |
 | updated_by              | Integer, ID of person                      |
@@ -22,9 +22,9 @@
 [
    {
       "id": 1,
-      "project_id": 1,
-      "phase_id": 1,
-      "role_id": 1,
+      "project": 1,
+      "phase": 1,
+      "role": 1,
       "baseline_minutes": 60,
       "created_by":1,
       "updated_by":1,
@@ -41,9 +41,9 @@
 | Response fields         | Description/format                         |
 | ----------------------- | ------------------------------------------ |
 | id                      | Integer                                    |
-| project_id              | Integer, ID of project                     |
-| milestone_id            | Integer, ID of milestone                   |
-| role_id                 | Integer, ID of role                        |
+| project                 | Integer, ID of project                     |
+| milestone               | Integer, ID of milestone                   |
+| role                    | Integer, ID of role                        |
 | baseline_minutes        | Integer                                    |
 | created_by              | Integer, ID of person                      |
 | updated_by              | Integer, ID of person                      |
@@ -56,9 +56,9 @@
 [
    {
       "id": 1,
-      "project_id": 1,
-      "phase_id": 1,
-      "role_id": 1,
+      "project": 1,
+      "phase": 1,
+      "role": 1,
       "baseline_minutes": 60,
       "created_by":1,
       "updated_by":1,
@@ -74,7 +74,7 @@
 
 | Request fields     | Description/format               |
 | ------------------ | -------------------------------- |
-| role_id            | (Required) Integer, ID of role   |
+| role               | (Required) Integer, ID of role   |
 | baseline_minutes   | (Required) Integer               |
 
 ### Sample JSON request
@@ -83,11 +83,8 @@ POST https://api.forecast.it/api/v1/projects/1/milestones/1/baselines_roles
 
 ```javascript
 {
-     "id": 1,
-     "project_id": 1,
-     "phase_id": 1,
-     "role_id": 1,
-     "baseline_minutes": 60,
+     "role": 1,
+     "baseline_minutes": 60
 }
 ```
 
@@ -105,13 +102,13 @@ PUT https://api.forecast.it/api/v1/projects/1/milestones/1/baseline_roles/1
 
 ```javascript
 {
-   "baseline_minutes": 120,
+   "baseline_minutes": 120
 }
 ```
 
 ## Delete baseline role
 
--  `DELETE /projects/{projectId}/milestones/{milestoneId}/baseline_roles/{baselineRoleId}` - Deletes a task.
+-  `DELETE /projects/{projectId}/milestones/{milestoneId}/baseline_roles/{baselineRoleId}` - Deletes a baseline role.
 
 ### Sample JSON request
 

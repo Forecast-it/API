@@ -92,7 +92,7 @@ POST https://api.forecast.it/api/v1/projects/1/milestones
    "start_date":"2017-06-14",
    "end_date":"2017-09-14",
    "baseline_target_minutes": null,
-   "baseline_target_price": 1000.0,
+   "baseline_target_price": 1000.0
 }
 ```
 
@@ -114,7 +114,7 @@ PUT https://api.forecast.it/api/v1/projects/1/milestones/1
 
 ```javascript
 {
-   "name":"Milestone 3",
+   "name":"Milestone 3"
 }
 ```
 

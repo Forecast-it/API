@@ -7,9 +7,9 @@
 | Response fields         | Description/format                         |
 | ----------------------- | ------------------------------------------ |
 | id                      | Integer                                    |
-| project_id              | Integer, ID of project                     |
-| milestone_id            | Integer, ID of milestone                   |
-| expense_category_id     | Integer, ID of expense category            |
+| project                 | Integer, ID of project                     |
+| milestone               | Integer, ID of milestone                   |
+| expense_category        | Integer, ID of expense category            |
 | expense_cost            | Double                                     |
 | expense_revenue         | Double                                     |
 | created_by              | Integer, ID of person                      |
@@ -23,9 +23,9 @@
 [
    {
      "id": 1,
-     "project_id": 1,
-     "phase_id": 2,
-     "expense_category_id": 1,
+     "project": 1,
+     "phase": 2,
+     "expense_category": 1,
      "expense_cost": 123.45,
      "expense_revenue": 234.56,
      "created_by":1,
@@ -43,9 +43,9 @@
 | Response fields         | Description/format                         |
 | ----------------------- | ------------------------------------------ |
 | id                      | Integer                                    |
-| project_id              | Integer, ID of project                     |
-| milestone_id            | Integer, ID of milestone                   |
-| expense_category_id     | Integer, ID of expense category            |
+| project                 | Integer, ID of project                     |
+| milestone               | Integer, ID of milestone                   |
+| expense_category        | Integer, ID of expense category            |
 | expense_cost            | Double                                     |
 | expense_revenue         | Double                                     |
 | created_by              | Integer, ID of person                      |
@@ -59,9 +59,9 @@
 [
    {
       "id": 1,
-      "project_id": 1,
-      "phase_id": 1,
-      "expense_category_id": 1,
+      "project": 1,
+      "phase": 1,
+      "expense_category": 1,
       "expense_cost": 123.45,
       "expense_revenue": 234.56,
       "created_by":1,
@@ -78,7 +78,7 @@
 
 | Request fields          | Description/format                         |
 | ----------------------- | ------------------------------------------ |
-| expense_category_id     | Integer, ID of expense category            |
+| expense_category        | Integer, ID of expense category            |
 | expense_cost            | Double                                     |
 | expense_revenue         | Double                                     |
 
@@ -88,12 +88,9 @@ POST https://api.forecast.it/api/v1/projects/1/milestones/1/baselines_expenses
 
 ```javascript
 {
-     "id": 1,
-     "project_id": 1,
-     "phase_id": 1,
-     "expense_category_id": 1,
+     "expense_category": 1,
      "expense_cost": 123.45,
-     "expense_revenue": 234.56,
+     "expense_revenue": 234.56
 }
 ```
 
@@ -113,13 +110,13 @@ PUT https://api.forecast.it/api/v1/projects/1/milestones/1/baseline_expenses/1
 ```javascript
 {
    "expense_cost": 123.45,
-   "expense_revenue": 234.56,
+   "expense_revenue": 234.56
 }
 ```
 
 ## Delete baseline expense
 
--  `DELETE /projects/{projectId}/milestones/{milestoneId}/baseline_expenses/{baselineExpenseId}` - Deletes a task.
+-  `DELETE /projects/{projectId}/milestones/{milestoneId}/baseline_expenses/{baselineExpenseId}` - Deletes a baseline expense.
 
 ### Sample JSON request
 

@@ -32,7 +32,7 @@
 | use_project_allocations      | Boolean                                                          |
 | use_baseline                 | Boolean                                                          |
 | baseline_target_minutes      | Integer                                                          |
-| baseline_win_chance          | Double                                                           |
+| baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
 | labels                       | List<Integer>, List ID of labels                                 |
 | external_refs                | List of references to other systems                              |
 | created_by                   | Integer, ID of person                                            |
@@ -111,7 +111,7 @@
 | use_project_allocations      | Boolean                                                          |
 | use_baseline                 | Boolean                                                          |
 | baseline_target_minutes      | Integer                                                          |
-| baseline_win_chance          | Double                                                           |
+| baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
 | labels                       | List<Integer>, List ID of labels                                 |
 | external_refs                | List of references to other systems                              |
 | created_by                   | Integer, ID of person                                            |
@@ -183,6 +183,7 @@
 | remaining_auto_calculated    | Boolean (Defaults to true)                                                                        |
 | use_project_allocations      | Boolean, deprecated. Uses company setting instead.                                                |
 | use_baseline                 | Boolean (Defaults to false)                                                                       |
+| baseline_target_minutes      | Integer                                                                                           |
 | baseline_win_chance          | Double (Between 0.0 and 1.0) (Defaults to 1.0)                                                    |
 | labels                       | List<Integer>, List ID of labels                                                                  |
 
@@ -199,7 +200,9 @@ POST https://api.forecast.it/api/v1/projects
    "budget":1000,
    "billable":true,
    "use_sprints":true,
-   "sprint_length":14
+   "sprint_length":14,
+   "use_baseline":true,
+   "baseline_win_chance":0.95
 }
 ```
 
