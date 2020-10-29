@@ -169,7 +169,7 @@
 | description                  | String                                                                                            |
 | estimation_units             | String (HOURS, POINTS) (Defaults to HOURS)                                                        |
 | minutes_per_estimation_point | Integer (Defaults to 60)                                                                          |
-| budget                       | Double                                                                                            |
+| budget                       | Double (Should only be set with budget_type: FIXED_PRICE)                                         |
 | billable                     | Boolean (Defaults to true) (Deprecated)                                                           |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER) (Defaults to TIME_AND_MATERIALS) |
 | use_sprints                  | Boolean (Defaults to false)                                                                       |
@@ -183,7 +183,7 @@
 | remaining_auto_calculated    | Boolean (Defaults to true)                                                                        |
 | use_project_allocations      | Boolean, deprecated. Uses company setting instead.                                                |
 | use_baseline                 | Boolean (Defaults to false)                                                                       |
-| baseline_target_minutes      | Integer                                                                                           |
+| baseline_target_minutes      | Integer (Should never be set with budget_type: FIXED_PRICE)                                       |
 | baseline_win_chance          | Double (Between 0.0 and 1.0) (Defaults to 1.0)                                                    |
 | labels                       | List<Integer>, List ID of labels                                                                  |
 
@@ -199,6 +199,7 @@ POST https://api.forecast.it/api/v1/projects
    "estimation_units":"HOURS",
    "budget":1000,
    "billable":true,
+   "budget_type": "FIXED_PRICE",
    "use_sprints":true,
    "sprint_length":14,
    "use_baseline":true,
@@ -220,7 +221,7 @@ POST https://api.forecast.it/api/v1/projects
 | description                  | String                                                           |
 | estimation_units             | String (HOURS, POINTS)                                           |
 | minutes_per_estimation_point | Integer                                                          |
-| budget                       | Double                                                           |
+| budget                       | Double (Should only be set with budget_type: FIXED_PRICE)        |
 | billable                     | Boolean (Deprecated)                                             |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER) |
 | use_sprints                  | Boolean                                                          |
@@ -234,7 +235,7 @@ POST https://api.forecast.it/api/v1/projects
 | rate_card                    | Integer, ID of rate card                                         |
 | use_project_allocations      | Boolean, deprecated. Uses company setting instead.               |
 | use_baseline                 | Boolean                                                          |
-| baseline_target_minutes      | Integer                                                          |
+| baseline_target_minutes      | Integer (Should never be set with budget_type: FIXED_PRICE)      |
 | baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
 | labels                       | List<Integer>, List ID of labels                                 |
 
