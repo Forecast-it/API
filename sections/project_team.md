@@ -114,6 +114,7 @@
    "created_at":"2017-01-14T18:46:56Z",
    "updated_at":"2017-01-14T18:47:58Z"
 }
+````
 
 ## Add person to project team
 
