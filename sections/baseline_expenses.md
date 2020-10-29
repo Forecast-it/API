@@ -72,6 +72,42 @@
 ]
 ```
 
+## Get baseline expense
+
+- `GET /projects/{projectId}/milestones/{milestoneId}/baseline_expenses/{baselineExpenseId}` - Returns a specific baseline expense.
+
+| Response fields         | Description/format                         |
+| ----------------------- | ------------------------------------------ |
+| id                      | Integer                                    |
+| project                 | Integer, ID of project                     |
+| milestone               | Integer, ID of milestone                   |
+| expense_category        | Integer, ID of expense category            |
+| expense_cost            | Double                                     |
+| expense_revenue         | Double                                     |
+| created_by              | Integer, ID of person                      |
+| updated_by              | Integer, ID of person                      |
+| created_at              | Date                                       |
+| updated_at              | Date                                       |
+
+### Sample JSON response
+
+```javascript
+[
+   {
+      "id": 1,
+      "project": 1,
+      "phase": 1,
+      "expense_category": 1,
+      "expense_cost": 123.45,
+      "expense_revenue": 234.56,
+      "created_by":1,
+      "updated_by":1,
+      "created_at":"2020-01-01T18:46:56Z",
+      "updated_at":"2020-01-01T18:47:58Z"
+   }, ...
+]
+```
+
 ## Create baseline expense
 
 -  `POST /projects/{projectId}/milestones/{milestoneId}/baseline_expenses` - Creates a new baseline expense. Returns the same object as getting a single baseline expense.

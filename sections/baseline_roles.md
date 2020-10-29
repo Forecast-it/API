@@ -68,6 +68,40 @@
 ]
 ```
 
+## Get baseline role
+
+- `GET /projects/{projectId}/milestones/{milestoneId}/baseline_roles/{baselineRoleId}` - Returns a specific baseline role.
+
+| Response fields         | Description/format                         |
+| ----------------------- | ------------------------------------------ |
+| id                      | Integer                                    |
+| project                 | Integer, ID of project                     |
+| milestone               | Integer, ID of milestone                   |
+| role                    | Integer, ID of role                        |
+| baseline_minutes        | Integer                                    |
+| created_by              | Integer, ID of person                      |
+| updated_by              | Integer, ID of person                      |
+| created_at              | Date                                       |
+| updated_at              | Date                                       |
+
+### Sample JSON response
+
+```javascript
+[
+   {
+      "id": 1,
+      "project": 1,
+      "phase": 1,
+      "role": 1,
+      "baseline_minutes": 60,
+      "created_by":1,
+      "updated_by":1,
+      "created_at":"2020-01-01T18:46:56Z",
+      "updated_at":"2020-01-01T18:47:58Z"
+   }, ...
+]
+```
+
 ## Create baseline role
 
 -  `POST /projects/{projectId}/milestones/{milestoneId}/baseline_roles` - Creates a new baseline role. Returns the same object as getting a single baseline role.
