@@ -112,11 +112,11 @@
 
 -  `POST /projects/{projectId}/milestones/{milestoneId}/baseline_expenses` - Creates a new baseline expense. Returns the same object as getting a single baseline expense.
 
-| Request fields          | Description/format                         |
-| ----------------------- | ------------------------------------------ |
-| expense_category        | Integer, ID of expense category            |
-| expense_cost            | Double                                     |
-| expense_revenue         | Double                                     |
+| Request fields          | Description/format                                    |
+| ----------------------- | ----------------------------------------------------- |
+| expense_category        | (Required) Integer, ID of expense category            |
+| expense_cost            | (Required) Double                                     |
+| expense_revenue         | (Required) Double                                     |
 
 ### Sample JSON request
 
