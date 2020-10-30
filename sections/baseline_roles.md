@@ -122,6 +122,9 @@ POST https://api.forecast.it/api/v1/projects/1/milestones/1/baselines_roles
 }
 ```
 
+When creating a baseline role, the response may contain a baseline_correction_error. 
+This indicates that the values you sent do not fit within the baseline, and have been adjusted accordingly.
+
 ## Update baseline role
 
 -  `PUT /projects/{projectId}/milestones/{milestoneId}/baseline_roles/{baselineRoleId}` - Updates a baseline role. Returns the same object as getting a single baseline role.
@@ -139,6 +142,9 @@ PUT https://api.forecast.it/api/v1/projects/1/milestones/1/baseline_roles/1
    "baseline_minutes": 120
 }
 ```
+
+When updating a baseline role, the response may contain a baseline_correction_error. 
+This indicates that the values you sent do not fit within the baseline, and have been adjusted accordingly.
 
 ## Delete baseline role
 

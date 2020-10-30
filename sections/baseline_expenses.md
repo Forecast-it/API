@@ -130,6 +130,9 @@ POST https://api.forecast.it/api/v1/projects/1/milestones/1/baselines_expenses
 }
 ```
 
+When creating a baseline expense, the response may contain a baseline_correction_error. 
+This indicates that the values you sent do not fit within the baseline, and have been adjusted accordingly.
+
 ## Update baseline expense
 
 -  `PUT /projects/{projectId}/milestones/{milestoneId}/baseline_expenses/{baselineExpenseId}` - Updates a baseline expense. Returns the same object as getting a single baseline expense.
@@ -149,6 +152,9 @@ PUT https://api.forecast.it/api/v1/projects/1/milestones/1/baseline_expenses/1
    "expense_revenue": 234.56
 }
 ```
+
+When updating a baseline expense, the response may contain a baseline_correction_error. 
+This indicates that the values you sent do not fit within the baseline, and have been adjusted accordingly.
 
 ## Delete baseline expense
 
