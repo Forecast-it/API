@@ -90,7 +90,7 @@ PUT https://api.forecast.it/api/v1/expense_categories/1
 
 ```javascript
 {
-    "name": "Utilities",
+    "name": "Utilities"
 }
 ```
 
