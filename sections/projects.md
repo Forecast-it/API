@@ -30,6 +30,9 @@
 | rate_card                    | Integer, ID of rate card                                         |
 | remaining_auto_calculated    | Boolean                                                          |
 | use_project_allocations      | Boolean                                                          |
+| use_baseline                 | Boolean                                                          |
+| baseline_target_minutes      | Integer                                                          |
+| baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
 | labels                       | List<Integer>, List ID of labels                                 |
 | external_refs                | List of references to other systems                              |
 | created_by                   | Integer, ID of person                                            |
@@ -63,6 +66,9 @@
       "rate_card": 1,
       "remaining_auto_calculated": false,
       "use_project_allocations": true,
+      "use_baseline": true,
+      "baseline_target_minutes": null,
+      "baseline_win_chance": 0.95,
       "labels": [1,2],
       "external_refs": [],
       "created_by":1,
@@ -103,6 +109,9 @@
 | rate_card                    | Integer, ID of rate card                                         |
 | remaining_auto_calculated    | Boolean                                                          |
 | use_project_allocations      | Boolean                                                          |
+| use_baseline                 | Boolean                                                          |
+| baseline_target_minutes      | Integer                                                          |
+| baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
 | labels                       | List<Integer>, List ID of labels                                 |
 | external_refs                | List of references to other systems                              |
 | created_by                   | Integer, ID of person                                            |
@@ -135,6 +144,9 @@
    "rate_card": 1,
    "remaining_auto_calculated": false,
    "use_project_allocations": true,
+   "use_baseline": true,
+   "baseline_target_minutes": null,
+   "baseline_win_chance": 0.95,
    "labels": [1,2],
    "external_refs": [],
    "created_by":1,
@@ -157,7 +169,7 @@
 | description                  | String                                                                                            |
 | estimation_units             | String (HOURS, POINTS) (Defaults to HOURS)                                                        |
 | minutes_per_estimation_point | Integer (Defaults to 60)                                                                          |
-| budget                       | Double                                                                                            |
+| budget                       | Double (Should only be set with budget_type: FIXED_PRICE)                                         |
 | billable                     | Boolean (Defaults to true) (Deprecated)                                                           |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER) (Defaults to TIME_AND_MATERIALS) |
 | use_sprints                  | Boolean (Defaults to false)                                                                       |
@@ -170,6 +182,9 @@
 | rate_card                    | Integer, ID of rate card                                                                          |
 | remaining_auto_calculated    | Boolean (Defaults to true)                                                                        |
 | use_project_allocations      | Boolean, deprecated. Uses company setting instead.                                                |
+| use_baseline                 | Boolean (Defaults to false)                                                                       |
+| baseline_target_minutes      | Integer (Should never be set with budget_type: FIXED_PRICE)                                       |
+| baseline_win_chance          | Double (Between 0.0 and 1.0) (Defaults to 1.0)                                                    |
 | labels                       | List<Integer>, List ID of labels                                                                  |
 
 ### Sample JSON request
@@ -184,8 +199,11 @@ POST https://api.forecast.it/api/v1/projects
    "estimation_units":"HOURS",
    "budget":1000,
    "billable":true,
+   "budget_type": "FIXED_PRICE",
    "use_sprints":true,
-   "sprint_length":14
+   "sprint_length":14,
+   "use_baseline":true,
+   "baseline_win_chance":0.95
 }
 ```
 
@@ -203,7 +221,7 @@ POST https://api.forecast.it/api/v1/projects
 | description                  | String                                                           |
 | estimation_units             | String (HOURS, POINTS)                                           |
 | minutes_per_estimation_point | Integer                                                          |
-| budget                       | Double                                                           |
+| budget                       | Double (Should only be set with budget_type: FIXED_PRICE)        |
 | billable                     | Boolean (Deprecated)                                             |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER) |
 | use_sprints                  | Boolean                                                          |
@@ -216,6 +234,9 @@ POST https://api.forecast.it/api/v1/projects
 | client                       | Integer, ID of client                                            |
 | rate_card                    | Integer, ID of rate card                                         |
 | use_project_allocations      | Boolean, deprecated. Uses company setting instead.               |
+| use_baseline                 | Boolean                                                          |
+| baseline_target_minutes      | Integer (Should never be set with budget_type: FIXED_PRICE)      |
+| baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
 | labels                       | List<Integer>, List ID of labels                                 |
 
 ### Sample JSON request
@@ -227,6 +248,10 @@ PUT https://api.forecast.it/api/v1/projects/1
    "stage":"RUNNING",
 }
 ```
+
+###Baseline only: 
+When updating baseline values, the response may contain a baseline_correction_error. 
+This indicates that the values you sent do not fit within the baseline, and have been adjusted accordingly.
 
 ## Delete project
 

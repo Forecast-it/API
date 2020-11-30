@@ -93,9 +93,12 @@ Errors are returned in the following JSON format.
 ## API sections (Work in progress)
 
 -   [Allocations](sections/allocations.md#allocations)
+-   [Baseline Expenses](sections/baseline_expenses.md#baseline_expenses)
+-   [Baseline Roles](sections/baseline_roles.md#baselines_roles)
 -   [Tasks](sections/tasks.md#tasks)
 -   [Clients](sections/clients.md#clients)
 -   [Connected projects](sections/connected_projects.md#connected-projects)
+-   [Expense categories](sections/expense_categories.md#expense-categories)
 -   [Expense items](sections/expense_items.md#expense-items)
 -   [Holiday calendar entries](sections/holiday_calendar_entries.md#holiday-calendar-entries)
 -   [Holiday calendars](sections/holiday_calendars.md#holiday-calendars)
