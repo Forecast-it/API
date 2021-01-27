@@ -4,17 +4,17 @@
 
 - `GET /projects/{projectId}/baseline_roles` - Returns all baseline roles for a given project.
 
-| Response fields         | Description/format                         |
-| ----------------------- | ------------------------------------------ |
-| id                      | Integer                                    |
-| project                 | Integer, ID of project                     |
-| milestone               | Integer, ID of milestone                   |
-| role                    | Integer, ID of role                        |
-| baseline_minutes        | Integer                                    |
-| created_by              | Integer, ID of person                      |
-| updated_by              | Integer, ID of person                      |
-| created_at              | Date                                       |
-| updated_at              | Date                                       |
+| Response fields  | Description/format       |
+| ---------------- | ------------------------ |
+| id               | Integer                  |
+| project          | Integer, ID of project   |
+| milestone        | Integer, ID of milestone |
+| role             | Integer, ID of role      |
+| baseline_minutes | Integer                  |
+| created_by       | Integer, ID of person    |
+| updated_by       | Integer, ID of person    |
+| created_at       | Date                     |
+| updated_at       | Date                     |
 
 ### Sample JSON response
 
@@ -38,17 +38,17 @@
 
 - `GET /projects/{projectId}/milestones/{milestoneId}/baseline_roles` - Returns all baseline roles for a given milestone.
 
-| Response fields         | Description/format                         |
-| ----------------------- | ------------------------------------------ |
-| id                      | Integer                                    |
-| project                 | Integer, ID of project                     |
-| milestone               | Integer, ID of milestone                   |
-| role                    | Integer, ID of role                        |
-| baseline_minutes        | Integer                                    |
-| created_by              | Integer, ID of person                      |
-| updated_by              | Integer, ID of person                      |
-| created_at              | Date                                       |
-| updated_at              | Date                                       |
+| Response fields  | Description/format       |
+| ---------------- | ------------------------ |
+| id               | Integer                  |
+| project          | Integer, ID of project   |
+| milestone        | Integer, ID of milestone |
+| role             | Integer, ID of role      |
+| baseline_minutes | Integer                  |
+| created_by       | Integer, ID of person    |
+| updated_by       | Integer, ID of person    |
+| created_at       | Date                     |
+| updated_at       | Date                     |
 
 ### Sample JSON response
 
@@ -72,17 +72,17 @@
 
 - `GET /projects/{projectId}/milestones/{milestoneId}/baseline_roles/{baselineRoleId}` - Returns a specific baseline role.
 
-| Response fields         | Description/format                         |
-| ----------------------- | ------------------------------------------ |
-| id                      | Integer                                    |
-| project                 | Integer, ID of project                     |
-| milestone               | Integer, ID of milestone                   |
-| role                    | Integer, ID of role                        |
-| baseline_minutes        | Integer                                    |
-| created_by              | Integer, ID of person                      |
-| updated_by              | Integer, ID of person                      |
-| created_at              | Date                                       |
-| updated_at              | Date                                       |
+| Response fields  | Description/format       |
+| ---------------- | ------------------------ |
+| id               | Integer                  |
+| project          | Integer, ID of project   |
+| milestone        | Integer, ID of milestone |
+| role             | Integer, ID of role      |
+| baseline_minutes | Integer                  |
+| created_by       | Integer, ID of person    |
+| updated_by       | Integer, ID of person    |
+| created_at       | Date                     |
+| updated_at       | Date                     |
 
 ### Sample JSON response
 
@@ -104,12 +104,12 @@
 
 ## Create baseline role
 
--  `POST /projects/{projectId}/milestones/{milestoneId}/baseline_roles` - Creates a new baseline role. Returns the same object as getting a single baseline role.
+- `POST /projects/{projectId}/milestones/{milestoneId}/baseline_roles` - Creates a new baseline role. Returns the same object as getting a single baseline role.
 
-| Request fields     | Description/format               |
-| ------------------ | -------------------------------- |
-| role               | (Required) Integer, ID of role   |
-| baseline_minutes   | (Required) Integer               |
+| Request fields   | Description/format             |
+| ---------------- | ------------------------------ |
+| role             | (Required) Integer, ID of role |
+| baseline_minutes | (Required) Integer             |
 
 ### Sample JSON request
 
@@ -122,16 +122,13 @@ POST https://api.forecast.it/api/v1/projects/1/milestones/1/baselines_roles
 }
 ```
 
-When creating a baseline role, the response may contain a baseline_correction_error. 
-This indicates that the values you sent do not fit within the baseline, and have been adjusted accordingly.
-
 ## Update baseline role
 
--  `PUT /projects/{projectId}/milestones/{milestoneId}/baseline_roles/{baselineRoleId}` - Updates a baseline role. Returns the same object as getting a single baseline role.
+- `PUT /projects/{projectId}/milestones/{milestoneId}/baseline_roles/{baselineRoleId}` - Updates a baseline role. Returns the same object as getting a single baseline role.
 
-| Request fields   | Description/format                                                                        |
-| ---------------- | ----------------------------------------------------------------------------------------- |
-| baseline_minutes | Integer                                                                                   |
+| Request fields   | Description/format |
+| ---------------- | ------------------ |
+| baseline_minutes | Integer            |
 
 ### Sample JSON request
 
@@ -143,12 +140,9 @@ PUT https://api.forecast.it/api/v1/projects/1/milestones/1/baseline_roles/1
 }
 ```
 
-When updating a baseline role, the response may contain a baseline_correction_error. 
-This indicates that the values you sent do not fit within the baseline, and have been adjusted accordingly.
-
 ## Delete baseline role
 
--  `DELETE /projects/{projectId}/milestones/{milestoneId}/baseline_roles/{baselineRoleId}` - Deletes a baseline role.
+- `DELETE /projects/{projectId}/milestones/{milestoneId}/baseline_roles/{baselineRoleId}` - Deletes a baseline role.
 
 ### Sample JSON request
 
