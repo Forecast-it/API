@@ -2,36 +2,35 @@
 
 ## Get projects
 
--  `GET /projects` - Returns all projects.
+- `GET /projects` - Returns all projects.
 
 | Response fields              | Description/format                                               |
-| ---------------------------- | ---------------------------------------------------------------- |
+| ---------------------------- | ---------------------------------------------------------------- | ------------------ |
 | id                           | Integer                                                          |
 | company_project_id           | Integer                                                          |
 | name                         | String                                                           |
 | connected_project            | Integer, ID of connected project                                 |
 | stage                        | String (PLANNING, RUNNING, HALTED, DONE)                         |
 | status_color                 | String (GREEN, YELLOW, RED)                                      |
-| status_description           | String|null                                                      |
-| description                  | String|null                                                      |
+| status_description           | String                                                           | null               |
+| description                  | String                                                           | null               |
 | color                        | String                                                           |
 | estimation_units             | String (HOURS, POINTS)                                           |
 | minutes_per_estimation_point | Integer                                                          |
-| budget                       | Double|null                                                      |
+| budget                       | Double                                                           | null               |
 | billable                     | Boolean (Deprecated)                                             |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER) |
 | use_sprints                  | Boolean                                                          |
 | sprint_length                | Integer                                                          |
-| start_date                   | Date|null                                                        |
-| end_date                     | Date|null                                                        |
+| start_date                   | Date                                                             | null               |
+| end_date                     | Date                                                             | null               |
 | card_levels                  | Integer, deprecated. Use 'task_levels' instead                   |
 | task_levels                  | Integer (1 or 2)                                                 |
-| client                       | Integer|null, ID of client                                       |
+| client                       | Integer                                                          | null, ID of client |
 | rate_card                    | Integer, ID of rate card                                         |
 | remaining_auto_calculated    | Boolean                                                          |
 | use_project_allocations      | Boolean                                                          |
 | use_baseline                 | Boolean                                                          |
-| baseline_target_minutes      | Integer                                                          |
 | baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
 | labels                       | List<Integer>, List ID of labels                                 |
 | external_refs                | List of references to other systems                              |
@@ -67,7 +66,6 @@
       "remaining_auto_calculated": false,
       "use_project_allocations": true,
       "use_baseline": true,
-      "baseline_target_minutes": null,
       "baseline_win_chance": 0.95,
       "labels": [1,2],
       "external_refs": [],
@@ -81,36 +79,35 @@
 
 ## Get project
 
--  `GET /projects/{projectId}` - Returns a specific project.
+- `GET /projects/{projectId}` - Returns a specific project.
 
 | Response fields              | Description/format                                               |
-| ---------------------------- | ---------------------------------------------------------------- |
+| ---------------------------- | ---------------------------------------------------------------- | ------------------ |
 | id                           | Integer                                                          |
 | company_project_id           | Integer                                                          |
 | connected_project            | Integer, ID of connected project                                 |
 | name                         | String                                                           |
 | stage                        | String (PLANNING, RUNNING, HALTED, DONE)                         |
 | status                       | String (GREEN, YELLOW, RED)                                      |
-| status_description           | String|null                                                      |
-| description                  | String|null                                                      |
+| status_description           | String                                                           | null               |
+| description                  | String                                                           | null               |
 | color                        | String                                                           |
 | estimation_units             | String (HOURS, POINTS)                                           |
 | minutes_per_estimation_point | Integer                                                          |
-| budget                       | Double|null                                                      |
+| budget                       | Double                                                           | null               |
 | billable                     | Boolean (Deprecated)                                             |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER) |
 | use_sprints                  | Boolean                                                          |
 | sprint_length                | Integer                                                          |
-| start_date                   | Date|null                                                        |
-| end_date                     | Date|null                                                        |
+| start_date                   | Date                                                             | null               |
+| end_date                     | Date                                                             | null               |
 | card_levels                  | Integer, deprecated. Use 'task_levels' instead                   |
 | task_levels                  | Integer (1 or 2)                                                 |
-| client                       | Integer|null, ID of client                                       |
+| client                       | Integer                                                          | null, ID of client |
 | rate_card                    | Integer, ID of rate card                                         |
 | remaining_auto_calculated    | Boolean                                                          |
 | use_project_allocations      | Boolean                                                          |
 | use_baseline                 | Boolean                                                          |
-| baseline_target_minutes      | Integer                                                          |
 | baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
 | labels                       | List<Integer>, List ID of labels                                 |
 | external_refs                | List of references to other systems                              |
@@ -145,7 +142,6 @@
    "remaining_auto_calculated": false,
    "use_project_allocations": true,
    "use_baseline": true,
-   "baseline_target_minutes": null,
    "baseline_win_chance": 0.95,
    "labels": [1,2],
    "external_refs": [],
@@ -158,7 +154,7 @@
 
 ## Create project
 
--  `POST /projects` - Creates a new project. Returns the same object as getting a single project.
+- `POST /projects` - Creates a new project. Returns the same object as getting a single project.
 
 | Request fields               | Description/format                                                                                |
 | ---------------------------- | ------------------------------------------------------------------------------------------------- |
@@ -183,7 +179,6 @@
 | remaining_auto_calculated    | Boolean (Defaults to true)                                                                        |
 | use_project_allocations      | Boolean, deprecated. Uses company setting instead.                                                |
 | use_baseline                 | Boolean (Defaults to false)                                                                       |
-| baseline_target_minutes      | Integer (Should never be set with budget_type: FIXED_PRICE)                                       |
 | baseline_win_chance          | Double (Between 0.0 and 1.0) (Defaults to 1.0)                                                    |
 | labels                       | List<Integer>, List ID of labels                                                                  |
 
@@ -209,7 +204,7 @@ POST https://api.forecast.it/api/v1/projects
 
 ## Update project
 
--  `PUT /projects/{projectId}` - Updates a project. Returns the same object as getting a single project.
+- `PUT /projects/{projectId}` - Updates a project. Returns the same object as getting a single project.
 
 | Request fields               | Description/format                                               |
 | ---------------------------- | ---------------------------------------------------------------- |
@@ -235,7 +230,6 @@ POST https://api.forecast.it/api/v1/projects
 | rate_card                    | Integer, ID of rate card                                         |
 | use_project_allocations      | Boolean, deprecated. Uses company setting instead.               |
 | use_baseline                 | Boolean                                                          |
-| baseline_target_minutes      | Integer (Should never be set with budget_type: FIXED_PRICE)      |
 | baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
 | labels                       | List<Integer>, List ID of labels                                 |
 
@@ -249,13 +243,9 @@ PUT https://api.forecast.it/api/v1/projects/1
 }
 ```
 
-###Baseline only: 
-When updating baseline values, the response may contain a baseline_correction_error. 
-This indicates that the values you sent do not fit within the baseline, and have been adjusted accordingly.
-
 ## Delete project
 
--  `DELETE /projects/{projectId}` - Deletes a project.
+- `DELETE /projects/{projectId}` - Deletes a project.
 
 ### Sample JSON request
 
@@ -263,7 +253,7 @@ DELETE https://api.forecast.it/api/v1/projects/1
 
 ## Get project statuses
 
--  `GET /projects/{projectId}/statuses` - Returns the entire status history of a specific project.
+- `GET /projects/{projectId}/statuses` - Returns the entire status history of a specific project.
 
 ### Sample JSON request
 
@@ -284,8 +274,8 @@ GET https://api.forecast.it/api/v1/projects/1/statuses
 
 ## Get project financials
 
--  `GET /projects/{projectId}/financials` - Returns all financial data for the project, broken down to milestone and role level.
--  `GET /projects/{projectId}/financials?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns all financial data for the project between `start_date` and `end_date`, broken down to milestone and role level.
+- `GET /projects/{projectId}/financials` - Returns all financial data for the project, broken down to milestone and role level.
+- `GET /projects/{projectId}/financials?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns all financial data for the project between `start_date` and `end_date`, broken down to milestone and role level.
 
 Some data in the response is broken down on the individual milestones of the project in arrays called `milestone_breakdown`. Each of these milestones can be further broken down on the individual roles in arrays called `role_breakdown`.
 

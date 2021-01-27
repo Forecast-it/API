@@ -2,20 +2,18 @@
 
 ## Get milestones
 
--  `GET /projects/{projectId}/milestones` - Returns all milestones of the project.
+- `GET /projects/{projectId}/milestones` - Returns all milestones of the project.
 
-| Response fields         | Description/format    |
-| ----------------------- | --------------------- |
-| id                      | Integer               |
-| name                    | String                |
-| start_date              | Date                  |
-| end_date                | Date                  |
-| baseline_target_minutes | Integer               |
-| baseline_target_price   | Double                |
-| created_by              | Integer, ID of person |
-| updated_by              | Integer, ID of person |
-| created_at              | Date                  |
-| updated_at              | Date                  |
+| Response fields | Description/format    |
+| --------------- | --------------------- |
+| id              | Integer               |
+| name            | String                |
+| start_date      | Date                  |
+| end_date        | Date                  |
+| created_by      | Integer, ID of person |
+| updated_by      | Integer, ID of person |
+| created_at      | Date                  |
+| updated_at      | Date                  |
 
 ### Sample JSON response
 
@@ -26,8 +24,6 @@
       "name":"Milestone 1",
       "start_date":"2017-01-14",
       "end_date":"2017-06-14",
-      "baseline_target_minutes": 2400,
-      "baseline_target_price": null,
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
@@ -38,20 +34,18 @@
 
 ## Get milestone
 
--  `GET /projects/{projectId}/milestones/{milestoneId}` - Returns a specific milestone.
+- `GET /projects/{projectId}/milestones/{milestoneId}` - Returns a specific milestone.
 
-| Response fields         | Description/format    |
-| ----------------------- | --------------------- |
-| id                      | Integer               |
-| name                    | String                |
-| start_date              | Date                  |
-| end_date                | Date                  |
-| baseline_target_minutes | Integer               |
-| baseline_target_price   | Double                |
-| created_by              | Integer, ID of person |
-| updated_by              | Integer, ID of person |
-| created_at              | Date                  |
-| updated_at              | Date                  |
+| Response fields | Description/format    |
+| --------------- | --------------------- |
+| id              | Integer               |
+| name            | String                |
+| start_date      | Date                  |
+| end_date        | Date                  |
+| created_by      | Integer, ID of person |
+| updated_by      | Integer, ID of person |
+| created_at      | Date                  |
+| updated_at      | Date                  |
 
 ### Sample JSON response
 
@@ -61,8 +55,6 @@
      "name":"Milestone 1",
      "start_date":"2017-01-14",
      "end_date":"2017-06-14",
-     "baseline_target_minutes": null,
-     "baseline_target_price": 1000.0,
      "created_by":1,
      "updated_by":1,
      "created_at":"2017-01-14T18:46:56Z",
@@ -72,15 +64,13 @@
 
 ## Create milestone
 
--  `POST /projects/{projectId}/milestones` - Creates a new milestone. Returns the same object as getting a single milestone.
+- `POST /projects/{projectId}/milestones` - Creates a new milestone. Returns the same object as getting a single milestone.
 
-| Request fields             | Description/format                                        |
-| -------------------------- | --------------------------------------------------------- |
-| name                       | (Required) String                                         |
-| start_date                 | Date                                                      |
-| end_date                   | Date                                                      |
-| baseline_target_minutes    | Integer (mutually exclusive with baseline_target_price)   |
-| baseline_target_price      | Double  (mutually exclusive with baseline_target_minutes) | 
+| Request fields | Description/format |
+| -------------- | ------------------ |
+| name           | (Required) String  |
+| start_date     | Date               |
+| end_date       | Date               |
 
 ### Sample JSON request
 
@@ -90,28 +80,20 @@ POST https://api.forecast.it/api/v1/projects/1/milestones
 {
    "name":"Milestone 2",
    "start_date":"2017-06-14",
-   "end_date":"2017-09-14",
-   "baseline_target_minutes": null,
-   "baseline_target_price": 1000.0
+   "end_date":"2017-09-14"
 }
 ```
 
-###Baseline only: 
-When creating a milestone with baseline values, the response may contain a baseline_correction_error. 
-This indicates that the values you sent do not fit within the baseline, and have been adjusted accordingly.
-
 ## Update milestone
 
--  `PUT /projects/{projectId}/milestones/{milestoneId}` - Updates a milestone. Returns the same object as getting a single milestone.
+- `PUT /projects/{projectId}/milestones/{milestoneId}` - Updates a milestone. Returns the same object as getting a single milestone.
 
-| Request fields             | Description/format                                        |
-| -------------------------- | --------------------------------------------------------- |
-| name                       | String                                                    |
-| start_date                 | Date                                                      |
-| end_date                   | Date                                                      |
-| baseline_target_minutes    | Integer (mutually exclusive with baseline_target_price)   |
-| baseline_target_price      | Double  (mutually exclusive with baseline_target_minutes) |
- 
+| Request fields | Description/format |
+| -------------- | ------------------ |
+| name           | String             |
+| start_date     | Date               |
+| end_date       | Date               |
+
 ### Sample JSON request
 
 PUT https://api.forecast.it/api/v1/projects/1/milestones/1
@@ -122,13 +104,9 @@ PUT https://api.forecast.it/api/v1/projects/1/milestones/1
 }
 ```
 
-###Baseline only: 
-When updating baseline values, the response may contain a baseline_correction_error. 
-This indicates that the values you sent do not fit within the baseline, and have been adjusted accordingly.
-
 ## Delete milestone
 
--  `DELETE /projects/{projectId}/milestones/{milestoneId}` - Deletes a milestone. Does not delete tasks in the milestone.
+- `DELETE /projects/{projectId}/milestones/{milestoneId}` - Deletes a milestone. Does not delete tasks in the milestone.
 
 ### Sample JSON request
 
