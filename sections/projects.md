@@ -5,25 +5,25 @@
 - `GET /projects` - Returns all projects.
 
 | Response fields              | Description/format                                               |
-| ---------------------------- | ---------------------------------------------------------------- | ------------------ |
+| ---------------------------- | ---------------------------------------------------------------- |
 | id                           | Integer                                                          |
 | company_project_id           | Integer                                                          |
 | name                         | String                                                           |
 | connected_project            | Integer, ID of connected project                                 |
 | stage                        | String (PLANNING, RUNNING, HALTED, DONE)                         |
 | status_color                 | String (GREEN, YELLOW, RED)                                      |
-| status_description           | String                                                           | null               |
-| description                  | String                                                           | null               |
+| status_description           | String / null               |
+| description                  | String / null |
 | color                        | String                                                           |
 | estimation_units             | String (HOURS, POINTS)                                           |
 | minutes_per_estimation_point | Integer                                                          |
-| budget                       | Double                                                           | null               |
+| budget                       | Double / null               |
 | billable                     | Boolean (Deprecated)                                             |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER) |
 | use_sprints                  | Boolean                                                          |
 | sprint_length                | Integer                                                          |
-| start_date                   | Date                                                             | null               |
-| end_date                     | Date                                                             | null               |
+| start_date                   | Date / null               |
+| end_date                     | Date / null               |
 | card_levels                  | Integer, deprecated. Use 'task_levels' instead                   |
 | task_levels                  | Integer (1 or 2)                                                 |
 | client                       | Integer                                                          | null, ID of client |
@@ -82,28 +82,28 @@
 - `GET /projects/{projectId}` - Returns a specific project.
 
 | Response fields              | Description/format                                               |
-| ---------------------------- | ---------------------------------------------------------------- | ------------------ |
+| ---------------------------- | ---------------------------------------------------------------- |
 | id                           | Integer                                                          |
 | company_project_id           | Integer                                                          |
 | connected_project            | Integer, ID of connected project                                 |
 | name                         | String                                                           |
 | stage                        | String (PLANNING, RUNNING, HALTED, DONE)                         |
 | status                       | String (GREEN, YELLOW, RED)                                      |
-| status_description           | String                                                           | null               |
-| description                  | String                                                           | null               |
+| status_description           | String                                                           |
+| description                  | String                                                           |
 | color                        | String                                                           |
 | estimation_units             | String (HOURS, POINTS)                                           |
 | minutes_per_estimation_point | Integer                                                          |
-| budget                       | Double                                                           | null               |
+| budget                       | Double                                                           |
 | billable                     | Boolean (Deprecated)                                             |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER) |
 | use_sprints                  | Boolean                                                          |
 | sprint_length                | Integer                                                          |
-| start_date                   | Date                                                             | null               |
-| end_date                     | Date                                                             | null               |
+| start_date                   | Date                                                             |
+| end_date                     | Date                                                             |
 | card_levels                  | Integer, deprecated. Use 'task_levels' instead                   |
 | task_levels                  | Integer (1 or 2)                                                 |
-| client                       | Integer                                                          | null, ID of client |
+| client                       | Integer, ID of client                                            |
 | rate_card                    | Integer, ID of rate card                                         |
 | remaining_auto_calculated    | Boolean                                                          |
 | use_project_allocations      | Boolean                                                          |
