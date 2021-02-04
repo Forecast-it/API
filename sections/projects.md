@@ -184,7 +184,7 @@
 | remaining_auto_calculated    | Boolean (Defaults to true)                                                                        |
 | use_project_allocations      | Boolean, deprecated. Uses company setting instead.                                                |
 | use_baseline                 | Boolean (Defaults to false)                                                                       |
-| baseline_target              | Double (Should not be set with budget_type: FIXED_PRICE)                                          |
+| baseline_target              | Double (Minimum 0.0, Should not be set with budget_type: FIXED_PRICE)                             |
 | baseline_win_chance          | Double (Between 0.0 and 1.0) (Defaults to 1.0)                                                    |
 | labels                       | List<Integer>, List ID of labels                                                                  |
 
@@ -237,7 +237,7 @@ POST https://api.forecast.it/api/v1/projects
 | use_project_allocations      | Boolean, deprecated. Uses company setting instead.               |
 | use_baseline                 | Boolean                                                          |
 | baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
-| baseline_target              | Double (Should not be set with budget_type: FIXED_PRICE)         |
+| baseline_target              | Double (Minimum 0.0, Should not be set with budget_type: FIXED_PRICE) |
 | labels                       | List<Integer>, List ID of labels                                 |
 
 ### Sample JSON request
