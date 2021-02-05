@@ -32,6 +32,7 @@
 | use_project_allocations      | Boolean                                                          |
 | use_baseline                 | Boolean                                                          |
 | baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
+| baseline_target              | Double (Same as budget if budget_type = FIXED_PRICE)             |
 | labels                       | List<Integer>, List ID of labels                                 |
 | external_refs                | List of references to other systems                              |
 | created_by                   | Integer, ID of person                                            |
@@ -55,6 +56,7 @@
       "estimation_units": "HOURS",
       "minutes_per_estimation_point": 480,
       "budget": 1234.56,
+      "budget_type": "FIXED_PRICE",
       "billable": true,
       "use_sprints": true,
       "sprint_length": 14,
@@ -67,6 +69,7 @@
       "use_project_allocations": true,
       "use_baseline": true,
       "baseline_win_chance": 0.95,
+      "baseline_target": 1234.56,
       "labels": [1,2],
       "external_refs": [],
       "created_by":1,
@@ -109,6 +112,7 @@
 | use_project_allocations      | Boolean                                                          |
 | use_baseline                 | Boolean                                                          |
 | baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
+| baseline_target              | Double (Same as budget if budget_type = FIXED_PRICE)             |
 | labels                       | List<Integer>, List ID of labels                                 |
 | external_refs                | List of references to other systems                              |
 | created_by                   | Integer, ID of person                                            |
@@ -143,6 +147,7 @@
    "use_project_allocations": true,
    "use_baseline": true,
    "baseline_win_chance": 0.95,
+   "baseline_target": 1234.56,
    "labels": [1,2],
    "external_refs": [],
    "created_by":1,
@@ -179,6 +184,7 @@
 | remaining_auto_calculated    | Boolean (Defaults to true)                                                                        |
 | use_project_allocations      | Boolean, deprecated. Uses company setting instead.                                                |
 | use_baseline                 | Boolean (Defaults to false)                                                                       |
+| baseline_target              | Double (Minimum 0.0, Should not be set with budget_type: FIXED_PRICE)                             |
 | baseline_win_chance          | Double (Between 0.0 and 1.0) (Defaults to 1.0)                                                    |
 | labels                       | List<Integer>, List ID of labels                                                                  |
 
@@ -231,6 +237,7 @@ POST https://api.forecast.it/api/v1/projects
 | use_project_allocations      | Boolean, deprecated. Uses company setting instead.               |
 | use_baseline                 | Boolean                                                          |
 | baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
+| baseline_target              | Double (Minimum 0.0, Should not be set with budget_type: FIXED_PRICE) |
 | labels                       | List<Integer>, List ID of labels                                 |
 
 ### Sample JSON request
@@ -433,3 +440,45 @@ GET https://api.forecast.it/api/v1/projects/1/financials
 | &nbsp;&nbsp;↳ invoiced_paid                        | Object                                                                                                       |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, The value for the selected period                                                                    |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, The total value for the project                                                                      |
+
+
+
+## Get project baseline
+
+- `GET /projects/{projectId}/baseline` - Returns all baseline data for the project, including aggregations of phases, roles and expenses.
+
+### Sample JSON request
+
+GET https://api.forecast.it/api/v1/projects/1/baseline
+
+| Response fields                                                            | Description/format                                                                                           |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| project_id                                                                 | Integer                                                                                                      |
+| baseline_target                                                            | Double, The set revenue target for the baseline.                                                             |
+| baseline_win_chance                                                        | Double, The set win chance for the baseline.                                                                 |
+| baseline_minutes                                                           | Integer, The total sum of minutes allocated to roles belonging to the baseline project.                      |
+| baseline_price                                                             | Double, The total sum of revenue from roles and expenses belonging to the baseline project.                  |
+| baseline_cost                                                              | Double, The total sum of cost from roles and expenses belonging to the baseline project.                     |
+| baseline_profit                                                            | Double, The total sum of profit from roles and expenses belonging to the baseline project.                   |
+| phase_baselines                                                            | Array, The baseline phases attached to the baseline project.                                                 |
+| &nbsp;&nbsp;↳ phase_id                                                     | Integer                                                                                                      |
+| &nbsp;&nbsp;↳ phase_baseline_minutes                                       | Integer, The total sum of minutes allocated to roles belonging to the baseline phase.                        |
+| &nbsp;&nbsp;↳ phase_baseline_price                                         | Double, The total sum of revenue from roles and expenses belonging to the baseline phase.                    |
+| &nbsp;&nbsp;↳ phase_baseline_cost                                          | Double, The total sum of cost from roles and expenses belonging to the baseline phase.                       |
+| &nbsp;&nbsp;↳ phase_baseline_profit                                        | Double, The total sum of profit from roles and expenses belonging to the baseline phase.                     |
+| &nbsp;&nbsp;↳ phase_baseline_roles                                         | Array, The baseline roles attached to the baseline phase.                                                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ role_id                              | Integer                                                                                                      |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ role_baseline_minutes                | Integer, The minutes allocated to the baseline role.                                                         |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ role_baseline_price                  | Double, The revenue calculated from the minutes allocated and the hourly rate of the baseline role.          |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ role_baseline_rate_per_hour          | Double, The hourly rate for the baseline role.                                                               |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ role_baseline_cost                   | Double, The cost calculated from the minutes allocated and the hourly cost of the baseline role.             |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ role_baseline_cost_per_hour          | Double, The hourly cost of the baseline role.                                                                |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ role_baseline_profit                 | Double, The profit calculated from the cost and the revenue of the baseline role.                            |
+| &nbsp;&nbsp;↳ phase_baseline_expenses                                      | Array, The baseline expenses attached to the baseline phase.                                                 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ expense_category_id                  | Integer                                                                                                      |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ expense_baseline_cost                | Double, The set cost of the baseline expense.                                                                |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ expense_baseline_markup              | Double, The set markup of the baseline expense.                                                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ expense_baseline_revenue             | Double, The set revenue of the baseline expense.                                                             |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ expense_baseline_profit              | Double, The profit calculated from the cost and the revenue of the baseline expense.                         |
+
+
