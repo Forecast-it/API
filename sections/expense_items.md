@@ -43,8 +43,8 @@
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
       "updated_at":"2017-01-14T18:47:58Z",
-	  "phase_id": 1,
-	  "part_of_fixed_price": true
+      "phase_id": 1,
+      "part_of_fixed_price": true
    }, ...
 ]
 ```
