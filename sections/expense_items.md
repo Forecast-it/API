@@ -21,6 +21,8 @@
 | updated_by          | Integer, ID of person           |
 | created_at          | Date                            |
 | updated_at          | Date                            |
+| phase_id            | Integer                         |
+| part_of_fixed_price | Boolean                         |
 
 ### Sample JSON response
 
@@ -40,7 +42,9 @@
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
-      "updated_at":"2017-01-14T18:47:58Z"
+      "updated_at":"2017-01-14T18:47:58Z",
+	  "phase_id": 1,
+	  "part_of_fixed_price": true
    }, ...
 ]
 ```
@@ -66,6 +70,8 @@
 | updated_by          | Integer, ID of person           |
 | created_at          | Date                            |
 | updated_at          | Date                            |
+| phase_id            | Integer                         |
+| part_of_fixed_price | Boolean                         |
 
 ### Sample JSON response
 
@@ -84,7 +90,9 @@
    "created_by":1,
    "updated_by":1,
    "created_at":"2017-01-14T18:46:56Z",
-   "updated_at":"2017-01-14T18:47:58Z"
+   "updated_at":"2017-01-14T18:47:58Z",
+   "phase_id": 1,
+   "part_of_fixed_price": true   
 }
 ```
 
@@ -103,7 +111,9 @@
 | billable         | Boolean (Cannot be set to true if project on which expense item is added is not billable, defaults to true on billable projects) |
 | notes            | String                                                                                                                            |
 | person_id        | Integer, ID of person                                                                                                             |
-| expense_category | Integer, ID of expense category
+| expense_category | Integer, ID of expense category                                                                                                   |
+| phase_id            | Integer, ID of phase                                                                                                           |
+| part_of_fixed_price | Boolean (Can only be set on retainer projects with fixed price)                                                                |
 
 ### Sample JSON request
 
@@ -134,6 +144,8 @@ POST https://api.forecast.it/api/v1/projects/1/expense_items
 | notes            | String                                                                                     |
 | person_id        | Integer, Id of person                                                                      |
 | expense_category | Integer, ID of expense category                                                            |
+| phase_id            | Integer, ID of phase                                                                    |
+| part_of_fixed_price | Boolean (Can only be set on retainer projects with fixed price)                         |
 
 ### Sample JSON request
 
