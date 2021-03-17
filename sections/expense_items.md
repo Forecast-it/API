@@ -21,7 +21,7 @@
 | updated_by          | Integer, ID of person           |
 | created_at          | Date                            |
 | updated_at          | Date                            |
-| phase_id            | Integer                         |
+| phase_id            | Integer, ID of milestone        |
 | part_of_fixed_price | Boolean                         |
 
 ### Sample JSON response
@@ -70,7 +70,7 @@
 | updated_by          | Integer, ID of person           |
 | created_at          | Date                            |
 | updated_at          | Date                            |
-| phase_id            | Integer                         |
+| phase_id            | Integer, ID of milestone        |
 | part_of_fixed_price | Boolean                         |
 
 ### Sample JSON response
@@ -112,7 +112,7 @@
 | notes            | String                                                                                                                            |
 | person_id        | Integer, ID of person                                                                                                             |
 | expense_category | Integer, ID of expense category                                                                                                   |
-| phase_id            | Integer, ID of phase                                                                                                           |
+| phase_id            | Integer, ID of milestone                                                                                                           |
 | part_of_fixed_price | Boolean (Can only be set on retainer projects with fixed price)                                                                |
 
 ### Sample JSON request
@@ -144,7 +144,7 @@ POST https://api.forecast.it/api/v1/projects/1/expense_items
 | notes            | String                                                                                     |
 | person_id        | Integer, Id of person                                                                      |
 | expense_category | Integer, ID of expense category                                                            |
-| phase_id            | Integer, ID of phase                                                                    |
+| phase_id            | Integer, ID of milestone                                                                |
 | part_of_fixed_price | Boolean (Can only be set on retainer projects with fixed price)                         |
 
 ### Sample JSON request
