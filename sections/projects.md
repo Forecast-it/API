@@ -11,7 +11,7 @@
 | name                         | String                                                           |
 | connected_project            | Integer, ID of connected project                                 |
 | stage                        | String (PLANNING, RUNNING, HALTED, DONE)                         |
-| status_color                 | String (GREEN, YELLOW, RED)                                      |
+| status                       | String (GREEN, YELLOW, RED)                                      |
 | status_description           | String                                                           |
 | description                  | String                                                           |
 | color                        | String                                                           |
