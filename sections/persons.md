@@ -85,7 +85,7 @@
 | active              | Boolean                                                                                |
 | default_role        | JSON (Role)                                                                            |
 | cost                | Decimal, cost from the current cost period                                             |
-| language            | String {"SPANISH", "DANISH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}       |
+| language            | String {"SPANISH", "DANISH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                 |
 | created_by          | Integer, ID of person                                                                  |
 | updated_by          | Integer, ID of person                                                                  |
 | created_at          | Date                                                                                   |
@@ -290,18 +290,20 @@ DELETE https://api.forecast.it/api/v1/persons/1
 
 -  `GET /persons/{personId}/timer` - Returns a specific persons timer information.
 
-| Response fields | Description/format                                   |
-| --------------- | ---------------------------------------------------- |
-| start_time      | Date                                                 |
-| card            | Integer, deprecated. Use 'task' instead              |
-| task            | Integer, id of the task that the timer is started on |
+| Response fields | Description/format                                      |
+| --------------- | ------------------------------------------------------- |
+| start_time      | Date                                                    |
+| card            | Integer, deprecated. Use 'task' instead                 |
+| task            | Integer, id of the task that the timer is started on    |
+| project         | Integer, id of the project that the timer is started on |
 
 ### Sample JSON response
 
 ```javascript
 {
    "start_time":"2018-01-14T18:46:56Z",
-   "task":1
+   "task":1,
+   "project": null
 }
 ```
 
@@ -309,10 +311,11 @@ DELETE https://api.forecast.it/api/v1/persons/1
 
 -  `PUT /persons/{personId}/timer/start` - Start the timer on a person. Returns the same object as getting a single persons timer.
 
-| Request fields | Description/format                                                                                     |
-| -------------- | ------------------------------------------------------------------------------------------------------ |
-| card           | Integer, deprecated. Use 'task' instead                                                                |
-| task           | Integer, id of the task to start the timer on. This is optional and can be set when stopping the timer |
+| Request fields | Description/format                                                                                        |
+| -------------- | --------------------------------------------------------------------------------------------------------- |
+| card           | Integer, deprecated. Use 'task' instead                                                                   |
+| task           | Integer, id of the task to start the timer on. This is optional and can be set when stopping the timer    |
+| project        | Integer, id of the project to start the timer on. This is optional and can be set when stopping the timer |
 
 ### Sample JSON request
 
@@ -334,7 +337,7 @@ PUT https://api.forecast.it/api/v1/persons/1/timer/start
 | task           | Integer, id of the task to register the time on    |
 | project        | Integer, id of the project to register the time on |
 
--  Either a task or project must be set here. If the task was set when starting the timer, this can be omitted.
+-  Either a task or project must be set here. If the task or project was set when starting the timer, this can be omitted.
 
 ### Sample JSON request
 
