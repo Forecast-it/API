@@ -157,6 +157,83 @@
 }
 ```
 
+## Get project by company project id
+
+- `GET /projects/company_project_id/{companyProjectId}` - Returns a specific project.
+
+| Response fields              | Description/format                                               |
+| ---------------------------- | ---------------------------------------------------------------- |
+| id                           | Integer                                                          |
+| company_project_id           | Integer                                                          |
+| connected_project            | Integer, ID of connected project                                 |
+| name                         | String                                                           |
+| stage                        | String (PLANNING, RUNNING, HALTED, DONE)                         |
+| status                       | String (GREEN, YELLOW, RED)                                      |
+| status_description           | String                                                           |
+| description                  | String                                                           |
+| color                        | String                                                           |
+| estimation_units             | String (HOURS, POINTS)                                           |
+| minutes_per_estimation_point | Integer                                                          |
+| budget                       | Double                                                           |
+| billable                     | Boolean (Deprecated)                                             |
+| budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER) |
+| use_sprints                  | Boolean                                                          |
+| sprint_length                | Integer                                                          |
+| start_date                   | Date                                                             |
+| end_date                     | Date                                                             |
+| card_levels                  | Integer, deprecated. Use 'task_levels' instead                   |
+| task_levels                  | Integer (1 or 2)                                                 |
+| client                       | Integer, ID of client                                            |
+| rate_card                    | Integer, ID of rate card                                         |
+| remaining_auto_calculated    | Boolean                                                          |
+| use_project_allocations      | Boolean                                                          |
+| use_baseline                 | Boolean                                                          |
+| baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
+| baseline_target              | Double (Same as budget if budget_type = FIXED_PRICE)             |
+| labels                       | List<Integer>, List ID of labels                                 |
+| external_refs                | List of references to other systems                              |
+| created_by                   | Integer, ID of person                                            |
+| updated_by                   | Integer, ID of person                                            |
+| created_at                   | Date                                                             |
+| updated_at                   | Date                                                             |
+
+### Sample JSON response
+
+```javascript
+{
+   "id":1,
+   "company_project_id":1,
+   "name":"Website project",
+   "stage":"PLANNING",
+   "status": "GREEN",
+   "status_description": "",
+   "description": "",
+   "color": "#FF7C75",
+   "estimation_units": "HOURS",
+   "minutes_per_estimation_point": 480,
+   "budget": 1234.56,
+   "billable": true,
+   "use_sprints": true,
+   "sprint_length": 14,
+   "start_date": "2017-01-01",
+   "end_date": "2018-01-01",
+   "task_levels": 1,
+   "client": 1,
+   "rate_card": 1,
+   "remaining_auto_calculated": false,
+   "use_project_allocations": true,
+   "use_baseline": true,
+   "baseline_win_chance": 0.95,
+   "baseline_target": 1234.56,
+   "labels": [1,2],
+   "external_refs": [],
+   "created_by":1,
+   "updated_by":1,
+   "created_at":"2017-01-14T18:46:56Z",
+   "updated_at":"2017-01-14T18:47:58Z"
+}
+```
+
 ## Create project
 
 - `POST /projects` - Creates a new project. Returns the same object as getting a single project.
