@@ -250,6 +250,43 @@ PUT https://api.forecast.it/api/v1/projects/1
 }
 ```
 
+## Duplicate project
+
+- `POST /projects/duplicate/{projectId}` - Creates a duplicate of the given project. Returns the new project.
+
+| Request fields               | Description/format                                                                                |
+| ---------------------------- | ------------------------------------------------------------------------------------------------- |
+| name                         | String                                                                                            |
+| start_date                   | Date (Changing the dates of a duplicated project will move tasks and milestones accordingly)      |
+| end_date                     | Date (Changing the dates of a duplicated project will move tasks and milestones accordingly)      |
+| client                       | Integer, ID of client                                                                             |
+| duplicate_color              | (Required) Boolean. Determines if the project color should be duplicated                          |
+| duplicate_expenses           | (Required) Boolean. Determines if expenses attached to the project should be duplicated           |
+| duplicate_phases             | (Required) Boolean. Determines if milestones on the project should be duplicated                  |
+| duplicate_settings           | (Required) Boolean. Determines if settings on the project should be duplicated                    |
+| duplicate_project_persons    | (Required) Boolean. Determines if persons assigned to the project should be duplicated            |
+| duplicate_tasks              | (Required) Boolean. Determines if tasks on the project should be duplicated                       |
+
+### Sample JSON request
+
+POST https://api.forecast.it/api/v1/projects/duplicate/1
+
+```javascript
+{
+   "name":"Website project",
+   "stage":"PLANNING",
+   "status":"GREEN",
+   "estimation_units":"HOURS",
+   "budget":1000,
+   "billable":true,
+   "budget_type": "FIXED_PRICE",
+   "use_sprints":true,
+   "sprint_length":14,
+   "use_baseline":true,
+   "baseline_win_chance":0.95
+}
+```
+
 ## Delete project
 
 - `DELETE /projects/{projectId}` - Deletes a project.
