@@ -350,17 +350,11 @@ POST https://api.forecast.it/api/v1/projects/duplicate/1
 
 ```javascript
 {
-   "name":"Website project",
-   "stage":"PLANNING",
-   "status":"GREEN",
-   "estimation_units":"HOURS",
-   "budget":1000,
-   "billable":true,
-   "budget_type": "FIXED_PRICE",
-   "use_sprints":true,
-   "sprint_length":14,
-   "use_baseline":true,
-   "baseline_win_chance":0.95
+   "name":"Duplicated Project",
+   "client": 1,
+   "start_date": "2021-08-14",
+   "duplicate_color": false,
+   "duplicate_expenses": false 
 }
 ```
 
