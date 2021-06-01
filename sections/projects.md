@@ -260,12 +260,12 @@ PUT https://api.forecast.it/api/v1/projects/1
 | start_date                   | Date (Changing the dates of a duplicated project will move tasks and milestones accordingly)      |
 | end_date                     | Date (Changing the dates of a duplicated project will move tasks and milestones accordingly)      |
 | client                       | Integer, ID of client                                                                             |
-| duplicate_color              | (Required) Boolean. Determines if the project color should be duplicated                          |
-| duplicate_expenses           | (Required) Boolean. Determines if expenses attached to the project should be duplicated           |
-| duplicate_phases             | (Required) Boolean. Determines if milestones on the project should be duplicated                  |
-| duplicate_settings           | (Required) Boolean. Determines if settings on the project should be duplicated                    |
-| duplicate_project_persons    | (Required) Boolean. Determines if persons assigned to the project should be duplicated            |
-| duplicate_tasks              | (Required) Boolean. Determines if tasks on the project should be duplicated                       |
+| duplicate_color              | Boolean (Defaults to true). Determines if the project color should be duplicated                  |
+| duplicate_expenses           | Boolean (Defaults to true). Determines if expenses attached to the project should be duplicated   |
+| duplicate_phases             | Boolean (Defaults to true). Determines if milestones on the project should be duplicated          |
+| duplicate_settings           | Boolean (Defaults to true). Determines if settings on the project should be duplicated            |
+| duplicate_project_persons    | Boolean (Defaults to true). Determines if persons assigned to the project should be duplicated    |
+| duplicate_tasks              | Boolean (Defaults to true). Determines if tasks on the project should be duplicated               |
 
 ### Sample JSON request
 
