@@ -327,6 +327,37 @@ PUT https://api.forecast.it/api/v1/projects/1
 }
 ```
 
+## Duplicate project
+
+- `POST /projects/duplicate/{projectId}` - Creates a duplicate of the given project. Returns the new project.
+
+| Request fields               | Description/format                                                                                |
+| ---------------------------- | ------------------------------------------------------------------------------------------------- |
+| name                         | String                                                                                            |
+| start_date                   | Date (Changing the dates of a duplicated project will move tasks and milestones accordingly)      |
+| end_date                     | Date (Changing the dates of a duplicated project will move tasks and milestones accordingly)      |
+| client                       | Integer, ID of client                                                                             |
+| duplicate_color              | Boolean (Defaults to true). Determines if the project color should be duplicated                  |
+| duplicate_expenses           | Boolean (Defaults to true). Determines if expenses attached to the project should be duplicated   |
+| duplicate_phases             | Boolean (Defaults to true). Determines if milestones on the project should be duplicated          |
+| duplicate_settings           | Boolean (Defaults to true). Determines if settings on the project should be duplicated            |
+| duplicate_project_persons    | Boolean (Defaults to true). Determines if persons assigned to the project should be duplicated    |
+| duplicate_tasks              | Boolean (Defaults to true). Determines if tasks on the project should be duplicated               |
+
+### Sample JSON request
+
+POST https://api.forecast.it/api/v1/projects/duplicate/1
+
+```javascript
+{
+   "name":"Duplicated Project",
+   "client": 1,
+   "start_date": "2021-08-14",
+   "duplicate_color": false,
+   "duplicate_expenses": false 
+}
+```
+
 ## Delete project
 
 - `DELETE /projects/{projectId}` - Deletes a project.
