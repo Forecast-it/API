@@ -4,8 +4,8 @@
 
 ## Get all tasks
 
--  `GET /v2/tasks` - Returns all tasks in your account (This may be a large dataset).
--  `GET /v2/tasks?updated_after=YYYYMMDDTHHmmss` - Returns all tasks in your account that have been updated after the specified time. Example value: `20180216T210047`.
+- `GET /v2/tasks` - Returns all tasks in your account (This may be a large dataset).
+- `GET /v2/tasks?updated_after=YYYYMMDDTHHmmss` - Returns all tasks in your account that have been updated after the specified time. Example value: `20180216T210047`.
 
 | Response fields  | Description/format                                |
 | ---------------- | ------------------------------------------------- |
@@ -24,6 +24,7 @@
 | start_date       | Date                                              |
 | end_date         | Date                                              |
 | bug              | Boolean                                           |
+| high_priority    | Boolean                                           |
 | un_billable      | Boolean                                           |
 | blocked          | Boolean                                           |
 | sprint           | Integer, ID of sprint                             |
@@ -57,6 +58,7 @@
       "start_date":"2017-01-01",
       "end_date":"2017-01-20",
       "bug":false,
+      "high_priority":false,
       "un_billable":false,
       "blocked":false,
       "sprint":1,
@@ -75,8 +77,8 @@
 
 ## Get tasks in project
 
--  `GET /v2/projects/{projectId}/tasks` - Returns all tasks of the project.
--  `GET /v2/projects/{projectId}/tasks?updated_after=YYYYMMDDTHHmmss` - Returns all tasks of the project that have been updated after the specified time. Example value: `20180216T210047`.
+- `GET /v2/projects/{projectId}/tasks` - Returns all tasks of the project.
+- `GET /v2/projects/{projectId}/tasks?updated_after=YYYYMMDDTHHmmss` - Returns all tasks of the project that have been updated after the specified time. Example value: `20180216T210047`.
 
 | Response fields  | Description/format                                |
 | ---------------- | ------------------------------------------------- |
@@ -95,6 +97,7 @@
 | start_date       | Date                                              |
 | end_date         | Date                                              |
 | bug              | Boolean                                           |
+| high_priority    | Boolean                                           |
 | un_billable      | Boolean                                           |
 | blocked          | Boolean                                           |
 | sprint           | Integer, ID of sprint                             |
@@ -128,6 +131,7 @@
       "start_date":"2017-01-01",
       "end_date":"2017-01-20",
       "bug":false,
+      "high_priority":false,
       "un_billable":false,
       "blocked":false,
       "sprint":1,
@@ -146,7 +150,7 @@
 
 ## Get task
 
--  `GET /v2/tasks/{taskId}` - Returns a specific task.
+- `GET /v2/tasks/{taskId}` - Returns a specific task.
 
 | Response fields  | Description/format                                |
 | ---------------- | ------------------------------------------------- |
@@ -165,6 +169,7 @@
 | start_date       | Date                                              |
 | end_date         | Date                                              |
 | bug              | Boolean                                           |
+| high_priority    | Boolean                                           |
 | un_billable      | Boolean                                           |
 | blocked          | Boolean                                           |
 | sprint           | Integer, ID of sprint                             |
@@ -197,6 +202,7 @@
    "start_date":"2017-01-01",
    "end_date":"2017-01-20",
    "bug":false,
+   "high_priority":false,
    "un_billable":false,
    "blocked":false,
    "sprint":1,
@@ -214,7 +220,7 @@
 
 ## Get task by company task id
 
--  `GET /v2/tasks/company_task_id/{companyTaskId}` - Returns a specific task.
+- `GET /v2/tasks/company_task_id/{companyTaskId}` - Returns a specific task.
 
 | Response fields  | Description/format                                |
 | ---------------- | ------------------------------------------------- |
@@ -233,6 +239,7 @@
 | start_date       | Date                                              |
 | end_date         | Date                                              |
 | bug              | Boolean                                           |
+| high_priority    | Boolean                                           |
 | un_billable      | Boolean                                           |
 | blocked          | Boolean                                           |
 | sprint           | Integer, ID of sprint                             |
@@ -265,6 +272,7 @@
    "start_date":"2017-01-01",
    "end_date":"2017-01-20",
    "bug":false,
+   "high_priority":false,
    "un_billable":false,
    "blocked":false,
    "sprint":1,
@@ -282,7 +290,7 @@
 
 ## Get comments for a task
 
--  `GET /v2/tasks/{taskId}/comments` - Returns a task's comments.
+- `GET /v2/tasks/{taskId}/comments` - Returns a task's comments.
 
 | Response fields | Description/format                        |
 | --------------- | ----------------------------------------- |
@@ -330,7 +338,7 @@ POST https://api.forecast.it/api/v2/tasks/2/comments
 
 ## Create task
 
--  `POST /tasks` - Creates a new task. Returns the same object as getting a single task.
+- `POST /tasks` - Creates a new task. Returns the same object as getting a single task.
 
 | Request fields   | Description/format                         |
 | ---------------- | ------------------------------------------ |
@@ -344,6 +352,7 @@ POST https://api.forecast.it/api/v2/tasks/2/comments
 | start_date       | Date                                       |
 | end_date         | Date                                       |
 | bug              | Boolean                                    |
+| high_priority    | Boolean                                    |
 | un_billable      | Boolean                                    |
 | blocked          | Boolean                                    |
 | sprint           | Integer, ID of sprint                      |
@@ -372,7 +381,7 @@ POST https://api.forecast.it/api/v2/tasks
 
 ## Update task
 
--  `PUT /v2/tasks/{taskId}` - Updates an task. Returns the same object as getting a single task.
+- `PUT /v2/tasks/{taskId}` - Updates an task. Returns the same object as getting a single task.
 
 | Request fields   | Description/format                                                                        |
 | ---------------- | ----------------------------------------------------------------------------------------- |
@@ -387,6 +396,7 @@ POST https://api.forecast.it/api/v2/tasks
 | start_date       | Date                                                                                      |
 | end_date         | Date                                                                                      |
 | bug              | Boolean                                                                                   |
+| high_priority    | Boolean                                                                                   |
 | un_billable      | Boolean                                                                                   |
 | blocked          | Boolean                                                                                   |
 | sprint           | Integer, ID of sprint                                                                     |
@@ -408,7 +418,7 @@ PUT https://api.forecast.it/api/v2/tasks/1
 
 ## Delete task
 
--  `DELETE /tasks/{taskId}` - Deletes a task.
+- `DELETE /tasks/{taskId}` - Deletes a task.
 
 ### Sample JSON request
 
@@ -416,9 +426,9 @@ DELETE https://api.forecast.it/api/v2/tasks/1
 
 ## Get deleted tasks
 
--  `GET /v2/tasks/deleted` - Returns all tasks that have been deleted.
--  `GET /v2/tasks/deleted?updated_after=YYYYMMDDTHHmmss` - Returns all tasks that have been deleted. after the specified time. Example value: `20180216T210047`.
--  `GET /v2/tasks/deleted?includeAllFields=true` - Includes a greater list of fields on the deleted task.
+- `GET /v2/tasks/deleted` - Returns all tasks that have been deleted.
+- `GET /v2/tasks/deleted?updated_after=YYYYMMDDTHHmmss` - Returns all tasks that have been deleted. after the specified time. Example value: `20180216T210047`.
+- `GET /v2/tasks/deleted?includeAllFields=true` - Includes a greater list of fields on the deleted task.
 
 #### Note that the 2 query parameters can be combined.
 
