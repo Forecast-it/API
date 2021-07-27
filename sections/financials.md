@@ -4,12 +4,12 @@
 
 - `POST /v1/getFinancialNumbers` - Gets financial numbers.
 
-| Request fields | Description/format                                                                                                          |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| startDate      | Date. ISO 8601                                                                                                              |
-| endDate        | Date. ISO 8601                                                                                                              |
-| groupBy        | Array of strings. Required. Accepted values: 'PROJECT', 'YEAR', 'MONTH', 'DAY', 'PHASE', 'ROLE', 'EXPENSE_CATEGORY', 'TASK' |
-| filters        | Array of [Filters](financial_filter.md)                                                                                     |
+| Request fields | Description/format                                                                                                |
+| -------------- | ----------------------------------------------------------------------------------------------------------------- |
+| startDate      | Date. ISO 8601. Required if 'endDate' is present.                                                                 |
+| endDate        | Date. ISO 8601 Required if 'startDate' is present.                                                                |
+| groupBy        | Array of strings. Accepted values: 'PROJECT', 'YEAR', 'MONTH', 'DAY', 'PHASE', 'ROLE', 'EXPENSE_CATEGORY', 'TASK' |
+| filters        | Array of [Filters](financial_filter.md)                                                                           |
 
 ### Sample JSON request
 
