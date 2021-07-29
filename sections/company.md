@@ -6,8 +6,6 @@
 
 | Response fields | Description/format          |
 | --------------- | --------------------------- |
-| company_id      | Integer                     |
-| chargebee_id    | Integer                     |
 | city            | String                      |
 | contact_email   | String                      |
 | contact_name    | String                      |
@@ -16,7 +14,6 @@
 | currency        | String                      |
 | company_name    | String                      |
 | street          | String                      |
-| tier            | String                      |
 | seats           | Integer                     |
 | vat_id          | String                      |
 | virtual_seats   | Integer                     |
