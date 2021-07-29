@@ -4,7 +4,7 @@
 
 ## Get persons
 
--  `GET /persons` - Returns all persons.
+- `GET /persons` - Returns all persons.
 
 | Response fields     | Description/format                                                                     |
 | ------------------- | -------------------------------------------------------------------------------------- |
@@ -26,6 +26,8 @@
 | default_role        | Integer, ID of default role                                                            |
 | cost                | Decimal, cost from the current cost period                                             |
 | language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}       |
+| start_date          | String (ISO 8601)                                                                      |
+| end_date            | String (ISO 8601)                                                                      |
 | created_by          | Integer, ID of person                                                                  |
 | updated_by          | Integer, ID of person                                                                  |
 | created_at          | Date                                                                                   |
@@ -54,6 +56,8 @@
       "default_role":29,
       "cost":100,
       "language":"DANISH",
+      "start_date":"2020-01-01",
+      "end_date":"2022-12-31",
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
@@ -64,7 +68,7 @@
 
 ## Get person
 
--  `GET /persons/{personId}` - Returns a specific person.
+- `GET /persons/{personId}` - Returns a specific person.
 
 | Response fields     | Description/format                                                                     |
 | ------------------- | -------------------------------------------------------------------------------------- |
@@ -122,7 +126,7 @@
 
 ## Get person projects
 
--  `GET /persons/{personId}/projects` - Returns a specific person's projects.
+- `GET /persons/{personId}/projects` - Returns a specific person's projects.
 
 | Response fields              | Description/format                             |
 | ---------------------------- | ---------------------------------------------- |
@@ -194,7 +198,7 @@
 
 ## Create person
 
--  `POST /persons` - Creates a new person. Returns the same object as getting a single person.
+- `POST /persons` - Creates a new person. Returns the same object as getting a single person.
 
 | Request fields      | Description/format                                                                        |
 | ------------------- | ----------------------------------------------------------------------------------------- |
@@ -242,7 +246,7 @@ POST https://api.forecast.it/api/v1/persons
 
 ## Update person
 
--  `PUT /persons/{personId}` - Updates a person. Returns the same object as getting a single person.
+- `PUT /persons/{personId}` - Updates a person. Returns the same object as getting a single person.
 
 | Request fields      | Description/format                                                               |
 | ------------------- | -------------------------------------------------------------------------------- |
@@ -280,7 +284,7 @@ PUT https://api.forecast.it/api/v1/persons/1
 
 \* Only person with client_id not equal to null can be deleted
 
--  `DELETE /persons/{personId}` - Deletes a person.
+- `DELETE /persons/{personId}` - Deletes a person.
 
 ### Sample JSON request
 
@@ -288,7 +292,7 @@ DELETE https://api.forecast.it/api/v1/persons/1
 
 ## Get person timer information
 
--  `GET /persons/{personId}/timer` - Returns a specific persons timer information.
+- `GET /persons/{personId}/timer` - Returns a specific persons timer information.
 
 | Response fields | Description/format                                      |
 | --------------- | ------------------------------------------------------- |
@@ -309,7 +313,7 @@ DELETE https://api.forecast.it/api/v1/persons/1
 
 ## Start person timer
 
--  `PUT /persons/{personId}/timer/start` - Start the timer on a person. Returns the same object as getting a single persons timer.
+- `PUT /persons/{personId}/timer/start` - Start the timer on a person. Returns the same object as getting a single persons timer.
 
 | Request fields | Description/format                                                                                        |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
@@ -329,7 +333,7 @@ PUT https://api.forecast.it/api/v1/persons/1/timer/start
 
 ## Stop person timer
 
--  `PUT /persons/{personId}/timer/stop` - Stop the timer on a person.
+- `PUT /persons/{personId}/timer/stop` - Stop the timer on a person.
 
 | Request fields | Description/format                                 |
 | -------------- | -------------------------------------------------- |
@@ -337,7 +341,7 @@ PUT https://api.forecast.it/api/v1/persons/1/timer/start
 | task           | Integer, id of the task to register the time on    |
 | project        | Integer, id of the project to register the time on |
 
--  Either a task or project must be set here. If the task or project was set when starting the timer, this can be omitted.
+- Either a task or project must be set here. If the task or project was set when starting the timer, this can be omitted.
 
 ### Sample JSON request
 
@@ -351,7 +355,7 @@ PUT https://api.forecast.it/api/v1/persons/1/timer/stop
 
 ## Reset person timer
 
--  `DELETE /persons/{personId}/timer` - Resets a persons timer.
+- `DELETE /persons/{personId}/timer` - Resets a persons timer.
 
 ### Sample JSON request
 
@@ -359,7 +363,7 @@ DELETE https://api.forecast.it/api/v1/persons/1/timer
 
 ## Get person utilization
 
--  `GET /persons/{personId}/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns a person's utilization data for the given timespan. Both `start_date` and `end_date` are required and inclusive.
+- `GET /persons/{personId}/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns a person's utilization data for the given timespan. Both `start_date` and `end_date` are required and inclusive.
 
 ### Sample JSON request
 
