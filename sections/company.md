@@ -18,7 +18,7 @@
 | vat_id          | String                      |
 | virtual_seats   | Integer                     |
 | zip             | String                      |
-| companyTarget   | Double                      |
+| company_target  | Double                      |
 
 ### Sample JSON response
 
@@ -35,7 +35,7 @@
     "vat_id": "12345678",
     "virtual_seats": 10,
     "zip": "12345",
-    "companyTarget": 0.7
+    "company_target": 0.7
 }
 ```
 
@@ -55,7 +55,7 @@
 | street         | String                      |
 | vat_id         | String                      |
 | zip            | String                      |
-| companyTarget  | Double                      |
+| company_target | Double                      |
 
 ### Sample JSON request
 
@@ -75,6 +75,6 @@ PUT https://api.forecast.it/api/v1/company
     "vat_id": "12345678",
     "virtual_seats": 10,
     "zip": "12345",
-    "companyTarget": 0.7
+    "company_target": 0.7
 }
 ```
