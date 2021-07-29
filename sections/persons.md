@@ -26,8 +26,8 @@
 | default_role        | Integer, ID of default role                                                            |
 | cost                | Decimal, cost from the current cost period                                             |
 | language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}       |
-| start_date          | String                                                                                 |
-| end_date            | String                                                                                 |
+| start_date          | String (ISO 8601)                                                                      |
+| end_date            | String (ISO 8601)                                                                      |
 | created_by          | Integer, ID of person                                                                  |
 | updated_by          | Integer, ID of person                                                                  |
 | created_at          | Date                                                                                   |
