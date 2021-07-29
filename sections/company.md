@@ -28,8 +28,6 @@
 
 ```javascript
 {
-    "company_id": 1,
-    "chargebee_id": "12345",
     "city": "New York City",
     "contact_email": "charles@xyz_company.com",
     "contact_name": "Charles Smith",
@@ -37,7 +35,6 @@
     "country": "US",
     "currency": "USD",
     "company_name": "xyz company",
-    "tier": "PRO",
     "seats": 50,
     "vat_id": "12345678",
     "virtual_seats": 10,
@@ -60,7 +57,6 @@
 | currency       | String                      |
 | company_name   | String                      |
 | street         | String                      |
-| company_name   | String                      |
 | vat_id         | String                      |
 | zip            | String                      |
 | companyTarget  | Double                      |
@@ -72,8 +68,6 @@ PUT https://api.forecast.it/api/v1/company
 ```javascript
 
 {
-    "company_id": 1,
-    "chargebee_id": "12345",
     "city": "New York City",
     "contact_email": "charles@xyz_company.com",
     "contact_name": "Charles Smith",
@@ -81,7 +75,6 @@ PUT https://api.forecast.it/api/v1/company
     "country": "US",
     "currency": "USD",
     "company_name": "xyz company",
-    "tier": "PRO",
     "seats": 50,
     "vat_id": "12345678",
     "virtual_seats": 10,
