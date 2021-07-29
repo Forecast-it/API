@@ -97,6 +97,7 @@ Errors are returned in the following JSON format.
 -   [Baseline Roles](sections/baseline_roles.md#baselines_roles)
 -   [Tasks](sections/tasks.md#tasks)
 -   [Clients](sections/clients.md#clients)
+-   [Company](sections/company.md#company)
 -   [Connected projects](sections/connected_projects.md#connected-projects)
 -   [Expense categories](sections/expense_categories.md#expense-categories)
 -   [Expense items](sections/expense_items.md#expense-items)
