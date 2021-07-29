@@ -16,7 +16,6 @@
 | currency        | String                      |
 | company_name    | String                      |
 | street          | String                      |
-| company_name    | String                      |
 | tier            | String                      |
 | seats           | Integer                     |
 | vat_id          | String                      |
