@@ -114,6 +114,7 @@ Errors are returned in the following JSON format.
 -   [Projects](sections/projects.md#projects)
 -   [Rate card rates](sections/rate_card_rates.md#rate-card-rates)
 -   [Rate cards](sections/rate_cards.md#rate-cards)
+-   [Exchange rates](sections/exchange_rates.md#exchange-rates)
 -   [Repeating tasks](sections/repeating_tasks.md#repeating-tasks)
 -   [Roles](sections/roles.md#roles)
 -   [Sprints](sections/sprints.md#sprints)
