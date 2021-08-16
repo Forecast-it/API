@@ -2,18 +2,19 @@
 
 ## Get rate card rates
 
-* `GET /rate_cards/{rate_cardId}/rates` - Returns all rates for a rate card. All roles might not be present. When a role is not present, the default rate of the rate card is used.
+- `GET /rate_cards/{rate_cardId}/rates` - Returns all rates for the current version of a rate card. All roles might not be present. When a role is not present, the default rate of the rate card is used.
 
-|Response fields | Description/format|
-|------------ | -------------|
-|role | Integer, ID of the role|
-|rate | Decimal|
-|created_by | Integer, ID of person|
-|updated_by | Integer, ID of person|
-|created_at | Date|
-|updated_at | Date|
+| Response fields | Description/format      |
+| --------------- | ----------------------- |
+| role            | Integer, ID of the role |
+| rate            | Decimal                 |
+| created_by      | Integer, ID of person   |
+| updated_by      | Integer, ID of person   |
+| created_at      | Date                    |
+| updated_at      | Date                    |
 
 ### Sample JSON response
+
 ```javascript
 [
    {
@@ -29,18 +30,19 @@
 
 ## Get rate card rate
 
-* `GET /rate_cards/{rate_cardId}/rates/{roleId}` - Returns a specific rate card rate for a role. This will return a 404 error if the role does not have a rate.
+- `GET /rate_cards/{rate_cardId}/rates/{roleId}` - Returns the current version of a specific rate card rate for a role. This will return a 404 error if the role does not have a rate.
 
-|Response fields | Description/format|
-|------------ | -------------|
-|role | Integer, ID of the role|
-|rate | Decimal|
-|created_by | Integer, ID of person|
-|updated_by | Integer, ID of person|
-|created_at | Date|
-|updated_at | Date|
+| Response fields | Description/format      |
+| --------------- | ----------------------- |
+| role            | Integer, ID of the role |
+| rate            | Decimal                 |
+| created_by      | Integer, ID of person   |
+| updated_by      | Integer, ID of person   |
+| created_at      | Date                    |
+| updated_at      | Date                    |
 
 ### Sample JSON response
+
 ```javascript
 {
    "role":1,
@@ -54,13 +56,14 @@
 
 ## Update rate card rate
 
-* `PUT /rate_cards/{rate_cardId}/rates/{roleId}` - Updates a rate card rate. Returns the same object as getting a single rate card rate.
+- `PUT /rate_cards/{rate_cardId}/rates/{roleId}` - Updates a rate card rate. Returns the same object as getting a single rate card rate.
 
-|Request fields | Description/format|
-|------------ | -------------|
-|rate | Decimal|
+| Request fields | Description/format |
+| -------------- | ------------------ |
+| rate           | Decimal            |
 
 ### Sample JSON request
+
 PUT https://api.forecast.it/api/v1/rate_cards/1/rates/1
 
 ```javascript
@@ -71,7 +74,8 @@ PUT https://api.forecast.it/api/v1/rate_cards/1/rates/1
 
 ## Delete rate card rate
 
-* `DELETE /rate_cards/{rate_cardId}/rates/{roleId}` - Deletes a rate card rate.
+- `DELETE /rate_cards/{rate_cardId}/rates/{roleId}` - Deletes a rate card rate.
 
 ### Sample JSON request
+
 DELETE https://api.forecast.it/api/v1/rate_cards/1/rates/1

@@ -2,7 +2,7 @@
 
 ## Get rate cards
 
--  `GET /rate_cards` - Returns all rate cards.
+- `GET /rate_cards` - Returns the current version of all rate cards.
 
 | Response fields | Description/format    |
 | --------------- | --------------------- |
@@ -33,7 +33,7 @@
 
 ## Get rate card
 
--  `GET /rate_cards/{rate_cardId}` - Returns a specific rate card.
+- `GET /rate_cards/{rate_cardId}` - Returns the current version of a specific rate card.
 
 | Response fields | Description/format    |
 | --------------- | --------------------- |
@@ -62,7 +62,7 @@
 
 ## Create rate card
 
--  `POST /rate_cards` - Creates a new rate card. Returns the same object as getting a single rate card.
+- `POST /rate_cards` - Creates a new rate card. Returns the same object as getting a single rate card.
 
 | Request fields | Description/format |
 | -------------- | ------------------ |
@@ -82,7 +82,7 @@ POST https://api.forecast.it/api/v1/rate_cards
 
 ## Update rate card
 
--  `PUT /rate_cards/{rate_cardId}` - Updates a rate card. Returns the same object as getting a single rate card.
+- `PUT /rate_cards/{rate_cardId}` - Updates a rate card. Returns the same object as getting a single rate card.
 
 | Request fields | Description/format |
 | -------------- | ------------------ |
@@ -101,7 +101,7 @@ PUT https://api.forecast.it/api/v1/rate_cards/1
 
 ## Delete rate card
 
--  `DELETE /rate_cards/{rate_cardId}` - Deletes a rate card.
+- `DELETE /rate_cards/{rate_cardId}` - Deletes a rate card.
 
 ### Sample JSON request
 
