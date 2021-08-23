@@ -64,7 +64,7 @@ POST https://api.forecast.it/api/v1/exchange_rates
 
 ## Update exchange rate
 
--  `PUT /exchange_rates/{currency}` - Updates an exchange rate. Returns the same object as getting a single exchange rate.
+-  `PUT /exchange_rates` - Updates an exchange rate. Returns the same object as getting a single exchange rate.
 
 | Response fields | Description/format    |
 | --------------- | --------------------- |
