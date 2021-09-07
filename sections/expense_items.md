@@ -111,7 +111,7 @@
 | billable         | Boolean (Cannot be set to true if project on which expense item is added is not billable, defaults to true on billable projects) |
 | notes            | String                                                                                                                            |
 | person_id        | Integer, ID of person                                                                                                             |
-| expense_category | Integer, ID of expense category                                                                                                   |
+| expense_category | (Required) Integer, ID of expense category                                                                                                   |
 | phase_id            | Integer, ID of milestone                                                                                                           |
 | part_of_fixed_price | Boolean (Can only be set on retainer projects with fixed price)                                                                |
 
@@ -119,12 +119,13 @@
 
 POST https://api.forecast.it/api/v1/projects/1/expense_items
 
-```javascript
+```json
 {
-   "name":"Licenses",
-   "cost": 150,
-   "price": 200,
-   "billable": true
+  "name": "Licenses",
+  "cost": 150,
+  "price": 200,
+  "billable": true,
+  "expense_category": 1
 }
 ```
 
