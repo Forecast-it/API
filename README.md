@@ -44,9 +44,9 @@ If you're worried that an API key has been compromised, or you're simply no long
 
 API keys grant full access to your [Forecast](https://www.forecast.it) account, and should be protected the same way you would protect your password. In particular, there are a few common scenarios to keep in mind when working with API keys:
 
--   Give each integration its own API key (or at least use a few). If a specific API key is compromised, you can disable that key without disabling access to all of your other integrations.
--   Be careful not to expose the key to the public (such as in screenshots, videos, help documentation, source control, etc). Remember that blurring your data isn't always enough. It's best to use "cut" functions in your graphics program to remove the data completely.
--   If a key needs to be shared, generate a new key so it can be disabled, if needed. Make sure never to email the API key; if your email account becomes compromised, the emailed key would allow hackers access to your [Forecast](https://www.forecast.it) account as well.
+- Give each integration its own API key (or at least use a few). If a specific API key is compromised, you can disable that key without disabling access to all of your other integrations.
+- Be careful not to expose the key to the public (such as in screenshots, videos, help documentation, source control, etc). Remember that blurring your data isn't always enough. It's best to use "cut" functions in your graphics program to remove the data completely.
+- If a key needs to be shared, generate a new key so it can be disabled, if needed. Make sure never to email the API key; if your email account becomes compromised, the emailed key would allow hackers access to your [Forecast](https://www.forecast.it) account as well.
 
 ## No XML, just JSON
 
@@ -85,49 +85,50 @@ Errors are returned in the following JSON format.
 
 ```json
 {
-	"status": 401,
-	"message": "Server failed to authenticate the request."
+  "status": 401,
+  "message": "Server failed to authenticate the request."
 }
 ```
 
 ## API sections (Work in progress)
 
--   [Allocations](sections/allocations.md#allocations)
--   [Baseline Expenses](sections/baseline_expenses.md#baseline_expenses)
--   [Baseline Roles](sections/baseline_roles.md#baselines_roles)
--   [Clients](sections/clients.md#clients)
--   [Company](sections/company.md#company)
--   [Connected projects](sections/connected_projects.md#connected-projects)
--   [Exchange rates](sections/exchange_rates.md#exchange-rates)
--   [Expense categories](sections/expense_categories.md#expense-categories)
--   [Expense items](sections/expense_items.md#expense-items)
--   [Holiday calendar entries](sections/holiday_calendar_entries.md#holiday-calendar-entries)
--   [Holiday calendars](sections/holiday_calendars.md#holiday-calendars)
--   [Invoices](sections/invoices.md#invoices)
--   [Labels](sections/labels.md#labels)
--   [Milestones](sections/milestones.md#milestones)
--   [Non project time](sections/non_project_time.md#non-project-time)
--   [Persons](sections/persons.md#persons)
--   [Person cost periods](sections/person_cost_periods.md#person-cost-periods)
--   [Project team](sections/project_team.md#project-team)
--   [Projects](sections/projects.md#projects)
--   [Rate card rates](sections/rate_card_rates.md#rate-card-rates)
--   [Rate card versions](sections/rate_card_versions.md#rate-card-versions)
--   [Rate cards](sections/rate_cards.md#rate-cards)
--   [Repeating tasks](sections/repeating_tasks.md#repeating-tasks)
--   [Roles](sections/roles.md#roles)
--   [Sprints](sections/sprints.md#sprints)
--   [Sub tasks](sections/sub_tasks.md#sub-tasks)
--   [Tasks](sections/tasks.md#tasks)
--   [Teams](sections/teams.md#teams)
--   [Time registrations](sections/time_registrations.md#time-registrations)
--   [Workflow columns](sections/workflow_columns.md#workflow-columns)
+- [Allocations](sections/allocations.md#allocations)
+- [Baseline Expenses](sections/baseline_expenses.md#baseline_expenses)
+- [Baseline Roles](sections/baseline_roles.md#baselines_roles)
+- [Clients](sections/clients.md#clients)
+- [Company](sections/company.md#company)
+- [Connected projects](sections/connected_projects.md#connected-projects)
+- [Exchange rates](sections/exchange_rates.md#exchange-rates)
+- [Expense categories](sections/expense_categories.md#expense-categories)
+- [Expense items](sections/expense_items.md#expense-items)
+- [Holiday calendar entries](sections/holiday_calendar_entries.md#holiday-calendar-entries)
+- [Holiday calendars](sections/holiday_calendars.md#holiday-calendars)
+- [Invoices](sections/invoices.md#invoices)
+- [Labels](sections/labels.md#labels)
+- [Milestones](sections/milestones.md#milestones)
+- [Non project time](sections/non_project_time.md#non-project-time)
+- [Persons](sections/persons.md#persons)
+- [Person cost periods](sections/person_cost_periods.md#person-cost-periods)
+- [Project team](sections/project_team.md#project-team)
+- [Projects](sections/projects.md#projects)
+- [Rate card rates](sections/rate_card_rates.md#rate-card-rates)
+- [Rate card versions](sections/rate_card_versions.md#rate-card-versions)
+- [Rate cards](sections/rate_cards.md#rate-cards)
+- [Repeating tasks](sections/repeating_tasks.md#repeating-tasks)
+- [Roles](sections/roles.md#roles)
+- [Sprints](sections/sprints.md#sprints)
+- [Sub tasks](sections/sub_tasks.md#sub-tasks)
+- [Tasks](sections/tasks.md#tasks)
+- [Teams](sections/teams.md#teams)
+- [Time registrations](sections/time_registrations.md#time-registrations)
+- [Webhook subscriptions](sections/webhook_subscriptions.md#webhook-subscriptions)
+- [Workflow columns](sections/workflow_columns.md#workflow-columns)
 
 ## API libraries
 
--   [Google APIs Client Library](https://code.google.com/p/google-api-java-client/) - Java
--   [Jersey](https://jersey.java.net/) - Java
--   Feel free to add libraries for other languages :)
+- [Google APIs Client Library](https://code.google.com/p/google-api-java-client/) - Java
+- [Jersey](https://jersey.java.net/) - Java
+- Feel free to add libraries for other languages :)
 
 ## Help us make it better
 
