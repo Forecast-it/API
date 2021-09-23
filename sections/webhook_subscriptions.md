@@ -8,7 +8,7 @@ When an event that you have subscribed to occours in Forecast, a webhook with th
 
 | Webhook fields   | Description/format                                                                                                                                  |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| timestamp        | String. A unix timestamp of when the event happened                                                                                                 |
+| timestamp        | String. A UTC timestamp of when the event happened                                                                                                  |
 | event            | String. A string consisting of the type of object and the type of event.                                                                            |
 | object           | JSON object                                                                                                                                         |
 | &nbsp;&nbsp;↳ id | Integer. The id of the object in question.                                                                                                          |
@@ -20,7 +20,7 @@ When an event that you have subscribed to occours in Forecast, a webhook with th
 
 ```javascript
 {
-    "timestamp": "1631884576921",
+    "timestamp": "2021-09-23T07:30:00Z",
     "event": "task_updated",
     "object": {
         "id": 655383
