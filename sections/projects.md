@@ -324,6 +324,7 @@ PUT https://api.forecast.it/api/v1/projects/1
 ```javascript
 {
    "stage":"RUNNING",
+   "labels":[12, 13]     
 }
 ```
 
