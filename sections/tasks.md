@@ -15,6 +15,7 @@
 | title            | String                                            |
 | description      | String                                            |
 | project_id       | Integer, ID of project                            |
+| parent_task_id   | Integer, ID of parent task                        |
 | role             | Integer, ID of role                               |
 | low_estimate     | Decimal                                           |
 | high_estimate    | Decimal                                           |
@@ -49,6 +50,7 @@
       "title":"Design login screen",
       "description":"",
       "project_id":1,
+      "parent_task_id":10,
       "role":1,
       "low_estimate":10.0,
       "high_estimate":20.0,
@@ -88,6 +90,7 @@
 | title            | String                                            |
 | description      | String                                            |
 | project_id       | Integer, ID of project                            |
+| parent_task_id   | Integer, ID of parent task                        |
 | role             | Integer, ID of role                               |
 | low_estimate     | Decimal                                           |
 | high_estimate    | Decimal                                           |
@@ -122,6 +125,7 @@
       "title":"Design login screen",
       "description":"",
       "project_id":1,
+      "parent_task_id":10,
       "role":1,
       "low_estimate":10.0,
       "high_estimate":20.0,
@@ -160,6 +164,7 @@
 | title            | String                                            |
 | description      | String                                            |
 | project_id       | Integer, ID of project                            |
+| parent_task_id   | Integer, ID of parent task                        |
 | role             | Integer, ID of role                               |
 | low_estimate     | Decimal                                           |
 | high_estimate    | Decimal                                           |
@@ -193,7 +198,8 @@
    "title":"Design login screen",
    "description":"",
    "role":1,
-   "project_id":1,
+   "project_id":1, 
+   "parent_task_id":10, 
    "low_estimate":10.0,
    "high_estimate":20.0,
    "forecast":26.0,
@@ -230,6 +236,7 @@
 | title            | String                                            |
 | description      | String                                            |
 | project_id       | Integer, ID of project                            |
+| parent_task_id   | Integer, ID of parent task                        |
 | role             | Integer, ID of role                               |
 | low_estimate     | Decimal                                           |
 | high_estimate    | Decimal                                           |
@@ -264,6 +271,7 @@
    "description":"",
    "role":1,
    "project_id":1,
+   "parent_task_id":10, 
    "low_estimate":10.0,
    "high_estimate":20.0,
    "forecast":26.0,
@@ -287,6 +295,81 @@
    "updated_at":"2017-01-14T18:47:58Z"
 }
 ```
+
+## Get children tasks
+
+- `GET /v2/tasks/{taskId}/children` - Returns an array of children tasks, that belongs to the specific task.
+
+| Response fields  | Description/format                                |
+| ---------------- | ------------------------------------------------- |
+| id               | Integer                                           |
+| company_card_id  | Integer, deprecated use 'company_task_id' instead |
+| company_task_id  | Integer                                           |
+| title            | String                                            |
+| description      | String                                            |
+| project_id       | Integer, ID of project                            |
+| parent_task_id   | Integer, ID of parent task                        |
+| role             | Integer, ID of role                               |
+| low_estimate     | Decimal                                           |
+| high_estimate    | Decimal                                           |
+| forecast         | Decimal                                           |
+| remaining        | Decimal                                           |
+| approved         | Boolean                                           |
+| start_date       | Date                                              |
+| end_date         | Date                                              |
+| bug              | Boolean                                           |
+| high_priority    | Boolean                                           |
+| un_billable      | Boolean                                           |
+| blocked          | Boolean                                           |
+| sprint           | Integer, ID of sprint                             |
+| workflow_column  | Integer, ID of workflow column                    |
+| milestone        | Integer, ID of milestone                          |
+| assigned_persons | List<Integer>, List ID of assigned persons        |
+| labels           | List<Integer>, List ID of labels                  |
+| owner_id         | Integer, ID of person                             |
+| created_by       | Integer, ID of person                             |
+| updated_by       | Integer, ID of person                             |
+| created_at       | Date                                              |
+| updated_at       | Date                                              |
+
+### Sample JSON response
+
+```javascript
+[
+   {
+      "id":1,
+      "company_card_id": 1,
+      "company_task_id": 1,
+      "title":"Design login screen",
+      "description":"",
+      "project_id":1,
+      "parent_task_id":10,
+      "role":1,
+      "low_estimate":10.0,
+      "high_estimate":20.0,
+      "forecast":26.0,
+      "remaining":26.0,
+      "approved":true,
+      "start_date":"2017-01-01",
+      "end_date":"2017-01-20",
+      "bug":false,
+      "high_priority":false,
+      "un_billable":false,
+      "blocked":false,
+      "sprint":1,
+      "workflow_column":2,
+      "milestone":1,
+      "assigned_persons":[1,2,3],
+      "labels":[1,2,3],
+      "owner_id":1,
+      "created_by":1,
+      "updated_by":1,
+      "created_at":"2017-01-14T18:46:56Z",
+      "updated_at":"2017-01-14T18:47:58Z"
+   }, ...
+]
+```
+
 
 ## Get comments for a task
 
@@ -346,6 +429,7 @@ POST https://api.forecast.it/api/v2/tasks/2/comments
 | description      | String                                     |
 | role             | Integer, ID of role                        |
 | project_id       | (Required) Integer, ID of project          |
+| parent_task_id   | Integer, ID of parent task                        |
 | low_estimate     | Decimal                                    |
 | high_estimate    | Decimal                                    |
 | approved         | Boolean (Defaults to true)                 |
@@ -371,6 +455,7 @@ POST https://api.forecast.it/api/v2/tasks
    "title":"Implement login page",
    "role":2,
    "project_id":1,
+   "parent_task_id":10, 
    "low_estimate":20.0,
    "high_estimate":40.0,
    "approved":true,
@@ -389,6 +474,7 @@ POST https://api.forecast.it/api/v2/tasks
 | description      | String                                                                                    |
 | role             | Integer, ID of role                                                                       |
 | project_id       | Integer, ID of project                                                                    |
+| parent_task_id   | Integer, ID of parent task                        |
 | low_estimate     | Decimal                                                                                   |
 | high_estimate    | Decimal                                                                                   |
 | remaining        | Decimal (available only if the task's project has remaining_auto_calculated set to false) |
