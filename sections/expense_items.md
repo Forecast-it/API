@@ -1,6 +1,58 @@
 # Expense items
 
-## Get expense items
+## Get company expense items
+
+* `GET /expense_items` - Returns all expense items of the company.
+
+| Response fields     | Description/format              |
+| ------------------- | ------------------------------- |
+| id                  | Integer                         |
+| project_id          | Integer                         |
+| name                | String                          |
+| expense_date        | Date                            |
+| cost                | Decimal                         |
+| price               | Decimal                         |
+| quantity            | Decimal                         |
+| approved            | Boolean                         |
+| billable            | Boolean                         |
+| notes               | String                          |
+| person_id           | Integer, ID of person           |
+| expense_category    | Integer, ID of expense category |
+| created_by          | Integer, ID of person           |
+| updated_by          | Integer, ID of person           |
+| created_at          | Date                            |
+| updated_at          | Date                            |
+| phase_id            | Integer, ID of milestone        |
+| part_of_fixed_price | Boolean                         |
+
+
+### Sample JSON response
+
+```javascript
+[
+   {
+      "id":1,
+      "project_id":2,
+      "name":"Servers",
+      "expense_date": "2017-01-01",
+      "cost": 150,
+      "price": 200,
+      "quantity": 1,
+      "approved": true,
+      "billable": true,
+      "notes": "Notes about servers expense",
+      "person_id": 1,
+      "created_by":1,
+      "updated_by":1,
+      "created_at":"2017-01-14T18:46:56Z",
+      "updated_at":"2017-01-14T18:47:58Z",
+      "phase_id": 1,
+      "part_of_fixed_price": true
+   }, ...
+]
+```
+
+## Get project expense items
 
 * `GET /projects/{projectId}/expense_items` - Returns all expense items of the project.
 
@@ -51,7 +103,56 @@
 
 ## Get expense item
 
-* `GET /projects/{projectId}/expense_items/{expense_itemId}` - Returns a specific expense item.
+* `GET /expense_items/{expense_itemId}` - Returns a specific expense item.
+
+| Response fields     | Description/format              |
+| ------------------- | ------------------------------- |
+| id                  | Integer                         |
+| project_id          | Integer                         |
+| name                | String                          |
+| expense_date        | Date                            |
+| cost                | Decimal                         |
+| price               | Decimal                         |
+| quantity            | Decimal                         |
+| approved            | Boolean                         |
+| billable            | Boolean                         |
+| notes               | String                          |
+| person_id           | Integer, ID of person           |
+| expense_category    | Integer, ID of expense category |
+| created_by          | Integer, ID of person           |
+| updated_by          | Integer, ID of person           |
+| created_at          | Date                            |
+| updated_at          | Date                            |
+| phase_id            | Integer, ID of milestone        |
+| part_of_fixed_price | Boolean                         |
+
+### Sample JSON response
+
+```javascript
+{
+   "id":1,
+   "project_id":2,
+   "name":"Servers",
+   "expense_date": "2017-01-01",
+   "cost": 150,
+   "price": 200,
+   "quantity": 1,
+   "approved": true,
+   "billable": true,
+   "notes": "Notes about servers expense",
+   "person_id": 1,
+   "created_by":1,
+   "updated_by":1,
+   "created_at":"2017-01-14T18:46:56Z",
+   "updated_at":"2017-01-14T18:47:58Z",
+   "phase_id": 1,
+   "part_of_fixed_price": true   
+}
+```
+
+## Get expense item in a project
+
+* `GET /projects/{projectId}/expense_items/{expense_itemId}` - Returns a specific expense item in a project.
 
 | Response fields     | Description/format              |
 | ------------------- | ------------------------------- |
