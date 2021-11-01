@@ -421,7 +421,7 @@ POST https://api.forecast.it/api/v2/tasks/2/comments
 
 ## Create task
 
-- `POST /tasks` - Creates a new task. Returns the same object as getting a single task.
+- `POST /v2/tasks` - Creates a new task. Returns the same object as getting a single task.
 
 | Request fields   | Description/format                         |
 | ---------------- | ------------------------------------------ |
@@ -504,7 +504,7 @@ PUT https://api.forecast.it/api/v2/tasks/1
 
 ## Delete task
 
-- `DELETE /tasks/{taskId}` - Deletes a task.
+- `DELETE /v2/tasks/{taskId}` - Deletes a task.
 
 ### Sample JSON request
 
