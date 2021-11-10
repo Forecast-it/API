@@ -617,9 +617,9 @@ PUT https://api.forecast.it/api/v1/invoice_payments/123
 }
 ```
 
-## Delete Invoice Entry
+## Delete Invoice Payment
 
--   `DELETE /invoice_entries/{invoiceEntryId}` - Deletes a specific invoice payment.
+-   `DELETE /invoice_payments/{invoicePaymentId}` - Deletes a specific invoice payment.
 
 ### Sample JSON request
 
