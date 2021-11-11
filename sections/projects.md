@@ -35,6 +35,11 @@
 | baseline_target              | Double (Same as budget if budget_type = FIXED_PRICE)             |
 | labels                       | List<Integer>, List ID of labels                                 |
 | external_refs                | List of references to other systems                              |
+| default_period_periodicity   | String (DAILY, WEEKLY, MONTHLY)                                  |
+| default_period_length        | Integer                                                          |
+| default_period_budget_type   | String (FIXED_HOURS, FIXED_PRICE, TIME_AND_MATERIALS)            |
+| default_period_hours_amount  | Double                                                           |
+| default_period_price_amount  | Double                                                           |
 | created_by                   | Integer, ID of person                                            |
 | updated_by                   | Integer, ID of person                                            |
 | created_at                   | Date                                                             |
@@ -56,7 +61,7 @@
       "estimation_units": "HOURS",
       "minutes_per_estimation_point": 480,
       "budget": 1234.56,
-      "budget_type": "FIXED_PRICE",
+      "budget_type": "RETAINER",
       "billable": true,
       "use_sprints": true,
       "sprint_length": 14,
@@ -75,7 +80,12 @@
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
-      "updated_at":"2017-01-14T18:47:58Z"
+      "updated_at":"2017-01-14T18:47:58Z", 
+      "default_period_periodicity": "DAILY",
+      "default_period_length": 1,
+      "default_period_budget_type": "FIXED_PRICE",
+      "default_period_hours_amount": 1,
+      "default_period_price_amount": 1
    }, ...
 ]
 ```
@@ -115,6 +125,11 @@
 | baseline_target              | Double (Same as budget if budget_type = FIXED_PRICE)             |
 | labels                       | List<Integer>, List ID of labels                                 |
 | external_refs                | List of references to other systems                              |
+| default_period_periodicity   | String (DAILY, WEEKLY, MONTHLY)                                  |
+| default_period_length        | Integer                                                          |
+| default_period_budget_type   | String (FIXED_HOURS, FIXED_PRICE, TIME_AND_MATERIALS)            |
+| default_period_hours_amount  | Double                                                           |
+| default_period_price_amount  | Double                                                           |
 | created_by                   | Integer, ID of person                                            |
 | updated_by                   | Integer, ID of person                                            |
 | created_at                   | Date                                                             |
@@ -153,7 +168,12 @@
    "created_by":1,
    "updated_by":1,
    "created_at":"2017-01-14T18:46:56Z",
-   "updated_at":"2017-01-14T18:47:58Z"
+   "updated_at":"2017-01-14T18:47:58Z",
+   "default_period_periodicity": "DAILY",
+   "default_period_length": 1, 
+   "default_period_budget_type": "FIXED_PRICE",
+   "default_period_hours_amount": 1,
+   "default_period_price_amount": 1
 }
 ```
 
@@ -192,6 +212,11 @@
 | baseline_target              | Double (Same as budget if budget_type = FIXED_PRICE)             |
 | labels                       | List<Integer>, List ID of labels                                 |
 | external_refs                | List of references to other systems                              |
+| default_period_periodicity   | String (DAILY, WEEKLY, MONTHLY)                                  |
+| default_period_length        | Integer                                                          |
+| default_period_budget_type   | String (FIXED_HOURS, FIXED_PRICE, TIME_AND_MATERIALS)            |
+| default_period_hours_amount  | Double                                                           |
+| default_period_price_amount  | Double                                                           |
 | created_by                   | Integer, ID of person                                            |
 | updated_by                   | Integer, ID of person                                            |
 | created_at                   | Date                                                             |
@@ -230,7 +255,12 @@
    "created_by":1,
    "updated_by":1,
    "created_at":"2017-01-14T18:46:56Z",
-   "updated_at":"2017-01-14T18:47:58Z"
+   "updated_at":"2017-01-14T18:47:58Z",
+   "default_period_periodicity": "DAILY",
+   "default_period_length": 1,
+   "default_period_budget_type": "FIXED_PRICE",
+   "default_period_hours_amount": 1,
+   "default_period_price_amount": 1
 }
 ```
 
@@ -264,6 +294,11 @@
 | baseline_target              | Double (Minimum 0.0, Should not be set with budget_type: FIXED_PRICE)                             |
 | baseline_win_chance          | Double (Between 0.0 and 1.0) (Defaults to 1.0)                                                    |
 | labels                       | List<Integer>, List ID of labels                                                                  |
+| default_period_periodicity   | String (DAILY, WEEKLY, MONTHLY)                                                                   |
+| default_period_length        | Integer                                                                                           |
+| default_period_budget_type   | String (FIXED_HOURS, FIXED_PRICE, TIME_AND_MATERIALS)                                             |
+| default_period_hours_amount  | Double                                                                                            |
+| default_period_price_amount  | Double                                                                                            |
 
 ### Sample JSON request
 
@@ -316,6 +351,11 @@ POST https://api.forecast.it/api/v1/projects
 | baseline_win_chance          | Double (Between 0.0 and 1.0)                                     |
 | baseline_target              | Double (Minimum 0.0, Should not be set with budget_type: FIXED_PRICE) |
 | labels                       | List<Integer>, List ID of labels                                 |
+| default_period_periodicity   | String (DAILY, WEEKLY, MONTHLY)                                  |
+| default_period_length        | Integer                                                          |
+| default_period_budget_type   | String (FIXED_HOURS, FIXED_PRICE, TIME_AND_MATERIALS)            |
+| default_period_hours_amount  | Double                                                           |
+| default_period_price_amount  | Double                                                           |
 
 ### Sample JSON request
 
