@@ -23,7 +23,8 @@
 | saturday            | Integer, working hours in minutes                                                      |
 | sunday              | Integer, working hours in minutes                                                      |
 | active              | Boolean                                                                                |
-| default_role        | Integer, ID of default role                                                            |
+| default_role        | Integer, ID of default [role](roles.md#get-role)     
+| department_id       | Integer, ID of [department](departments.md#get-department)
 | cost                | Decimal, cost from the current cost period                                             |
 | language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}       |
 | start_date          | String (ISO 8601)                                                                      |
