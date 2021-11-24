@@ -397,3 +397,6 @@ The returned data contains a total for the entire timespan, plus an array with d
    ]
 }
 ```
+   
+## Get person labels
+see [Person Labels](person_labels.md)   
