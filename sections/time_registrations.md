@@ -2,9 +2,14 @@
 
 ## Get time registrations
 
--  `GET v3/time_registrations` - Returns all time registrations.
--  `GET v3/time_registrations?updated_after=YYYYMMDDTHHmmss` - Returns all time registrations that have been updated after the specified time. Example value: `20200216T210047`.
--  `GET v3/time_registrations?date_after=YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`.
+-  `GET v3/time_registrations` - Returns all time registrations. (DEPRECATED - please see the v4 endpoints)
+-  `GET v3/time_registrations?updated_after=YYYYMMDDTHHmmss` - Returns all time registrations that have been updated after the specified time. Example value: `20200216T210047`. (DEPRECATED - please see the v4 endpoints)
+-  `GET v3/time_registrations?date_after=YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`. (DEPRECATED - please see the v4 endpoints)
+
+-  `GET v4/time_registrations` - Returns all time registrations. Paginated.
+-  `GET v4/time_registrations/updated_after/YYYYMMDDTHHmmss` - Returns all time registrations that have been updated after the specified time. Example value: `20200216T210047`. Paginated.
+-  `GET v4/time_registrations/date_after/YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`. Paginated.
+
 
 | Response fields  | Description/format                    |
 | ---------------- | ------------------------------------- |

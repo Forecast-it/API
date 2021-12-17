@@ -64,6 +64,24 @@ Successful PUT and POST requests also return the JSON of the created/updated res
 
 Successful DELETE requests return 200 OK
 
+## Pagination
+
+For endpoints with pagination, you can supply the following query parameters:
+
+| Pagination param | Description/Format                                                              |
+| ---------------- | ------------------------------------------------------------------------------- |
+| pageNumber       | Positive integer. Defaults to 1 if not supplied or invalid.                     |
+| pageSize         | Positive integer. Defaults to 100. Maximum value is subject to change.          |
+
+Responses from paginated endpoints will be in the following format:
+
+| Response fields  | Description/Format                                                              |
+| ---------------- | ------------------------------------------------------------------------------- |
+| pageNumber       | Positive integer. Page number returned.                                         |
+| pageSize         | Positive integer. Page size used to generate response.                          |
+| totalObjectCount | Positive integer. Size of the total collection of which this page was returned. |
+| pageContents     | Array of the objects on the requested page.                                     |
+
 ## Handling errors
 
 If [Forecast](https://www.forecast.it) is having trouble, you might see a 5xx error. 500 means that the app is entirely down, but you might also see 502 Bad Gateway, 503 Service Unavailable, or 504 Gateway Timeout. It's your responsibility in all of these cases to retry your request later.
