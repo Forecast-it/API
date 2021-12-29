@@ -84,7 +84,7 @@ POST https://api.forecast.it/api/v1/skills
 |Request fields | Description/format|
 |------------ | -------------|
 |name | String|
-|categoryId | Integer|
+|categoryId | Integer, id of skill_category or null to remove from skill_category|
 |assignedPersons | List<Integer>, List ID of persons|
 
 ### Sample JSON request
