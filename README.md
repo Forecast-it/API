@@ -139,6 +139,7 @@ Errors are returned in the following JSON format.
 - [Sprints](sections/sprints.md#sprints)
 - [Sub tasks](sections/sub_tasks.md#sub-tasks)
 - [Tasks](sections/tasks.md#tasks)
+- [Task Financials](sections/task_financials.md)
 - [Teams](sections/teams.md#teams)
 - [Time registrations](sections/time_registrations.md#time-registrations)
 - [Webhook subscriptions](sections/webhook_subscriptions.md#webhook-subscriptions)
