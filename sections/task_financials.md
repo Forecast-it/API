@@ -23,11 +23,11 @@
 | forecast_cost          | Number. Actual costs + Remaining costs                                                 |
 | forecast_profit        | Number. Forecasted Revenue - Forecasted costs                                          |
 | forecast_margin        | Number. Estimated profit / Forecasted Revenue X 100                                    |
-| registered_minutes     | Number. Sum of time registrations on projects/tasks on project.                        |
-| remaining_minutes      | Number. Sum of remaining minutes                                                       |
-| forecast_minutes       | Number. Sum of registered + remaining minutes                                          |
-| scope_approved_minutes | Number. Sum of estimate of approved tasks in minutes                                   |
-| scope_total_minutes    | Number. Sum of estimate of all tasks in minutes                                        |
+| registered_minutes     | Number. Time registrations                                                             |
+| remaining_minutes      | Number. Remaining minutes                                                              |
+| forecast_minutes       | Number. Registered + remaining minutes                                                 |
+| scope_approved_minutes | Number. Estimate of approved task in minutes                                           |
+| scope_total_minutes    | Number. Estimate of task in minutes                                                    |
 
 ### Sample JSON response
 ```json
@@ -80,11 +80,11 @@
 | forecast_cost          | Number. Actual costs + Remaining costs                                                 |
 | forecast_profit        | Number. Forecasted Revenue - Forecasted costs                                          |
 | forecast_margin        | Number. Estimated profit / Forecasted Revenue X 100                                    |
-| registered_minutes     | Number. Sum of time registrations on projects/tasks on project.                        |
-| remaining_minutes      | Number. Sum of remaining minutes                                                       |
-| forecast_minutes       | Number. Sum of registered + remaining minutes                                          |
-| scope_approved_minutes | Number. Sum of estimate of approved tasks in minutes                                   |
-| scope_total_minutes    | Number. Sum of estimate of all tasks in minutes                                        |
+| registered_minutes     | Number. Time registrations                                                             |
+| remaining_minutes      | Number. Remaining minutes                                                              |
+| forecast_minutes       | Number. Registered + remaining minutes                                                 |
+| scope_approved_minutes | Number. Estimate of approved task in minutes                                           |
+| scope_total_minutes    | Number. Estimate of task in minutes                                                    |
 
 ### Sample JSON response
 ```json
