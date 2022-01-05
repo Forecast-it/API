@@ -2,7 +2,8 @@
 
 ## Get financials for task
 
-* `/tasks/{taskId}/financials` - Return financial numbers for specific task
+* `/tasks/{taskId}/financials` - Return financial numbers for specific task (in company currency)
+* `/tasks/{taskId}/financials?convert_to_project_currency=true` - Return financial numbers for specific task (in project currency)
 
 | Response fields        | Description/format                                                                     |
 |------------------------|----------------------------------------------------------------------------------------|
@@ -59,7 +60,8 @@
 
 ## Get financials for all tasks in a project
 
-* `/projects/{projectId}/tasks/financials` - Return list of financial numbers for each task in the specific project
+* `/projects/{projectId}/tasks/financials` - Return list of financial numbers for each task in the specific project (in company currency)
+* `/projects/{projectId}/tasks/financials?convert_to_project_currency=true` - Return list of financial numbers for each task in the specific project (in project currency)
 
 | Response fields        | Description/format                                                                     |
 |------------------------|----------------------------------------------------------------------------------------|
