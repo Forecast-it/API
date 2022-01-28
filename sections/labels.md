@@ -9,6 +9,7 @@
 |id | Integer|
 |name | String|
 |color | String|
+|categoryId | Integer, ID of label_category|
 |created_by | Integer, ID of person|
 |updated_by | Integer, ID of person|
 |created_at | Date|
@@ -21,6 +22,7 @@
       "id":1,
       "name":"Java",
       "color":"#392664",
+      "categoryId": 1,
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
@@ -38,6 +40,7 @@
 |id | Integer|
 |name | String|
 |color | String|
+|categoryId | Integer, ID of label_category|
 |created_by | Integer, ID of person|
 |updated_by | Integer, ID of person|
 |created_at | Date|
@@ -49,6 +52,7 @@
    "id":1,
    "name":"Java",
    "color":"#392664",
+   "categoryId": 1,
    "created_by":1,
    "updated_by":1,
    "created_at":"2017-01-14T18:46:56Z",
@@ -64,6 +68,7 @@
 |------------ | -------------|
 |name | (Required) String|
 |color | String|
+|categoryId | Integer, ID of label_category|
 
 ### Sample JSON request
 POST https://api.forecast.it/api/v1/labels
@@ -71,7 +76,8 @@ POST https://api.forecast.it/api/v1/labels
 ```javascript
 {
    "name":"Design",
-   "color":"#392664"
+   "color":"#392664",
+   "categoryId": 1,
 }
 ```
 
@@ -83,13 +89,16 @@ POST https://api.forecast.it/api/v1/labels
 |------------ | -------------|
 |name | String|
 |color | String|
+|categoryId | Integer, id of label_category or null to remove from label_category|
 
 ### Sample JSON request
 PUT https://api.forecast.it/api/v1/labels/1
 
 ```javascript
 {
-   "name":"Design"
+   "name":"Design",
+   "color":"#392664",
+   "categoryId": null,
 }
 ```
 
