@@ -16,8 +16,9 @@
 | id               | Integer                               |
 | person           | Integer, ID of person                 |
 | project          | Integer, ID of project                |
-| card             | Integer, deprecated. Use task instead |
+| card             | Integer, deprecated. Use task instead. **Only v3** |
 | task             | Integer, ID of task                   |
+| task_project      | Integer, ID of project of task (if any). **Only v4**                   |
 | non_project_time | Integer, ID of non project time       |
 | time_registered  | Integer, time registered in minutes   |
 | date             | Date                                  |
