@@ -35,9 +35,10 @@
    {
       "id":1,
       "person":1,
-      "project":1,
+      "project":null,
       "card":1,
       "task":1,
+      "task_project":1
       "non_project_time":null,
       "time_registered":480,
       "date":"2017-01-14",
