@@ -4,7 +4,9 @@
 
 ## Get persons
 
-- `GET /persons` - Returns all persons.
+- `GET v1/persons` - Returns all persons. (DEPRECATED - please see the v2 endpoints)
+- 
+- `GET v2/persons` - Returns all persons.
 
 | Response fields     | Description/format                                                                                    |
 | ------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -12,7 +14,7 @@
 | first_name          | String                                                                                                |
 | last_name           | String                                                                                                |
 | email               | String                                                                                                |
-| user_type           | String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} |
+| user_type           | String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1**|
 | client_id           | Integer, ID of client                                                                                 |
 | holiday_calendar_id | Integer, ID of holiday calendar                                                                       |
 | monday              | Integer, working hours in minutes                                                                     |
@@ -69,7 +71,9 @@
 
 ## Get person
 
-- `GET /persons/{personId}` - Returns a specific person.
+- `GET v1/persons/{personId}` - Returns a specific person. (DEPRECATED - please see the v2 endpoints)
+
+- `GET v2/persons/{personId}` - Returns a specific person.
 
 | Response fields     | Description/format                                                                     |
 | ------------------- | -------------------------------------------------------------------------------------- |
@@ -77,7 +81,7 @@
 | first_name          | String                                                                                 |
 | last_name           | String                                                                                 |
 | email               | String                                                                                 |
-| user_type           | String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} |
+| user_type           | String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1**|
 | client_id           | Integer, ID of client                                                                  |
 | holiday_calendar_id | Integer, ID of holiday calendar                                                        |
 | monday              | Integer                                                                                |
@@ -127,7 +131,7 @@
 
 ## Get person projects
 
-- `GET /persons/{personId}/projects` - Returns a specific person's projects.
+- `GET v1/persons/{personId}/projects` - Returns a specific person's projects.
 
 | Response fields              | Description/format                             |
 | ---------------------------- | ---------------------------------------------- |
@@ -199,14 +203,17 @@
 
 ## Create person
 
-- `POST /persons` - Creates a new person. Returns the same object as getting a single person.
+- `POST v1/persons` - Creates a new person. Returns the same object as getting a single person. (DEPRECATED - please see the v2 endpoints)
+
+- `POST v2/persons` - Creates a new person. Returns the same object as getting a single person.
 
 | Request fields      | Description/format                                                                        |
 | ------------------- | ----------------------------------------------------------------------------------------- |
 | first_name          | String                                                                                    |
 | last_name           | String                                                                                    |
 | email               | String                                                                                    |
-| user_type           | (Required\*) String {"VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} |
+| user_type           | (Required\*) String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1**|
+| profile_ids         | List<Integer>, List ID of [Profile](sections/profiles.md#profiles) ids **Only v2**  
 | client_id           | Integer, ID of client                                                                     |
 | holiday_calendar_id | Integer, ID of holiday calendar                                                           |
 | monday              | Integer, if not set, taken from company                                                   |
@@ -231,7 +238,8 @@ POST https://api.forecast.it/api/v1/persons
    "first_name":"John",
    "last_name":"Smith",
    "email":"js@domain.com",
-   "user_type":"ADMIN",
+   "user_type":"ADMIN", 
+   "profile_ids":[-3],
    "holiday_calendar_id": 1,
    "monday":480,
    "tuesday":480,
@@ -247,14 +255,17 @@ POST https://api.forecast.it/api/v1/persons
 
 ## Update person
 
-- `PUT /persons/{personId}` - Updates a person. Returns the same object as getting a single person.
+- `PUT v1/persons/{personId}` - Updates a person. Returns the same object as getting a single person. (DEPRECATED - please see the v2 endpoints)
+
+- `PUT v2/persons/{personId}` - Updates a person. Returns the same object as getting a single person.
 
 | Request fields      | Description/format                                                               |
 | ------------------- | -------------------------------------------------------------------------------- |
 | first_name          | String                                                                           |
 | last_name           | String                                                                           |
 | email               | String                                                                           |
-| user_type           | String\* {"VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"}   |
+| user_type           | (Required\*) String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1**|
+| profile_ids         | List<Integer>, List ID of profile ids **Only v2**                                                     |
 | holiday_calendar_id | Integer, ID of holiday calendar                                                  |
 | monday              | Integer                                                                          |
 | tuesday             | Integer                                                                          |
@@ -285,7 +296,9 @@ PUT https://api.forecast.it/api/v1/persons/1
 
 \* Only person with client_id not equal to null can be deleted
 
-- `DELETE /persons/{personId}` - Deletes a person.
+- `DELETE v1/persons/{personId}` - Deletes a person.
+
+- `DELETE v2/persons/{personId}` - Deletes a person.
 
 ### Sample JSON request
 

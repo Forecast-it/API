@@ -131,6 +131,7 @@ Errors are returned in the following JSON format.
 - [Person labels (skills)](sections/person_labels.md)
 - [Project team](sections/project_team.md#project-team)
 - [Projects](sections/projects.md#projects)
+- [Profiles](sections/profiles.md#profiles)
 - [Rate card rates](sections/rate_card_rates.md#rate-card-rates)
 - [Rate card versions](sections/rate_card_versions.md#rate-card-versions)
 - [Rate cards](sections/rate_cards.md#rate-cards)
