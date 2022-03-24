@@ -86,7 +86,7 @@ The following endpoints can be used to subscribe to Forecast webhooks.
 | --------------- | ------------------------------- |
 | id              | Integer                         |
 | name            | String                          |
-| type            | String (TASK, TIME_REG)         |
+| type            | String (TASK, TIME_REG, PROJECT, PHASE)         |
 | event           | String (CREATE, UPDATE, DELETE) |
 | url             | String                          |
 | active          | Boolean                         |
@@ -115,7 +115,7 @@ GET https://api.forecast.it/api/v1/webhook_subscriptions/1
 | Request fields | Description/format                         |
 | -------------- | ------------------------------------------ |
 | name           | (Required) String                          |
-| type           | (Required) String (TASK, TIME_REG)         |
+| type           | (Required) String (TASK, TIME_REG, PROJECT, PHASE)         |
 | event          | (Required) String (CREATE, UPDATE, DELETE) |
 | url            | (Required) String                          |
 | active         | Boolean (Defaults to true)                 |
@@ -153,7 +153,7 @@ POST https://api.forecast.it/api/v1/webhook_subscriptions
 | Request fields | Description/format              |
 | -------------- | ------------------------------- |
 | name           | String                          |
-| type           | String (TASK, TIME_REG)         |
+| type           | String (TASK, TIME_REG, PROJECT, PHASE)         |
 | event          | String (CREATE, UPDATE, DELETE) |
 | url            | String                          |
 | active         | Boolean                         |
