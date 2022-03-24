@@ -58,7 +58,7 @@ The following endpoints can be used to subscribe to Forecast webhooks.
 | --------------- | ------------------------------- |
 | id              | Integer                         |
 | name            | String                          |
-| type            | String (TASK, TIME_REG)         |
+| type            | String (TASK, TIME_REG, PROJECT, PHASE)         |
 | event           | String (CREATE, UPDATE, DELETE) |
 | url             | String                          |
 | active          | Boolean                         |
