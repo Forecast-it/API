@@ -1,5 +1,7 @@
 # Milestones
 
+This endpoint is deprecated. Please use the [Phases](../sections/phases.md#phases) endpoint instead
+
 ## Get milestones
 
 - `GET /projects/{projectId}/milestones` - Returns all milestones of the project.

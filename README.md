@@ -68,10 +68,10 @@ Successful DELETE requests return 200 OK
 
 For endpoints with pagination, you can supply the following query parameters:
 
-| Pagination param | Description/Format                                                              |
-| ---------------- | ------------------------------------------------------------------------------- |
-| pageNumber       | Positive integer. Defaults to 1 if not supplied or invalid.                     |
-| pageSize         | Positive integer. Defaults to 100. Maximum value is subject to change.          |
+| Pagination param | Description/Format                                                     |
+| ---------------- | ---------------------------------------------------------------------- |
+| pageNumber       | Positive integer. Defaults to 1 if not supplied or invalid.            |
+| pageSize         | Positive integer. Defaults to 100. Maximum value is subject to change. |
 
 Responses from paginated endpoints will be in the following format:
 
@@ -124,11 +124,12 @@ Errors are returned in the following JSON format.
 - [Holiday calendars](sections/holiday_calendars.md#holiday-calendars)
 - [Invoices](sections/invoices.md#invoices)
 - [Labels](sections/labels.md#labels)
-- [Milestones](sections/milestones.md#milestones)
+- [Milestones (Deprecated - Name changed to Phases)](sections/milestones_deprecated.md#milestones)
 - [Non project time](sections/non_project_time.md#non-project-time)
 - [Persons](sections/persons.md#persons)
 - [Person cost periods](sections/person_cost_periods.md#person-cost-periods)
 - [Person labels (skills)](sections/person_labels.md)
+- [Phases](sections/phases.md#phases)
 - [Project team](sections/project_team.md#project-team)
 - [Projects](sections/projects.md#projects)
 - [Profiles](sections/profiles.md#profiles)

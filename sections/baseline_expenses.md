@@ -8,7 +8,7 @@
 | ---------------- | ------------------------------- |
 | id               | Integer                         |
 | project          | Integer, ID of project          |
-| milestone        | Integer, ID of milestone        |
+| phase            | Integer, ID of phase            |
 | expense_category | Integer, ID of expense category |
 | expense_cost     | Double                          |
 | expense_revenue  | Double                          |
@@ -36,15 +36,15 @@
 ]
 ```
 
-## Get baseline expenses for milestone
+## Get baseline expenses for phase
 
-- `GET /projects/{projectId}/milestones/{milestoneId}/baseline_expenses` - Returns all baseline expenses for a given milestone.
+- `GET /projects/{projectId}/phases/{phaseId}/baseline_expenses` - Returns all baseline expenses for a given phase.
 
 | Response fields  | Description/format              |
 | ---------------- | ------------------------------- |
 | id               | Integer                         |
 | project          | Integer, ID of project          |
-| milestone        | Integer, ID of milestone        |
+| phase            | Integer, ID of phase            |
 | expense_category | Integer, ID of expense category |
 | expense_cost     | Double                          |
 | expense_revenue  | Double                          |
@@ -74,13 +74,13 @@
 
 ## Get baseline expense
 
-- `GET /projects/{projectId}/milestones/{milestoneId}/baseline_expenses/{baselineExpenseId}` - Returns a specific baseline expense.
+- `GET /projects/{projectId}/phases/{phaseId}/baseline_expenses/{baselineExpenseId}` - Returns a specific baseline expense.
 
 | Response fields  | Description/format              |
 | ---------------- | ------------------------------- |
 | id               | Integer                         |
 | project          | Integer, ID of project          |
-| milestone        | Integer, ID of milestone        |
+| phase            | Integer, ID of phase            |
 | expense_category | Integer, ID of expense category |
 | expense_cost     | Double                          |
 | expense_revenue  | Double                          |
@@ -110,7 +110,7 @@
 
 ## Create baseline expense
 
-- `POST /projects/{projectId}/milestones/{milestoneId}/baseline_expenses` - Creates a new baseline expense. Returns the same object as getting a single baseline expense.
+- `POST /projects/{projectId}/phases/{phaseId}/baseline_expenses` - Creates a new baseline expense. Returns the same object as getting a single baseline expense.
 
 | Request fields   | Description/format                         |
 | ---------------- | ------------------------------------------ |
@@ -120,7 +120,7 @@
 
 ### Sample JSON request
 
-POST https://api.forecast.it/api/v1/projects/1/milestones/1/baselines_expenses
+POST https://api.forecast.it/api/v1/projects/1/phases/1/baselines_expenses
 
 ```javascript
 {
@@ -132,7 +132,7 @@ POST https://api.forecast.it/api/v1/projects/1/milestones/1/baselines_expenses
 
 ## Update baseline expense
 
-- `PUT /projects/{projectId}/milestones/{milestoneId}/baseline_expenses/{baselineExpenseId}` - Updates a baseline expense. Returns the same object as getting a single baseline expense.
+- `PUT /projects/{projectId}/phases/{phaseId}/baseline_expenses/{baselineExpenseId}` - Updates a baseline expense. Returns the same object as getting a single baseline expense.
 
 | Request fields  | Description/format |
 | --------------- | ------------------ |
@@ -141,7 +141,7 @@ POST https://api.forecast.it/api/v1/projects/1/milestones/1/baselines_expenses
 
 ### Sample JSON request
 
-PUT https://api.forecast.it/api/v1/projects/1/milestones/1/baseline_expenses/1
+PUT https://api.forecast.it/api/v1/projects/1/phases/1/baseline_expenses/1
 
 ```javascript
 {
@@ -152,8 +152,8 @@ PUT https://api.forecast.it/api/v1/projects/1/milestones/1/baseline_expenses/1
 
 ## Delete baseline expense
 
-- `DELETE /projects/{projectId}/milestones/{milestoneId}/baseline_expenses/{baselineExpenseId}` - Deletes a baseline expense.
+- `DELETE /projects/{projectId}/phases/{phaseId}/baseline_expenses/{baselineExpenseId}` - Deletes a baseline expense.
 
 ### Sample JSON request
 
-DELETE https://api.forecast.it/api/v1/projects/1/milestones/1/baseline_expenses/1
+DELETE https://api.forecast.it/api/v1/projects/1/phases/1/baseline_expenses/1
