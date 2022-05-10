@@ -16,6 +16,7 @@
 | id               | Integer                               |
 | person           | Integer, ID of person                 |
 | project          | Integer, ID of project                |
+| phase            | Integer, ID of project **Only v4**    |
 | card             | Integer, deprecated. Use task instead. **Only v3** |
 | task             | Integer, ID of task                   |
 | task_project      | Integer, ID of project of task (if any). **Only v4**                   |
