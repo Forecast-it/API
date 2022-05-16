@@ -3,6 +3,8 @@
 (Formerly known as cards. See old docs here: [Cards](cards.md#cards))
 
 ## Get all tasks
+- `GET /v4/tasks` - Returns all tasks in your account in a paginated response.
+- `GET /v4/tasks/updated_after/YYYYMMDDTHHmmss` - Returns all tasks in your account that have been updated after the specified time in a paginated response. Example value: `20180216T210047`.
 
 - `GET /v3/tasks` - Returns all tasks in your account (This may be a large dataset).
 - `GET /v3/tasks/updated_after/YYYYMMDDTHHmmss` - Returns all tasks in your account that have been updated after the specified time. Example value: `20180216T210047`.
