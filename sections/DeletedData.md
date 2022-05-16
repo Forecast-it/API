@@ -1,6 +1,9 @@
-# Deleted Time registrations
+# Deleted data
+In this section you can find all endpoints for deleted data such as deleted time registrations and deleted tasks. 
 
-## Get all deleted time registrations in your company
+## Deleted Time registrations
+
+### Get all deleted time registrations in your company
 
 - `GET v4/time_regisrations/deleted` - Returns all deleted time registrations in a paginated response. 
 
@@ -19,7 +22,7 @@
 | name              | String, name of task project ***Only on task type***  |
 | datetime          | Datetime, date and time of registration               |
 
-### Sample JSON response
+#### Sample JSON response
 
 ```javascript
 [
