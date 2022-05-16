@@ -145,6 +145,9 @@ Errors are returned in the following JSON format.
 - [Time registrations](sections/time_registrations.md#time-registrations)
 - [Webhook subscriptions](sections/webhook_subscriptions.md#webhook-subscriptions)
 - [Workflow columns](sections/workflow_columns.md#workflow-columns)
+- [Deleted data](sections/DeletedData.md#deleted-data)
+  - [Time registrations](sections/DeletedData.md#deleted-time-registrations)
+  - Tasks
 
 ## API libraries
 
