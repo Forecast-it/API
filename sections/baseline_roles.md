@@ -4,17 +4,17 @@
 
 - `GET /projects/{projectId}/baseline_roles` - Returns all baseline roles for a given project.
 
-| Response fields  | Description/format       |
-| ---------------- | ------------------------ |
-| id               | Integer                  |
-| project          | Integer, ID of project   |
-| milestone        | Integer, ID of milestone |
-| role             | Integer, ID of role      |
-| baseline_minutes | Integer                  |
-| created_by       | Integer, ID of person    |
-| updated_by       | Integer, ID of person    |
-| created_at       | Date                     |
-| updated_at       | Date                     |
+| Response fields  | Description/format     |
+| ---------------- | ---------------------- |
+| id               | Integer                |
+| project          | Integer, ID of project |
+| phase            | Integer, ID of phase   |
+| role             | Integer, ID of role    |
+| baseline_minutes | Integer                |
+| created_by       | Integer, ID of person  |
+| updated_by       | Integer, ID of person  |
+| created_at       | Date                   |
+| updated_at       | Date                   |
 
 ### Sample JSON response
 
@@ -34,21 +34,21 @@
 ]
 ```
 
-## Get baseline roles for milestone
+## Get baseline roles for phase
 
-- `GET /projects/{projectId}/milestones/{milestoneId}/baseline_roles` - Returns all baseline roles for a given milestone.
+- `GET /projects/{projectId}/phases/{phaseId}/baseline_roles` - Returns all baseline roles for a given phase.
 
-| Response fields  | Description/format       |
-| ---------------- | ------------------------ |
-| id               | Integer                  |
-| project          | Integer, ID of project   |
-| milestone        | Integer, ID of milestone |
-| role             | Integer, ID of role      |
-| baseline_minutes | Integer                  |
-| created_by       | Integer, ID of person    |
-| updated_by       | Integer, ID of person    |
-| created_at       | Date                     |
-| updated_at       | Date                     |
+| Response fields  | Description/format     |
+| ---------------- | ---------------------- |
+| id               | Integer                |
+| project          | Integer, ID of project |
+| phase            | Integer, ID of phase   |
+| role             | Integer, ID of role    |
+| baseline_minutes | Integer                |
+| created_by       | Integer, ID of person  |
+| updated_by       | Integer, ID of person  |
+| created_at       | Date                   |
+| updated_at       | Date                   |
 
 ### Sample JSON response
 
@@ -70,19 +70,19 @@
 
 ## Get baseline role
 
-- `GET /projects/{projectId}/milestones/{milestoneId}/baseline_roles/{baselineRoleId}` - Returns a specific baseline role.
+- `GET /projects/{projectId}/phases/{phaseId}/baseline_roles/{baselineRoleId}` - Returns a specific baseline role.
 
-| Response fields  | Description/format       |
-| ---------------- | ------------------------ |
-| id               | Integer                  |
-| project          | Integer, ID of project   |
-| milestone        | Integer, ID of milestone |
-| role             | Integer, ID of role      |
-| baseline_minutes | Integer                  |
-| created_by       | Integer, ID of person    |
-| updated_by       | Integer, ID of person    |
-| created_at       | Date                     |
-| updated_at       | Date                     |
+| Response fields  | Description/format     |
+| ---------------- | ---------------------- |
+| id               | Integer                |
+| project          | Integer, ID of project |
+| phase            | Integer, ID of phase   |
+| role             | Integer, ID of role    |
+| baseline_minutes | Integer                |
+| created_by       | Integer, ID of person  |
+| updated_by       | Integer, ID of person  |
+| created_at       | Date                   |
+| updated_at       | Date                   |
 
 ### Sample JSON response
 
@@ -104,7 +104,7 @@
 
 ## Create baseline role
 
-- `POST /projects/{projectId}/milestones/{milestoneId}/baseline_roles` - Creates a new baseline role. Returns the same object as getting a single baseline role.
+- `POST /projects/{projectId}/phases/{phaseId}/baseline_roles` - Creates a new baseline role. Returns the same object as getting a single baseline role.
 
 | Request fields   | Description/format             |
 | ---------------- | ------------------------------ |
@@ -113,7 +113,7 @@
 
 ### Sample JSON request
 
-POST https://api.forecast.it/api/v1/projects/1/milestones/1/baselines_roles
+POST https://api.forecast.it/api/v1/projects/1/phases/1/baselines_roles
 
 ```javascript
 {
@@ -124,7 +124,7 @@ POST https://api.forecast.it/api/v1/projects/1/milestones/1/baselines_roles
 
 ## Update baseline role
 
-- `PUT /projects/{projectId}/milestones/{milestoneId}/baseline_roles/{baselineRoleId}` - Updates a baseline role. Returns the same object as getting a single baseline role.
+- `PUT /projects/{projectId}/phases/{phaseId}/baseline_roles/{baselineRoleId}` - Updates a baseline role. Returns the same object as getting a single baseline role.
 
 | Request fields   | Description/format |
 | ---------------- | ------------------ |
@@ -132,7 +132,7 @@ POST https://api.forecast.it/api/v1/projects/1/milestones/1/baselines_roles
 
 ### Sample JSON request
 
-PUT https://api.forecast.it/api/v1/projects/1/milestones/1/baseline_roles/1
+PUT https://api.forecast.it/api/v1/projects/1/phases/1/baseline_roles/1
 
 ```javascript
 {
@@ -142,8 +142,8 @@ PUT https://api.forecast.it/api/v1/projects/1/milestones/1/baseline_roles/1
 
 ## Delete baseline role
 
-- `DELETE /projects/{projectId}/milestones/{milestoneId}/baseline_roles/{baselineRoleId}` - Deletes a baseline role.
+- `DELETE /projects/{projectId}/phases/{phaseId}/baseline_roles/{baselineRoleId}` - Deletes a baseline role.
 
 ### Sample JSON request
 
-DELETE https://api.forecast.it/api/v1/projects/1/milestones/1/baseline_roles/1
+DELETE https://api.forecast.it/api/v1/projects/1/phases/1/baseline_roles/1

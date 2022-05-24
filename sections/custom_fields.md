@@ -7,29 +7,32 @@ Custom fields are available for PROJECT, PHASE, TIME_REG and TASK. For setting c
 Setting the value for a custom field can be done using the same API endpoints as used to update the entity. The endpoint just needs to be suffixed with `/custom_fields`, and the body should be the wanted custom-field keys and values. The keys for the entity type must be pre-defined in the admin UI.
 
 API endpoints:
-* Project: `PUT /projects/{projectId}/custom_fields`
-* Phase: `PUT /projects/{projectId}/milestones/{milestoneId}/custom_fields`
-* Time registration: `PUT /time_registrations/{time_registrationId}/custom_fields`
-* Task: `PUT /v3/tasks/{taskId}/custom_fields`
+
+- Project: `PUT /projects/{projectId}/custom_fields`
+- Phase: `PUT /projects/{projectId}/phases/{phaseId}/custom_fields`
+- Time registration: `PUT /time_registrations/{time_registrationId}/custom_fields`
+- Task: `PUT /v3/tasks/{taskId}/custom_fields`
 
 ### Sample JSON request
+
 ```json
 {
-    "key1": "value1",
-    "key2": "value2",
-    "key3": "value3"
+  "key1": "value1",
+  "key2": "value2",
+  "key3": "value3"
 }
 ```
 
-## Get custom fields 
+## Get custom fields
 
 For getting custom fields along with the entity, the parameter `?includeCustomFields=true` has to be added to the end of the get APIs for that entity type.
 
 ### Sample JSON response
+
 ```json
 {
     ...,
-    
+
     "custom_fields": {
 		"key1": "value1",
 		"key2": "value2",
