@@ -1,5 +1,7 @@
 # Sub tasks
 
+**NB: These endpoints refer to the old subtasks which have been deprecated. To do's are still available via these, but for the new subtasks please see our documentation on tasks.**
+
 ## Get task sub tasks
 
 -  `GET /tasks/{taskId}/sub_tasks` - Returns all sub tasks for a task.
