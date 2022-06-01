@@ -148,7 +148,7 @@ Errors are returned in the following JSON format.
 - [Workflow columns](sections/workflow_columns.md#workflow-columns)
 - [Deleted data](sections/DeletedData.md#deleted-data)
   - [Deleted time registrations](sections/DeletedData.md#deleted-time-registrations)
-  - Deleted tasks
+  - [Deleted tasks](sections/DeletedData.md#deleted-tasks)
 
 ## API libraries
 
