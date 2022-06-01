@@ -29,16 +29,16 @@ In this section you can find all endpoints for deleted data such as deleted time
    {
      "minutesRegistered": 1440,
       "person": {
-        "name": "Emil Desler",
-        "email": "emil.desler+local@forecast.app"
+        "name": "John Doe",
+        "email": "johndoe@doe.inc"
       },
       "registeredOn": {
         "type": "TASK",
         "id": 235,
-        "name": "fgad",
+        "name": "Build hovercraft",
         "project": {
           "id": 55,
-          "name": "Investigation: Using points for day registrations"
+          "name": "The greatest project"
         }
       },
       "datetime": "2021-11-02T13:42:40+01:00"
