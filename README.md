@@ -130,6 +130,7 @@ Errors are returned in the following JSON format.
 - [Person cost periods](sections/person_cost_periods.md#person-cost-periods)
 - [Person labels (skills)](sections/person_labels.md)
 - [Phases](sections/phases.md#phases)
+- [Priority levels](sections/priority_levels.md#priority_levels)
 - [Project team](sections/project_team.md#project-team)
 - [Projects](sections/projects.md#projects)
 - [Profiles](sections/profiles.md#profiles)
