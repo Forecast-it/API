@@ -14,6 +14,7 @@
 | status                       | String (GREEN, YELLOW, RED)                                      |
 | status_description           | String                                                           |
 | description                  | String                                                           |
+| priority_level_id            | Integer                                                          |
 | color                        | String                                                           |
 | estimation_units             | String (HOURS, POINTS)                                           |
 | minutes_per_estimation_point | Integer                                                          |
@@ -57,6 +58,7 @@
       "status": "GREEN",
       "status_description": "",
       "description": "",
+      "priority_level_id": 3,
       "color": "#FF7C75",
       "estimation_units": "HOURS",
       "minutes_per_estimation_point": 480,
@@ -104,6 +106,7 @@
 | status                       | String (GREEN, YELLOW, RED)                                      |
 | status_description           | String                                                           |
 | description                  | String                                                           |
+| priority_level_id            | Integer                                                          |
 | color                        | String                                                           |
 | estimation_units             | String (HOURS, POINTS)                                           |
 | minutes_per_estimation_point | Integer                                                          |
@@ -146,6 +149,7 @@
    "status": "GREEN",
    "status_description": "",
    "description": "",
+   "priority_level_id": 3,
    "color": "#FF7C75",
    "estimation_units": "HOURS",
    "minutes_per_estimation_point": 480,
@@ -191,6 +195,7 @@
 | status                       | String (GREEN, YELLOW, RED)                                      |
 | status_description           | String                                                           |
 | description                  | String                                                           |
+| priority_level_id            | Integer                                                          |
 | color                        | String                                                           |
 | estimation_units             | String (HOURS, POINTS)                                           |
 | minutes_per_estimation_point | Integer                                                          |
@@ -233,6 +238,7 @@
    "status": "GREEN",
    "status_description": "",
    "description": "",
+   "priority_level_id": 3,
    "color": "#FF7C75",
    "estimation_units": "HOURS",
    "minutes_per_estimation_point": 480,
