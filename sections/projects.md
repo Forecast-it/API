@@ -440,16 +440,19 @@ GET https://api.forecast.it/api/v1/projects/1/statuses
 - `GET /v2/projects/{projectId}/financials?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns all financial data for the project between `start_date` and `end_date`, broken down to milestone and role level.
 
 ### Grouping
+
 The groupBys parameter allows grouping by combinations of 'YEAR', 'MONTH', 'PHASE', 'ROLE', 'EXPENSE_CATEGORY' and 'TASK'.
 If no groupBy is defined, we return project totals.
-- `GET /v2/projects/478/financials?groupBys=PHASE,ROLE` - Numbers are grouped by phase and role, so you get one set for each phase / role combination in the project. 
+
+- `GET /v2/projects/478/financials?groupBys=PHASE,ROLE` - Numbers are grouped by phase and role, so you get one set for each phase / role combination in the project.
+
 #### Special values for roles and phases
+
 When grouping by Role, you will get expenses returned as the roleId -1, a value of zero means "no role".
 Grouping by Phase might return a phaseId of -1, this means that time was registered directly on the project and not on a task. Zero is for tasks outside project phases.
 
-
 | Response fields                                 | Description/format              |
-|-------------------------------------------------|---------------------------------|
+| ----------------------------------------------- | ------------------------------- |
 | yearGrouping                                    | String (when grouping by year)  |
 | yearMonthGrouping                               | String (when grouping by month) |
 | revenueRecognition                              | Object                          |
@@ -467,21 +470,25 @@ Grouping by Phase might return a phaseId of -1, this means that time was registe
 | &nbsp;&nbsp;↳ margin                            | Percentage (Decimal)            |
 | planned                                         | Object                          |
 | &nbsp;&nbsp;↳ billableTimeAndExpenses           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ nonbillableTimeAndExpenses        | Amount (Double)                 |
 | &nbsp;&nbsp;↳ cost                              | Amount (Double)                 |
 | &nbsp;&nbsp;↳ profit                            | Amount (Double)                 |
 | &nbsp;&nbsp;↳ margin                            | Percentage (Decimal)            |
 | actual                                          | Object                          |
 | &nbsp;&nbsp;↳ billableTimeAndExpenses           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ nonbillableTimeAndExpenses        | Amount (Double)                 |
 | &nbsp;&nbsp;↳ cost                              | Amount (Double)                 |
 | &nbsp;&nbsp;↳ profit                            | Amount (Double)                 |
 | &nbsp;&nbsp;↳ margin                            | Percentage (Decimal)            |
 | forecastToComplete                              | Object                          |
 | &nbsp;&nbsp;↳ billableTimeAndExpenses           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ nonbillableTimeAndExpenses        | Amount (Double)                 |
 | &nbsp;&nbsp;↳ cost                              | Amount (Double)                 |
 | &nbsp;&nbsp;↳ profit                            | Amount (Double)                 |
 | &nbsp;&nbsp;↳ margin                            | Percentage (Decimal)            |
 | totalAtCompletion                               | Object                          |
 | &nbsp;&nbsp;↳ billableTimeAndExpenses           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ nonbillableTimeAndExpenses        | Amount (Double)                 |
 | &nbsp;&nbsp;↳ cost                              | Amount (Double)                 |
 | &nbsp;&nbsp;↳ profit                            | Amount (Double)                 |
 | &nbsp;&nbsp;↳ margin                            | Percentage (Decimal)            |
@@ -502,26 +509,25 @@ Grouping by Phase might return a phaseId of -1, this means that time was registe
 | &nbsp;&nbsp;↳ cost                              | Amount (Double)                 |
 | &nbsp;&nbsp;↳ profit                            | Amount (Double)                 |
 | timeInMinutes                                   | Object                          |
-| &nbsp;&nbsp;↳ actualTimeRegisteredToDate        | Minutes (Integer)               |   
-| &nbsp;&nbsp;↳ forecastTimeToComplete            | Minutes (Integer)               |      
-| &nbsp;&nbsp;↳ totalTimeAtCompletion             | Minutes (Integer)               |      
-| &nbsp;&nbsp;↳ scopeApprovedTime                 | Minutes (Integer)               |      
-| &nbsp;&nbsp;↳ scopeTotalTime                    | Minutes (Integer)               |      
-| &nbsp;&nbsp;↳ totalAllocation                   | Minutes (Integer)               |      
-| &nbsp;&nbsp;↳ baselineTotalMinutes              | Minutes (Integer)               |      
-| &nbsp;&nbsp;↳ baselineVsRegisteredMinutes       | Minutes (Integer)               |      
-| &nbsp;&nbsp;↳ baselineVsForecastMinutes         | Minutes (Integer)               |      
-| &nbsp;&nbsp;↳ registeredVsScopeApprovedMinutes  | Minutes (Integer)               |      
-| &nbsp;&nbsp;↳ forecastVsScopeApprovedMinutes    | Minutes (Integer)               |      
+| &nbsp;&nbsp;↳ actualTimeRegisteredToDate        | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ forecastTimeToComplete            | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ totalTimeAtCompletion             | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ scopeApprovedTime                 | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ scopeTotalTime                    | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ totalAllocation                   | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ baselineTotalMinutes              | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ baselineVsRegisteredMinutes       | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ baselineVsForecastMinutes         | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ registeredVsScopeApprovedMinutes  | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ forecastVsScopeApprovedMinutes    | Minutes (Integer)               |
 | invoices                                        | Object                          |
 | &nbsp;&nbsp;↳ invoicedTotal                     | Amount (Double)                 |
 | &nbsp;&nbsp;↳ uninvoicedTotal                   | Amount (Double)                 |
 | &nbsp;&nbsp;↳ paid                              | Amount (Double)                 |
 | &nbsp;&nbsp;↳ invoicedVsBillableTimeAndExpenses | Amount (Double)                 |
- | retainerPeriodTarget                            | Object                          |   
-| &nbsp;&nbsp;↳ minutes                           | Minutes (Integer)               | 
+| retainerPeriodTarget                            | Object                          |
+| &nbsp;&nbsp;↳ minutes                           | Minutes (Integer)               |
 | &nbsp;&nbsp;↳ price                             | Amount (Double)                 |
-
 
 ## Get project financials (v1 - deprecated)
 
@@ -537,7 +543,7 @@ Milestone and role objects with id zero represent data with no milestone or role
 GET https://api.forecast.it/api/v1/projects/1/financials
 
 | Response fields                                    | Description/format                                                                                           |
-|----------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | project_id                                         | Integer                                                                                                      |
 | progress                                           | Object                                                                                                       |
 | &nbsp;&nbsp;↳ period_value                         | Double, The value for the selected period                                                                    |
