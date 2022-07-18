@@ -451,85 +451,83 @@ If no groupBy is defined, we return project totals.
 When grouping by Role, you will get expenses returned as the roleId -1, a value of zero means "no role".
 Grouping by Phase might return a phaseId of -1, this means that time was registered directly on the project and not on a task. Zero is for tasks outside project phases.
 
-| Response fields                                                                                                   | Description/format              |
-| ----------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| yearGrouping                                                                                                      | String (when grouping by year)  |
-| yearMonthGrouping                                                                                                 | String (when grouping by month) |
-| revenueRecognition                                                                                                | Object                          |
-| &nbsp;&nbsp;↳ totalRevenueRecognition                                                                             | Amount (Double)                 |
-| &nbsp;&nbsp;↳ revenueRecogitionLocked                                                                             | Amount (Double)                 |
-| &nbsp;&nbsp;↳ revenueRecognitionUnlocked                                                                          | Amount (Double)                 |
-| &nbsp;&nbsp;↳ percentageComplete                                                                                  | Percentage (Decimal)            |
-| &nbsp;&nbsp;↳ varianceWithBudget                                                                                  | Amount (Double)                 |
-| &nbsp;&nbsp;↳ profitAtCompletion                                                                                  | Amount (Double)                 |
-| &nbsp;&nbsp;↳ tasksWithForecastTimeInThePast                                                                      | Amount (Double)                 |
-| baseline                                                                                                          | Object                          |
-| &nbsp;&nbsp;↳ billableTimeAndExpenses                                                                             | Amount (Double)                 |
-| &nbsp;&nbsp;↳ cost                                                                                                | Amount (Double)                 |
-| &nbsp;&nbsp;↳ profit                                                                                              | Amount (Double)                 |
-| &nbsp;&nbsp;↳ margin                                                                                              | Percentage (Decimal)            |
-| planned                                                                                                           | Object                          |
-| &nbsp;&nbsp;↳ billableTimeAndExpenses                                                                             | Amount (Double)                 |
-| &nbsp;&nbsp;↳ nonbillableTimeAndExpenses                                                                          | Amount (Double)                 |
-| &nbsp;&nbsp;↳ cost                                                                                                | Amount (Double)                 |
-| &nbsp;&nbsp;↳ profit                                                                                              | Amount (Double)                 |
-| &nbsp;&nbsp;↳ margin                                                                                              | Percentage (Decimal)            |
-| actual                                                                                                            | Object                          |
-| &nbsp;&nbsp;↳ billableTimeAndExpenses                                                                             | Amount (Double)                 |
-| &nbsp;&nbsp;↳ nonbillableTimeAndExpenses                                                                          | Amount (Double)                 |
-| &nbsp;&nbsp;↳ cost                                                                                                | Amount (Double)                 |
-| &nbsp;&nbsp;↳ profit                                                                                              | Amount (Double)                 |
-| &nbsp;&nbsp;↳ margin                                                                                              | Percentage (Decimal)            |
-| forecastToComplete                                                                                                | Object                          |
-| &nbsp;&nbsp;↳ billableTimeAndExpenses                                                                             | Amount (Double)                 |
-| &nbsp;&nbsp;↳ nonbillableTimeAndExpenses                                                                          | Amount (Double)                 |
-| &nbsp;&nbsp;↳ cost                                                                                                | Amount (Double)                 |
-| &nbsp;&nbsp;↳ profit                                                                                              | Amount (Double)                 |
-| &nbsp;&nbsp;↳ margin                                                                                              | Percentage (Decimal)            |
-| totalAtCompletion                                                                                                 | Object                          |
-| &nbsp;&nbsp;↳ billableTimeAndExpenses                                                                             | Amount (Double)                 |
-| &nbsp;&nbsp;↳ nonbillableTimeAndExpenses                                                                          | Amount (Double)                 |
-| &nbsp;&nbsp;↳ cost                                                                                                | Amount (Double)                 |
-| &nbsp;&nbsp;↳ profit                                                                                              | Amount (Double)                 |
-| &nbsp;&nbsp;↳ margin                                                                                              | Percentage (Decimal)            |
-| baselineVsActual                                                                                                  | Object                          |
-| &nbsp;&nbsp;↳ billableTimeAndExpenses                                                                             | Amount (Double)                 |
-| &nbsp;&nbsp;↳ cost                                                                                                | Amount (Double)                 |
-| &nbsp;&nbsp;↳ profit                                                                                              | Amount (Double)                 |
-| baselineVsTotalAtCompletion                                                                                       | Object                          |
-| &nbsp;&nbsp;↳ billableTimeAndExpenses                                                                             | Amount (Double)                 |
-| &nbsp;&nbsp;↳ cost                                                                                                | Amount (Double)                 |
-| &nbsp;&nbsp;↳ profit                                                                                              | Amount (Double)                 |
-| plannedVsActual                                                                                                   | Object                          |
-| &nbsp;&nbsp;↳ billableTimeAndExpenses                                                                             | Amount (Double)                 |
-| &nbsp;&nbsp;↳ cost                                                                                                | Amount (Double)                 |
-| &nbsp;&nbsp;↳ profit                                                                                              | Amount (Double)                 |
-| plannedVsTotalAtCompletion                                                                                        | Object                          |
-| &nbsp;&nbsp;↳ billableTimeAndExpenses                                                                             | Amount (Double)                 |
-| &nbsp;&nbsp;↳ cost                                                                                                | Amount (Double)                 |
-| &nbsp;&nbsp;↳ profit                                                                                              | Amount (Double)                 |
-| timeInMinutes                                                                                                     | Object                          |
-| &nbsp;&nbsp;↳ actualTimeRegisteredToDate                                                                          | Minutes (Integer)               |
-| &nbsp;&nbsp;↳ forecastTimeToComplete                                                                              | Minutes (Integer)               |
-| &nbsp;&nbsp;↳ totalTimeAtCompletion                                                                               | Minutes (Integer)               |
-| &nbsp;&nbsp;↳ scopeApprovedTime                                                                                   | Minutes (Integer)               |
-| &nbsp;&nbsp;↳ scopeTotalTime                                                                                      | Minutes (Integer)               |
-| &nbsp;&nbsp;↳ totalAllocation                                                                                     | Minutes (Integer)               |
-| &nbsp;&nbsp;↳ baselineTotalMinutes                                                                                | Minutes (Integer)               |
-| &nbsp;&nbsp;↳ baselineVsRegisteredMinutes                                                                         | Minutes (Integer)               |
-| &nbsp;&nbsp;↳ baselineVsForecastMinutes (deprecated: renamed to baselineVsTotalTimeAtCompletion)                  | Minutes (Integer)               |
-| &nbsp;&nbsp;↳ baselineVsTotalTimeAtCompletion                                                                     | Minutes (Integer)               |
-| &nbsp;&nbsp;↳ registeredVsScopeApprovedMinutes                                                                    | Minutes (Integer)               |
-| &nbsp;&nbsp;↳ forecastVsScopeApprovedMinutes (deprecated: renamed to totalTimeAtCompletionVsScopeApprovedMinutes) | Minutes (Integer)               |
-| &nbsp;&nbsp;↳ totalTimeAtCompletionVsScopeApprovedMinutes                                                         | Minutes (Integer)               |
-| invoices                                                                                                          | Object                          |
-| &nbsp;&nbsp;↳ invoicedTotal                                                                                       | Amount (Double)                 |
-| &nbsp;&nbsp;↳ uninvoicedTotal                                                                                     | Amount (Double)                 |
-| &nbsp;&nbsp;↳ paid                                                                                                | Amount (Double)                 |
-| &nbsp;&nbsp;↳ invoicedVsBillableTimeAndExpenses                                                                   | Amount (Double)                 |
-| retainerPeriodTarget                                                                                              | Object                          |
-| &nbsp;&nbsp;↳ minutes                                                                                             | Minutes (Integer)               |
-| &nbsp;&nbsp;↳ price                                                                                               | Amount (Double)                 |
+| Response fields                                 | Description/format              |
+| ----------------------------------------------- | ------------------------------- |
+| yearGrouping                                    | String (when grouping by year)  |
+| yearMonthGrouping                               | String (when grouping by month) |
+| revenueRecognition                              | Object                          |
+| &nbsp;&nbsp;↳ totalRevenueRecognition           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ revenueRecogitionLocked           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ revenueRecognitionUnlocked        | Amount (Double)                 |
+| &nbsp;&nbsp;↳ percentageComplete                | Percentage (Decimal)            |
+| &nbsp;&nbsp;↳ varianceWithBudget                | Amount (Double)                 |
+| &nbsp;&nbsp;↳ profitAtCompletion                | Amount (Double)                 |
+| &nbsp;&nbsp;↳ tasksWithForecastTimeInThePast    | Amount (Double)                 |
+| baseline                                        | Object                          |
+| &nbsp;&nbsp;↳ billableTimeAndExpenses           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ cost                              | Amount (Double)                 |
+| &nbsp;&nbsp;↳ profit                            | Amount (Double)                 |
+| &nbsp;&nbsp;↳ margin                            | Percentage (Decimal)            |
+| planned                                         | Object                          |
+| &nbsp;&nbsp;↳ billableTimeAndExpenses           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ nonbillableTimeAndExpenses        | Amount (Double)                 |
+| &nbsp;&nbsp;↳ cost                              | Amount (Double)                 |
+| &nbsp;&nbsp;↳ profit                            | Amount (Double)                 |
+| &nbsp;&nbsp;↳ margin                            | Percentage (Decimal)            |
+| actual                                          | Object                          |
+| &nbsp;&nbsp;↳ billableTimeAndExpenses           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ nonbillableTimeAndExpenses        | Amount (Double)                 |
+| &nbsp;&nbsp;↳ cost                              | Amount (Double)                 |
+| &nbsp;&nbsp;↳ profit                            | Amount (Double)                 |
+| &nbsp;&nbsp;↳ margin                            | Percentage (Decimal)            |
+| forecastToComplete                              | Object                          |
+| &nbsp;&nbsp;↳ billableTimeAndExpenses           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ nonbillableTimeAndExpenses        | Amount (Double)                 |
+| &nbsp;&nbsp;↳ cost                              | Amount (Double)                 |
+| &nbsp;&nbsp;↳ profit                            | Amount (Double)                 |
+| &nbsp;&nbsp;↳ margin                            | Percentage (Decimal)            |
+| totalAtCompletion                               | Object                          |
+| &nbsp;&nbsp;↳ billableTimeAndExpenses           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ nonbillableTimeAndExpenses        | Amount (Double)                 |
+| &nbsp;&nbsp;↳ cost                              | Amount (Double)                 |
+| &nbsp;&nbsp;↳ profit                            | Amount (Double)                 |
+| &nbsp;&nbsp;↳ margin                            | Percentage (Decimal)            |
+| baselineVsActual                                | Object                          |
+| &nbsp;&nbsp;↳ billableTimeAndExpenses           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ cost                              | Amount (Double)                 |
+| &nbsp;&nbsp;↳ profit                            | Amount (Double)                 |
+| baselineVsTotalAtCompletion                     | Object                          |
+| &nbsp;&nbsp;↳ billableTimeAndExpenses           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ cost                              | Amount (Double)                 |
+| &nbsp;&nbsp;↳ profit                            | Amount (Double)                 |
+| plannedVsActual                                 | Object                          |
+| &nbsp;&nbsp;↳ billableTimeAndExpenses           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ cost                              | Amount (Double)                 |
+| &nbsp;&nbsp;↳ profit                            | Amount (Double)                 |
+| plannedVsTotalAtCompletion                      | Object                          |
+| &nbsp;&nbsp;↳ billableTimeAndExpenses           | Amount (Double)                 |
+| &nbsp;&nbsp;↳ cost                              | Amount (Double)                 |
+| &nbsp;&nbsp;↳ profit                            | Amount (Double)                 |
+| timeInMinutes                                   | Object                          |
+| &nbsp;&nbsp;↳ actualTimeRegisteredToDate        | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ forecastTimeToComplete            | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ totalTimeAtCompletion             | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ scopeApprovedTime                 | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ scopeTotalTime                    | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ totalAllocation                   | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ baselineTotalMinutes              | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ baselineVsRegisteredMinutes       | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ baselineVsForecastMinutes         | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ registeredVsScopeApprovedMinutes  | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ forecastVsScopeApprovedMinutes    | Minutes (Integer)               |
+| invoices                                        | Object                          |
+| &nbsp;&nbsp;↳ invoicedTotal                     | Amount (Double)                 |
+| &nbsp;&nbsp;↳ uninvoicedTotal                   | Amount (Double)                 |
+| &nbsp;&nbsp;↳ paid                              | Amount (Double)                 |
+| &nbsp;&nbsp;↳ invoicedVsBillableTimeAndExpenses | Amount (Double)                 |
+| retainerPeriodTarget                            | Object                          |
+| &nbsp;&nbsp;↳ minutes                           | Minutes (Integer)               |
+| &nbsp;&nbsp;↳ price                             | Amount (Double)                 |
 
 ## Get project financials (v1 - deprecated)
 
