@@ -30,7 +30,7 @@
 | forecast_cost (deprecated: renamed to total_cost_at_completion)                            | Number. Actual costs + Remaining costs                                                      |
 | forecast_profit (deprecated: renamed to total_profit_at_completion)                        | Number. Forecasted Revenue - Forecasted costs                                               |
 | forecast_margin (deprecated: renamed to total_margin_and_expenses_at_completion)           | Number. Estimated profit / Forecasted Revenue X 100                                         |
-| billable_total_time_and_expenses_at_completion                                             | Number. Billable Actual Time and Expenses + Billable Planned Time and Expenses              |
+| billable_total_time_and_expenses_at_completion                                             | Number. Billable Actual Time and Expenses + Billable Forecast Time and Expenses to complete |
 | total_cost_at_completion                                                                   | Number. Actual costs + Forecast costs to complete                                           |
 | total_profit_at_completion                                                                 | Number. Billable Total Time and Expenses at completion - Total Cost at completion           |
 | total_margin_at_completion                                                                 | Number. Estimated profit / Billable Total Time and Expenses at completion X 100             |
@@ -101,7 +101,7 @@
 | forecast_cost (deprecated: renamed to total_cost_at_completion)                            | Number. Actual costs + Remaining costs                                                      |
 | forecast_profit (deprecated: renamed to total_profit_at_completion)                        | Number. Forecasted Revenue - Forecasted costs                                               |
 | forecast_margin (deprecated: renamed to total_margin_and_expenses_at_completion)           | Number. Estimated profit / Forecasted Revenue X 100                                         |
-| billable_total_time_and_expenses_at_completion                                             | Number. Billable Actual Time and Expenses + Billable Planned Time and Expenses              |
+| billable_total_time_and_expenses_at_completion                                             | Number. Billable Actual Time and Expenses + Billable Forecast Time and Expenses to complete |
 | total_cost_at_completion                                                                   | Number. Actual costs + Forecast costs to complete                                           |
 | total_profit_at_completion                                                                 | Number. Billable Total Time and Expenses at completion - Total Cost at completion           |
 | total_margin_at_completion                                                                 | Number. Estimated profit / Billable Total Time and Expenses at completion X 100             |
