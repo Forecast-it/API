@@ -120,6 +120,7 @@ Errors are returned in the following JSON format.
 - [Exchange rates](sections/exchange_rates.md#exchange-rates)
 - [Expense categories](sections/expense_categories.md#expense-categories)
 - [Expense items](sections/expense_items.md#expense-items)
+- [Financials](sections/financials.md)
 - [Holiday calendar entries](sections/holiday_calendar_entries.md)
 - [Holiday calendars](sections/holiday_calendars.md#holiday-calendars)
 - [Invoices](sections/invoices.md#invoices)
