@@ -115,7 +115,7 @@ Errors are returned in the following JSON format.
 - [Baseline Roles](sections/baseline_roles.md)
 - [Clients](sections/clients.md#clients)
 - [Company](sections/company.md#company)
-- [Company contacts](sections/company_contacts.md#Company contacts)
+- [Company contacts](sections/company_contacts.md)
 - [Connected projects](sections/connected_projects.md#connected-projects)
 - [Departments](sections/departments.md)
 - [Exchange rates](sections/exchange_rates.md#exchange-rates)
