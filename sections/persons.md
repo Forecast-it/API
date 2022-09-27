@@ -5,36 +5,36 @@
 ## Get persons
 
 - `GET v1/persons` - Returns all persons. (DEPRECATED - please see the v2 endpoints)
-- 
+-
 - `GET v2/persons` - Returns all persons.
 
-| Response fields     | Description/format                                                                                    |
-| ------------------- | ----------------------------------------------------------------------------------------------------- |
-| id                  | Integer                                                                                               |
-| first_name          | String                                                                                                |
-| last_name           | String                                                                                                |
-| email               | String                                                                                                |
-| user_type           | String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1**|
-| client_id           | Integer, ID of client                                                                                 |
-| holiday_calendar_id | Integer, ID of holiday calendar                                                                       |
-| monday              | Integer, working hours in minutes                                                                     |
-| tuesday             | Integer, working hours in minutes                                                                     |
-| wednesday           | Integer, working hours in minutes                                                                     |
-| thursday            | Integer, working hours in minutes                                                                     |
-| friday              | Integer, working hours in minutes                                                                     |
-| saturday            | Integer, working hours in minutes                                                                     |
-| sunday              | Integer, working hours in minutes                                                                     |
-| active              | Boolean                                                                                               |
-| default_role        | Integer, ID of default [role](roles.md#get-role)     
-| department_id       | Integer, ID of [department](departments.md#get-department)
-| cost                | Decimal, cost from the current cost period                                                            |
-| language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                      |
-| start_date          | String (ISO 8601)                                                                                     |
-| end_date            | String (ISO 8601)                                                                                     |
-| created_by          | Integer, ID of person                                                                                 |
-| updated_by          | Integer, ID of person                                                                                 |
-| created_at          | Date                                                                                                  |
-| updated_at          | Date                                                                                                  |
+| Response fields     | Description/format                                                                                                |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| id                  | Integer                                                                                                           |
+| first_name          | String                                                                                                            |
+| last_name           | String                                                                                                            |
+| email               | String                                                                                                            |
+| user_type           | String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1** |
+| client_id           | Integer, ID of client                                                                                             |
+| holiday_calendar_id | Integer, ID of holiday calendar                                                                                   |
+| monday              | Integer, working hours in minutes                                                                                 |
+| tuesday             | Integer, working hours in minutes                                                                                 |
+| wednesday           | Integer, working hours in minutes                                                                                 |
+| thursday            | Integer, working hours in minutes                                                                                 |
+| friday              | Integer, working hours in minutes                                                                                 |
+| saturday            | Integer, working hours in minutes                                                                                 |
+| sunday              | Integer, working hours in minutes                                                                                 |
+| active              | Boolean                                                                                                           |
+| default_role        | Integer, ID of default [role](roles.md#get-role)                                                                  |
+| department_id       | Integer, ID of [department](departments.md#get-department)                                                        |
+| cost                | Decimal, cost from the current cost period                                                                        |
+| language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                  |
+| start_date          | String (ISO 8601)                                                                                                 |
+| end_date            | String (ISO 8601)                                                                                                 |
+| created_by          | Integer, ID of person                                                                                             |
+| updated_by          | Integer, ID of person                                                                                             |
+| created_at          | Date                                                                                                              |
+| updated_at          | Date                                                                                                              |
 
 ### Sample JSON response
 
@@ -75,30 +75,30 @@
 
 - `GET v2/persons/{personId}` - Returns a specific person.
 
-| Response fields     | Description/format                                                                     |
-| ------------------- | -------------------------------------------------------------------------------------- |
-| id                  | Integer                                                                                |
-| first_name          | String                                                                                 |
-| last_name           | String                                                                                 |
-| email               | String                                                                                 |
-| user_type           | String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1**|
-| client_id           | Integer, ID of client                                                                  |
-| holiday_calendar_id | Integer, ID of holiday calendar                                                        |
-| monday              | Integer                                                                                |
-| tuesday             | Integer                                                                                |
-| wednesday           | Integer                                                                                |
-| thursday            | Integer                                                                                |
-| friday              | Integer                                                                                |
-| saturday            | Integer                                                                                |
-| sunday              | Integer                                                                                |
-| active              | Boolean                                                                                |
-| default_role        | JSON (Role)                                                                            |
-| cost                | Decimal, cost from the current cost period                                             |
-| language            | String {"SPANISH", "DANISH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                 |
-| created_by          | Integer, ID of person                                                                  |
-| updated_by          | Integer, ID of person                                                                  |
-| created_at          | Date                                                                                   |
-| updated_at          | Date                                                                                   |
+| Response fields     | Description/format                                                                                                |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| id                  | Integer                                                                                                           |
+| first_name          | String                                                                                                            |
+| last_name           | String                                                                                                            |
+| email               | String                                                                                                            |
+| user_type           | String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1** |
+| client_id           | Integer, ID of client                                                                                             |
+| holiday_calendar_id | Integer, ID of holiday calendar                                                                                   |
+| monday              | Integer                                                                                                           |
+| tuesday             | Integer                                                                                                           |
+| wednesday           | Integer                                                                                                           |
+| thursday            | Integer                                                                                                           |
+| friday              | Integer                                                                                                           |
+| saturday            | Integer                                                                                                           |
+| sunday              | Integer                                                                                                           |
+| active              | Boolean                                                                                                           |
+| default_role        | JSON (Role)                                                                                                       |
+| cost                | Decimal, cost from the current cost period                                                                        |
+| language            | String {"SPANISH", "DANISH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                            |
+| created_by          | Integer, ID of person                                                                                             |
+| updated_by          | Integer, ID of person                                                                                             |
+| created_at          | Date                                                                                                              |
+| updated_at          | Date                                                                                                              |
 
 ### Sample JSON response
 
@@ -207,25 +207,25 @@
 
 - `POST v2/persons` - Creates a new person. Returns the same object as getting a single person.
 
-| Request fields      | Description/format                                                                        |
-| ------------------- | ----------------------------------------------------------------------------------------- |
-| first_name          | String                                                                                    |
-| last_name           | String                                                                                    |
-| email               | String                                                                                    |
-| user_type           | (Required\*) String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1**|
-| profile_ids         | List<Integer>, List ID of [Profile](sections/profiles.md#profiles) ids **Only v2**  
-| client_id           | Integer, ID of client                                                                     |
-| holiday_calendar_id | Integer, ID of holiday calendar                                                           |
-| monday              | Integer, if not set, taken from company                                                   |
-| tuesday             | Integer, if not set, taken from company                                                   |
-| wednesday           | Integer, if not set, taken from company                                                   |
-| thursday            | Integer, if not set, taken from company                                                   |
-| friday              | Integer, if not set, taken from company                                                   |
-| saturday            | Integer, if not set, taken from company                                                   |
-| sunday              | Integer, if not set, taken from company                                                   |
-| default_role        | Integer, id of the default role                                                           |
-| cost                | Decimal, cost to be used in the current cost period                                       |
-| language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}          |
+| Request fields      | Description/format                                                                                                             |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| first_name          | String                                                                                                                         |
+| last_name           | String                                                                                                                         |
+| email               | String                                                                                                                         |
+| user_type           | (Required\*) String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1** |
+| profile_ids         | List<Integer>, List ID of [Profile](sections/profiles.md#profiles) ids **Only v2**                                             |
+| client_id           | Integer, ID of client                                                                                                          |
+| holiday_calendar_id | Integer, ID of holiday calendar                                                                                                |
+| monday              | Integer, if not set, taken from company                                                                                        |
+| tuesday             | Integer, if not set, taken from company                                                                                        |
+| wednesday           | Integer, if not set, taken from company                                                                                        |
+| thursday            | Integer, if not set, taken from company                                                                                        |
+| friday              | Integer, if not set, taken from company                                                                                        |
+| saturday            | Integer, if not set, taken from company                                                                                        |
+| sunday              | Integer, if not set, taken from company                                                                                        |
+| default_role        | Integer, id of the default role                                                                                                |
+| cost                | Decimal, cost to be used in the current cost period                                                                            |
+| language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                               |
 
 \* Person with client_id can only be "VIRTUAL" or "CLIENT" user_type. Person without client_id cannot have "CLIENT" user_type
 
@@ -238,7 +238,7 @@ POST https://api.forecast.it/api/v1/persons
    "first_name":"John",
    "last_name":"Smith",
    "email":"js@domain.com",
-   "user_type":"ADMIN", 
+   "user_type":"ADMIN",
    "profile_ids":[-3],
    "holiday_calendar_id": 1,
    "monday":480,
@@ -259,25 +259,25 @@ POST https://api.forecast.it/api/v1/persons
 
 - `PUT v2/persons/{personId}` - Updates a person. Returns the same object as getting a single person.
 
-| Request fields      | Description/format                                                               |
-| ------------------- | -------------------------------------------------------------------------------- |
-| first_name          | String                                                                           |
-| last_name           | String                                                                           |
-| email               | String                                                                           |
-| user_type           | (Required\*) String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1**|
-| profile_ids         | List<Integer>, List ID of profile ids **Only v2**                                                     |
-| holiday_calendar_id | Integer, ID of holiday calendar                                                  |
-| monday              | Integer                                                                          |
-| tuesday             | Integer                                                                          |
-| wednesday           | Integer                                                                          |
-| thursday            | Integer                                                                          |
-| friday              | Integer                                                                          |
-| saturday            | Integer                                                                          |
-| sunday              | Integer                                                                          |
-| active              | Boolean\*                                                                        |
-| default_role        | Integer, id of the default role                                                  |
-| cost                | Decimal, cost to be used in the current cost period                              |
-| language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"} |
+| Request fields      | Description/format                                                                                                             |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| first_name          | String                                                                                                                         |
+| last_name           | String                                                                                                                         |
+| email               | String                                                                                                                         |
+| user_type           | (Required\*) String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1** |
+| profile_ids         | List<Integer>, List ID of profile ids **Only v2**                                                                              |
+| holiday_calendar_id | Integer, ID of holiday calendar                                                                                                |
+| monday              | Integer                                                                                                                        |
+| tuesday             | Integer                                                                                                                        |
+| wednesday           | Integer                                                                                                                        |
+| thursday            | Integer                                                                                                                        |
+| friday              | Integer                                                                                                                        |
+| saturday            | Integer                                                                                                                        |
+| sunday              | Integer                                                                                                                        |
+| active              | Boolean\*                                                                                                                      |
+| default_role        | Integer, id of the default role                                                                                                |
+| cost                | Decimal, cost to be used in the current cost period                                                                            |
+| language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                               |
 
 \* Person with client_id can only be "VIRTUAL" or "CLIENT" user_type and cannot have active equal to false. Person without client_id cannot have "CLIENT" user_type
 
@@ -306,7 +306,7 @@ DELETE https://api.forecast.it/api/v1/persons/1
 
 ## Get person timer information
 
-- `GET /persons/{personId}/timer` - Returns a specific persons timer information.
+- `GET v1/persons/{personId}/timer` - Returns a specific persons timer information.
 
 | Response fields | Description/format                                      |
 | --------------- | ------------------------------------------------------- |
@@ -327,7 +327,7 @@ DELETE https://api.forecast.it/api/v1/persons/1
 
 ## Start person timer
 
-- `PUT /persons/{personId}/timer/start` - Start the timer on a person. Returns the same object as getting a single persons timer.
+- `PUT v1/persons/{personId}/timer/start` - Start the timer on a person. Returns the same object as getting a single persons timer.
 
 | Request fields | Description/format                                                                                        |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
@@ -347,13 +347,15 @@ PUT https://api.forecast.it/api/v1/persons/1/timer/start
 
 ## Stop person timer
 
-- `PUT /persons/{personId}/timer/stop` - Stop the timer on a person.
+- `PUT v1/persons/{personId}/timer/stop` - Stop the timer on a person.
 
-| Request fields | Description/format                                 |
-| -------------- | -------------------------------------------------- |
-| card           | Integer, deprecated. Use 'task' instead            |
-| task           | Integer, id of the task to register the time on    |
-| project        | Integer, id of the project to register the time on |
+| Request fields | Description/format                                          |
+| -------------- | ----------------------------------------------------------- |
+| card           | Integer, deprecated. Use 'task' instead                     |
+| task           | Integer, id of the task to register the time on             |
+| project        | Integer, id of the project to register the time on          |
+| nonProjectTime | Integer, id of the non-project time to register the time on |
+| notes          | String, notes to be registered with the time                |
 
 - Either a task or project must be set here. If the task or project was set when starting the timer, this can be omitted.
 
@@ -369,7 +371,7 @@ PUT https://api.forecast.it/api/v1/persons/1/timer/stop
 
 ## Reset person timer
 
-- `DELETE /persons/{personId}/timer` - Resets a persons timer.
+- `DELETE v1/persons/{personId}/timer` - Resets a persons timer.
 
 ### Sample JSON request
 
@@ -377,7 +379,7 @@ DELETE https://api.forecast.it/api/v1/persons/1/timer
 
 ## Get person utilization
 
-- `GET /persons/{personId}/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns a person's utilization data for the given timespan. Both `start_date` and `end_date` are required and inclusive.
+- `GET v1/persons/{personId}/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns a person's utilization data for the given timespan. Both `start_date` and `end_date` are required and inclusive.
 
 ### Sample JSON request
 
@@ -410,6 +412,7 @@ The returned data contains a total for the entire timespan, plus an array with d
    ]
 }
 ```
-   
+
 ## Get person labels
-see [Person Labels](person_labels.md)   
+
+see [Person Labels](person_labels.md)
