@@ -391,6 +391,7 @@ The returned data contains a total for the entire timespan, plus an array with d
 
 ```javascript
 {
+   "person_id": "1",
    "minutes_available": 11040,
    "task_minutes_allocated": 5520,
    "task_billable_minutes_allocated": 2760,
@@ -411,6 +412,130 @@ The returned data contains a total for the entire timespan, plus an array with d
       }, ...
    ]
 }
+```
+
+## Get person utilization for entire company
+
+- `GET v1/persons/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns all company person's utilization data for the given timespan. Both `start_date` and `end_date` are required and inclusive.
+
+
+GET https://api.forecast.it/api/v1/persons/utilization?start_date=20200101&end_date=20200131
+
+### Sample JSON response
+
+For every person in the company, a total utilization for the entire timespan plus an array with data for each day in the timespan.
+
+```json
+[
+  {
+    "person_id": "1",
+    "minutes_available": 11040,
+    "task_minutes_allocated": 5520,
+    "task_billable_minutes_allocated": 2760,
+    "project_minutes_allocated": 0,
+    "project_billable_minutes_allocated": 0,
+    "idle_time_minutes_allocated": 2760,
+    "time_off_minutes_allocated": 0,
+    "dates": [
+      {
+        "date": "2020-01-01",
+        "minutes_available": 480,
+        "task_minutes_allocated": 240,
+        "task_billable_minutes_allocated": 240,
+        "project_minutes_allocated": 0,
+        "project_billable_minutes_allocated": 0,
+        "idle_time_minutes_allocated": 0,
+        "time_off_minutes_allocated": 0
+      },
+      ...
+    ]
+  },
+  {
+    "person_id": "2",
+    "minutes_available": 11040,
+    "task_minutes_allocated": 5520,
+    "task_billable_minutes_allocated": 2760,
+    "project_minutes_allocated": 0,
+    "project_billable_minutes_allocated": 0,
+    "idle_time_minutes_allocated": 2760,
+    "time_off_minutes_allocated": 0,
+    "dates": [
+      {
+        "date": "2020-01-01",
+        "minutes_available": 480,
+        "task_minutes_allocated": 240,
+        "task_billable_minutes_allocated": 240,
+        "project_minutes_allocated": 0,
+        "project_billable_minutes_allocated": 0,
+        "idle_time_minutes_allocated": 0,
+        "time_off_minutes_allocated": 0
+      },
+      ...
+    ]
+  }
+]
+```
+
+## Get person utilization for specific persons
+
+- `GET v1/persons/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD?personId={personId}&personId={personId}` - Returns  utilization data for specific persons for the given timespan. Both `start_date` and `end_date` are required and inclusive.
+
+
+GET https://api.forecast.it/api/v1/persons/utilization?start_date=20200101&end_date=20200131?personId=1&personId=2
+
+### Sample JSON response
+
+For selected persons, a total utilization for the entire timespan plus an array with data for each day in the timespan.
+
+```json
+[
+  {
+    "person_id": "1",
+    "minutes_available": 11040,
+    "task_minutes_allocated": 5520,
+    "task_billable_minutes_allocated": 2760,
+    "project_minutes_allocated": 0,
+    "project_billable_minutes_allocated": 0,
+    "idle_time_minutes_allocated": 2760,
+    "time_off_minutes_allocated": 0,
+    "dates": [
+      {
+        "date": "2020-01-01",
+        "minutes_available": 480,
+        "task_minutes_allocated": 240,
+        "task_billable_minutes_allocated": 240,
+        "project_minutes_allocated": 0,
+        "project_billable_minutes_allocated": 0,
+        "idle_time_minutes_allocated": 0,
+        "time_off_minutes_allocated": 0
+      },
+      ...
+    ]
+  },
+  {
+    "person_id": "2",
+    "minutes_available": 11040,
+    "task_minutes_allocated": 5520,
+    "task_billable_minutes_allocated": 2760,
+    "project_minutes_allocated": 0,
+    "project_billable_minutes_allocated": 0,
+    "idle_time_minutes_allocated": 2760,
+    "time_off_minutes_allocated": 0,
+    "dates": [
+      {
+        "date": "2020-01-01",
+        "minutes_available": 480,
+        "task_minutes_allocated": 240,
+        "task_billable_minutes_allocated": 240,
+        "project_minutes_allocated": 0,
+        "project_billable_minutes_allocated": 0,
+        "idle_time_minutes_allocated": 0,
+        "time_off_minutes_allocated": 0
+      },
+      ...
+    ]
+  }
+]
 ```
 
 ## Get person labels
