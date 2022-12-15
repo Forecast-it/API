@@ -8,6 +8,7 @@
 | --------------- | --------------------- |
 | id              | Integer               |
 | name            | String                |
+| project_id      | Integer               |
 | start_date      | Date                  |
 | end_date        | Date                  |
 | created_by      | Integer, ID of person |
@@ -35,11 +36,13 @@
 ## Get phase
 
 - `GET /projects/{projectId}/phases/{phaseId}` - Returns a specific phase.
+- `GET /phases/{phaseId}` - Returns a specific phase.
 
 | Response fields | Description/format    |
 | --------------- | --------------------- |
 | id              | Integer               |
 | name            | String                |
+| project_id      | Integer               |
 | start_date      | Date                  |
 | end_date        | Date                  |
 | created_by      | Integer, ID of person |
