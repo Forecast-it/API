@@ -101,6 +101,11 @@
     }
 ]
 ```
+## Get Invoices with status
+
+-   `GET /invoices/status/{invoiceStatus}` - Returns all invoices with the given status. invoiceStatus can be DRAFT, APPROVED or SENT
+
+returns the same list of invoices with entries and payments as "Get Invoices" see above for details
 
 ## Create invoice
 
