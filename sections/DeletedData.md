@@ -5,7 +5,7 @@ In this section you can find all endpoints for deleted data such as deleted time
 
 ### Get all deleted time registrations in your company
 
-- `GET v4/time_regisrations/deleted` - Returns all deleted time registrations in a paginated response. 
+- `GET v4/time_registrations/deleted` - Returns all deleted time registrations in a paginated response. 
 
 | Response fields   | Description/format                                    |
 | ----------------  | -------------------------------                       |
