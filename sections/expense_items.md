@@ -201,7 +201,7 @@
 - `POST /projects/{projectId}/expense_items` - Creates a new expense item. Returns the same object as getting a single expense item.
 
 | Request fields      | Description/format                                                                                                               |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------- |----------------------------------------------------------------------------------------------------------------------------------|
 | name                | (Required) String                                                                                                                |
 | expense_date        | Date                                                                                                                             |
 | cost                | (Required) Decimal                                                                                                               |
@@ -213,7 +213,7 @@
 | person_id           | Integer, ID of person                                                                                                            |
 | expense_category    | (Required) Integer, ID of expense category                                                                                       |
 | phase_id            | Integer, ID of phase                                                                                                             |
-| part_of_fixed_price | Boolean (Can only be set on retainer projects with fixed price)                                                                  |
+| part_of_fixed_price | Boolean (Can only be set on fixed price projects and retainer projects with fixed price periods)                                 |
 
 ### Sample JSON request
 
@@ -267,3 +267,13 @@ PUT https://api.forecast.it/api/v1/projects/1/expense_items/1
 ### Sample JSON request
 
 DELETE https://api.forecast.it/api/v1/projects/1/expense_items/1
+
+## Notes on fixed price project expense settings
+Q1 2023 introduces more flexible expense settings for fixed price projects. The following table illustrate how the UI settings map to an expense request:
+
+| UI billing option               | Billable | Part of fixed price |
+|---------------------------------|----------|---------------------|
+| Billable as part of Fixed Price | true     | true                | 
+| Billable on top of Fixed Price  | true     | false               | 
+| Non Billable                    | false    | -                   | 
+
