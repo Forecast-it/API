@@ -233,20 +233,20 @@ POST https://api.forecast.it/api/v1/projects/1/expense_items
 
 - `PUT /projects/{projectId}/expense_items/{expense_itemId}` - Updates an expense item. Returns the same object as getting a single expense item.
 
-| Request fields      | Description/format                                                                         |
-| ------------------- | ------------------------------------------------------------------------------------------ |
-| name                | String                                                                                     |
-| expense_date        | Date                                                                                       |
-| cost                | Decimal                                                                                    |
-| price               | Decimal                                                                                    |
-| quantity            | Decimal                                                                                    |
-| approved            | Boolean                                                                                    |
-| billable            | Boolean (Cannnot be set to true if project on which expense item is added is not billable) |
-| notes               | String                                                                                     |
-| person_id           | Integer, Id of person                                                                      |
-| expense_category    | Integer, ID of expense category                                                            |
-| phase_id            | Integer, ID of phase                                                                       |
-| part_of_fixed_price | Boolean (Can only be set on retainer projects with fixed price)                            |
+| Request fields      | Description/format                                                                               |
+| ------------------- |--------------------------------------------------------------------------------------------------|
+| name                | String                                                                                           |
+| expense_date        | Date                                                                                             |
+| cost                | Decimal                                                                                          |
+| price               | Decimal                                                                                          |
+| quantity            | Decimal                                                                                          |
+| approved            | Boolean                                                                                          |
+| billable            | Boolean (Cannnot be set to true if project on which expense item is added is not billable)       |
+| notes               | String                                                                                           |
+| person_id           | Integer, Id of person                                                                            |
+| expense_category    | Integer, ID of expense category                                                                  |
+| phase_id            | Integer, ID of phase                                                                             |
+| part_of_fixed_price | Boolean (Can only be set on fixed price projects and retainer projects with fixed price periods) |
 
 ### Sample JSON request
 
