@@ -478,10 +478,10 @@ For every person in the company, a total utilization for the entire timespan plu
 
 ## Get person utilization for specific persons
 
-- `GET v1/persons/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD?personId={personId}&personId={personId}` - Returns  utilization data for specific persons for the given timespan. Both `start_date` and `end_date` are required and inclusive.
+- `GET v1/persons/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD&personId={personId}&personId={personId}` - Returns  utilization data for specific persons for the given timespan. Both `start_date` and `end_date` are required and inclusive.
 
 
-GET https://api.forecast.it/api/v1/persons/utilization?start_date=20200101&end_date=20200131?personId=1&personId=2
+GET https://api.forecast.it/api/v1/persons/utilization?start_date=20200101&end_date=20200131&personId=1&personId=2
 
 ### Sample JSON response
 
