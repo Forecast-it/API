@@ -2,7 +2,7 @@
 
 ## Get person labels
 
-* `GET /person_labels/{personId}` - Returns skills (labels) associated with a person.
+* `GET /person_labels/{personId}` - Returns labels associated with a person.
 
 | Response fields | Description/format |
 |-----------------|--------------------|
