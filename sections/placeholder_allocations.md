@@ -51,7 +51,7 @@
 
 ## Get all placeholder allocations for placeholder
 
-* `GET /placehodlers/{placeholderId}/placeholder_allocations` - Returns all placeholder allocations for a placeholder.
+* `GET /placeholders/{placeholderId}/placeholder_allocations` - Returns all placeholder allocations for a placeholder.
 
 | Response fields | Description/format                   |
 |-----------------|--------------------------------------|
