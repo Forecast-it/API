@@ -1,13 +1,13 @@
 # Person Labels
 
-## Get person labels (skills)
+## Get person labels
 
-* `GET /person_labels/{personId}` - Returns skills (labels) associated with a person.
+* `GET /person_labels/{personId}` - Returns labels associated with a person.
 
-|Response fields | Description/format|
-|------------ | -------------|
-|id | Integer|
-|name | String|
+| Response fields | Description/format |
+|-----------------|--------------------|
+| id              | Integer            |
+| name            | String             |
 
 ### Sample JSON response
 ```javascript
