@@ -2,7 +2,7 @@
 
 ## Get person skills
 
-* `GET /person_skills` - Returns skills associated with all persons.
+* `GET /skill_persons` - Returns skills associated with all persons.
 
 | Response fields | Description/format |
 |-----------------|--------------------|
@@ -23,7 +23,7 @@
 
 ## Get person skills for person
 
-* `GET /person_skills/{personId}` - Returns skills associated with a person.
+* `GET /skill_persons/{personId}` - Returns skills associated with a person.
 
 | Response fields | Description/format |
 |-----------------|--------------------|
@@ -45,6 +45,6 @@
 
 ## Delete person skill
 
-* `DELETE /person_skills/{personId}/{skillId}` - Delete skill associated with a person.
+* `DELETE /skill_persons/{personId}/{skillId}` - Delete skill associated with a person.
 
 
