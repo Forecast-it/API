@@ -12,7 +12,7 @@
 | start_date          | Date                       |
 | end_date            | Date                       |
 | baseline_start_date | Date, specific to Baseline |
-| baseline_end_date   | Date                       |
+| baseline_end_date   | Date, specific to Baseline |
 | created_by          | Integer, ID of person      |
 | updated_by          | Integer, ID of person      |
 | created_at          | Date                       |
@@ -50,7 +50,7 @@
 | start_date          | Date                       |
 | end_date            | Date                       |
 | baseline_start_date | Date, specific to Baseline |
-| baseline_end_date   | Date                       |
+| baseline_end_date   | Date, specific to Baseline |
 | created_by          | Integer, ID of person      |
 | updated_by          | Integer, ID of person      |
 | created_at          | Date                       |
@@ -64,8 +64,8 @@
      "name":"Phase 1",
      "start_date":"2017-01-14",
      "end_date":"2017-06-14",
-      "baseline_start_date":"2017-01-14",
-      "baseline_end_date":"2017-06-14",
+     "baseline_start_date":"2017-01-14",
+     "baseline_end_date":"2017-06-14",
      "created_by":1,
      "updated_by":1,
      "created_at":"2017-01-14T18:46:56Z",
@@ -85,7 +85,7 @@
 | start_date          | Date                       |
 | end_date            | Date                       |
 | baseline_start_date | Date, specific to Baseline |
-| baseline_end_date   | Date                       |
+| baseline_end_date   | Date, specific to Baseline |
 | created_by          | Integer, ID of person      |
 | updated_by          | Integer, ID of person      |
 | created_at          | Date                       |
@@ -116,11 +116,13 @@ GET https://api.forecast.it/api/v4/phases
 
 - `POST /projects/{projectId}/phases` - Creates a new phase. Returns the same object as getting a single phase.
 
-| Request fields | Description/format |
-| -------------- | ------------------ |
-| name           | (Required) String  |
-| start_date     | Date               |
-| end_date       | Date               |
+| Request fields      | Description/format         |
+| ------------------- | -------------------------- |
+| name                | (Required) String          |
+| start_date          | Date                       |
+| end_date            | Date                       |
+| baseline_start_date | Date, specific to Baseline |
+| baseline_end_date   | Date, specific to Baseline |
 
 ### Sample JSON request
 
@@ -138,11 +140,13 @@ POST https://api.forecast.it/api/v1/projects/1/phases
 
 - `PUT /projects/{projectId}/phases/{phaseId}` - Updates a phase. Returns the same object as getting a single phase.
 
-| Request fields | Description/format |
-| -------------- | ------------------ |
-| name           | String             |
-| start_date     | Date               |
-| end_date       | Date               |
+| Request fields      | Description/format         |
+| ------------------- | -------------------------- |
+| name                | String          |
+| start_date          | Date                       |
+| end_date            | Date                       |
+| baseline_start_date | Date, specific to Baseline |
+| baseline_end_date   | Date, specific to Baseline |
 
 ### Sample JSON request
 
