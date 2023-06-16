@@ -14,6 +14,7 @@
 | first_name          | String                                                                                                            |
 | last_name           | String                                                                                                            |
 | email               | String                                                                                                            |
+| job_title           | String                                                                                                            |
 | user_type           | String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1** |
 | client_id           | Integer, ID of client                                                                                             |
 | holiday_calendar_id | Integer, ID of holiday calendar                                                                                   |
@@ -45,8 +46,10 @@
       "first_name":"John",
       "last_name":"Smith",
       "email":"js@domain.com",
+      "job_title":"Senior Developer",
       "user_type":"ADMIN",
       "client_id": null,
+      "department_id": 2,
       "holiday_calendar_id": 1,
       "monday":480,
       "tuesday":480,
@@ -81,6 +84,7 @@
 | first_name          | String                                                                                                            |
 | last_name           | String                                                                                                            |
 | email               | String                                                                                                            |
+| job_title           | String                                                                                                            |
 | user_type           | String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1** |
 | client_id           | Integer, ID of client                                                                                             |
 | holiday_calendar_id | Integer, ID of holiday calendar                                                                                   |
@@ -93,8 +97,11 @@
 | sunday              | Integer                                                                                                           |
 | active              | Boolean                                                                                                           |
 | default_role        | JSON (Role)                                                                                                       |
+| department_id       | Integer, ID of [department](departments.md#get-department)                                                        |
 | cost                | Decimal, cost from the current cost period                                                                        |
 | language            | String {"SPANISH", "DANISH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                            |
+| start_date          | String (ISO 8601)                                                                                                 |
+| end_date            | String (ISO 8601)                                                                                                 |
 | created_by          | Integer, ID of person                                                                                             |
 | updated_by          | Integer, ID of person                                                                                             |
 | created_at          | Date                                                                                                              |
@@ -107,7 +114,8 @@
    "id":1,
    "first_name":"John",
    "last_name":"Smith",
-   "email":"js@domain.com",
+   "email":"js@domain.com", 
+   "job_title":"Senior Developer",
    "user_type":"ADMIN",
    "client_id": null,
    "holiday_calendar_id": 1,
@@ -121,7 +129,10 @@
    "active":true,
    "default_role": {...},
    "cost":100,
+   "department_id": 2,
    "language":"DANISH",
+   "start_date":"2020-01-01",
+   "end_date":"2022-12-31",
    "created_by":1,
    "updated_by":1,
    "created_at":"2017-01-14T18:46:56Z",
@@ -208,10 +219,11 @@
 - `POST v2/persons` - Creates a new person. Returns the same object as getting a single person.
 
 | Request fields      | Description/format                                                                                                             |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------|
 | first_name          | String                                                                                                                         |
 | last_name           | String                                                                                                                         |
 | email               | String                                                                                                                         |
+| job_title           | String                                                                                                                         |
 | user_type           | (Required\*) String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1** |
 | profile_ids         | List<Integer>, List ID of [Profile](sections/profiles.md#profiles) ids **Only v2**                                             |
 | client_id           | Integer, ID of client                                                                                                          |
@@ -224,8 +236,11 @@
 | saturday            | Integer, if not set, taken from company                                                                                        |
 | sunday              | Integer, if not set, taken from company                                                                                        |
 | default_role        | Integer, id of the default role                                                                                                |
+| department_id       | Integer, id of department                                                                                                      |
 | cost                | Decimal, cost to be used in the current cost period                                                                            |
 | language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                               |
+| start_date          | String (ISO 8601)                                                                                                 |
+| end_date            | String (ISO 8601)                                                                                                 |
 
 \* Person with client_id can only be "VIRTUAL" or "CLIENT" user_type. Person without client_id cannot have "CLIENT" user_type
 
@@ -233,11 +248,12 @@
 
 POST https://api.forecast.it/api/v1/persons
 
-```javascript
+```json
 {
    "first_name":"John",
    "last_name":"Smith",
    "email":"js@domain.com",
+   "job_title":"Senior Developer",
    "user_type":"ADMIN",
    "profile_ids":[-3],
    "holiday_calendar_id": 1,
@@ -249,7 +265,10 @@ POST https://api.forecast.it/api/v1/persons
    "saturday":0,
    "sunday":0,
    "default_role":4,
+   "department_id": 2,
    "cost":100,
+   "start_date": "2020-12-20",
+   "end_date": "2025-01-01",
 }
 ```
 
@@ -264,6 +283,7 @@ POST https://api.forecast.it/api/v1/persons
 | first_name          | String                                                                                                                         |
 | last_name           | String                                                                                                                         |
 | email               | String                                                                                                                         |
+| job_title           | String                                                                                                                         |
 | user_type           | (Required\*) String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1** |
 | profile_ids         | List<Integer>, List ID of profile ids **Only v2**                                                                              |
 | holiday_calendar_id | Integer, ID of holiday calendar                                                                                                |
@@ -276,8 +296,11 @@ POST https://api.forecast.it/api/v1/persons
 | sunday              | Integer                                                                                                                        |
 | active              | Boolean\*                                                                                                                      |
 | default_role        | Integer, id of the default role                                                                                                |
+| department_id       | Integer, id of department                                                                                                      |
 | cost                | Decimal, cost to be used in the current cost period                                                                            |
 | language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                               |
+| start_date          | String (ISO 8601)                                                                                                 |
+| end_date            | String (ISO 8601)                                                                                                 |
 
 \* Person with client_id can only be "VIRTUAL" or "CLIENT" user_type and cannot have active equal to false. Person without client_id cannot have "CLIENT" user_type
 
