@@ -100,16 +100,16 @@ The following endpoints are available for programs:
 
 - `POST /programs` - Creates a new program.
 
-| Request fields | Description/format                    |
-| -------------- | ------------------------------------- |
-| name           | String                                |
-| key            | String, Max 5 alphanumeric characters |
-| description    | String                                |
-| color          | String, Hex color                     |
-| stage_id       | UUID                                  |
-| start_date     | Date, ISO 8601                        |
-| end_date       | Date, ISO 8601                        |
-| owners         | List<Integer>                         |
+| Request fields | Description/format                                 |
+| -------------- | -------------------------------------------------- |
+| name           | (Required\*) String                                |
+| key            | (Required\*) String, Max 5 alphanumeric characters |
+| description    | String                                             |
+| color          | String, Hex color                                  |
+| stage_id       | UUID                                               |
+| start_date     | Date, ISO 8601                                     |
+| end_date       | Date, ISO 8601                                     |
+| owners         | List<Integer>                                      |
 
 ### Sample JSON request
 
@@ -170,9 +170,9 @@ DELETE https://api.forecast.it/api/v1/programs/4ec178b1-f229-47c2-b5c3-b3aaf6da2
 
 - `PUT /programs/{programId}/add_projects` - Adds projects to an existing program.
 
-| Request fields | Description/format             |
-| -------------- | ------------------------------ |
-| project_ids    | List<Integer>, IDs of projects |
+| Request fields | Description/format                          |
+| -------------- | ------------------------------------------- |
+| project_ids    | (Required\*) List<Integer>, IDs of projects |
 
 ### Sample JSON request
 
@@ -188,9 +188,9 @@ PUT https://api.forecast.it/api/v1/programs/4ec178b1-f229-47c2-b5c3-b3aaf6da2a4e
 
 - `PUT /programs/{programId}/remove_projects` - Removes projects from an existing program.
 
-| Request fields | Description/format             |
-| -------------- | ------------------------------ |
-| project_ids    | List<Integer>, IDs of projects |
+| Request fields | Description/format                          |
+| -------------- | ------------------------------------------- |
+| project_ids    | (Required\*) List<Integer>, IDs of projects |
 
 ### Sample JSON request
 
