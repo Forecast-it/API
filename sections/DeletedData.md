@@ -55,15 +55,15 @@ In this section you can find all endpoints for deleted data such as deleted time
 
 - `GET v4/tasks/deleted` - Returns all deleted tasks in a paginated response. 
 
-| Response fields   | Description/format                                    |
-| ----------------  | -------------------------------                       |
-| task             | Object ({id: Integer, name: String, deleted_at: Datetime})                |
-| project      | Object ({id: Integer, name: String})                                               |           |
-| phase              | Object ({id: Integer, name: String})             |
-| sprint              | Object ({id: Integer, name: String})   |
-| assignedPersons              | Object[] ({id: Integer, name: String})  |
-| labels              | Object[] ({id: Integer, name: String})  |
-| comments              | String[]   |
+| Response fields    | Description/format                                                              |
+|--------------------|---------------------------------------------------------------------------------|
+| task               | Object ({id: Integer, name: String, deleted_at: Datetime, deleted_by: Integer}) |
+| project            | Object ({id: Integer, name: String})                                            |           
+| phase              | Object ({id: Integer, name: String})                                            |
+| sprint             | Object ({id: Integer, name: String})                                            |
+| assignedPersons    | Object[] ({id: Integer, name: String})                                          |
+| labels             | Object[] ({id: Integer, name: String})                                          |
+| comments           | String[]                                                                        |
 
 #### Sample JSON response
 
@@ -73,7 +73,8 @@ In this section you can find all endpoints for deleted data such as deleted time
             "task": {
                 "id": 206,
                 "name": "taskName",
-                "deleted_at": "2021-10-26T10:57:20+02:00"
+                "deleted_at": "2021-10-26T10:57:20+02:00",
+                "deleted_by": 2
             },
             "project": {
                 "id": 49,
