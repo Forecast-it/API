@@ -114,7 +114,7 @@
    "id":1,
    "first_name":"John",
    "last_name":"Smith",
-   "email":"js@domain.com", 
+   "email":"js@domain.com",
    "job_title":"Senior Developer",
    "user_type":"ADMIN",
    "client_id": null,
@@ -219,7 +219,7 @@
 - `POST v2/persons` - Creates a new person. Returns the same object as getting a single person.
 
 | Request fields      | Description/format                                                                                                             |
-|---------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | first_name          | String                                                                                                                         |
 | last_name           | String                                                                                                                         |
 | email               | String                                                                                                                         |
@@ -239,8 +239,9 @@
 | department_id       | Integer, id of department                                                                                                      |
 | cost                | Decimal, cost to be used in the current cost period                                                                            |
 | language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                               |
-| start_date          | String (ISO 8601)                                                                                                 |
-| end_date            | String (ISO 8601)                                                                                                 |
+| start_date          | String (ISO 8601)                                                                                                              |
+| end_date            | String (ISO 8601)                                                                                                              |
+| active              | Boolean (Defaults to true)                                                                                                     |
 
 \* Person with client_id can only be "VIRTUAL" or "CLIENT" user_type. Person without client_id cannot have "CLIENT" user_type
 
@@ -250,25 +251,25 @@ POST https://api.forecast.it/api/v1/persons
 
 ```json
 {
-   "first_name":"John",
-   "last_name":"Smith",
-   "email":"js@domain.com",
-   "job_title":"Senior Developer",
-   "user_type":"ADMIN",
-   "profile_ids":[-3],
-   "holiday_calendar_id": 1,
-   "monday":480,
-   "tuesday":480,
-   "wednesday":480,
-   "thursday":480,
-   "friday":480,
-   "saturday":0,
-   "sunday":0,
-   "default_role":4,
-   "department_id": 2,
-   "cost":100,
-   "start_date": "2020-12-20",
-   "end_date": "2025-01-01",
+  "first_name": "John",
+  "last_name": "Smith",
+  "email": "js@domain.com",
+  "job_title": "Senior Developer",
+  "user_type": "ADMIN",
+  "profile_ids": [-3],
+  "holiday_calendar_id": 1,
+  "monday": 480,
+  "tuesday": 480,
+  "wednesday": 480,
+  "thursday": 480,
+  "friday": 480,
+  "saturday": 0,
+  "sunday": 0,
+  "default_role": 4,
+  "department_id": 2,
+  "cost": 100,
+  "start_date": "2020-12-20",
+  "end_date": "2025-01-01"
 }
 ```
 
@@ -299,8 +300,8 @@ POST https://api.forecast.it/api/v1/persons
 | department_id       | Integer, id of department                                                                                                      |
 | cost                | Decimal, cost to be used in the current cost period                                                                            |
 | language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                               |
-| start_date          | String (ISO 8601)                                                                                                 |
-| end_date            | String (ISO 8601)                                                                                                 |
+| start_date          | String (ISO 8601)                                                                                                              |
+| end_date            | String (ISO 8601)                                                                                                              |
 
 \* Person with client_id can only be "VIRTUAL" or "CLIENT" user_type and cannot have active equal to false. Person without client_id cannot have "CLIENT" user_type
 
@@ -441,7 +442,6 @@ The returned data contains a total for the entire timespan, plus an array with d
 
 - `GET v1/persons/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns all company person's utilization data for the given timespan. Both `start_date` and `end_date` are required and inclusive.
 
-
 GET https://api.forecast.it/api/v1/persons/utilization?start_date=20200101&end_date=20200131
 
 ### Sample JSON response
@@ -501,8 +501,7 @@ For every person in the company, a total utilization for the entire timespan plu
 
 ## Get person utilization for specific persons
 
-- `GET v1/persons/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD&personId={personId}&personId={personId}` - Returns  utilization data for specific persons for the given timespan. Both `start_date` and `end_date` are required and inclusive.
-
+- `GET v1/persons/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD&personId={personId}&personId={personId}` - Returns utilization data for specific persons for the given timespan. Both `start_date` and `end_date` are required and inclusive.
 
 GET https://api.forecast.it/api/v1/persons/utilization?start_date=20200101&end_date=20200131&personId=1&personId=2
 
