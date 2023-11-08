@@ -222,7 +222,6 @@ Notification settings for each destination can be configured independently throu
 
 | Request fields                                        | Description/format                                          |
 | ----------------------------------------------------- | ----------------------------------------------------------- |
-| person_id                                             | Integer                                                     |
 | project_deadline_notification_period                  | Integer                                                     |
 | task_deadline_notification_period                     | Integer                                                     |
 | invoice_notification_days_overdue                     | Integer                                                     |
