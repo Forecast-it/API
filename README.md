@@ -134,6 +134,7 @@ Errors are returned in the following JSON format.
 - [Person cost periods](sections/person_cost_periods.md#person-cost-periods)
 - [Person labels](sections/person_labels.md)
 - [Persons](sections/persons.md#persons)
+- [Person notification settings](sections/person_notification_settings.md)
 - [Phases](sections/phases.md#phases)
 - [Placeholder allocations](sections/placeholder_allocations.md)
 - [Placeholders](sections/placeholders.md)
