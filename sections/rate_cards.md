@@ -65,9 +65,10 @@
 - `POST /rate_cards` - Creates a new rate card. Returns the same object as getting a single rate card.
 
 | Request fields | Description/format |
-| -------------- | ------------------ |
+|----------------|--------------------|
 | name           | (Required) String  |
 | default_rate   | Decimal            |
+| currency       | String             |
 
 ### Sample JSON request
 
@@ -76,7 +77,8 @@ POST https://api.forecast.it/api/v1/rate_cards
 ```javascript
 {
    "name":"Low end rates 2017",
-   "default_rate":150.0,
+   "default_rate":150.0, 
+   "currency":"USD" 
 }
 ```
 
