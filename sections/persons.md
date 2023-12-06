@@ -5,7 +5,7 @@
 ## Get persons
 
 - `GET v1/persons` - Returns all persons. (DEPRECATED - please see the v2 endpoints)
--
+
 - `GET v2/persons` - Returns all persons.
 
 | Response fields     | Description/format                                                                                                |
@@ -32,6 +32,8 @@
 | language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                  |
 | start_date          | String (ISO 8601)                                                                                                 |
 | end_date            | String (ISO 8601)                                                                                                 |
+| permissions         | String[]                                                                                                          |
+| is_system_user      | Boolean                                                                                                           |
 | created_by          | Integer, ID of person                                                                                             |
 | updated_by          | Integer, ID of person                                                                                             |
 | created_at          | Date                                                                                                              |
@@ -42,32 +44,38 @@
 ```javascript
 [
    {
-      "id":1,
-      "first_name":"John",
-      "last_name":"Smith",
-      "email":"js@domain.com",
-      "job_title":"Senior Developer",
-      "user_type":"ADMIN",
-      "client_id": null,
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Smith",
+      "email": "js@domain.com",
+      "job_title": "Senior Developer",
+      "monday": 480,
+      "tuesday": 480,
+      "wednesday": 480,
+      "thursday": 480,
+      "friday": 480,
+      "saturday": 0,
+      "sunday": 0,
+      "active": true,
+      "default_role": 4,
       "department_id": 2,
-      "holiday_calendar_id": 1,
-      "monday":480,
-      "tuesday":480,
-      "wednesday":480,
-      "thursday":480,
-      "friday":480,
-      "saturday":0,
-      "sunday":0,
-      "active":true,
-      "default_role":29,
-      "cost":100,
+      "cost": 100,
       "language":"DANISH",
-      "start_date":"2020-01-01",
-      "end_date":"2022-12-31",
-      "created_by":1,
-      "updated_by":1,
-      "created_at":"2017-01-14T18:46:56Z",
-      "updated_at":"2017-01-14T18:47:58Z"
+      "created_by": 1,
+      "updated_by": 1,
+      "created_at": "2017-01-14T18:46:56Z",
+      "updated_at": "2017-01-14T18:47:58Z"
+      "client_id": 1,
+      "holiday_calendar_id": 1,
+      "start_date": "2020-12-20",
+      "end_date": "2025-01-01"
+      "permissions": [
+         "PROJECTS_CREATE",
+         "PROJECTS_UPDATE",
+         "PROJECTS_DELETE",
+         "PROJECT_SCHEDULING_SHARE_CREATE",
+      ],
+      "is_system_user": false,
    }, ...
 ]
 ```
@@ -102,6 +110,8 @@
 | language            | String {"SPANISH", "DANISH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                            |
 | start_date          | String (ISO 8601)                                                                                                 |
 | end_date            | String (ISO 8601)                                                                                                 |
+| permissions         | String[]                                                                                                          |
+| is_system_user      | Boolean                                                                                                           |
 | created_by          | Integer, ID of person                                                                                             |
 | updated_by          | Integer, ID of person                                                                                             |
 | created_at          | Date                                                                                                              |
@@ -111,32 +121,38 @@
 
 ```javascript
 {
-   "id":1,
-   "first_name":"John",
-   "last_name":"Smith",
-   "email":"js@domain.com",
-   "job_title":"Senior Developer",
-   "user_type":"ADMIN",
-   "client_id": null,
-   "holiday_calendar_id": 1,
-   "monday":480,
-   "tuesday":480,
-   "wednesday":480,
-   "thursday":480,
-   "friday":480,
-   "saturday":0,
-   "sunday":0,
-   "active":true,
-   "default_role": {...},
-   "cost":100,
+   "id": 1,
+   "first_name": "John",
+   "last_name": "Smith",
+   "email": "js@domain.com",
+   "job_title": "Senior Developer",
+   "monday": 480,
+   "tuesday": 480,
+   "wednesday": 480,
+   "thursday": 480,
+   "friday": 480,
+   "saturday": 0,
+   "sunday": 0,
+   "active": true,
+   "default_role": 4,
    "department_id": 2,
+   "cost": 100,
    "language":"DANISH",
-   "start_date":"2020-01-01",
-   "end_date":"2022-12-31",
-   "created_by":1,
-   "updated_by":1,
-   "created_at":"2017-01-14T18:46:56Z",
-   "updated_at":"2017-01-14T18:47:58Z"
+   "created_by": 1,
+   "updated_by": 1,
+   "created_at": "2017-01-14T18:46:56Z",
+   "updated_at": "2017-01-14T18:47:58Z"
+   "client_id": 1,
+   "holiday_calendar_id": 1,
+   "start_date": "2020-12-20",
+   "end_date": "2025-01-01"
+   "permissions": [
+      "PROJECTS_CREATE",
+      "PROJECTS_UPDATE",
+      "PROJECTS_DELETE",
+      "PROJECT_SCHEDULING_SHARE_CREATE",
+   ],
+   "is_system_user": false,
 }
 ```
 
@@ -241,35 +257,49 @@
 | language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                               |
 | start_date          | String (ISO 8601)                                                                                                              |
 | end_date            | String (ISO 8601)                                                                                                              |
+| external_refs       | {key: String, value: String}[]                                                                                                 |
 | active              | Boolean (Defaults to true)                                                                                                     |
 
 \* Person with client_id can only be "VIRTUAL" or "CLIENT" user_type. Person without client_id cannot have "CLIENT" user_type
 
 ### Sample JSON request
 
-POST https://api.forecast.it/api/v1/persons
+POST https://api.forecast.it/api/v2/persons
 
 ```json
 {
-  "first_name": "John",
-  "last_name": "Smith",
-  "email": "js@domain.com",
-  "job_title": "Senior Developer",
-  "user_type": "ADMIN",
-  "profile_ids": [-3],
-  "holiday_calendar_id": 1,
-  "monday": 480,
-  "tuesday": 480,
-  "wednesday": 480,
-  "thursday": 480,
-  "friday": 480,
-  "saturday": 0,
-  "sunday": 0,
-  "default_role": 4,
-  "department_id": 2,
-  "cost": 100,
-  "start_date": "2020-12-20",
-  "end_date": "2025-01-01"
+   "id": 1,
+   "first_name": "John",
+   "last_name": "Smith",
+   "email": "js@domain.com",
+   "job_title": "Senior Developer",
+   "monday": 480,
+   "tuesday": 480,
+   "wednesday": 480,
+   "thursday": 480,
+   "friday": 480,
+   "saturday": 0,
+   "sunday": 0,
+   "active": true,
+   "default_role": 4,
+   "department_id": 2,
+   "cost": 100,
+   "language":"DANISH",
+   "created_by": 1,
+   "updated_by": 1,
+   "created_at": "2017-01-14T18:46:56Z",
+   "updated_at": "2017-01-14T18:47:58Z"
+   "client_id": 1,
+   "holiday_calendar_id": 1,
+   "start_date": "2020-12-20",
+   "end_date": "2025-01-01"
+   "permissions": [
+      "PROJECTS_CREATE",
+      "PROJECTS_UPDATE",
+      "PROJECTS_DELETE",
+      "PROJECT_SCHEDULING_SHARE_CREATE",
+   ],
+   "is_system_user": false,
 }
 ```
 
@@ -302,17 +332,48 @@ POST https://api.forecast.it/api/v1/persons
 | language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                               |
 | start_date          | String (ISO 8601)                                                                                                              |
 | end_date            | String (ISO 8601)                                                                                                              |
+| external_refs       | {key: String, value: String}[]                                                                                                 |
 
 \* Person with client_id can only be "VIRTUAL" or "CLIENT" user_type and cannot have active equal to false. Person without client_id cannot have "CLIENT" user_type
 
 ### Sample JSON request
 
-PUT https://api.forecast.it/api/v1/persons/1
+PUT https://api.forecast.it/api/v2/persons/1
 
 ```javascript
 {
-   "first_name":"John",
-   "last_name":"Doe"
+   "id": 1,
+   "first_name": "John",
+   "last_name": "Smith",
+   "email": "js@domain.com",
+   "job_title": "Senior Developer",
+   "monday": 480,
+   "tuesday": 480,
+   "wednesday": 480,
+   "thursday": 480,
+   "friday": 480,
+   "saturday": 0,
+   "sunday": 0,
+   "active": true,
+   "default_role": 4,
+   "department_id": 2,
+   "cost": 100,
+   "language":"DANISH",
+   "created_by": 1,
+   "updated_by": 1,
+   "created_at": "2017-01-14T18:46:56Z",
+   "updated_at": "2017-01-14T18:47:58Z"
+   "client_id": 1,
+   "holiday_calendar_id": 1,
+   "start_date": "2020-12-20",
+   "end_date": "2025-01-01"
+   "permissions": [
+      "PROJECTS_CREATE",
+      "PROJECTS_UPDATE",
+      "PROJECTS_DELETE",
+      "PROJECT_SCHEDULING_SHARE_CREATE",
+   ],
+   "is_system_user": false,
 }
 ```
 
