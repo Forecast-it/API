@@ -1,5 +1,97 @@
 # ProjectBillTos
 
+## Get ProjectBillTo
+
+* `GET /project_bill_tos` - Returns all project bill tos
+
+| Response fields | Description/format   |
+|-----------------|----------------------|
+| id              | Integer              |
+| bill_from_id    | Integer              |
+| bill_to_id      | Integer              |
+| project_id      | Integer              |
+| client_bill_to_id      | Integer              |
+| client_id       | Integer              |
+| created_by      | Integer, ID of person |
+| updated_by      | Integer, ID of person |
+| created_at      | Date                 |
+| updated_at      | Date                 |
+
+### Sample JSON response
+```json
+[
+  {
+    "id": 1,
+    "bill_from_id": 2,
+    "bill_to_id": 3,
+    "project_id": 5,
+    "client_bill_to_id": 4,
+    "client_id": 2,
+    "created_by": 1,
+    "updated_by": 1,
+    "created_at": "2020-01-14T18:46:56Z",
+    "updated_at": "2020-01-14T18:47:58Z"
+  },
+  {
+    "id": 2,
+    "bill_from_id": 2,
+    "bill_to_id": 3,
+    "project_id": 3,
+    "client_bill_to_id": 2,
+    "client_id": 1,
+    "created_by": 1,
+    "updated_by": 1,
+    "created_at": "2020-01-14T18:46:56Z",
+    "updated_at": "2020-01-14T18:47:58Z"
+  }
+]
+```
+
+* `GET /project_bill_tos?project_id={projectId}&project_id={projectId}` - Returns all project bill tos for given project ids.
+
+| Response fields | Description/format   |
+|-----------------|----------------------|
+| id              | Integer              |
+| bill_from_id    | Integer              |
+| bill_to_id      | Integer              |
+| project_id      | Integer              |
+| client_bill_to_id      | Integer              |
+| client_id       | Integer              |
+| created_by      | Integer, ID of person |
+| updated_by      | Integer, ID of person |
+| created_at      | Date                 |
+| updated_at      | Date                 |
+
+### Sample JSON response
+```json
+[
+  {
+    "id": 1,
+    "bill_from_id": 2,
+    "bill_to_id": 3,
+    "project_id": 5,
+    "client_bill_to_id": 4,
+    "client_id": 2,
+    "created_by": 1,
+    "updated_by": 1,
+    "created_at": "2020-01-14T18:46:56Z",
+    "updated_at": "2020-01-14T18:47:58Z"
+  },
+  {
+    "id": 2,
+    "bill_from_id": 1,
+    "bill_to_id": 2,
+    "project_id": 5,
+    "client_bill_to_id": 4,
+    "client_id": 2,
+    "created_by": 1,
+    "updated_by": 1,
+    "created_at": "2020-01-14T18:46:56Z",
+    "updated_at": "2020-01-14T18:47:58Z"
+  }
+]
+```
+
 ## Create ProjectBillTo
 
 * `POST /project_bill_tos` - Creates a new project bill to entry.
