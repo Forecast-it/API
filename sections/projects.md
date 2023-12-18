@@ -448,6 +448,7 @@ GET https://api.forecast.it/api/v1/projects/1/statuses
 
 - `GET /v2/projects/{projectId}/financials` - Returns all financial data for the project
 - `GET /v2/projects/{projectId}/financials?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns all financial data for the project between `start_date` and `end_date`, broken down to milestone and role level.
+- `GET /v2/projects/{projectId}/financials?convert_to_project_currency=true` - Returns all financial data for the project in project currency
 
 ### Grouping
 
