@@ -1,13 +1,14 @@
-# Financial Numbers 
+# Financial Numbers
 
 ## Get financial numbers
 
 - `POST /v2/getFinancialNumbers` - Gets financial numbers.
+- `GET /v2/projects/{projectId}/financials?convert_to_project_currency=true` - Gets financial numbers in project currency
 
 | Request fields | Description/format                                                                                                |
 | -------------- | ----------------------------------------------------------------------------------------------------------------- |
 | startDate      | Date. ISO 8601. Required if 'endDate' is present.                                                                 |
-| endDate        | Date. ISO 8601. Required if 'startDate' is present.                                                                |
+| endDate        | Date. ISO 8601. Required if 'startDate' is present.                                                               |
 | groupBy        | Array of strings. Accepted values: 'PROJECT', 'YEAR', 'MONTH', 'DAY', 'PHASE', 'ROLE', 'EXPENSE_CATEGORY', 'TASK' |
 | filters        | Array of [Filters](financial_filter.md)                                                                           |
 
@@ -107,7 +108,7 @@ POST https://api.forecast.it/api/v2/getFinancialNumbers
 | &nbsp;&nbsp;↳ price                             | Amount (Double)                 |
 
 `Deprecated response from version 1 (/v1/getFinancialNumbers) ` - Please use v2
- 
+
 | Response fields       | Description/format                                                                                   |
 | --------------------- | ---------------------------------------------------------------------------------------------------- |
 | actualRevenue         | Number. All billable Time Registrations x Rate + Actual Billable Expenses                            |
