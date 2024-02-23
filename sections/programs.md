@@ -61,7 +61,7 @@ The following endpoints are available for programs:
 
 ## Get program
 
-- `GET /program/{programId}` - Returns a single program.
+- `GET /programs/{programId}` - Returns a single program.
 
 | Response fields | Description/format                                    |
 | --------------- | ----------------------------------------------------- |
