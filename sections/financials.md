@@ -3,7 +3,7 @@
 ## Get financial numbers
 
 - `POST /v2/getFinancialNumbers` - Gets financial numbers.
-- `GET /v2/projects/{projectId}/financials?convert_to_project_currency=true` - Gets financial numbers in project currency
+- `POST /v2/getFinancialNumbers?convert_to_project_currency=true` - Gets financial numbers in project currency
 
 | Request fields | Description/format                                                                                                |
 | -------------- | ----------------------------------------------------------------------------------------------------------------- |
