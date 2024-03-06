@@ -384,18 +384,22 @@ PUT https://api.forecast.it/api/v1/projects/1
 
 - `POST /projects/duplicate/{projectId}` - Creates a duplicate of the given project. Returns the new project.
 
-| Request fields            | Description/format                                                                              |
-| ------------------------- | ----------------------------------------------------------------------------------------------- |
-| name                      | String                                                                                          |
-| start_date                | Date (Changing the dates of a duplicated project will move tasks and phases accordingly)        |
-| end_date                  | Date (Changing the dates of a duplicated project will move tasks and phases accordingly)        |
-| client                    | Integer, ID of client                                                                           |
-| duplicate_color           | Boolean (Defaults to true). Determines if the project color should be duplicated                |
-| duplicate_expenses        | Boolean (Defaults to true). Determines if expenses attached to the project should be duplicated |
-| duplicate_phases          | Boolean (Defaults to true). Determines if phases on the project should be duplicated            |
-| duplicate_settings        | Boolean (Defaults to true). Determines if settings on the project should be duplicated          |
-| duplicate_project_persons | Boolean (Defaults to true). Determines if persons assigned to the project should be duplicated  |
-| duplicate_tasks           | Boolean (Defaults to true). Determines if tasks on the project should be duplicated             |
+| Request fields                    | Description/format                                                                                                                               |
+|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| name                              | String                                                                                                                                           |
+| start_date                        | Date (Changing the dates of a duplicated project will move tasks and phases accordingly)                                                         |
+| end_date                          | Date (Changing the dates of a duplicated project will move tasks and phases accordingly)                                                         |
+| client                            | Integer, ID of client                                                                                                                            |
+| duplicate_color                   | Boolean (Defaults to true). Determines if the project color should be duplicated                                                                 |
+| duplicate_expenses                | Boolean (Defaults to true). Determines if expenses attached to the project should be duplicated                                                  |
+| duplicate_phases                  | Boolean (Defaults to true). Determines if phases on the project should be duplicated                                                             |
+| duplicate_settings                | Boolean (Defaults to true). Determines if settings on the project should be duplicated                                                           |
+| duplicate_project_persons         | Boolean (Defaults to true). Determines if persons assigned to the project should be duplicated                                                   |
+| duplicate_tasks                   | Boolean (Defaults to true). Determines if tasks on the project should be duplicated                                                              |
+| duplicate_allocations             | Boolean (Defaults to false). Determines if allocations on the project should be duplicated                                                       |
+| duplicate_retainer_periods        | Boolean (Defaults to false). Determines if retainer periods on the project should be duplicated                                                  |
+| duplicate_placeholders            | Boolean (Defaults to false). Determines if placeholders on the project should be duplicated                                                      |
+| duplicate_placeholder_allocations | Boolean (Defaults to false). If `duplicate_placeholders` is true, this determines if placeholder allocations on the project should be duplicated |
 
 ### Sample JSON request
 
@@ -444,6 +448,7 @@ GET https://api.forecast.it/api/v1/projects/1/statuses
 
 - `GET /v2/projects/{projectId}/financials` - Returns all financial data for the project
 - `GET /v2/projects/{projectId}/financials?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns all financial data for the project between `start_date` and `end_date`, broken down to milestone and role level.
+- `GET /v2/projects/{projectId}/financials?convert_to_project_currency=true` - Returns all financial data for the project in project currency
 
 ### Grouping
 

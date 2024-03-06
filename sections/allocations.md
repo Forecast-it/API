@@ -5,7 +5,7 @@
 * `GET /allocations` - Returns all allocations.
 
 | Response fields   | Description/format                   |
-| ----------------- | ------------------------------------ |
+|-------------------| ------------------------------------ |
 | id                | Integer                              |
 | project           | Integer, ID of project               |
 | non_project_time  | Integer, ID of non project time      |
@@ -21,6 +21,7 @@
 | saturday          | Integer, allocation hours in minutes |
 | sunday            | Integer, allocation hours in minutes |
 | notes             | String                               |
+| is_soft           | Boolean                              |
 | created_by        | Integer, ID of person                |
 | updated_by        | Integer, ID of person                |
 | created_at        | Date                                 |
@@ -46,6 +47,7 @@
       "saturday":0,
       "sunday":0,
       "notes":"Very important client",
+      "is_soft": false,
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
@@ -59,7 +61,7 @@
 * `GET /allocations/{allocationId}` - Returns a specific allocation.
 
 | Response fields   | Description/format                   |
-| ----------------- | ------------------------------------ |
+| ----------------- |--------------------------------------|
 | id                | Integer                              |
 | project           | Integer, ID of project               |
 | non_project_time  | Integer, ID of non project time      |
@@ -75,6 +77,7 @@
 | saturday          | Integer, allocation hours in minutes |
 | sunday            | Integer, allocation hours in minutes |
 | notes             | String                               |
+| is_soft           | Boolean                              |
 | created_by        | Integer, ID of person                |
 | updated_by        | Integer, ID of person                |
 | created_at        | Date                                 |
@@ -99,6 +102,7 @@
    "saturday":0,
    "sunday":0,
    "notes":"Very important client",
+   "is_soft": false,
    "created_by":1,
    "updated_by":1,
    "created_at":"2017-01-14T18:46:56Z",
@@ -111,7 +115,7 @@
 * `POST /allocations` - Creates a new allocation. Returns the same object as getting a single allocation.
 
 | Request fields    | Description/format                                                       |
-| ----------------- | ------------------------------------------------------------------------ |
+| ----------------- |--------------------------------------------------------------------------|
 | project           | (Required\*) Integer, ID of project                                      |
 | non_project_time  | (Required\*) Integer, ID of non project time                             |
 | connected_project | (Required\*) Integer, ID of connected project                            |
@@ -126,6 +130,7 @@
 | saturday          | Integer, allocation hours in minutes (Defaults to persons working hours) |
 | sunday            | Integer, allocation hours in minutes (Defaults to persons working hours) |
 | notes             | String                                                                   |
+| is_soft           | Boolean                                                                  |
 
 \* Either a project, connected_project or non_project_time must be supplied
 
@@ -147,7 +152,7 @@ POST https://api.forecast.it/api/v1/allocations
 * `PUT /allocations/{allocationId}` - Updates an allocation. Returns the same object as getting a single allocation.
 
 | Request fields    | Description/format                   |
-| ----------------- | ------------------------------------ |
+|-------------------|--------------------------------------|
 | project           | Integer, ID of project               |
 | non_project_time  | Integer, ID of non project time      |
 | connected_project | Integer, ID of connected project     |
@@ -162,6 +167,7 @@ POST https://api.forecast.it/api/v1/allocations
 | saturday          | Integer, allocation hours in minutes |
 | sunday            | Integer, allocation hours in minutes |
 | notes             | String                               |
+| is_soft           | Boolean                              |
 
 ### Sample JSON request
 

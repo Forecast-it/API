@@ -12,38 +12,38 @@
 - `GET /v2/tasks` - Returns all tasks in your account (This may be a large dataset). ***DEPRECATED***
 - `GET /v2/tasks?updated_after=YYYYMMDDTHHmmss` - Returns all tasks in your account that have been updated after the specified time. Example value: `20180216T210047`. ***DEPRECATED***
 
-| Response fields  | Description/format                                |
-| ---------------- | ------------------------------------------------- |
-| id               | Integer                                           |
-| company_card_id  | ***only v2*** Integer                             |
-| company_task_id  | Integer                                           |
-| title            | String                                            |
-| description      | String                                            |
-| project_id       | Integer, ID of project                            |
-| parent_task_id   | Integer, ID of parent task                        |
-| role             | Integer, ID of role                               |
-| low_estimate     | ***only v2*** Decimal                             |
-| high_estimate    | ***only v2*** Decimal                             |
-| forecast         | ***only v2*** Decimal                             |
-| estimate         | ***only v3*** Decimal                             |
-| remaining        | Decimal                                           |
-| approved         | Boolean                                           |
-| start_date       | Date                                              |
-| end_date         | Date                                              |
-| bug              | Boolean                                           |
-| high_priority    | Boolean                                           |
-| un_billable      | Boolean                                           |
-| blocked          | Boolean                                           |
-| sprint           | Integer, ID of sprint                             |
-| workflow_column  | Integer, ID of workflow column                    |
-| milestone        | Integer, ID of milestone                          |
-| assigned_persons | List<Integer>, List ID of assigned persons        |
-| labels           | List<Integer>, List ID of labels                  |
-| owner_id         | Integer, ID of person                             |
-| created_by       | Integer, ID of person                             |
-| updated_by       | Integer, ID of person                             |
-| created_at       | Date                                              |
-| updated_at       | Date                                              |
+| Response fields  | Description/format                         |
+| ---------------- |--------------------------------------------|
+| id               | Integer                                    |
+| company_card_id  | ***only v2*** Integer                      |
+| company_task_id  | Integer                                    |
+| title            | String                                     |
+| description      | String                                     |
+| project_id       | Integer, ID of project                     |
+| parent_task_id   | Integer, ID of parent task                 |
+| role             | Integer, ID of role                        |
+| low_estimate     | ***only v2*** Decimal                      |
+| high_estimate    | ***only v2*** Decimal                      |
+| forecast         | ***only v2*** Decimal                      |
+| estimate         | ***only v3 & v4*** Decimal                 |
+| remaining        | Decimal                                    |
+| approved         | Boolean                                    |
+| start_date       | Date                                       |
+| end_date         | Date                                       |
+| bug              | Boolean                                    |
+| high_priority    | Boolean                                    |
+| un_billable      | Boolean                                    |
+| blocked          | Boolean                                    |
+| sprint           | Integer, ID of sprint                      |
+| workflow_column  | Integer, ID of workflow column             |
+| milestone        | Integer, ID of milestone                   |
+| assigned_persons | List<Integer>, List ID of assigned persons |
+| labels           | List<Integer>, List ID of labels           |
+| owner_id         | Integer, ID of person                      |
+| created_by       | Integer, ID of person                      |
+| updated_by       | Integer, ID of person                      |
+| created_at       | Date                                       |
+| updated_at       | Date                                       |
 
 ### Sample JSON response
 

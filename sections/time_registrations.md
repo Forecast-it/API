@@ -11,7 +11,7 @@
 - `GET v4/time_registrations/date_after/YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`. Paginated.
 
 | Response fields  | Description/format                                   |
-| ---------------- | ---------------------------------------------------- |
+| ---------------- |------------------------------------------------------|
 | id               | Integer                                              |
 | person           | Integer, ID of person                                |
 | project          | Integer, ID of project                               |
@@ -22,6 +22,7 @@
 | task_project     | Integer, ID of project of task (if any). **Only v4** |
 | non_project_time | Integer, ID of non project time                      |
 | time_registered  | Integer, time registered in minutes                  |
+| billable_minutes_registered  | Integer, billable time registered in minutes         |
 | date             | Date                                                 |
 | notes            | String                                               |
 | created_by       | Integer, ID of person                                |
@@ -43,6 +44,7 @@
       "task_project":1,
       "non_project_time":null,
       "time_registered":480,
+      "billable_minutes_registered":360,
       "date":"2017-01-14",
       "notes":"Did work on login page",
       "created_by":1,
@@ -69,6 +71,7 @@
 | task             | Integer, ID of task                   |
 | non_project_time | Integer, ID of non project time       |
 | time_registered  | Integer, time registered in minutes   |
+| billable_minutes_registered  | Integer, billable time registered in minutes   |
 | date             | Date                                  |
 | notes            | String                                |
 | created_by       | Integer, ID of person                 |
@@ -89,6 +92,7 @@
       "task":null,
       "non_project_time":null,
       "time_registered":480,
+     "billable_minutes_registered":360,
       "date":"2017-01-14",
       "notes":"Did work on login page",
       "created_by":1,
@@ -115,6 +119,7 @@
 | task             | Integer, ID of task                   |
 | non_project_time | Integer, ID of non project time       |
 | time_registered  | Integer, time registered in minutes   |
+| billable_minutes_registered  | Integer, billable time registered in minutes   |
 | date             | Date                                  |
 | notes            | String                                |
 | created_by       | Integer, ID of person                 |
@@ -135,6 +140,7 @@
       "task":1,
       "non_project_time":null,
       "time_registered":480,
+     "billable_minutes_registered":360,
       "date":"2017-01-14",
       "notes":"Did work on login page",
       "created_by":1,
@@ -159,6 +165,7 @@
 | task             | Integer, ID of task                   |
 | non_project_time | Integer, ID of non project time       |
 | time_registered  | Integer, time registered in minutes   |
+| billable_minutes_registered  | Integer, billable time registered in minutes   |
 | date             | Date                                  |
 | notes            | String                                |
 | created_by       | Integer, ID of person                 |
@@ -177,7 +184,8 @@
    "card":1,
    "task":1,
    "non_project_time":null,
-   "time_registered":480,
+   "time_registered":480, 
+   "billable_minutes_registered":360,
    "date":"2017-01-14",
    "notes":"Did work on login page",
    "created_by":1,
@@ -200,6 +208,7 @@
 | task             | (Required\*) Integer, ID of task               |
 | non_project_time | (Required\*) Integer, ID of non project time   |
 | time_registered  | (Required) Integer, time registered in minutes |
+| billable_minutes_registered  | Integer, billable time registered in minutes   |
 | date             | (Required) Date                                |
 | notes            | String                                         |
 
@@ -214,7 +223,8 @@ POST https://api.forecast.it/api/v1/time_registrations
    "person":1,
    "role": 10,
    "task":1,
-   "time_registered":480,
+   "time_registered":480, 
+   "billable_minutes_registered":360,
    "date":"2017-01-15",
    "notes":"Did work on logout page"
 }
@@ -227,6 +237,7 @@ POST https://api.forecast.it/api/v1/time_registrations
 | Request fields  | Description/format                  |
 | --------------- | ----------------------------------- |
 | time_registered | Integer, time registered in minutes |
+| billable_minutes_registered  | Integer, billable time registered in minutes   |
 | role            | Integer, ID of role                 |
 | date            | Date                                |
 | notes           | String                              |

@@ -5,7 +5,7 @@
 ## Get persons
 
 - `GET v1/persons` - Returns all persons. (DEPRECATED - please see the v2 endpoints)
--
+
 - `GET v2/persons` - Returns all persons.
 
 | Response fields     | Description/format                                                                                                |
@@ -14,6 +14,7 @@
 | first_name          | String                                                                                                            |
 | last_name           | String                                                                                                            |
 | email               | String                                                                                                            |
+| job_title           | String                                                                                                            |
 | user_type           | String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1** |
 | client_id           | Integer, ID of client                                                                                             |
 | holiday_calendar_id | Integer, ID of holiday calendar                                                                                   |
@@ -31,6 +32,8 @@
 | language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                  |
 | start_date          | String (ISO 8601)                                                                                                 |
 | end_date            | String (ISO 8601)                                                                                                 |
+| permissions         | String[]                                                                                                          |
+| is_system_user      | Boolean                                                                                                           |
 | created_by          | Integer, ID of person                                                                                             |
 | updated_by          | Integer, ID of person                                                                                             |
 | created_at          | Date                                                                                                              |
@@ -41,30 +44,38 @@
 ```javascript
 [
    {
-      "id":1,
-      "first_name":"John",
-      "last_name":"Smith",
-      "email":"js@domain.com",
-      "user_type":"ADMIN",
-      "client_id": null,
-      "holiday_calendar_id": 1,
-      "monday":480,
-      "tuesday":480,
-      "wednesday":480,
-      "thursday":480,
-      "friday":480,
-      "saturday":0,
-      "sunday":0,
-      "active":true,
-      "default_role":29,
-      "cost":100,
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Smith",
+      "email": "js@domain.com",
+      "job_title": "Senior Developer",
+      "monday": 480,
+      "tuesday": 480,
+      "wednesday": 480,
+      "thursday": 480,
+      "friday": 480,
+      "saturday": 0,
+      "sunday": 0,
+      "active": true,
+      "default_role": 4,
+      "department_id": 2,
+      "cost": 100,
       "language":"DANISH",
-      "start_date":"2020-01-01",
-      "end_date":"2022-12-31",
-      "created_by":1,
-      "updated_by":1,
-      "created_at":"2017-01-14T18:46:56Z",
-      "updated_at":"2017-01-14T18:47:58Z"
+      "created_by": 1,
+      "updated_by": 1,
+      "created_at": "2017-01-14T18:46:56Z",
+      "updated_at": "2017-01-14T18:47:58Z"
+      "client_id": 1,
+      "holiday_calendar_id": 1,
+      "start_date": "2020-12-20",
+      "end_date": "2025-01-01"
+      "permissions": [
+         "PROJECTS_CREATE",
+         "PROJECTS_UPDATE",
+         "PROJECTS_DELETE",
+         "PROJECT_SCHEDULING_SHARE_CREATE",
+      ],
+      "is_system_user": false,
    }, ...
 ]
 ```
@@ -81,6 +92,7 @@
 | first_name          | String                                                                                                            |
 | last_name           | String                                                                                                            |
 | email               | String                                                                                                            |
+| job_title           | String                                                                                                            |
 | user_type           | String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1** |
 | client_id           | Integer, ID of client                                                                                             |
 | holiday_calendar_id | Integer, ID of holiday calendar                                                                                   |
@@ -93,8 +105,13 @@
 | sunday              | Integer                                                                                                           |
 | active              | Boolean                                                                                                           |
 | default_role        | JSON (Role)                                                                                                       |
+| department_id       | Integer, ID of [department](departments.md#get-department)                                                        |
 | cost                | Decimal, cost from the current cost period                                                                        |
 | language            | String {"SPANISH", "DANISH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                            |
+| start_date          | String (ISO 8601)                                                                                                 |
+| end_date            | String (ISO 8601)                                                                                                 |
+| permissions         | String[]                                                                                                          |
+| is_system_user      | Boolean                                                                                                           |
 | created_by          | Integer, ID of person                                                                                             |
 | updated_by          | Integer, ID of person                                                                                             |
 | created_at          | Date                                                                                                              |
@@ -104,28 +121,38 @@
 
 ```javascript
 {
-   "id":1,
-   "first_name":"John",
-   "last_name":"Smith",
-   "email":"js@domain.com",
-   "user_type":"ADMIN",
-   "client_id": null,
-   "holiday_calendar_id": 1,
-   "monday":480,
-   "tuesday":480,
-   "wednesday":480,
-   "thursday":480,
-   "friday":480,
-   "saturday":0,
-   "sunday":0,
-   "active":true,
-   "default_role": {...},
-   "cost":100,
+   "id": 1,
+   "first_name": "John",
+   "last_name": "Smith",
+   "email": "js@domain.com",
+   "job_title": "Senior Developer",
+   "monday": 480,
+   "tuesday": 480,
+   "wednesday": 480,
+   "thursday": 480,
+   "friday": 480,
+   "saturday": 0,
+   "sunday": 0,
+   "active": true,
+   "default_role": 4,
+   "department_id": 2,
+   "cost": 100,
    "language":"DANISH",
-   "created_by":1,
-   "updated_by":1,
-   "created_at":"2017-01-14T18:46:56Z",
-   "updated_at":"2017-01-14T18:47:58Z"
+   "created_by": 1,
+   "updated_by": 1,
+   "created_at": "2017-01-14T18:46:56Z",
+   "updated_at": "2017-01-14T18:47:58Z"
+   "client_id": 1,
+   "holiday_calendar_id": 1,
+   "start_date": "2020-12-20",
+   "end_date": "2025-01-01"
+   "permissions": [
+      "PROJECTS_CREATE",
+      "PROJECTS_UPDATE",
+      "PROJECTS_DELETE",
+      "PROJECT_SCHEDULING_SHARE_CREATE",
+   ],
+   "is_system_user": false,
 }
 ```
 
@@ -212,6 +239,7 @@
 | first_name          | String                                                                                                                         |
 | last_name           | String                                                                                                                         |
 | email               | String                                                                                                                         |
+| job_title           | String                                                                                                                         |
 | user_type           | (Required\*) String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1** |
 | profile_ids         | List<Integer>, List ID of [Profile](sections/profiles.md#profiles) ids **Only v2**                                             |
 | client_id           | Integer, ID of client                                                                                                          |
@@ -224,32 +252,54 @@
 | saturday            | Integer, if not set, taken from company                                                                                        |
 | sunday              | Integer, if not set, taken from company                                                                                        |
 | default_role        | Integer, id of the default role                                                                                                |
+| department_id       | Integer, id of department                                                                                                      |
 | cost                | Decimal, cost to be used in the current cost period                                                                            |
 | language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                               |
+| start_date          | String (ISO 8601)                                                                                                              |
+| end_date            | String (ISO 8601)                                                                                                              |
+| external_refs       | {key: String, value: String}[]                                                                                                 |
+| active              | Boolean (Defaults to true)                                                                                                     |
 
 \* Person with client_id can only be "VIRTUAL" or "CLIENT" user_type. Person without client_id cannot have "CLIENT" user_type
 
 ### Sample JSON request
 
-POST https://api.forecast.it/api/v1/persons
+POST https://api.forecast.it/api/v2/persons
 
-```javascript
+```json
 {
-   "first_name":"John",
-   "last_name":"Smith",
-   "email":"js@domain.com",
-   "user_type":"ADMIN",
-   "profile_ids":[-3],
+   "id": 1,
+   "first_name": "John",
+   "last_name": "Smith",
+   "email": "js@domain.com",
+   "job_title": "Senior Developer",
+   "monday": 480,
+   "tuesday": 480,
+   "wednesday": 480,
+   "thursday": 480,
+   "friday": 480,
+   "saturday": 0,
+   "sunday": 0,
+   "active": true,
+   "default_role": 4,
+   "department_id": 2,
+   "cost": 100,
+   "language":"DANISH",
+   "created_by": 1,
+   "updated_by": 1,
+   "created_at": "2017-01-14T18:46:56Z",
+   "updated_at": "2017-01-14T18:47:58Z"
+   "client_id": 1,
    "holiday_calendar_id": 1,
-   "monday":480,
-   "tuesday":480,
-   "wednesday":480,
-   "thursday":480,
-   "friday":480,
-   "saturday":0,
-   "sunday":0,
-   "default_role":4,
-   "cost":100,
+   "start_date": "2020-12-20",
+   "end_date": "2025-01-01"
+   "permissions": [
+      "PROJECTS_CREATE",
+      "PROJECTS_UPDATE",
+      "PROJECTS_DELETE",
+      "PROJECT_SCHEDULING_SHARE_CREATE",
+   ],
+   "is_system_user": false,
 }
 ```
 
@@ -264,6 +314,7 @@ POST https://api.forecast.it/api/v1/persons
 | first_name          | String                                                                                                                         |
 | last_name           | String                                                                                                                         |
 | email               | String                                                                                                                         |
+| job_title           | String                                                                                                                         |
 | user_type           | (Required\*) String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1** |
 | profile_ids         | List<Integer>, List ID of profile ids **Only v2**                                                                              |
 | holiday_calendar_id | Integer, ID of holiday calendar                                                                                                |
@@ -276,19 +327,53 @@ POST https://api.forecast.it/api/v1/persons
 | sunday              | Integer                                                                                                                        |
 | active              | Boolean\*                                                                                                                      |
 | default_role        | Integer, id of the default role                                                                                                |
+| department_id       | Integer, id of department                                                                                                      |
 | cost                | Decimal, cost to be used in the current cost period                                                                            |
 | language            | String {"SPANISH", "DANISH", "FRENCH", "ENGLISH_EU", "ENGLISH_UK", "ENGLISH_US"}                                               |
+| start_date          | String (ISO 8601)                                                                                                              |
+| end_date            | String (ISO 8601)                                                                                                              |
+| external_refs       | {key: String, value: String}[]                                                                                                 |
 
 \* Person with client_id can only be "VIRTUAL" or "CLIENT" user_type and cannot have active equal to false. Person without client_id cannot have "CLIENT" user_type
 
 ### Sample JSON request
 
-PUT https://api.forecast.it/api/v1/persons/1
+PUT https://api.forecast.it/api/v2/persons/1
 
 ```javascript
 {
-   "first_name":"John",
-   "last_name":"Doe"
+   "id": 1,
+   "first_name": "John",
+   "last_name": "Smith",
+   "email": "js@domain.com",
+   "job_title": "Senior Developer",
+   "monday": 480,
+   "tuesday": 480,
+   "wednesday": 480,
+   "thursday": 480,
+   "friday": 480,
+   "saturday": 0,
+   "sunday": 0,
+   "active": true,
+   "default_role": 4,
+   "department_id": 2,
+   "cost": 100,
+   "language":"DANISH",
+   "created_by": 1,
+   "updated_by": 1,
+   "created_at": "2017-01-14T18:46:56Z",
+   "updated_at": "2017-01-14T18:47:58Z"
+   "client_id": 1,
+   "holiday_calendar_id": 1,
+   "start_date": "2020-12-20",
+   "end_date": "2025-01-01"
+   "permissions": [
+      "PROJECTS_CREATE",
+      "PROJECTS_UPDATE",
+      "PROJECTS_DELETE",
+      "PROJECT_SCHEDULING_SHARE_CREATE",
+   ],
+   "is_system_user": false,
 }
 ```
 
@@ -418,7 +503,6 @@ The returned data contains a total for the entire timespan, plus an array with d
 
 - `GET v1/persons/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns all company person's utilization data for the given timespan. Both `start_date` and `end_date` are required and inclusive.
 
-
 GET https://api.forecast.it/api/v1/persons/utilization?start_date=20200101&end_date=20200131
 
 ### Sample JSON response
@@ -478,8 +562,7 @@ For every person in the company, a total utilization for the entire timespan plu
 
 ## Get person utilization for specific persons
 
-- `GET v1/persons/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD&personId={personId}&personId={personId}` - Returns  utilization data for specific persons for the given timespan. Both `start_date` and `end_date` are required and inclusive.
-
+- `GET v1/persons/utilization?start_date=YYYYMMDD&end_date=YYYYMMDD&personId={personId}&personId={personId}` - Returns utilization data for specific persons for the given timespan. Both `start_date` and `end_date` are required and inclusive.
 
 GET https://api.forecast.it/api/v1/persons/utilization?start_date=20200101&end_date=20200131&personId=1&personId=2
 
