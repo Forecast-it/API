@@ -2,24 +2,24 @@
 
 ## Get time registrations
 
--  `GET v3/time_registrations` - Returns all time registrations. (DEPRECATED - please see the v4 endpoints)
--  `GET v3/time_registrations?updated_after=YYYYMMDDTHHmmss` - Returns all time registrations that have been updated after the specified time. Example value: `20200216T210047`. (DEPRECATED - please see the v4 endpoints)
--  `GET v3/time_registrations?date_after=YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`. (DEPRECATED - please see the v4 endpoints)
+- `GET v3/time_registrations` - Returns all time registrations. (DEPRECATED - please see the v4 endpoints)
+- `GET v3/time_registrations?updated_after=YYYYMMDDTHHmmss` - Returns all time registrations that have been updated after the specified time. Example value: `20200216T210047`. (DEPRECATED - please see the v4 endpoints)
+- `GET v3/time_registrations?date_after=YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`. (DEPRECATED - please see the v4 endpoints)
 
--  `GET v4/time_registrations` - Returns all time registrations. Paginated.
--  `GET v4/time_registrations/updated_after/YYYYMMDDTHHmmss` - Returns all time registrations that have been updated after the specified time. Example value: `20200216T210047`. Paginated.
--  `GET v4/time_registrations/date_after/YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`. Paginated.
-
+- `GET v4/time_registrations` - Returns all time registrations. Paginated.
+- `GET v4/time_registrations/updated_after/YYYYMMDDTHHmmss` - Returns all time registrations that have been updated after the specified time. Example value: `20200216T210047`. Paginated.
+- `GET v4/time_registrations/date_after/YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`. Paginated.
 
 | Response fields  | Description/format                                   |
 | ---------------- |------------------------------------------------------|
 | id               | Integer                                              |
 | person           | Integer, ID of person                                |
 | project          | Integer, ID of project                               |
+| role             | Integer, ID of role                                  |
 | phase            | Integer, ID of project **Only v4**                   |
 | card             | Integer, deprecated. Use task instead. **Only v3**   |
 | task             | Integer, ID of task                                  |
-| task_project      | Integer, ID of project of task (if any). **Only v4** |
+| task_project     | Integer, ID of project of task (if any). **Only v4** |
 | non_project_time | Integer, ID of non project time                      |
 | time_registered  | Integer, time registered in minutes                  |
 | billable_minutes_registered  | Integer, billable time registered in minutes         |
@@ -38,6 +38,7 @@
       "id":1,
       "person":1,
       "project":null,
+      "role": 10,
       "card":1,
       "task":1,
       "task_project":1,
@@ -56,15 +57,16 @@
 
 ## Get all time registrations in a project
 
--  `GET v3/projects/{projectId}/time_registrations` - Returns all time registrations in a project.
--  `GET v3/projects/{projectId}/time_registrations?updated_after=YYYYMMDDTHHmmss` - Returns all time registrations in a project that have been updated after the specified time. Example value: `20200216T210047`.
--  `GET v3/projects/{projectId}/time_registrations?date_after=YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`.
+- `GET v3/projects/{projectId}/time_registrations` - Returns all time registrations in a project.
+- `GET v3/projects/{projectId}/time_registrations?updated_after=YYYYMMDDTHHmmss` - Returns all time registrations in a project that have been updated after the specified time. Example value: `20200216T210047`.
+- `GET v3/projects/{projectId}/time_registrations?date_after=YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`.
 
 | Response fields  | Description/format                    |
 | ---------------- | ------------------------------------- |
 | id               | Integer                               |
 | person           | Integer, ID of person                 |
 | project          | Integer, ID of project                |
+| role             | Integer, ID of role                   |
 | card             | Integer, deprecated. Use task instead |
 | task             | Integer, ID of task                   |
 | non_project_time | Integer, ID of non project time       |
@@ -85,6 +87,7 @@
       "id":1,
       "person":1,
       "project":1,
+      "role": 10,
       "card":null,
       "task":null,
       "non_project_time":null,
@@ -102,15 +105,16 @@
 
 ## Get all time registrations for a given person
 
--  `GET v3/persons/{personId}/time_registrations` - Returns all time registrations for a given person.
--  `GET v3/persons/{personId}/time_registrations?updated_after=YYYYMMDDTHHmmss` - Returns all time registrations for a given person that have been updated after the specified time. Example value: `20200216T210047`.
--  `GET v3/persons/{personId}/time_registrations?date_after=YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`.
+- `GET v3/persons/{personId}/time_registrations` - Returns all time registrations for a given person.
+- `GET v3/persons/{personId}/time_registrations?updated_after=YYYYMMDDTHHmmss` - Returns all time registrations for a given person that have been updated after the specified time. Example value: `20200216T210047`.
+- `GET v3/persons/{personId}/time_registrations?date_after=YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`.
 
 | Response fields  | Description/format                    |
 | ---------------- | ------------------------------------- |
 | id               | Integer                               |
 | person           | Integer, ID of person                 |
 | project          | Integer, ID of project                |
+| role             | Integer, ID of role                   |
 | card             | Integer, deprecated. Use task instead |
 | task             | Integer, ID of task                   |
 | non_project_time | Integer, ID of non project time       |
@@ -131,6 +135,7 @@
       "id":1,
       "person":1,
       "project":1,
+      "role": 10,
       "card":1,
       "task":1,
       "non_project_time":null,
@@ -148,13 +153,14 @@
 
 ## Get time registration
 
--  `GET v3/time_registrations/{time_registrationId}` - Returns a specific time registration.
+- `GET v3/time_registrations/{time_registrationId}` - Returns a specific time registration.
 
 | Response fields  | Description/format                    |
 | ---------------- | ------------------------------------- |
 | id               | Integer                               |
 | person           | Integer, ID of person                 |
 | project          | Integer, ID of project                |
+| role             | Integer, ID of role                   |
 | card             | Integer, deprecated. Use task instead |
 | task             | Integer, ID of task                   |
 | non_project_time | Integer, ID of non project time       |
@@ -174,6 +180,7 @@
    "id":1,
    "person":1,
    "project":1,
+   "role": 10,
    "card":1,
    "task":1,
    "non_project_time":null,
@@ -190,12 +197,13 @@
 
 ## Create time registration
 
--  `POST /time_registrations` - Creates a new time registration. Returns the same object as getting a single time registration.
+- `POST /time_registrations` - Creates a new time registration. Returns the same object as getting a single time registration.
 
 | Request fields   | Description/format                             |
 | ---------------- | ---------------------------------------------- |
 | person           | (Required) Integer, ID of person               |
 | project          | (Required\*) Integer, ID of project            |
+| role             | Integer, ID of role                            |
 | card             | Integer, deprecated. Use task instead          |
 | task             | (Required\*) Integer, ID of task               |
 | non_project_time | (Required\*) Integer, ID of non project time   |
@@ -213,6 +221,7 @@ POST https://api.forecast.it/api/v1/time_registrations
 ```javascript
 {
    "person":1,
+   "role": 10,
    "task":1,
    "time_registered":480, 
    "billable_minutes_registered":360,
@@ -223,12 +232,13 @@ POST https://api.forecast.it/api/v1/time_registrations
 
 ## Update time registration
 
--  `PUT /time_registrations/{time_registrationId}` - Updates a time registration. Returns the same object as getting a single time registration.
+- `PUT /time_registrations/{time_registrationId}` - Updates a time registration. Returns the same object as getting a single time registration.
 
 | Request fields  | Description/format                  |
 | --------------- | ----------------------------------- |
 | time_registered | Integer, time registered in minutes |
 | billable_minutes_registered  | Integer, billable time registered in minutes   |
+| role            | Integer, ID of role                 |
 | date            | Date                                |
 | notes           | String                              |
 
@@ -238,13 +248,14 @@ PUT https://api.forecast.it/api/v1/time_registrations/1
 
 ```javascript
 {
-   "time_registered":120
+   "time_registered":120,
+   "role": 10
 }
 ```
 
 ## Delete time registration
 
--  `DELETE /time_registrations/{time_registrationId}` - Deletes a time registration.
+- `DELETE /time_registrations/{time_registrationId}` - Deletes a time registration.
 
 ### Sample JSON request
 
@@ -252,8 +263,8 @@ DELETE https://api.forecast.it/api/v1/time_registrations/1
 
 ## Get deleted time registrations
 
--  `GET /v3/time_registrations/deleted` - Returns all time registrations that have been deleted.
--  `GET /v3/time_registrations/deleted?updated_after=YYYYMMDDTHHmmss` - Returns all time registrations that have been deleted. after the specified time. Example value: `20200216T210047`.
+- `GET /v3/time_registrations/deleted` - Returns all time registrations that have been deleted.
+- `GET /v3/time_registrations/deleted?updated_after=YYYYMMDDTHHmmss` - Returns all time registrations that have been deleted. after the specified time. Example value: `20200216T210047`.
 
 | Response fields | Description/format                                         |
 | --------------- | ---------------------------------------------------------- |
