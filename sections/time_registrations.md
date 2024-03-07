@@ -10,25 +10,26 @@
 - `GET v4/time_registrations/updated_after/YYYYMMDDTHHmmss` - Returns all time registrations that have been updated after the specified time. Example value: `20200216T210047`. Paginated.
 - `GET v4/time_registrations/date_after/YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`. Paginated.
 
-| Response fields  | Description/format                                   |
-| ---------------- |------------------------------------------------------|
-| id               | Integer                                              |
-| person           | Integer, ID of person                                |
-| project          | Integer, ID of project                               |
-| role             | Integer, ID of role                                  |
-| phase            | Integer, ID of project **Only v4**                   |
-| card             | Integer, deprecated. Use task instead. **Only v3**   |
-| task             | Integer, ID of task                                  |
+| Response fields  | Description/format                               |
+| ---------------- |--------------------------------------------------|
+| id               | Integer                                          |
+| person           | Integer, ID of person                            |
+| project          | Integer, ID of project                           |
+| role             | Integer, ID of role                              |
+| phase            | Integer, ID of project **Only v4**               |
+| card             | Integer, deprecated. Use task instead. **Only v3** |
+| task             | Integer, ID of task                              |
 | task_project     | Integer, ID of project of task (if any). **Only v4** |
-| non_project_time | Integer, ID of non project time                      |
-| time_registered  | Integer, time registered in minutes                  |
-| billable_minutes_registered  | Integer, billable time registered in minutes         |
-| date             | Date                                                 |
-| notes            | String                                               |
-| created_by       | Integer, ID of person                                |
-| updated_by       | Integer, ID of person                                |
-| created_at       | Date                                                 |
-| updated_at       | Date                                                 |
+| non_project_time | Integer, ID of non project time                  |
+| time_registered  | Integer, time registered in minutes              |
+| billable_minutes_registered | Integer, billable time registered in minutes     |
+| date             | Date                                             |
+| notes            | String                                           |
+| approval_status  | String (NOT_SUBMITTED, SUBMITTED, APPROVED)      |
+| created_by       | Integer, ID of person                            |
+| updated_by       | Integer, ID of person                            |
+| created_at       | Date                                             |
+| updated_at       | Date                                             |
 
 ### Sample JSON response
 
@@ -47,6 +48,7 @@
       "billable_minutes_registered":360,
       "date":"2017-01-14",
       "notes":"Did work on login page",
+      "approval_status": "APPROVED",
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
@@ -71,9 +73,10 @@
 | task             | Integer, ID of task                   |
 | non_project_time | Integer, ID of non project time       |
 | time_registered  | Integer, time registered in minutes   |
-| billable_minutes_registered  | Integer, billable time registered in minutes   |
+| billable_minutes_registered | Integer, billable time registered in minutes   |
 | date             | Date                                  |
 | notes            | String                                |
+| approval_status  | String (NOT_SUBMITTED, SUBMITTED, APPROVED)|
 | created_by       | Integer, ID of person                 |
 | updated_by       | Integer, ID of person                 |
 | created_at       | Date                                  |
@@ -92,9 +95,10 @@
       "task":null,
       "non_project_time":null,
       "time_registered":480,
-     "billable_minutes_registered":360,
+      "billable_minutes_registered":360,
       "date":"2017-01-14",
       "notes":"Did work on login page",
+      "approval_status": "APPROVED",
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
@@ -122,6 +126,7 @@
 | billable_minutes_registered  | Integer, billable time registered in minutes   |
 | date             | Date                                  |
 | notes            | String                                |
+| approval_status  | String (NOT_SUBMITTED, SUBMITTED, APPROVED)|
 | created_by       | Integer, ID of person                 |
 | updated_by       | Integer, ID of person                 |
 | created_at       | Date                                  |
@@ -140,9 +145,10 @@
       "task":1,
       "non_project_time":null,
       "time_registered":480,
-     "billable_minutes_registered":360,
+      "billable_minutes_registered":360,
       "date":"2017-01-14",
       "notes":"Did work on login page",
+      "approval_status": "APPROVED",
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
@@ -168,6 +174,7 @@
 | billable_minutes_registered  | Integer, billable time registered in minutes   |
 | date             | Date                                  |
 | notes            | String                                |
+| approval_status  | String (NOT_SUBMITTED, SUBMITTED, APPROVED)|
 | created_by       | Integer, ID of person                 |
 | updated_by       | Integer, ID of person                 |
 | created_at       | Date                                  |
@@ -188,6 +195,7 @@
    "billable_minutes_registered":360,
    "date":"2017-01-14",
    "notes":"Did work on login page",
+   "approval_status": "APPROVED",
    "created_by":1,
    "updated_by":1,
    "created_at":"2017-01-14T18:46:56Z",
