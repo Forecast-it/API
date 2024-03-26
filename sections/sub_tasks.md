@@ -2,6 +2,7 @@
 
 > [!CAUTION]
 > **DEPRECATED**
+> <br/>
 > **NB: These endpoints refer to the old subtasks which have been deprecated. To do's are still available via these, but for the new subtasks please see our documentation on tasks.**
 
 ## Get task sub tasks
