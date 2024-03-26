@@ -1,6 +1,9 @@
 # Milestones
 
-This endpoint is deprecated. Please use the [Phases](../sections/phases.md#phases) endpoint instead
+> [!CAUTION]
+> **DEPRECATED**
+> <br/>
+> This endpoint is deprecated. Please use the [Phases](../sections/phases.md#phases) endpoint instead
 
 ## Get milestones
 

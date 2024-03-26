@@ -1,10 +1,11 @@
 # Persons
 
-**NOTE: persons with the user_type "SYSTEM" can only be fetched and not created or updated. These are used internal in Forecast for things like integrations.**
+> [!NOTE]
+> persons with the user_type "SYSTEM" can only be fetched and not created or updated. These are used internal in Forecast for things like integrations.**
 
 ## Get persons
 
-- `GET v1/persons` - Returns all persons. (DEPRECATED - please see the v2 endpoints)
+-  ~~`GET v1/persons` - Returns all persons. (DEPRECATED - please see the v2 endpoints) ~~
 
 - `GET v2/persons` - Returns all persons.
 
