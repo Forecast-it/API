@@ -20,13 +20,13 @@
 | estimation_units             | String (HOURS, POINTS)                                                     |
 | minutes_per_estimation_point | Integer                                                                    |
 | budget                       | Double                                                                     |
-| billable                     | Boolean (Deprecated)                                                       |
+| ~~billable~~                 | Boolean (Deprecated)                                                       |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER)           |
 | use_sprints                  | Boolean                                                                    |
 | sprint_length                | Integer                                                                    |
 | start_date                   | Date                                                                       |
 | end_date                     | Date                                                                       |
-| card_levels                  | Integer, deprecated. Use 'task_levels' instead                             |
+| ~~card_levels~~              | Integer, deprecated. Use 'task_levels' instead                             |
 | task_levels                  | Integer (1 or 2)                                                           |
 | client                       | Integer, ID of client                                                      |
 | rate_card                    | Integer, ID of rate card                                                   |
@@ -114,13 +114,13 @@
 | estimation_units             | String (HOURS, POINTS)                                                     |
 | minutes_per_estimation_point | Integer                                                                    |
 | budget                       | Double                                                                     |
-| billable                     | Boolean (Deprecated)                                                       |
+| ~~billable~~                 | Boolean (Deprecated)                                                       |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER)           |
 | use_sprints                  | Boolean                                                                    |
 | sprint_length                | Integer                                                                    |
 | start_date                   | Date                                                                       |
 | end_date                     | Date                                                                       |
-| card_levels                  | Integer, deprecated. Use 'task_levels' instead                             |
+| ~~card_levels~~              | Integer, deprecated. Use 'task_levels' instead                             |
 | task_levels                  | Integer (1 or 2)                                                           |
 | client                       | Integer, ID of client                                                      |
 | rate_card                    | Integer, ID of rate card                                                   |
@@ -191,7 +191,7 @@
 - `GET /projects/company_project_id/{companyProjectId}?includeProgress=true` - Returns a specific project, including it's progress value. Progress value is cached for 10 minutes.
 
 | Response fields              | Description/format                                                         |
-| ---------------------------- | -------------------------------------------------------------------------- |
+|------------------------------| -------------------------------------------------------------------------- |
 | id                           | Integer                                                                    |
 | company_project_id           | Integer                                                                    |
 | connected_project            | Integer, ID of connected project                                           |
@@ -205,13 +205,13 @@
 | estimation_units             | String (HOURS, POINTS)                                                     |
 | minutes_per_estimation_point | Integer                                                                    |
 | budget                       | Double                                                                     |
-| billable                     | Boolean (Deprecated)                                                       |
+| ~~billable~~                 | Boolean (Deprecated)                                                       |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER)           |
 | use_sprints                  | Boolean                                                                    |
 | sprint_length                | Integer                                                                    |
 | start_date                   | Date                                                                       |
 | end_date                     | Date                                                                       |
-| card_levels                  | Integer, deprecated. Use 'task_levels' instead                             |
+| ~~card_levels~~              | Integer, deprecated. Use 'task_levels' instead                             |
 | task_levels                  | Integer (1 or 2)                                                           |
 | client                       | Integer, ID of client                                                      |
 | rate_card                    | Integer, ID of rate card                                                   |
@@ -290,18 +290,18 @@
 | estimation_units             | String (HOURS, POINTS) (Defaults to HOURS)                                                        |
 | minutes_per_estimation_point | Integer (Defaults to 60)                                                                          |
 | budget                       | Double (Should only be set with budget_type: FIXED_PRICE)                                         |
-| billable                     | Boolean (Defaults to true) (Deprecated)                                                           |
+| ~~billable~~                 | Boolean (Defaults to true) (Deprecated)                                                           |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER) (Defaults to TIME_AND_MATERIALS) |
 | use_sprints                  | Boolean (Defaults to false)                                                                       |
 | sprint_length                | Integer (Defaults to 14)                                                                          |
 | start_date                   | Date                                                                                              |
 | end_date                     | Date                                                                                              |
-| card_levels                  | Integer, deprecated. Use 'task_levels' instead                                                    |
+| ~~card_levels~~              | Integer, deprecated. Use 'task_levels' instead                                                    |
 | task_levels                  | Integer (1 or 2) (Defaults to 1)                                                                  |
 | client                       | Integer, ID of client                                                                             |
 | rate_card                    | Integer, ID of rate card                                                                          |
 | remaining_auto_calculated    | Boolean (Defaults to true)                                                                        |
-| use_project_allocations      | Boolean, deprecated. Uses company setting instead.                                                |
+| ~~use_project_allocations~~  | Boolean, deprecated. Uses company setting instead.                                                |
 | use_baseline                 | Boolean (Defaults to false)                                                                       |
 | baseline_target              | Double (Minimum 0.0, Should not be set with budget_type: FIXED_PRICE)                             |
 | baseline_win_chance          | Double (Between 0.0 and 1.0) (Defaults to 1.0)                                                    |
@@ -347,18 +347,18 @@ POST https://api.forecast.it/api/v1/projects
 | estimation_units             | String (HOURS, POINTS)                                                |
 | minutes_per_estimation_point | Integer                                                               |
 | budget                       | Double (Should only be set with budget_type: FIXED_PRICE)             |
-| billable                     | Boolean (Deprecated)                                                  |
+| ~~billable~~                 | Boolean (Deprecated)                                                  |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER)      |
 | use_sprints                  | Boolean                                                               |
 | sprint_length                | Integer                                                               |
 | remaining_auto_calculated    | Boolean                                                               |
 | start_date                   | Date                                                                  |
 | end_date                     | Date                                                                  |
-| card_levels                  | Integer, deprecated. Use 'task_levels' instead                        |
+| ~~card_levels~~              | Integer, deprecated. Use 'task_levels' instead                        |
 | task_levels                  | Integer (1 or 2)                                                      |
 | client                       | Integer, ID of client                                                 |
 | rate_card                    | Integer, ID of rate card                                              |
-| use_project_allocations      | Boolean, deprecated. Uses company setting instead.                    |
+| ~~use_project_allocations~~  | Boolean, deprecated. Uses company setting instead.                    |
 | use_baseline                 | Boolean                                                               |
 | baseline_win_chance          | Double (Between 0.0 and 1.0)                                          |
 | baseline_target              | Double (Minimum 0.0, Should not be set with budget_type: FIXED_PRICE) |

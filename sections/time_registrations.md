@@ -2,9 +2,9 @@
 
 ## Get time registrations
 
-- `GET v3/time_registrations` - Returns all time registrations. (DEPRECATED - please see the v4 endpoints)
-- `GET v3/time_registrations?updated_after=YYYYMMDDTHHmmss` - Returns all time registrations that have been updated after the specified time. Example value: `20200216T210047`. (DEPRECATED - please see the v4 endpoints)
-- `GET v3/time_registrations?date_after=YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`. (DEPRECATED - please see the v4 endpoints)
+- ~~`GET v3/time_registrations` - Returns all time registrations.~~ (DEPRECATED - please see the v4 endpoints)
+- ~~`GET v3/time_registrations?updated_after=YYYYMMDDTHHmmss` - Returns all time registrations that have been updated after the specified time. Example value: `20200216T210047`.~~ (DEPRECATED - please see the v4 endpoints)
+- ~~`GET v3/time_registrations?date_after=YYYYMMDD` - Returns all time registrations that have a date value after the specified date. Example value: `20200216`.~~ (DEPRECATED - please see the v4 endpoints)
 
 - `GET v4/time_registrations` - Returns all time registrations. Paginated.
 - `GET v4/time_registrations/updated_after/YYYYMMDDTHHmmss` - Returns all time registrations that have been updated after the specified time. Example value: `20200216T210047`. Paginated.
@@ -17,7 +17,7 @@
 | project          | Integer, ID of project                           |
 | role             | Integer, ID of role                              |
 | phase            | Integer, ID of project **Only v4**               |
-| card             | Integer, deprecated. Use task instead. **Only v3** |
+| ~~card~~         | Integer, deprecated. Use task instead. **Only v3** |
 | task             | Integer, ID of task                              |
 | task_project     | Integer, ID of project of task (if any). **Only v4** |
 | non_project_time | Integer, ID of non project time                  |
@@ -69,7 +69,7 @@
 | person           | Integer, ID of person                 |
 | project          | Integer, ID of project                |
 | role             | Integer, ID of role                   |
-| card             | Integer, deprecated. Use task instead |
+| ~~card~~         | Integer, deprecated. Use task instead |
 | task             | Integer, ID of task                   |
 | non_project_time | Integer, ID of non project time       |
 | time_registered  | Integer, time registered in minutes   |
@@ -119,7 +119,7 @@
 | person           | Integer, ID of person                 |
 | project          | Integer, ID of project                |
 | role             | Integer, ID of role                   |
-| card             | Integer, deprecated. Use task instead |
+| ~~card~~         | Integer, deprecated. Use task instead |
 | task             | Integer, ID of task                   |
 | non_project_time | Integer, ID of non project time       |
 | time_registered  | Integer, time registered in minutes   |
@@ -167,7 +167,7 @@
 | person           | Integer, ID of person                 |
 | project          | Integer, ID of project                |
 | role             | Integer, ID of role                   |
-| card             | Integer, deprecated. Use task instead |
+| ~~card~~         | Integer, deprecated. Use task instead |
 | task             | Integer, ID of task                   |
 | non_project_time | Integer, ID of non project time       |
 | time_registered  | Integer, time registered in minutes   |
@@ -212,7 +212,7 @@
 | person           | (Required) Integer, ID of person               |
 | project          | (Required\*) Integer, ID of project            |
 | role             | Integer, ID of role                            |
-| card             | Integer, deprecated. Use task instead          |
+| ~~card~~         | Integer, deprecated. Use task instead          |
 | task             | (Required\*) Integer, ID of task               |
 | non_project_time | (Required\*) Integer, ID of non project time   |
 | time_registered  | (Required) Integer, time registered in minutes |

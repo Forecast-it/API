@@ -9,8 +9,8 @@
 - `GET /v3/tasks` - Returns all tasks in your account (This may be a large dataset).
 - `GET /v3/tasks/updated_after/YYYYMMDDTHHmmss` - Returns all tasks in your account that have been updated after the specified time. Example value: `20180216T210047`.
 
-- `GET /v2/tasks` - Returns all tasks in your account (This may be a large dataset). ***DEPRECATED***
-- `GET /v2/tasks?updated_after=YYYYMMDDTHHmmss` - Returns all tasks in your account that have been updated after the specified time. Example value: `20180216T210047`. ***DEPRECATED***
+- ~~`GET /v2/tasks` - Returns all tasks in your account (This may be a large dataset).~~ ***DEPRECATED***
+- ~~`GET /v2/tasks?updated_after=YYYYMMDDTHHmmss` - Returns all tasks in your account that have been updated after the specified time. Example value: `20180216T210047`.~~ ***DEPRECATED***
 
 | Response fields  | Description/format                         |
 | ---------------- |--------------------------------------------|
@@ -88,8 +88,8 @@
 - `GET /v3/projects/{projectId}/tasks` - Returns all tasks of the project.
 - `GET /v3/projects/{projectId}/tasks/updated_after/YYYYMMDDTHHmmss` - Returns all tasks of the project that have been updated after the specified time. Example value: `20180216T210047`.
 
-- `GET /v2/projects/{projectId}/tasks` - Returns all tasks of the project. ***DEPRECATED***
-- `GET /v2/projects/{projectId}/tasks?updated_after=YYYYMMDDTHHmmss` - Returns all tasks of the project that have been updated after the specified time. Example value: `20180216T210047`. ***DEPRECATED***
+- ~~`GET /v2/projects/{projectId}/tasks` - Returns all tasks of the project.~~ ***DEPRECATED***
+- ~~`GET /v2/projects/{projectId}/tasks?updated_after=YYYYMMDDTHHmmss` - Returns all tasks of the project that have been updated after the specified time. Example value: `20180216T210047`.~~ ***DEPRECATED***
 
 | Response fields  | Description/format                                |
 | ---------------- | ------------------------------------------------- |
@@ -166,7 +166,7 @@
 
 - `GET /v3/tasks/{taskId}` - Returns a specific task.
 
-- `GET /v2/tasks/{taskId}` - Returns a specific task. ***DEPRECATED***
+- ~~`GET /v2/tasks/{taskId}` - Returns a specific task.~~ ***DEPRECATED***
 
 | Response fields  | Description/format                                |
 | ---------------- | ------------------------------------------------- |
@@ -241,7 +241,7 @@
 
 - `GET /v3/tasks/company_task_id/{companyTaskId}` - Returns a specific task.
 
-- `GET /v2/tasks/company_task_id/{companyTaskId}` - Returns a specific task. ***DEPRECATED***
+- ~~`GET /v2/tasks/company_task_id/{companyTaskId}`~~ - Returns a specific task. ***DEPRECATED***
 
 | Response fields  | Description/format                                |
 | ---------------- | ------------------------------------------------- |
@@ -316,7 +316,7 @@
 
 - `GET /v3/tasks/{taskId}/children` - Returns an array of children tasks, that belongs to the specific task.
 
-- `GET /v2/tasks/{taskId}/children` - Returns an array of children tasks, that belongs to the specific task. ***DEPRECATED***
+- ~~`GET /v2/tasks/{taskId}/children` - Returns an array of children tasks, that belongs to the specific task.~~ ***DEPRECATED***
 
 | Response fields  | Description/format                                |
 | ---------------- | ------------------------------------------------- |
@@ -397,7 +397,7 @@
 | Response fields | Description/format                        |
 | --------------- | ----------------------------------------- |
 | id              | Integer                                   |
-| card_id         | Integer, deprecated use 'task_id' instead |
+| ~~card_id~~     | Integer, deprecated use 'task_id' instead |
 | task_id         | Integer                                   |
 | comment         | String                                    |
 | created_at      | Date                                      |
@@ -442,7 +442,7 @@ POST https://api.forecast.it/api/v2/tasks/2/comments
 
 - `POST /v3/tasks` - Creates a new task. Returns the same object as getting a single task.
 
-- `POST /v2/tasks` - Creates a new task. Returns the same object as getting a single task. ***DEPRECATED***
+- ~~`POST /v2/tasks` - Creates a new task. Returns the same object as getting a single task.~~ ***DEPRECATED***
 
 | Request fields   | Description/format                         |
 | ---------------- | ------------------------------------------ |
@@ -490,7 +490,7 @@ POST https://api.forecast.it/api/v2/tasks
 
 - `PUT /v3/tasks/{taskId}` - Updates an task. Returns the same object as getting a single task.
 
-- `PUT /v2/tasks/{taskId}` - Updates an task. Returns the same object as getting a single task. ***DEPRECATED***
+- ~~`PUT /v2/tasks/{taskId}` - Updates an task. Returns the same object as getting a single task.~~ ***DEPRECATED***
 
 | Request fields   | Description/format                                                                        |
 | ---------------- | ----------------------------------------------------------------------------------------- |

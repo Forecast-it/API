@@ -12,7 +12,7 @@
 | Response fields | Description/format                      |
 | --------------- | --------------------------------------- |
 | id              | Integer                                 |
-| card            | Integer, deprecated. Use 'task' instead |
+| ~~card~~        | Integer, deprecated. Use 'task' instead |
 | task            | Integer, ID of task                     |
 | name            | String                                  |
 | description     | String                                  |
@@ -50,7 +50,7 @@
 | Response fields | Description/format                      |
 | --------------- | --------------------------------------- |
 | id              | Integer                                 |
-| card            | Integer, deprecated. Use 'task' instead |
+| ~~card~~        | Integer, deprecated. Use 'task' instead |
 | task            | Integer, ID of task                     |
 | name            | String                                  |
 | description     | String                                  |
@@ -88,7 +88,7 @@
 | Response fields | Description/format                      |
 | --------------- | --------------------------------------- |
 | id              | Integer                                 |
-| card            | Integer, deprecated. Use 'task' instead |
+| ~~card~~        | Integer, deprecated. Use 'task' instead |
 | task            | Integer, ID of task                     |
 | name            | String                                  |
 | description     | String                                  |
@@ -123,7 +123,7 @@
 
 | Request fields | Description/format                      |
 | -------------- | --------------------------------------- |
-| card           | Integer, deprecated. Use 'task' instead |
+| ~~card~~       | Integer, deprecated. Use 'task' instead |
 | task           | (Required) Integer, ID of parent task   |
 | name           | String                                  |
 | description    | String                                  |

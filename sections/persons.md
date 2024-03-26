@@ -5,7 +5,7 @@
 
 ## Get persons
 
--  ~~`GET v1/persons` - Returns all persons. (DEPRECATED - please see the v2 endpoints)~~
+-  ~~`GET v1/persons` - Returns all persons.~~ (DEPRECATED - please see the v2 endpoints)
 
 - `GET v2/persons` - Returns all persons.
 
@@ -83,7 +83,7 @@
 
 ## Get person
 
-- `GET v1/persons/{personId}` - Returns a specific person. (DEPRECATED - please see the v2 endpoints)
+- ~~`GET v1/persons/{personId}` - Returns a specific person.~~ (DEPRECATED - please see the v2 endpoints)
 
 - `GET v2/persons/{personId}` - Returns a specific person.
 
@@ -180,7 +180,7 @@
 | sprint_length                | Integer                                        |
 | start_date                   | Date                                           |
 | end_date                     | Date                                           |
-| card_levels                  | Integer, deprecated. Use 'task_levels' instead |
+| ~~card_levels~~              | Integer, deprecated. Use 'task_levels' instead |
 | task_levels                  | Integer (1 or 2)                               |
 | client                       | Integer, ID of client                          |
 | rate_card                    | Integer, ID of rate card                       |
@@ -231,7 +231,7 @@
 
 ## Create person
 
-- `POST v1/persons` - Creates a new person. Returns the same object as getting a single person. (DEPRECATED - please see the v2 endpoints)
+- ~~`POST v1/persons` - Creates a new person. Returns the same object as getting a single person.~~ (DEPRECATED - please see the v2 endpoints)
 
 - `POST v2/persons` - Creates a new person. Returns the same object as getting a single person.
 
@@ -306,7 +306,7 @@ POST https://api.forecast.it/api/v2/persons
 
 ## Update person
 
-- `PUT v1/persons/{personId}` - Updates a person. Returns the same object as getting a single person. (DEPRECATED - please see the v2 endpoints)
+- ~~`PUT v1/persons/{personId}` - Updates a person. Returns the same object as getting a single person.~~ (DEPRECATED - please see the v2 endpoints)
 
 - `PUT v2/persons/{personId}` - Updates a person. Returns the same object as getting a single person.
 
@@ -397,7 +397,7 @@ DELETE https://api.forecast.it/api/v1/persons/1
 | Response fields | Description/format                                      |
 | --------------- | ------------------------------------------------------- |
 | start_time      | Date                                                    |
-| card            | Integer, deprecated. Use 'task' instead                 |
+| ~~card~~        | Integer, deprecated. Use 'task' instead                 |
 | task            | Integer, id of the task that the timer is started on    |
 | project         | Integer, id of the project that the timer is started on |
 
@@ -417,7 +417,7 @@ DELETE https://api.forecast.it/api/v1/persons/1
 
 | Request fields | Description/format                                                                                        |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
-| card           | Integer, deprecated. Use 'task' instead                                                                   |
+| ~~card~~       | Integer, deprecated. Use 'task' instead                                                                   |
 | task           | Integer, id of the task to start the timer on. This is optional and can be set when stopping the timer    |
 | project        | Integer, id of the project to start the timer on. This is optional and can be set when stopping the timer |
 
@@ -437,7 +437,7 @@ PUT https://api.forecast.it/api/v1/persons/1/timer/start
 
 | Request fields | Description/format                                          |
 | -------------- | ----------------------------------------------------------- |
-| card           | Integer, deprecated. Use 'task' instead                     |
+| ~~card~~       | Integer, deprecated. Use 'task' instead                     |
 | task           | Integer, id of the task to register the time on             |
 | project        | Integer, id of the project to register the time on          |
 | nonProjectTime | Integer, id of the non-project time to register the time on |
