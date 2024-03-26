@@ -5,7 +5,7 @@
 
 ## Get persons
 
--  ~~GET v1/persons - Returns all persons. (DEPRECATED - please see the v2 endpoints) ~~
+-  ~~`GET v1/persons` - Returns all persons. (DEPRECATED - please see the v2 endpoints)~~
 
 - `GET v2/persons` - Returns all persons.
 
