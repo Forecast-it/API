@@ -1,20 +1,7 @@
-# Sub tasks - **DEPRECATED**
-
-## Simple alerts
-> [!NOTE]
-> This is a note.
-
-> [!TIP]
-> This is a tip. (Supported since 14 Nov 2023)
-
-> [!IMPORTANT]
-> Crutial information comes here.
+# Sub tasks
 
 > [!CAUTION]
-> Negative potential consequences of an action. (Supported since 14 Nov 2023)
-
-> [!WARNING]
-> Critical content comes here.
+> DEPRECATED
 
 **NB: These endpoints refer to the old subtasks which have been deprecated. To do's are still available via these, but for the new subtasks please see our documentation on tasks.**
 
