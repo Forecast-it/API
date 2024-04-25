@@ -280,37 +280,34 @@
 
 - `POST /projects` - Creates a new project. Returns the same object as getting a single project.
 
-| Request fields               | Description/format                                                                                |
-| ---------------------------- | ------------------------------------------------------------------------------------------------- |
-| name                         | String                                                                                            |
-| stage                        | String (PLANNING, RUNNING, HALTED, DONE) (Defaults to PLANNING)                                   |
-| status                       | String (GREEN, YELLOW, RED) (Defaults to GREEN)                                                   |
-| status_description           | String                                                                                            |
-| description                  | String                                                                                            |
-| estimation_units             | String (HOURS, POINTS) (Defaults to HOURS)                                                        |
-| minutes_per_estimation_point | Integer (Defaults to 60)                                                                          |
-| budget                       | Double (Should only be set with budget_type: FIXED_PRICE)                                         |
-| billable                     | Boolean (Defaults to true) (Deprecated)                                                           |
+| Request fields               | Description/format                                                                               |
+| ---------------------------- |--------------------------------------------------------------------------------------------------|
+| name                         | String (Defaults to "New Project")                                                                |
+| stage                        | String (PLANNING, RUNNING, HALTED, DONE) (Defaults to PLANNING)                                  |
+| status                       | String (GREEN, YELLOW, RED) (Defaults to GREEN)                                                  |
+| status_description           | String                                                                                           |
+| description                  | String                                                                                           |
+| estimation_units             | String (HOURS, POINTS) (Defaults to HOURS)                                                       |
+| minutes_per_estimation_point | Integer (Defaults to 60)                                                                         |
+| budget                       | Double (Should only be set with budget_type: FIXED_PRICE)                                        |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER) (Defaults to TIME_AND_MATERIALS) |
-| use_sprints                  | Boolean (Defaults to false)                                                                       |
-| sprint_length                | Integer (Defaults to 14)                                                                          |
-| start_date                   | Date                                                                                              |
-| end_date                     | Date                                                                                              |
-| card_levels                  | Integer, deprecated. Use 'task_levels' instead                                                    |
-| task_levels                  | Integer (1 or 2) (Defaults to 1)                                                                  |
-| client                       | Integer, ID of client                                                                             |
-| rate_card                    | Integer, ID of rate card                                                                          |
-| remaining_auto_calculated    | Boolean (Defaults to true)                                                                        |
-| use_project_allocations      | Boolean, deprecated. Uses company setting instead.                                                |
-| use_baseline                 | Boolean (Defaults to false)                                                                       |
-| baseline_target              | Double (Minimum 0.0, Should not be set with budget_type: FIXED_PRICE)                             |
-| baseline_win_chance          | Double (Between 0.0 and 1.0) (Defaults to 1.0)                                                    |
-| labels                       | List<Integer>, List ID of labels                                                                  |
-| default_period_periodicity   | String (DAILY, WEEKLY, MONTHLY)                                                                   |
-| default_period_length        | Integer                                                                                           |
-| default_period_budget_type   | String (FIXED_HOURS, FIXED_PRICE, TIME_AND_MATERIALS)                                             |
-| default_period_hours_amount  | Double                                                                                            |
-| default_period_price_amount  | Double                                                                                            |
+| use_sprints                  | Boolean (Defaults to false)                                                                      |
+| sprint_length                | Integer (Defaults to 14)                                                                         |
+| start_date                   | Date (YYYY-MM-DD)                                                                                |
+| end_date                     | Date (YYYY-MM-DD)                                                                                |
+| client                       | Integer, ID of client                                                                            |
+| rate_card                    | Integer, ID of rate card                                                                         |
+| remaining_auto_calculated    | Boolean (Defaults to true)                                                                       |
+| use_project_allocations      | Boolean, deprecated. Uses company setting instead.                                               |
+| use_baseline                 | Boolean (Defaults to false)                                                                      |
+| baseline_target              | Double (Minimum 0.0, Should not be set with budget_type: FIXED_PRICE)                            |
+| baseline_win_chance          | Double (Between 0.0 and 1.0) (Defaults to 1.0)                                                   |
+| labels                       | List<Integer>, List ID of labels                                                                 |
+| default_period_periodicity   | String (DAILY, WEEKLY, MONTHLY)                                                                  |
+| default_period_length        | Integer                                                                                          |
+| default_period_budget_type   | String (FIXED_HOURS, FIXED_PRICE, TIME_AND_MATERIALS)                                            |
+| default_period_hours_amount  | Double                                                                                           |
+| default_period_price_amount  | Double                                                                                           |
 
 ### Sample JSON request
 
@@ -323,7 +320,6 @@ POST https://api.forecast.it/api/v1/projects
    "status":"GREEN",
    "estimation_units":"HOURS",
    "budget":1000,
-   "billable":true,
    "budget_type": "FIXED_PRICE",
    "use_sprints":true,
    "sprint_length":14,
@@ -337,7 +333,7 @@ POST https://api.forecast.it/api/v1/projects
 - `PUT /projects/{projectId}` - Updates a project. Returns the same object as getting a single project.
 
 | Request fields               | Description/format                                                    |
-| ---------------------------- | --------------------------------------------------------------------- |
+| ---------------------------- |-----------------------------------------------------------------------|
 | name                         | String                                                                |
 | connected_project            | Integer, ID of connected project                                      |
 | stage                        | String (PLANNING, RUNNING, HALTED, DONE)                              |
@@ -347,15 +343,12 @@ POST https://api.forecast.it/api/v1/projects
 | estimation_units             | String (HOURS, POINTS)                                                |
 | minutes_per_estimation_point | Integer                                                               |
 | budget                       | Double (Should only be set with budget_type: FIXED_PRICE)             |
-| billable                     | Boolean (Deprecated)                                                  |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER)      |
 | use_sprints                  | Boolean                                                               |
 | sprint_length                | Integer                                                               |
 | remaining_auto_calculated    | Boolean                                                               |
-| start_date                   | Date                                                                  |
-| end_date                     | Date                                                                  |
-| card_levels                  | Integer, deprecated. Use 'task_levels' instead                        |
-| task_levels                  | Integer (1 or 2)                                                      |
+| start_date                   | Date (YYYY-MM-DD)                                                     |
+| end_date                     | Date (YYYY-MM-DD)                                                     |
 | client                       | Integer, ID of client                                                 |
 | rate_card                    | Integer, ID of rate card                                              |
 | use_project_allocations      | Boolean, deprecated. Uses company setting instead.                    |
