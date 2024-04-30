@@ -4,6 +4,8 @@ The [Forecast](https://www.forecast.it) API is a complete programmable interface
 
 This is a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer)-style [API](http://en.wikipedia.org/wiki/Application_programming_interface) that uses [JSON](http://json.org/) for serialization and [HTTP](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol).
 
+_Fair use policy :  https://www.forecast.app/fair-use-policy_
+
 # What can you do with it?
 
 A ton of stuff! We've exposed all the needed services for you to use in your applications.

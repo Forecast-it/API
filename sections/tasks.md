@@ -421,10 +421,10 @@
 
 - `POST /v2/tasks/{taskId}/comments` - Creates a new comment on a task and returns the created comment.
 
-| Request fields   | Description/format                         |
-| ---------------- | ------------------------------------------ |
-| comment          | String                                     |
-| person_id        | Integer, ID of a person                    |
+| Request fields   | Description/format      |
+| ---------------- |-------------------------|
+| comment          | String (Required)       |
+| person_id        | Integer, ID of a person (Required)  |
 
 ### Sample JSON request
 
@@ -445,7 +445,7 @@ POST https://api.forecast.it/api/v2/tasks/2/comments
 - `POST /v2/tasks` - Creates a new task. Returns the same object as getting a single task. ***DEPRECATED***
 
 | Request fields   | Description/format                         |
-| ---------------- | ------------------------------------------ |
+| ---------------- |--------------------------------------------|
 | title            | String                                     |
 | description      | String                                     |
 | role             | Integer, ID of role                        |
@@ -453,14 +453,14 @@ POST https://api.forecast.it/api/v2/tasks/2/comments
 | parent_task_id   | Integer, ID of parent task                 |
 | low_estimate     | ***only v2*** Decimal                      |
 | high_estimate    | ***only v2*** Decimal                      |
-| estimate         | ***only v3*** Decimal                      |
+| estimate         | ***only v3*** Decimal (Defaults to 0)      |
 | approved         | Boolean (Defaults to true)                 |
-| start_date       | Date                                       |
-| end_date         | Date                                       |
-| bug              | Boolean                                    |
-| high_priority    | Boolean                                    |
-| un_billable      | Boolean                                    |
-| blocked          | Boolean                                    |
+| start_date       | Date (YYYY-MM-DD)                          |
+| end_date         | Date (YYYY-MM-DD)                          |
+| bug              | Boolean (Defaults to false)                |
+| high_priority    | Boolean (Defaults to false)                |
+| un_billable      | Boolean (Defaults to false)                |
+| blocked          | Boolean (Defaults to false)                |
 | sprint           | Integer, ID of sprint                      |
 | workflow_column  | Integer, ID of workflow column             |
 | milestone        | Integer, ID of milestone                   |
@@ -470,7 +470,7 @@ POST https://api.forecast.it/api/v2/tasks/2/comments
 
 ### Sample JSON request
 
-POST https://api.forecast.it/api/v2/tasks
+POST https://api.forecast.it/api/v3/tasks
 
 ```javascript
 {
@@ -478,8 +478,7 @@ POST https://api.forecast.it/api/v2/tasks
    "role":2,
    "project_id":1,
    "parent_task_id":10, 
-   "low_estimate":20.0,
-   "high_estimate":40.0,
+   "estimate":20,
    "approved":true,
    "sprint":2,
    "owner_id":1
