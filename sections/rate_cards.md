@@ -64,11 +64,11 @@
 
 - `POST /rate_cards` - Creates a new rate card. Returns the same object as getting a single rate card.
 
-| Request fields | Description/format |
-|----------------|--------------------|
-| name           | (Required) String  |
-| default_rate   | Decimal            |
-| currency       | String             |
+| Request fields | Description/format      |
+|----------------|-------------------------|
+| name           | String (Required)       |
+| default_rate   | Decimal (Defaults to 0) |
+| currency       | String                  |
 
 ### Sample JSON request
 
