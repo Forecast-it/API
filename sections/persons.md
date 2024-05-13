@@ -241,7 +241,7 @@
 | email               | String                                                                                                                             |
 | job_title           | String                                                                                                                             |
 | ~~user_type~~          | ~~(Required\*) String {"SYSTEM", "VIRTUAL", "CLIENT", "COLLABORATOR", "MANAGER","CONTROLLER","ADMIN", "COORDINATOR"} **Only v1**~~ |
-| profile_ids         | *(Required) List<Integer>, List ID of [Profile](/profiles.md) ids                                                          |
+| profile_ids         | *(Required) List<Integer>, List ID of [Profile](profiles.md#profiles) ids                                                          |
 | client_id           | Integer, ID of client                                                                                                              |
 | holiday_calendar_id | Integer, ID of holiday calendar                                                                                                    |
 | monday              | Integer, if not set, taken from company                                                                                            |
@@ -260,7 +260,7 @@
 | active              | Boolean (Defaults to true)                                                                                                         |
 
 \*  You can set multiple profiles on a user if you have Advanced Analytics Enabled . Otherwise you can only have 1 permission profile for a user.
-You can get the permission profiles of your company using the `GET v1/profiles` endpoint described here - [Profile](/profiles.md)
+You can get the permission profiles of your company using the `GET v1/profiles` endpoint described here - [Profile](profiles.md#profiles)
 
 ### Sample JSON request
 
@@ -323,7 +323,7 @@ POST https://api.forecast.it/api/v2/persons
 | external_refs       | {key: String, value: String}[]                                                                                                     |
 
 \* You can set multiple profiles on a user if you have Advanced Analytics Enabled . Otherwise you can only have 1 permission profile for a user.
-You can get the permission profiles of your company using the `GET v1/profiles` endpoint described here - [Profile](/profiles.md)
+You can get the permission profiles of your company using the `GET v1/profiles` endpoint described here - [Profile](profiles.md#profiles)
 ### Sample JSON request
 
 PUT https://api.forecast.it/api/v2/persons/1
