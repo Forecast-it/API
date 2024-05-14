@@ -445,7 +445,7 @@ GET https://api.forecast.it/api/v1/projects/1/statuses
 
 ### Grouping
 
-The groupBys parameter allows grouping by combinations of 'YEAR', 'MONTH', 'PHASE', 'ROLE', 'EXPENSE_CATEGORY' and 'TASK'.
+The groupBys parameter allows grouping by combinations of 'YEAR', 'MONTH', 'PHASE', 'ROLE', 'EXPENSE_CATEGORY', 'RETAINER_PERIOD' and 'TASK'.
 If no groupBy is defined, we return project totals.
 
 - `GET /v2/projects/478/financials?groupBys=PHASE,ROLE` - Numbers are grouped by phase and role, so you get one set for each phase / role combination in the project.
