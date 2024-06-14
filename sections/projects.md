@@ -9,6 +9,7 @@
 | ---------------------------- | -------------------------------------------------------------------------- |
 | id                           | Integer                                                                    |
 | company_project_id           | Integer                                                                    |
+| custom_project_id            | String                                                                     |
 | name                         | String                                                                     |
 | connected_project            | Integer, ID of connected project                                           |
 | stage                        | String (PLANNING, RUNNING, HALTED, DONE)                                   |
@@ -55,6 +56,7 @@
    {
       "id":1,
       "company_project_id":1,
+      "custom_project_id":"P1",
       "name":"Website project",
       "stage":"PLANNING",
       "status": "GREEN",
@@ -103,6 +105,7 @@
 | ---------------------------- | -------------------------------------------------------------------------- |
 | id                           | Integer                                                                    |
 | company_project_id           | Integer                                                                    |
+| custom_project_id            | String                                                                     |
 | connected_project            | Integer, ID of connected project                                           |
 | name                         | String                                                                     |
 | stage                        | String (PLANNING, RUNNING, HALTED, DONE)                                   |
@@ -148,6 +151,7 @@
 {
    "id":1,
    "company_project_id":1,
+   "custom_project_id":"P1",
    "name":"Website project",
    "stage":"PLANNING",
    "status": "GREEN",
@@ -194,6 +198,7 @@
 | ---------------------------- | -------------------------------------------------------------------------- |
 | id                           | Integer                                                                    |
 | company_project_id           | Integer                                                                    |
+| custom_project_id            | String                                                                     |
 | connected_project            | Integer, ID of connected project                                           |
 | name                         | String                                                                     |
 | stage                        | String (PLANNING, RUNNING, HALTED, DONE)                                   |
@@ -239,6 +244,100 @@
 {
    "id":1,
    "company_project_id":1,
+   "custom_project_id":"P1",
+   "name":"Website project",
+   "stage":"PLANNING",
+   "status": "GREEN",
+   "status_description": "",
+   "description": "",
+   "priority_level_id": 3,
+   "color": "#FF7C75",
+   "estimation_units": "HOURS",
+   "minutes_per_estimation_point": 480,
+   "budget": 1234.56,
+   "billable": true,
+   "use_sprints": true,
+   "sprint_length": 14,
+   "start_date": "2017-01-01",
+   "end_date": "2018-01-01",
+   "task_levels": 1,
+   "client": 1,
+   "rate_card": 1,
+   "remaining_auto_calculated": false,
+   "use_project_allocations": true,
+   "use_baseline": true,
+   "baseline_win_chance": 0.95,
+   "baseline_target": 1234.56,
+   "labels": [1,2],
+   "external_refs": [],
+   "created_by":1,
+   "updated_by":1,
+   "created_at":"2017-01-14T18:46:56Z",
+   "updated_at":"2017-01-14T18:47:58Z",
+   "default_period_periodicity": "DAILY",
+   "default_period_length": 1,
+   "default_period_budget_type": "FIXED_PRICE",
+   "default_period_hours_amount": 1,
+   "default_period_price_amount": 1
+}
+```
+
+## Get project by custom project id
+
+- `GET /projects/custom_project_id/{customProjectId}` - Returns a specific project.
+- `GET /projects/custom_project_id/{customProjectId}?includeProgress=true` - Returns a specific project, including it's progress value. Progress value is cached for 10 minutes.
+
+| Response fields              | Description/format                                                         |
+| ---------------------------- | -------------------------------------------------------------------------- |
+| id                           | Integer                                                                    |
+| company_project_id           | Integer                                                                    |
+| custom_project_id            | String                                                                     |
+| connected_project            | Integer, ID of connected project                                           |
+| name                         | String                                                                     |
+| stage                        | String (PLANNING, RUNNING, HALTED, DONE)                                   |
+| status                       | String (GREEN, YELLOW, RED)                                                |
+| status_description           | String                                                                     |
+| description                  | String                                                                     |
+| priority_level_id            | Integer                                                                    |
+| color                        | String                                                                     |
+| estimation_units             | String (HOURS, POINTS)                                                     |
+| minutes_per_estimation_point | Integer                                                                    |
+| budget                       | Double                                                                     |
+| billable                     | Boolean (Deprecated)                                                       |
+| budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER)           |
+| use_sprints                  | Boolean                                                                    |
+| sprint_length                | Integer                                                                    |
+| start_date                   | Date                                                                       |
+| end_date                     | Date                                                                       |
+| card_levels                  | Integer, deprecated. Use 'task_levels' instead                             |
+| task_levels                  | Integer (1 or 2)                                                           |
+| client                       | Integer, ID of client                                                      |
+| rate_card                    | Integer, ID of rate card                                                   |
+| remaining_auto_calculated    | Boolean                                                                    |
+| use_project_allocations      | Boolean                                                                    |
+| use_baseline                 | Boolean                                                                    |
+| baseline_win_chance          | Double (Between 0.0 and 1.0)                                               |
+| baseline_target              | Double (Same as budget if budget_type = FIXED_PRICE)                       |
+| labels                       | List<Integer>, List ID of labels                                           |
+| external_refs                | List of references to other systems                                        |
+| progress                     | Double (Requires the 'includeProgress' query parameter. Cached for 10 min) |
+| default_period_periodicity   | String (DAILY, WEEKLY, MONTHLY)                                            |
+| default_period_length        | Integer                                                                    |
+| default_period_budget_type   | String (FIXED_HOURS, FIXED_PRICE, TIME_AND_MATERIALS)                      |
+| default_period_hours_amount  | Double                                                                     |
+| default_period_price_amount  | Double                                                                     |
+| created_by                   | Integer, ID of person                                                      |
+| updated_by                   | Integer, ID of person                                                      |
+| created_at                   | Date                                                                       |
+| updated_at                   | Date                                                                       |
+
+### Sample JSON response
+
+```javascript
+{
+   "id":1,
+   "company_project_id":1,
+   "custom_project_id":"P1",
    "name":"Website project",
    "stage":"PLANNING",
    "status": "GREEN",
@@ -280,34 +379,35 @@
 
 - `POST /projects` - Creates a new project. Returns the same object as getting a single project.
 
-| Request fields               | Description/format                                                                               |
-| ---------------------------- |--------------------------------------------------------------------------------------------------|
+| Request fields               | Description/format                                                                                |
+| ---------------------------- | ------------------------------------------------------------------------------------------------- |
 | name                         | String (Defaults to "New Project")                                                                |
-| stage                        | String (PLANNING, RUNNING, HALTED, DONE) (Defaults to PLANNING)                                  |
-| status                       | String (GREEN, YELLOW, RED) (Defaults to GREEN)                                                  |
-| status_description           | String                                                                                           |
-| description                  | String                                                                                           |
-| estimation_units             | String (HOURS, POINTS) (Defaults to HOURS)                                                       |
-| minutes_per_estimation_point | Integer (Defaults to 60)                                                                         |
-| budget                       | Double (Should only be set with budget_type: FIXED_PRICE)                                        |
+| custom_project_id            | String (Max 20 characters)                                                                        |
+| stage                        | String (PLANNING, RUNNING, HALTED, DONE) (Defaults to PLANNING)                                   |
+| status                       | String (GREEN, YELLOW, RED) (Defaults to GREEN)                                                   |
+| status_description           | String                                                                                            |
+| description                  | String                                                                                            |
+| estimation_units             | String (HOURS, POINTS) (Defaults to HOURS)                                                        |
+| minutes_per_estimation_point | Integer (Defaults to 60)                                                                          |
+| budget                       | Double (Should only be set with budget_type: FIXED_PRICE)                                         |
 | budget_type                  | String (FIXED_PRICE, NON_BILLABLE, TIME_AND_MATERIALS, RETAINER) (Defaults to TIME_AND_MATERIALS) |
-| use_sprints                  | Boolean (Defaults to false)                                                                      |
-| sprint_length                | Integer (Defaults to 14)                                                                         |
-| start_date                   | Date (YYYY-MM-DD)                                                                                |
-| end_date                     | Date (YYYY-MM-DD)                                                                                |
-| client                       | Integer, ID of client                                                                            |
-| rate_card                    | Integer, ID of rate card                                                                         |
-| remaining_auto_calculated    | Boolean (Defaults to true)                                                                       |
-| use_project_allocations      | Boolean, deprecated. Uses company setting instead.                                               |
-| use_baseline                 | Boolean (Defaults to false)                                                                      |
-| baseline_target              | Double (Minimum 0.0, Should not be set with budget_type: FIXED_PRICE)                            |
-| baseline_win_chance          | Double (Between 0.0 and 1.0) (Defaults to 1.0)                                                   |
-| labels                       | List<Integer>, List ID of labels                                                                 |
-| default_period_periodicity   | String (DAILY, WEEKLY, MONTHLY)                                                                  |
-| default_period_length        | Integer                                                                                          |
-| default_period_budget_type   | String (FIXED_HOURS, FIXED_PRICE, TIME_AND_MATERIALS)                                            |
-| default_period_hours_amount  | Double                                                                                           |
-| default_period_price_amount  | Double                                                                                           |
+| use_sprints                  | Boolean (Defaults to false)                                                                       |
+| sprint_length                | Integer (Defaults to 14)                                                                          |
+| start_date                   | Date (YYYY-MM-DD)                                                                                 |
+| end_date                     | Date (YYYY-MM-DD)                                                                                 |
+| client                       | Integer, ID of client                                                                             |
+| rate_card                    | Integer, ID of rate card                                                                          |
+| remaining_auto_calculated    | Boolean (Defaults to true)                                                                        |
+| use_project_allocations      | Boolean, deprecated. Uses company setting instead.                                                |
+| use_baseline                 | Boolean (Defaults to false)                                                                       |
+| baseline_target              | Double (Minimum 0.0, Should not be set with budget_type: FIXED_PRICE)                             |
+| baseline_win_chance          | Double (Between 0.0 and 1.0) (Defaults to 1.0)                                                    |
+| labels                       | List<Integer>, List ID of labels                                                                  |
+| default_period_periodicity   | String (DAILY, WEEKLY, MONTHLY)                                                                   |
+| default_period_length        | Integer                                                                                           |
+| default_period_budget_type   | String (FIXED_HOURS, FIXED_PRICE, TIME_AND_MATERIALS)                                             |
+| default_period_hours_amount  | Double                                                                                            |
+| default_period_price_amount  | Double                                                                                            |
 
 ### Sample JSON request
 
@@ -333,8 +433,9 @@ POST https://api.forecast.it/api/v1/projects
 - `PUT /projects/{projectId}` - Updates a project. Returns the same object as getting a single project.
 
 | Request fields               | Description/format                                                    |
-| ---------------------------- |-----------------------------------------------------------------------|
+| ---------------------------- | --------------------------------------------------------------------- |
 | name                         | String                                                                |
+| custom_project_id            | String (Max 20 characters)                                            |
 | connected_project            | Integer, ID of connected project                                      |
 | stage                        | String (PLANNING, RUNNING, HALTED, DONE)                              |
 | status                       | String (GREEN, YELLOW, RED)                                           |
@@ -378,8 +479,9 @@ PUT https://api.forecast.it/api/v1/projects/1
 - `POST /projects/duplicate/{projectId}` - Creates a duplicate of the given project. Returns the new project.
 
 | Request fields                    | Description/format                                                                                                                               |
-|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | name                              | String                                                                                                                                           |
+| custom_project_id                 | String (Max 20 characters)                                                                                                                       |
 | start_date                        | Date (Changing the dates of a duplicated project will move tasks and phases accordingly)                                                         |
 | end_date                          | Date (Changing the dates of a duplicated project will move tasks and phases accordingly)                                                         |
 | client                            | Integer, ID of client                                                                                                                            |
@@ -401,6 +503,7 @@ POST https://api.forecast.it/api/v1/projects/duplicate/1
 ```javascript
 {
    "name":"Duplicated Project",
+   "custom_project_id":"P1dupe",
    "client": 1,
    "start_date": "2021-08-14",
    "duplicate_color": false,
