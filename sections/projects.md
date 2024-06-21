@@ -770,3 +770,5 @@ GET https://api.forecast.it/api/v1/projects/1/retainer_periods/{periodId}
 
 - `GET /projects/{projectId}/retainer_periods` - Returns all retainer periods for the project, including aggregated rollover to and from each period
 
+Returns array of retainer periods, as detailed above.
+

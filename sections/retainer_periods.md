@@ -2,13 +2,15 @@
 
 ## Get retainer periods by IDs
 
-- `GET /projects/retainer_periods/{periodId}` - Returns retainer periods with IDs specified by the `ids` query parameter, including aggregated rollover to and from each period.
+- `GET /retainer_periods` - Returns retainer periods with IDs specified by the `ids` query parameter, including aggregated rollover to and from each period.
 
 This endpoint will not return any data in the absence of the `ids` query parameter.
 
 ### Sample JSON request
 
-GET https://api.forecast.it/api/v1/projects/1/retainer_periods/{periodId}
+GET https://api.forecast.it/api/v1/retainer_periods/ids=1,2,3
+
+Returns array of: 
 
 | Response fields                                                   | Description/format                                                                                   |
 | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
