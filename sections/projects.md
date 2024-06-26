@@ -733,13 +733,16 @@ GET https://api.forecast.it/api/v1/projects/1/baseline
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ expense_baseline_revenue    | Double, The set revenue of the baseline expense.                                                    |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ expense_baseline_profit     | Double, The profit calculated from the cost and the revenue of the baseline expense.                |
 
-## Get project retainer period by ID
 
-- `GET /projects/{projectId}/retainer_periods/{periodId}` - Returns retainer period with ID periodId for project with ID projectId, including aggregated rollover to and from each period
+## Get project retainer periods
+
+- `GET /projects/{projectId}/retainer_periods` - Returns all retainer periods for the project, including aggregated rollover to and from each period
 
 ### Sample JSON request
 
-GET https://api.forecast.it/api/v1/projects/1/retainer_periods/{periodId}
+GET https://api.forecast.it/api/v1/projects/{projectId}/retainer_periods
+
+Returns array of: 
 
 | Response fields                                                   | Description/format                                                                                   |
 | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -763,12 +766,4 @@ GET https://api.forecast.it/api/v1/projects/1/retainer_periods/{periodId}
 | start_year                                                        | Integer, The year the period starts.                                                                 |
 | updated_at                                                        | DateTime, The date on which the period was last updated.                                             |
 | updated_by                                                        | String, The user who last updated the object.                                                        |
-| total_rollover_from_period                                        | Double, The total amount rolled over from the period.                                                |
-| total_rollover_to_period                                          | Double, The total amount rolled over to the period.                                                  |
-
-## Get project retainer periods
-
-- `GET /projects/{projectId}/retainer_periods` - Returns all retainer periods for the project, including aggregated rollover to and from each period
-
-Returns array of retainer periods, as detailed above.
 
