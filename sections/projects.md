@@ -738,6 +738,7 @@ GET https://api.forecast.it/api/v1/projects/1/baseline
 
 - `GET /projects/{projectId}/retainer_periods` - Returns all retainer periods for the project
 
+To exclude expenses from all value-of-service calculations, add the query parameter `excludeExpenses` set to `true`.
 ### Sample JSON request
 
 GET https://api.forecast.it/api/v1/projects/{projectId}/retainer_periods
