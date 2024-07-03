@@ -5,7 +5,7 @@
 - `GET /retainer_periods` - Returns retainer periods with IDs specified by the `ids` query parameter.
 
 This endpoint will not return any data in the absence of the `ids` query parameter.
-To exclude expenses from all value-of-service calculations, add the query parameter `excludeExpenses` set to `true`. 
+To include expenses in all value-of-service calculations, add the query parameter `includeExpenses` set to `true`. 
 ### Sample JSON request
 
 GET https://api.forecast.it/api/v1/retainer_periods?ids=1,2,3
@@ -49,7 +49,7 @@ projected_total_billable_value_of_service | Projected amount for the period that
 
 - `GET /retainer_periods/{periodId}` - Returns retainer period with ID periodId
 
-To exclude expenses from all value-of-service calculations, add the query parameter `excludeExpenses` set to `true`. 
+To include expenses in all value-of-service calculations, add the query parameter `includeExpenses` set to `true`. 
 ### Sample JSON request
 
 GET https://api.forecast.it/api/v1/retainer_periods/{periodId}
