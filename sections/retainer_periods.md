@@ -2,7 +2,9 @@
 
 ## Get retainer periods by IDs
 
-- `GET /retainer_periods` - Returns retainer periods with IDs specified by the `ids` query parameter.
+- `GET /retainer_periods` - Returns retainer periods with IDs specified by the `ids` query parameter. `ids` is a comma separated list of retainer period IDs. 
+
+Retainer period IDs can be obtained by fetching all retainer periods on a given project using the `v1/projects/{projectId}/retainer_periods` (see [Projects](projects.md))
 
 This endpoint will not return any data in the absence of the `ids` query parameter.
 To exclude expenses from all value-of-service calculations, add the query parameter `excludeExpenses` set to `true`. 
