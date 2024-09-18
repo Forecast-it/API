@@ -26,6 +26,8 @@
 | date             | Date                                             |
 | notes            | String                                           |
 | approval_status  | String (NOT_SUBMITTED, SUBMITTED, APPROVED)      |
+| invoice_entry    | Integer                                          |
+| invoice          | Integer                                          |
 | created_by       | Integer, ID of person                            |
 | updated_by       | Integer, ID of person                            |
 | created_at       | Date                                             |
@@ -49,6 +51,8 @@
       "date":"2017-01-14",
       "notes":"Did work on login page",
       "approval_status": "APPROVED",
+      "invoice_entry": null,
+      "invoice": 6065,
       "created_by":1,
       "updated_by":1,
       "created_at":"2017-01-14T18:46:56Z",
