@@ -606,3 +606,20 @@ DELETE https://api.forecast.it/api/v2/tasks/1
     }, ...
 ]
 ```
+## Upload file to a task
+
+- `POST /v2/tasks/{taskId}/file` - Uploads a file to the specified task. The request body must use `multipart/form-data`.
+
+| Request fields   | Description/format      |
+| ---------------- |-------------------------|
+| file          | File (Required)       |
+
+### Sample JSON request
+
+POST https://api.forecast.it/api/v2/tasks/{taskId}/file
+
+```javascript
+{
+   "file": "Your file",
+}
+```
