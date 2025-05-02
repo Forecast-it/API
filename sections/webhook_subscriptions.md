@@ -2,7 +2,7 @@
 
 ## Webhooks
 
-Webhooks allow you to subscribe to task and time registration events from Forecast and get notified at a url of your choice.
+Webhooks allow you to subscribe to task, time registration, project and phase events from Forecast and get notified at a url of your choice.
 
 When an event that you have subscribed to occours in Forecast, a webhook with the following format will be sent to the url you specified in your subscription:
 
