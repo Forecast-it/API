@@ -40,3 +40,30 @@ For getting custom fields along with the entity, the parameter `?includeCustomFi
 	}
 }
 ```
+
+## Get custom field options
+
+For getting custom field options for a dropdown type custom field.
+
+Entity type must be one of: "PROJECT", "PHASE", "TASK", or "TIME_REG".
+
+Key refers to the key of the custom field.
+
+
+* `GET /custom_fields/{entityType}/{key}/options` - Returns all connected projects.
+
+### Sample JSON response
+
+```json
+[
+   {
+    "id": 1,
+    "name": "Option 1"
+   },
+   {
+    "id": 2,
+    "name": "Option 2"
+   },
+   ...
+]
+```
