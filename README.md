@@ -1,6 +1,6 @@
 # What is the Forecast API?
 
-The [Forecast](https://www.forecast.it) API is a complete programmable interface to all Forecast functionality.
+The [Forecast](https://www.forecast.app) API is a complete programmable interface to all Forecast functionality.
 
 This is a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer)-style [API](http://en.wikipedia.org/wiki/Application_programming_interface) that uses [JSON](http://json.org/) for serialization and [HTTP](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol).
 
@@ -12,9 +12,9 @@ A ton of stuff! We've exposed all the needed services for you to use in your app
 
 # How do I get started?
 
-You'll need a [Forecast](https://www.forecast.it) account, first of all. Then you grab an API key for each app you want to build from the [Forecast](https://www.forecast.it) "Admin" section.
+You'll need a [Forecast](https://www.forecast.app) account, first of all. Then you grab an API key for each app you want to build from the [Forecast](https://www.forecast.app) "Admin" section.
 
-We recommend that you start out by getting to know the concepts and conventions of [Forecast](https://www.forecast.it) (and the API) and learn how to authenticate with us.
+We recommend that you start out by getting to know the concepts and conventions of [Forecast](https://www.forecast.app) (and the API) and learn how to authenticate with us.
 
 ## Making a request
 
@@ -32,27 +32,27 @@ That's it. Super simple, eh?
 
 ## Authentication
 
-If you're making a private integration with [Forecast](https://www.forecast.it) for your own purposes, you can use HTTP header "X-FORECAST-API-KEY". This is secure since all requests in [Forecast](https://www.forecast.it) use [SSL](http://en.wikipedia.org/wiki/Transport_Layer_Security).
+If you're making a private integration with [Forecast](https://www.forecast.app) for your own purposes, you can use HTTP header "X-FORECAST-API-KEY". This is secure since all requests in [Forecast](https://www.forecast.app) use [SSL](http://en.wikipedia.org/wiki/Transport_Layer_Security).
 
 API keys are generated in the administration module.
 
-**API keys provide full access to your [Forecast](https://www.forecast.it) account, so keep them like a secret.**
+**API keys provide full access to your [Forecast](https://www.forecast.app) account, so keep them like a secret.**
 
 ### Disabling an API key
 
-If you're worried that an API key has been compromised, or you're simply no longer using the integration that was accessing your account through a particular API key, [Forecast](https://www.forecast.it) makes it possible to disable or delete that API key.
+If you're worried that an API key has been compromised, or you're simply no longer using the integration that was accessing your account through a particular API key, [Forecast](https://www.forecast.app) makes it possible to disable or delete that API key.
 
 ### API key security
 
-API keys grant full access to your [Forecast](https://www.forecast.it) account, and should be protected the same way you would protect your password. In particular, there are a few common scenarios to keep in mind when working with API keys:
+API keys grant full access to your [Forecast](https://www.forecast.app) account, and should be protected the same way you would protect your password. In particular, there are a few common scenarios to keep in mind when working with API keys:
 
 - Give each integration its own API key (or at least use a few). If a specific API key is compromised, you can disable that key without disabling access to all of your other integrations.
 - Be careful not to expose the key to the public (such as in screenshots, videos, help documentation, source control, etc). Remember that blurring your data isn't always enough. It's best to use "cut" functions in your graphics program to remove the data completely.
-- If a key needs to be shared, generate a new key so it can be disabled, if needed. Make sure never to email the API key; if your email account becomes compromised, the emailed key would allow hackers access to your [Forecast](https://www.forecast.it) account as well.
+- If a key needs to be shared, generate a new key so it can be disabled, if needed. Make sure never to email the API key; if your email account becomes compromised, the emailed key would allow hackers access to your [Forecast](https://www.forecast.app) account as well.
 
 ## No XML, just JSON
 
-We only support [JSON](http://json.org/) for serialization of data. This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing or PUTing data into [Forecast](https://www.forecast.it). **All API URLs only accept and return JSON.**
+We only support [JSON](http://json.org/) for serialization of data. This means that you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing or PUTing data into [Forecast](https://www.forecast.app). **All API URLs only accept and return JSON.**
 
 You'll receive a 415 Unsupported Media Type response code if you don't include the Content-Type header.
 
@@ -86,7 +86,7 @@ Responses from paginated endpoints will be in the following format:
 
 ## Handling errors
 
-If [Forecast](https://www.forecast.it) is having trouble, you might see a 5xx error. 500 means that the app is entirely down, but you might also see 502 Bad Gateway, 503 Service Unavailable, or 504 Gateway Timeout. It's your responsibility in all of these cases to retry your request later.
+If [Forecast](https://www.forecast.app) is having trouble, you might see a 5xx error. 500 means that the app is entirely down, but you might also see 502 Bad Gateway, 503 Service Unavailable, or 504 Gateway Timeout. It's your responsibility in all of these cases to retry your request later.
 
 400 Errors usually means that the provided input is invalid and the message will tell you what the problem is.
 
@@ -172,4 +172,4 @@ Errors are returned in the following JSON format.
 
 Please tell us how we can make the API better. If you have a specific feature request or if you've found a bug, please contact us.
 
-You can always reach us via email at info@forecast.it
+You can always reach us via email at info@forecast.app
