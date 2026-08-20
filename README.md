@@ -158,6 +158,7 @@ Errors are returned in the following JSON format.
 - [Task Financials](sections/task_financials.md)
 - [Tasks](sections/tasks.md#tasks)
 - [Teams](sections/teams.md#teams)
+- [Tickets](sections/tickets.md#tickets)
 - [Time registrations](sections/time_registrations.md#time-registrations)
 - [Webhook subscriptions](sections/webhook_subscriptions.md#webhook-subscriptions)
 - [Workflow columns](sections/workflow_columns.md#workflow-columns)
