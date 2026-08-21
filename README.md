@@ -162,12 +162,6 @@ Errors are returned in the following JSON format.
 - [Webhook subscriptions](sections/webhook_subscriptions.md#webhook-subscriptions)
 - [Workflow columns](sections/workflow_columns.md#workflow-columns)
 
-## API libraries
-
-- [Google APIs Client Library](https://code.google.com/p/google-api-java-client/) - Java
-- [Jersey](https://jersey.java.net/) - Java
-- Feel free to add libraries for other languages :)
-
 ## Help us make it better
 
 Please tell us how we can make the API better. If you have a specific feature request or if you've found a bug, please contact us.
