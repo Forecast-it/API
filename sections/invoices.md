@@ -39,7 +39,7 @@
 | invoice_id      | Integer, ID of the Invoice |
 | name            | String                     |
 | project_id      | Integer, ID of project     |
-| quantity        | Integer                    |
+| quantity        | Double                     |
 | unit_price      | Double                     |
 | discount        | Double                     |
 | tax             | Double                     |
@@ -138,7 +138,7 @@ returns the same list of invoices with entries and payments as "Get Invoices" se
 | -------------- | ---------------------- |
 | name           | String                 |
 | project_id     | Integer, ID of project |
-| quantity       | Integer                |
+| quantity       | Double                 |
 | unit_price     | Double                 |
 | discount       | Double                 |
 | tax            | Double                 |
@@ -208,7 +208,7 @@ POST https://api.forecast.it/api/v1/projects/123/invoices
 | invoice_id      | Integer, ID of the Invoice |
 | name            | String                     |
 | project_id      | Integer, ID of project     |
-| quantity        | Integer                    |
+| quantity        | Double                     |
 | unit_price      | Double                     |
 | discount        | Double                     |
 | tax             | Double                     |
@@ -315,7 +315,7 @@ POST https://api.forecast.it/api/v1/projects/123/invoices
 | invoice_id      | Integer, ID of the Invoice |
 | name            | String                     |
 | project_id      | Integer, ID of project     |
-| quantity        | Integer                    |
+| quantity        | Double                     |
 | unit_price      | Double                     |
 | discount        | Double                     |
 | tax             | Double                     |
@@ -406,7 +406,7 @@ POST https://api.forecast.it/api/v1/projects/123/invoices
 | -------------- | ---------------------- |
 | name           | String                 |
 | project_id     | Integer, ID of project |
-| quantity       | Integer                |
+| quantity       | Double                 |
 | unit_price     | Double                 |
 | discount       | Double                 |
 | tax            | Double                 |
@@ -466,7 +466,7 @@ POST https://api.forecast.it/api/v1/projects/123/invoices
 | id             | Integer, ID of the entry |
 | name           | String                   |
 | project_id     | Integer, ID of project   |
-| quantity       | Integer                  |
+| quantity       | Double                   |
 | unit_price     | Double                   |
 | discount       | Double                   |
 | tax            | Double                   |
@@ -535,7 +535,7 @@ DELETE https://api.forecast.it/api/v1/invoices/123
 | -------------- | ---------------------- |
 | name           | String, Required       |
 | project_id     | Integer, ID of project |
-| quantity       | Integer, Required      |
+| quantity       | Double, Required       |
 | unit_price     | Double, Required       |
 | discount       | Double                 |
 | tax            | Double                 |
@@ -564,7 +564,7 @@ POST https://api.forecast.it/api/v1/invoices/84/invoice_entries
 | -------------- | ---------------------- |
 | name           | String                 |
 | project_id     | Integer, ID of project |
-| quantity       | Integer                |
+| quantity       | Double                 |
 | unit_price     | Double                 |
 | discount       | Double                 |
 | tax            | Double                 |
