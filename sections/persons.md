@@ -354,11 +354,7 @@ PUT https://api.forecast.it/api/v2/persons/1
 
 ## Delete person\*
 
-\* Only person with client_id not equal to null can be deleted
-
 - `DELETE v1/persons/{personId}` - Deletes a person.
-
-- `DELETE v2/persons/{personId}` - Deletes a person.
 
 ### Sample JSON request
 
