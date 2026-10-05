@@ -134,15 +134,15 @@ returns the same list of invoices with entries and payments as "Get Invoices" se
 
 ### Entries
 
-| Request fields | Description/format     |
-| -------------- | ---------------------- |
-| name           | String                 |
-| project_id     | Integer, ID of project |
-| quantity       | Double                 |
-| unit_price     | Double                 |
-| discount       | Double                 |
-| tax            | Double                 |
-| description    | String                 |
+| Request fields | Description/format                                         |
+| -------------- | ---------------------------------------------------------- |
+| name           | String                                                     |
+| project_id     | Integer, ID of project                                     |
+| quantity       | Double (greater than -1000000000 and less than 1000000000) |
+| unit_price     | Double                                                     |
+| discount       | Double                                                     |
+| tax            | Double                                                     |
+| description    | String                                                     |
 
 ### Sample JSON request
 
@@ -402,15 +402,15 @@ POST https://api.forecast.it/api/v1/projects/123/invoices
 
 ### Entries
 
-| Request fields | Description/format     |
-| -------------- | ---------------------- |
-| name           | String                 |
-| project_id     | Integer, ID of project |
-| quantity       | Double                 |
-| unit_price     | Double                 |
-| discount       | Double                 |
-| tax            | Double                 |
-| description    | String                 |
+| Request fields | Description/format                                         |
+| -------------- | ---------------------------------------------------------- |
+| name           | String                                                     |
+| project_id     | Integer, ID of project                                     |
+| quantity       | Double (greater than -1000000000 and less than 1000000000) |
+| unit_price     | Double                                                     |
+| discount       | Double                                                     |
+| tax            | Double                                                     |
+| description    | String                                                     |
 
 ### Sample JSON request
 
@@ -461,16 +461,16 @@ POST https://api.forecast.it/api/v1/projects/123/invoices
 
 - If the entry id is specified then this entry will be updated (or an error occure if it does not exist) else a new entry will be created.
 
-| Request fields | Description/format       |
-| -------------- | ------------------------ |
-| id             | Integer, ID of the entry |
-| name           | String                   |
-| project_id     | Integer, ID of project   |
-| quantity       | Double                   |
-| unit_price     | Double                   |
-| discount       | Double                   |
-| tax            | Double                   |
-| description    | String                   |
+| Request fields | Description/format                                         |
+| -------------- | ---------------------------------------------------------- |
+| id             | Integer, ID of the entry                                   |
+| name           | String                                                     |
+| project_id     | Integer, ID of project                                     |
+| quantity       | Double (greater than -1000000000 and less than 1000000000) |
+| unit_price     | Double                                                     |
+| discount       | Double                                                     |
+| tax            | Double                                                     |
+| description    | String                                                     |
 
 ### Payments
 
@@ -531,15 +531,15 @@ DELETE https://api.forecast.it/api/v1/invoices/123
 
 - `POST /invoices/{invoiceId}/invoice_entries` - Creates a new invoice entry for a specific invoice. Returns the newly created invoice entry.
 
-| Request fields | Description/format     |
-| -------------- | ---------------------- |
-| name           | String, Required       |
-| project_id     | Integer, ID of project |
-| quantity       | Double, Required       |
-| unit_price     | Double, Required       |
-| discount       | Double                 |
-| tax            | Double                 |
-| description    | String                 |
+| Request fields | Description/format                                                   |
+| -------------- | -------------------------------------------------------------------- |
+| name           | String, Required                                                     |
+| project_id     | Integer, ID of project                                               |
+| quantity       | Double, Required (greater than -1000000000 and less than 1000000000) |
+| unit_price     | Double, Required                                                     |
+| discount       | Double                                                               |
+| tax            | Double                                                               |
+| description    | String                                                               |
 
 ### Sample JSON request
 
@@ -560,15 +560,15 @@ POST https://api.forecast.it/api/v1/invoices/84/invoice_entries
 
 - `PUT /invoice_entries/{invoiceEntryId}` - Updates a specific invoice entry. Returns the updated invoice entry.
 
-| Request fields | Description/format     |
-| -------------- | ---------------------- |
-| name           | String                 |
-| project_id     | Integer, ID of project |
-| quantity       | Double                 |
-| unit_price     | Double                 |
-| discount       | Double                 |
-| tax            | Double                 |
-| description    | String                 |
+| Request fields | Description/format                                         |
+| -------------- | ---------------------------------------------------------- |
+| name           | String                                                     |
+| project_id     | Integer, ID of project                                     |
+| quantity       | Double (greater than -1000000000 and less than 1000000000) |
+| unit_price     | Double                                                     |
+| discount       | Double                                                     |
+| tax            | Double                                                     |
+| description    | String                                                     |
 
 ### Sample JSON request
 
