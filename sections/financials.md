@@ -1,9 +1,30 @@
 # Financial Numbers
 
+## Permissions for financial information
+
+The endpoints that return financial numbers or financial settings depend on what the API key is allowed to see, based on the two profile permissions **View financial information** and **View financial information, revenue only**:
+
+| API key has                               | Response                                                                                                    |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| View financial information                | All fields.                                                                                                 |
+| View financial information, revenue only  | Every field whose name contains `cost`, `profit` or `margin` is left out, including inside nested objects, `milestone_breakdown` and `role_breakdown`. Revenue, value of service, time and invoice fields are returned. |
+| Neither                                   | `403` with `{"status": 403, "message": "The API key does not have access to financial information."}`      |
+
+This applies to:
+
+- `POST /v1/getFinancialNumbers` and `POST /v2/getFinancialNumbers` (below)
+- `GET /projects/{projectId}/financials` and `GET /v2/projects/{projectId}/financials` (see [Projects](projects.md))
+- `GET /tasks/{taskId}/financials` and `GET /projects/{projectId}/tasks/financials` (see [Task Financials](task_financials.md))
+- `GET /programs/{programId}/financials` and `PUT /programs/{programId}/financials` (see [Programs](programs.md))
+
+Retainer periods (`GET /retainer_periods`, `GET /retainer_periods/{periodId}` and `GET /projects/{projectId}/retainer_periods`) are returned without financial access, but without their money fields: `period_target_price`, `period_rollover_price`, `estimated_billable_value_of_service`, `actual_billable_value_of_service`, `remaining_work_billable_value_of_service` and `projected_total_billable_value_of_service`. An API key with no permissions at all gets a `403`.
+
 ## Get financial numbers
 
 - `POST /v2/getFinancialNumbers` - Gets financial numbers.
 - `POST /v2/getFinancialNumbers?convert_to_project_currency=true` - Gets financial numbers in project currency
+
+> Requires financial access, and without "View financial information" cost, profit and margin are left out. See [Permissions for financial information](#permissions-for-financial-information).
 
 | Request fields | Description/format                                                                                                |
 | -------------- | ----------------------------------------------------------------------------------------------------------------- |

@@ -7,6 +7,9 @@
 Retainer period IDs can be obtained by fetching all retainer periods on a given project using the `v1/projects/{projectId}/retainer_periods` (see [Projects](projects.md))
 
 This endpoint will not return any data in the absence of the `ids` query parameter.
+
+> Without financial access the money fields are left out. See [Permissions for financial information](financials.md#permissions-for-financial-information).
+
 To exclude expenses from all value-of-service calculations, add the query parameter `excludeExpenses` set to `true`. 
 ### Sample JSON request
 
@@ -50,6 +53,8 @@ projected_total_billable_value_of_service | Projected amount for the period that
 ## Get retainer period by ID
 
 - `GET /retainer_periods/{periodId}` - Returns retainer period with ID periodId
+
+> Without financial access the money fields are left out. See [Permissions for financial information](financials.md#permissions-for-financial-information).
 
 To exclude expenses from all value-of-service calculations, add the query parameter `excludeExpenses` set to `true`. 
 ### Sample JSON request

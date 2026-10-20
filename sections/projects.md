@@ -546,6 +546,10 @@ GET https://api.forecast.it/api/v1/projects/1/statuses
 - `GET /v2/projects/{projectId}/financials?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns all financial data for the project between `start_date` and `end_date`, broken down to milestone and role level.
 - `GET /v2/projects/{projectId}/financials?convert_to_project_currency=true` - Returns all financial data for the project in project currency
 
+> Requires financial access, and without "View financial information" cost, profit and margin are left out. See [Permissions for financial information](financials.md#permissions-for-financial-information).
+
+If `start_date` or `end_date` is not a valid `YYYYMMDD` date, it is ignored.
+
 ### Grouping
 
 The groupBys parameter allows grouping by combinations of 'YEAR', 'MONTH', 'PHASE', 'ROLE', 'EXPENSE_CATEGORY', 'RETAINER_PERIOD' and 'TASK'.
@@ -640,6 +644,8 @@ Grouping by Phase might return a phaseId of -1, this means that time was registe
 
 - `GET /projects/{projectId}/financials` - Returns all financial data for the project, broken down to milestone and role level.
 - `GET /projects/{projectId}/financials?start_date=YYYYMMDD&end_date=YYYYMMDD` - Returns all financial data for the project between `start_date` and `end_date`, broken down to milestone and role level.
+
+> Requires financial access, and without "View financial information" cost, profit and margin are left out. See [Permissions for financial information](financials.md#permissions-for-financial-information).
 
 Some data in the response is broken down on the individual milestones of the project in arrays called `milestone_breakdown`. Each of these milestones can be further broken down on the individual roles in arrays called `role_breakdown`.
 
@@ -840,6 +846,8 @@ GET https://api.forecast.it/api/v1/projects/1/baseline
 ## Get project retainer periods
 
 - `GET /projects/{projectId}/retainer_periods` - Returns all retainer periods for the project
+
+> Without financial access the money fields are left out. See [Permissions for financial information](financials.md#permissions-for-financial-information).
 
 To exclude expenses from all value-of-service calculations, add the query parameter `excludeExpenses` set to `true`.
 ### Sample JSON request
