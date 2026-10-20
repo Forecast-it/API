@@ -204,6 +204,8 @@ PUT https://api.forecast.it/api/v1/programs/4ec178b1-f229-47c2-b5c3-b3aaf6da2a4e
 
 - `GET /programs/{programId}/financials` - Returns the financial settings of an existing program.
 
+> Requires financial access. See [Permissions for financial information](financials.md#permissions-for-financial-information).
+
 | Response fields | Description/format                                                                |
 | --------------- | --------------------------------------------------------------------------------- |
 | budget_type     | String                                                                            |
@@ -221,6 +223,8 @@ PUT https://api.forecast.it/api/v1/programs/4ec178b1-f229-47c2-b5c3-b3aaf6da2a4e
 ## Update program financials
 
 - `PUT /programs/{programId}/financials` - Updates the financial settings of an existing program.
+
+> Requires financial access. See [Permissions for financial information](financials.md#permissions-for-financial-information).
 
 | Request fields | Description/format                                                                |
 | -------------- | --------------------------------------------------------------------------------- |
