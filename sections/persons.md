@@ -160,37 +160,39 @@
 
 - `GET v1/persons/{personId}/projects` - Returns a specific person's projects.
 
-| Response fields              | Description/format                             |
-| ---------------------------- | ---------------------------------------------- |
-| id                           | Integer                                        |
-| company_project_id           | Integer                                        |
-| name                         | String                                         |
-| connected_project            | Integer, ID of connected project               |
-| stage                        | String (PLANNING, RUNNING, HALTED, DONE)       |
-| status_color                 | String (GREEN, YELLOW, RED)                    |
-| status_description           | String                                         |
-| description                  | String                                         |
-| color                        | String                                         |
-| estimation_units             | String (HOURS, POINTS)                         |
-| minutes_per_estimation_point | Integer                                        |
-| budget                       | Double                                         |
-| billable                     | Boolean                                        |
-| use_sprints                  | Boolean                                        |
-| sprint_length                | Integer                                        |
-| start_date                   | Date                                           |
-| end_date                     | Date                                           |
-| card_levels                  | Integer, deprecated. Use 'task_levels' instead |
-| task_levels                  | Integer (1 or 2)                               |
-| client                       | Integer, ID of client                          |
-| rate_card                    | Integer, ID of rate card                       |
-| remaining_auto_calculated    | Boolean                                        |
-| use_project_allocations      | Boolean                                        |
-| labels                       | List<Integer>, List ID of labels               |
-| external_refs                | List of references to other systems            |
-| created_by                   | Integer, ID of person                          |
-| updated_by                   | Integer, ID of person                          |
-| created_at                   | Date                                           |
-| updated_at                   | Date                                           |
+| Response fields              | Description/format                                                                      |
+| ---------------------------- | --------------------------------------------------------------------------------------- |
+| id                           | Integer                                                                                 |
+| company_project_id           | Integer                                                                                 |
+| name                         | String                                                                                  |
+| connected_project            | Integer, ID of connected project                                                        |
+| stage                        | String (OPPORTUNITY, PLANNING, RUNNING, HALTED, DONE), see [Stages](projects.md#stages) |
+| stage_id                     | Integer, only for companies using custom project stages                                 |
+| stage_name                   | String, only for companies using custom project stages                                  |
+| status_color                 | String (GREEN, YELLOW, RED)                                                             |
+| status_description           | String                                                                                  |
+| description                  | String                                                                                  |
+| color                        | String                                                                                  |
+| estimation_units             | String (HOURS, POINTS)                                                                  |
+| minutes_per_estimation_point | Integer                                                                                 |
+| budget                       | Double                                                                                  |
+| billable                     | Boolean                                                                                 |
+| use_sprints                  | Boolean                                                                                 |
+| sprint_length                | Integer                                                                                 |
+| start_date                   | Date                                                                                    |
+| end_date                     | Date                                                                                    |
+| card_levels                  | Integer, deprecated. Use 'task_levels' instead                                          |
+| task_levels                  | Integer (1 or 2)                                                                        |
+| client                       | Integer, ID of client                                                                   |
+| rate_card                    | Integer, ID of rate card                                                                |
+| remaining_auto_calculated    | Boolean                                                                                 |
+| use_project_allocations      | Boolean                                                                                 |
+| labels                       | List<Integer>, List ID of labels                                                        |
+| external_refs                | List of references to other systems                                                     |
+| created_by                   | Integer, ID of person                                                                   |
+| updated_by                   | Integer, ID of person                                                                   |
+| created_at                   | Date                                                                                    |
+| updated_at                   | Date                                                                                    |
 
 ### Sample JSON response
 
