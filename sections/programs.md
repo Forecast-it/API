@@ -106,7 +106,7 @@ The following endpoints are available for programs:
 | key            | (Required\*) String, Max 5 alphanumeric characters |
 | description    | String                                             |
 | color          | String, Hex color                                  |
-| stage_id       | UUID                                               |
+| stage_id       | UUID, a Planning, Running or Done stage            |
 | start_date     | Date, ISO 8601                                     |
 | end_date       | Date, ISO 8601                                     |
 | owners         | List<Integer>                                      |
@@ -121,12 +121,14 @@ POST https://api.forecast.it/api/v1/programs
    "key": "NP",
    "description": "This is a new Program",
    "color": "#75C2FF",
-   "stage_id": "11eda956-33cf-8baa-800b-0242ac120003",
+   "stage_id": "11eda956-33cf-8baa-800b-0242ac120004",
    "start_date": "2022-01-31",
    "end_date": "2024-03-02",
    "owners": [1,2,3]
 }
 ```
+
+Programs can only be created in the PLANNING, RUNNING or DONE stage. A `stage_id` for the OPPORTUNITY or HALTED stage returns a 400 error.
 
 ## Update program
 
@@ -242,6 +244,8 @@ PUT https://api.forecast.it/api/v1/programs/4ec178b1-f229-47c2-b5c3-b3aaf6da2a4e
 
 - `GET /programs/stages` - Returns possible stages of programs.
 
+OPPORTUNITY and HALTED are still returned so existing programs in those stages can be read, but programs can no longer be moved into them.
+
 | Response fields | Description/format |
 | --------------- | ------------------ |
 | id              | UUID               |
@@ -254,6 +258,10 @@ PUT https://api.forecast.it/api/v1/programs/4ec178b1-f229-47c2-b5c3-b3aaf6da2a4e
     {
         "id": "11eda956-33cf-8baa-800b-0242ac120003",
         "name": "OPPORTUNITY"
+    },
+    {
+        "id": "11eda956-33cf-8baa-800b-0242ac120004",
+        "name": "PLANNING"
     }, ...
 ]
 ```
@@ -262,9 +270,11 @@ PUT https://api.forecast.it/api/v1/programs/4ec178b1-f229-47c2-b5c3-b3aaf6da2a4e
 
 - `PUT /programs/{programId}/stages/{stageId}` - Updates the stage of an existing program.
 
+Programs can only be moved to the PLANNING, RUNNING or DONE stage. Moving a program to the OPPORTUNITY or HALTED stage returns a 400 error, unless the program is already in that stage, in which case nothing changes. An unknown program returns a 404 error.
+
 ### Sample JSON request
 
-PUT https://api.forecast.it/api/v1/programs/4ec178b1-f229-47c2-b5c3-b3aaf6da2a4e/stages/11eda956-33cf-8baa-800b-0242ac120003
+PUT https://api.forecast.it/api/v1/programs/4ec178b1-f229-47c2-b5c3-b3aaf6da2a4e/stages/11eda956-33cf-8baa-800b-0242ac120004
 
 ## Update program client
 
