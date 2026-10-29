@@ -121,7 +121,7 @@ POST https://api.forecast.it/api/v1/programs
    "key": "NP",
    "description": "This is a new Program",
    "color": "#75C2FF",
-   "stage_id": "11eda956-33cf-8baa-800b-0242ac120003",
+   "stage_id": "11eda956-33cf-8baa-800b-0242ac120004",
    "start_date": "2022-01-31",
    "end_date": "2024-03-02",
    "owners": [1,2,3]
@@ -258,6 +258,10 @@ OPPORTUNITY and HALTED are still returned so existing programs in those stages c
     {
         "id": "11eda956-33cf-8baa-800b-0242ac120003",
         "name": "OPPORTUNITY"
+    },
+    {
+        "id": "11eda956-33cf-8baa-800b-0242ac120004",
+        "name": "PLANNING"
     }, ...
 ]
 ```
@@ -270,7 +274,7 @@ Programs can only be moved to the PLANNING, RUNNING or DONE stage. Moving a prog
 
 ### Sample JSON request
 
-PUT https://api.forecast.it/api/v1/programs/4ec178b1-f229-47c2-b5c3-b3aaf6da2a4e/stages/11eda956-33cf-8baa-800b-0242ac120003
+PUT https://api.forecast.it/api/v1/programs/4ec178b1-f229-47c2-b5c3-b3aaf6da2a4e/stages/11eda956-33cf-8baa-800b-0242ac120004
 
 ## Update program client
 
