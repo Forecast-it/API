@@ -798,6 +798,46 @@ GET https://api.forecast.it/api/v1/projects/1/financials
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ period_value | Double, The value for the selected period                                                                    |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ total_value  | Double, The total value for the project                                                                      |
 
+## Set project revenue recognition
+
+- `POST /v4/project/{projectId}/revenue_recognition` - Sets the revenue recognition for one calendar month of the project to `amount`. Any existing value for the month, locked or not, is replaced, and the month is left unlocked unless `locked` is `true`. Returns an array with the month's revenue recognition record.
+
+Returns `404` if the project doesn't exist in the company the API key belongs to.
+
+| Request fields | Description/format                                                                                                        |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| year           | Integer (Minimum 1970) (Required)                                                                                         |
+| month          | Integer (Between 1 and 12) (Required)                                                                                     |
+| amount         | Double (Minimum 0.0) (Required). The revenue to recognise for the month, including expenses                              |
+| locked         | Boolean (Defaults to false). `true` locks the month at `amount`                                                           |
+
+### Sample JSON request
+
+POST https://api.forecast.it/api/v4/project/1/revenue_recognition
+
+```javascript
+{
+   "year": 2026,
+   "month": 4,
+   "amount": 999
+}
+```
+
+### Sample JSON response
+
+```javascript
+[
+   {
+      "id": 1,
+      "projectId": 1,
+      "start_date": "2026-04-01",
+      "end_date": "2026-04-30",
+      "locked": false,
+      "actual_revenue": 999
+   }
+]
+```
+
 ## Get project baseline
 
 - `GET /projects/{projectId}/baseline` - Returns all baseline data for the project, including aggregations of phases, roles and expenses.
