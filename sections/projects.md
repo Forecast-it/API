@@ -808,7 +808,7 @@ Returns `404` if the project doesn't exist in the company the API key belongs to
 | -------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | year           | Integer (Minimum 1970) (Required)                                                                                         |
 | month          | Integer (Between 1 and 12) (Required)                                                                                     |
-| amount         | Double (Minimum 0.0) (Required). The total revenue recognised for the month, in the company currency, including expenses |
+| amount         | Double (Minimum 0.0) (Required). The revenue to recognise for the month, including expenses                              |
 | locked         | Boolean (Defaults to false). Also locks the month, the same as locking it on the project's revenue recognition page      |
 
 ### Sample JSON request
