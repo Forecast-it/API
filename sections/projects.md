@@ -800,7 +800,7 @@ GET https://api.forecast.it/api/v1/projects/1/financials
 
 ## Set project revenue recognition
 
-- `POST /v4/project/{projectId}/revenue_recognition` - Sets the manual revenue recognition for one calendar month of the project. If the month already has a manual value, it is replaced. Returns an array with the month's revenue recognition record.
+- `POST /v4/project/{projectId}/revenue_recognition` - Sets the revenue recognition for one calendar month of the project to `amount`. Any existing value for the month, locked or not, is replaced, and the month is left unlocked unless `locked` is `true`. Returns an array with the month's revenue recognition record.
 
 Returns `404` if the project doesn't exist in the company the API key belongs to.
 
@@ -809,7 +809,7 @@ Returns `404` if the project doesn't exist in the company the API key belongs to
 | year           | Integer (Minimum 1970) (Required)                                                                                         |
 | month          | Integer (Between 1 and 12) (Required)                                                                                     |
 | amount         | Double (Minimum 0.0) (Required). The revenue to recognise for the month, including expenses                              |
-| locked         | Boolean (Defaults to false). Also locks the month, the same as locking it on the project's revenue recognition page      |
+| locked         | Boolean (Defaults to false). `true` locks the month at `amount`                                                           |
 
 ### Sample JSON request
 
