@@ -11,7 +11,7 @@
 |start_year | Integer|
 |start_month | Integer|
 |start_day | Integer|
-|cost | Decimal|
+|cost | Decimal, nullable. `null` means no internal cost has been entered. `0` is a cost of $0.|
 |created_by | Integer, ID of person|
 |updated_by | Integer, ID of person|
 |created_at | Date|
@@ -55,7 +55,7 @@
 |start_year | Integer|
 |start_month | Integer|
 |start_day | Integer|
-|cost | Decimal|
+|cost | Decimal, nullable. `null` means no internal cost has been entered. `0` is a cost of $0.|
 |created_by | Integer, ID of person|
 |updated_by | Integer, ID of person|
 |created_at | Date|
