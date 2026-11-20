@@ -5,6 +5,8 @@
 * `/tasks/{taskId}/financials` - Return financial numbers for specific task (in company currency)
 * `/tasks/{taskId}/financials?convert_to_project_currency=true` - Return financial numbers for specific task (in project currency)
 
+> Requires financial access, and without "View financial information" cost, profit and margin are left out. See [Permissions for financial information](financials.md#permissions-for-financial-information).
+
 | Response fields        | Description/format                                                                     |
 |------------------------|----------------------------------------------------------------------------------------|
 | task_id                | Integer. Task ID                                                                       |
@@ -62,6 +64,8 @@
 
 * `/projects/{projectId}/tasks/financials` - Return list of financial numbers for each task in the specific project (in company currency)
 * `/projects/{projectId}/tasks/financials?convert_to_project_currency=true` - Return list of financial numbers for each task in the specific project (in project currency)
+
+> Requires financial access, and without "View financial information" cost, profit and margin are left out. See [Permissions for financial information](financials.md#permissions-for-financial-information).
 
 | Response fields        | Description/format                                                                     |
 |------------------------|----------------------------------------------------------------------------------------|

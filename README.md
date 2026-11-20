@@ -92,6 +92,8 @@ If [Forecast](https://www.forecast.app) is having trouble, you might see a 5xx e
 
 401 is a failure to authenticate the api key.
 
+403 means the API key does not have the permission the endpoint needs. For example, the financial endpoints need access to financial information, see [Permissions for financial information](sections/financials.md#permissions-for-financial-information).
+
 404 Errors usually means that you are trying to GET/POST/PUT/DELETE a resource that doesn't exist.
 
 Errors are returned in the following JSON format.
